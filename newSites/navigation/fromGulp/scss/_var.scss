@@ -1,0 +1,16 @@
+$col-mainblau: #034f67;
+$col-hellgrau: #e6e1dc;
+$col-bikini: #77212e;
+$col-dunkel: #373434;
+$col-chili: #9B2335;
+$col-alarm: #f9423a;
+$col-bronze: #a6966c;
+
+$col-hilite: #f9423a;
+$col-medium:#a6966c;
+
+
+@mixin upper(){
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
