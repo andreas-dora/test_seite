@@ -15,11 +15,12 @@
   --c-accent: #a6966c;
   --c-second: #034f67;
   --c-hilite: #f9423a;
+  --c-back:#f8f8ff;
 }
 
 body{
   font-family: Arial, Helvetica, sans-serif;
-  background-color: ghostwhite;
+  background-color: var(--c-back);
 }
 h1, h2, h3, h4, h5 {
   font-family: 'Cairo', Arial, sans-serif;
@@ -190,14 +191,15 @@ pre{
   color: var(--c-dunkel);
   text-align: right;
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.5;
+  margin-bottom: 1em;
 }
 .inhalt dt{
   font-weight: bold;
+  font-size: 20px;
   /* text-transform: uppercase;
   font-size: 20px;
   letter-spacing: .16em; */
-
 }
 .inhalt dd{
   border-top: 3px solid var(--c-dunkel);
@@ -206,6 +208,5 @@ pre{
   text-decoration: none;
   color: var(--c-dunkel);
   font-size: 18px;
-
-
 }
+
