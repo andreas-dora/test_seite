@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Layout eine Splate</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <section>
+    <article>
+      <h2>Starke und schwache Entitäten</h2>
+      <h5>Das habe ich abgeschrieben aus Michael Laubes Buch: Einstieg in sql. Kapitel 7.3.4 Datenbanken modelieren. Besonders hilfreich 
+        fand ich den Eltern-Kiind vergeleich. </h5>
+      <p>1. In der Tabelle, die eine starke Entität repräsentiert, existiert eine Zeile autonomm.
+        Hier ist keine Beziehung zu einer anderen Tabelle zu beachten. Einfüge-, Aktualisierungs- und Löschoperationen
+        können hier völlig autonom betrachtet werden. Es gibt keine Beziehungen zu Zeilen in anderen
+        Tabellen. Für Aktualisierungs- und Löschanweisungen gilt dies nur solange keine schwache Entität eine Beziehung zu Zeilen einer Starken Entität hat.
+      </p>
+      <p>2. In einer Tabelle die eine schwache Entität repäsentiert, existierren Zeilen,
+         die eine Beziehung zu Zeilen herstellen die eine schwache Entität repräsentiert.
+        Diese Beziehung hat unmittelbare Auswirkungen auf Einfüge-, Aktualisierungs- und 
+        Löschoperationen: </p>
+      <ul>
+        <li>Eine Zeile einer Tabelle, die eine starke Entität repräsentiert, kann nicht gelöscht werden, 
+          solange eine Beziehung zu einer Zeile einer Tabelle gegeben ist, die eine schwache
+         Entität repäsentiert. Besteht hingegen keine solche Beziehung, so kann due Zeile aus der Tabelle, die einer 
+        starken Entität entspricht, einfach gelöscht werden.</li>
+        <li>Eine Zeile aus einer Tabelle, die einer schwachen Entität entspricht, darf nur auf gültige 
+          Primärschlüsselwerte in den Zeilen der Tabele verweisen, die eine starke Entität darstellen. 
+          Wenn eine neue Zeile eingefügt wird, ist dies unbedingt zu beachten. Die einzige Ausnahme ist der Fall, dass eine
+          Zeile einer Tabelle, die einer schwachen Entität entspricht, keine Beziehung zu einer Zeile 
+          keine Beziehung zu einer Zeile einer Tabelle eingeht, die einer starken Entität entspricht. 
+          Dies ist der Fall, wenn Sie es mit NULL-Werten in einer Fremdschlüsselspalte zu tun haben.   
+        </li>
+        <li>Zeilen einer Tabelle, die einer schwachen Entität entspricht, können gelöscht werden, 
+          auch wenn eine Beziehung zu den Zeilen einer starken Entität existiert. Merken Sie sich, 
+          dass die die schwache Entität mit den Fremdschlüsselwerten der Besitzer der Beziehung ist. 
+          In diesem Fall wird mit dem Löschen lediglich die Beziehung zu der Zeile aufgehoben, die der 
+          starken Entität entspricht.</li>
+          <li>Es muss also sichergestellt werden, dass aus Zeilen von Tabellen, die einer schwachen 
+            Entität ensprechen, nur Beziehungen existieren, die auch tatsächlich in den Zeilen der Tabelle,
+            die einer starken Entität entspricht, in Form von Primärschlüsselwerten vorhanden sind.
+          </li>
+          <li>Folglich ist es auch nicht zulässig, dass Primärschlüsselwerte aus Zeilen einer Tabelle, 
+            die einer starken Entität entspricht, geändert werden, wenn mithilfe eines Fremdschlüsselwertes eine 
+            Beziehung zu einer Tabelle existiert, die einer schwachen Entität entspricht. Hier gibt es nur eine 
+            Ausnahme: auf sie komme ich später zu sprechen, wenn wir uns kaskadierte Änderungs- und Löschoperationen
+            ansehen.</li>
+      </ul>
+      <p>Diese Zusammenhänge zwischen starken und schwachen Entiäten werden auch als Eltern-Kind-Beziehung oder - nicht 
+        ganz so neutral - als Vater-Sohn-Beziehung bezeichnet. Ein Kind kann nur existieren, wenn Eltern vorhanden sind.
+        Potentiälle Eltern hingegen können auch ohne Kind existieren.</p>
+      <p>Die Auswirkungen,  die ich ihnen soeben im Bezug auf die Beziehungen zwischen starken und schwachen Entitäten.
+        dargestellt habe, können wir auch als Anforderungen an eine relationales Datenbanksystem formulieren. Relationale 
+        Datenbanksysteme stellen sicher, dass die hier aufgeführten Auswirkungen immer eintreten und dass die 
+        Intägrität einer Beziehung immer gewährleistet ist. Diese Gewährleistung wird als <strong>referenzielle Intägrität</strong> 
+      bezeichnet und stellt sicher, dass nur gültige Beziehung existieren.</p>
+    </article>
+  </section>
+</body>
+</html>
