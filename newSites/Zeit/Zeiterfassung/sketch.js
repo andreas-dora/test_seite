@@ -58,7 +58,7 @@ const minutenFeld = document.getElementById('id_minutenFeld');
 const totalFeld = document.getElementById('id_totalMillis');
 
 
-var startStempel;
+var startStempel = 0;
 
 function workStartStop(){
   if(!isWorking){

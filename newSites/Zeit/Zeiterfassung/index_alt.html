@@ -16,17 +16,41 @@
           <div class="uhr" id="id_uhr"></div>
           <div class="datum" id="id_datum"></div>
         </div>
-
-
         <div class="container">
           <h5>Stechuhr</h5>
-          <button class="bigBtn" id="id_workBtn">Start</button>
-        
-        
+          <button class="bigBtn" id="id_workStartBtn">Start</button>
+          <dl>
+            <dd>Start: <span id="id_tagStart"></span></dd>
+            <!-- <dd><span id="id_startStempel"></span></dd> -->
+
+            <dd>Ende: <span id="id_tagEnde"></span></dd>
+            <dd><span id="id_EndeStempel"></span></dd>
             <hr>
+            <dd>= <span id="id_myMillis"></span></dd>
+            <hr>
+          </dl>
             <h5>Pause</h5>
             <button class="bigBtn" id="id_pauseBtn">Pause</button>
 
+          <dl>
+            <!-- <dd>= <span id="id_pauseMillis"></span></dd> -->
+          
+            <dd>Stunden: <span id="id_stundenFeld"></span>:<span id="id_minutenFeld"></span>
+            </dd>
+          </dl>
+
+        
+          <!-- <p></p>
+          <p>Stempel: </p>
+          <p></p>
+          <hr>
+          <p></p>
+          <p></p> -->
+       
+       
+          
+          <!-- <button class="bigBtn" id="tagStop_btn">Stop</button> -->
+          <!-- <h4>Stunden: <span id="tagStunden"></span></h4> -->
         </div>
        
         </div>
@@ -40,29 +64,15 @@
 
       <table>
         <thead>
-          <tr><th>Arbeit</th><th>Millis</th></tr>
+          <tr><th></th><th>Millis</th></tr>
         </thead>
         <tbody>
-          <tr><th>Start:</th><td id="id_workStartFeld"></td></tr>
-          <tr><th>Ende:</th><td id="id_workStopFeld"></td></tr>
-          <tr><th>Zeit:</th><td id="id_workMillisFeld"></td></tr>
+          <tr><td>Arbeit Start</td><td id="id_workStartStamp"></td></tr>
+          <tr><td>Arbeit Ende</td><td id="id_workStopStamp"></td></tr>
           <!-- <tr><td>Arbeit Start</td><td id="id_startStempel"></td></tr> -->
-
-        </tbody>
-        <thead>
-          <tr>
-            <th>Pause</th><th>Millis</th>
+          <tr><td>Pause (länge)</td><td id="id_pauseMillis"></td></tr>
+          <tr><td>Arbeitzeit</td><td id="id_totalMillis"></td>
           </tr>
-        </thead>
-        <tbody>
-          <tr><th>Start:</th><td id="id_pauseStartFeld"></td></tr>
-          <tr><th>Ende:</th><td id="id_pauseStopFeld"></td></tr>
-          <tr><th>Zeit:</th><td id="id_pauseMillisFeld"></td></tr>
-        </tbody>
-        <thead><tr><th>Total</th><th>Millis</th></tr></thead>
-        <tbody>
-          <tr><th>Zeit:</th><td id="id_totalMillisFeld"></td></tr>
-
         </tbody>
       </table>
 
@@ -86,6 +96,5 @@
     </section>
   </main>
   <script type="text/javascript" src="uhr.js"></script>
-  <script type="text/javascript" src="arbeitszeit.js"></script>
 </body>
 </html>

@@ -84,3 +84,40 @@ a{
 
 
 }
+
+hr{
+  margin: 1em 0;
+}
+
+
+section{
+  display: flex;
+  gap: 1em;
+}
+
+article{
+  min-width: 300px;
+  padding: .4em 1em .7em 3em;
+  border: 1px solid var(--c-dunkel);
+
+}
+table{
+  border: 1px solid var(--c-dunkel);
+  border-collapse: collapse;
+}
+thead{
+  background-color: var(--c-dunkel);
+  color: white;
+}
+th, td{
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid silver;
+  /* border-collapse: collapse; */
+  padding: .6em 1.4em .4em 1.4em;
+}
+th{
+  text-align: left;
+}
+td{
+  text-align: right;
+}
