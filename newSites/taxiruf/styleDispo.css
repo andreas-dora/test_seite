@@ -1,0 +1,74 @@
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid pink; */
+}
+:root{
+--c-mainblau: #034f67;
+--c-hellgrau: #e6e1dc;
+--c-bikini: #77212e;
+--c-dunkel: #373434;
+--c-chili: #9B2335;
+--c-alarm: #f9423a;
+
+--c-back: #f8f8ff;
+--c-text: #000000;
+--c-accent: #696969;
+--c-hilite: #f9423a;
+
+--sans: Arial, Helvetica, sans-serif;
+--serif:'Times New Roman', Times, serif;
+--code: 'Courier New', Courier, monospace;
+--maxW: 1000px;
+--topOffset: 4em;
+}
+
+/*########################################## 
+############################################ 
+############################################ */
+
+body{
+  background-color: var(--c-back);
+  font-family: var(--sans);
+  font-size: 100%;
+}
+.neuerAuftrag{
+  display: flex;
+  background-color: #e6e1dc;
+}
+.balken{
+  width: 100%;
+  background-color: #373434;
+  color: white;
+  padding: 0.3em;
+  display: flex;
+  justify-content: space-between;
+}
+.zeile{
+  height: 40px;
+  padding: .3em;
+}
+label{
+  margin:0 .3em 0 1em;
+  display: inline-block;
+}
+input{
+  height: 100%;
+}
+.shortInput{
+  width: 80px;
+}
+.quick{
+  width: 70%;
+}
+.laInput{
+  width: 40px;
+}
+
+
+@media (min-width:1000px){
+  .lContainer{
+    width: 45%;
+  }
+}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dispo Mockup</title>
+  <link rel="stylesheet" href="styleDispo.css">
+</head>
+<body>
+  <header>
+    <span>Neuer Auftrag - ManId: 1</span>
+  </header>
+ <main class="neuerAuftrag">
+  <div class="lContainer">
+    <form action="" class="maske">
+      <section class="kunde">
+        <div class="balken" class="center">Kunde</div>
+        <div class="zeile">
+          <label for="kunde">Kunde:</label>
+          <input type="text" name="kunde" id="id_kunde">
+          <label for="la">LA:</label>
+          <input type="text" name="la" id="Id_la" class="laInput">
+        </div>
+      </section>
+
+ 
+      <div class="zeile"></div>
+      <section class="accordion" id="abfahrt">
+        <div class="balken"><span>1</span><span>Abfahrt</span><button class="mini">+</button></div>
+        <div class="pannel">
+          <div class="zeile"><label for="abfahrtQuik">Quik:</label><input type="text" name="abfahrtQuick" id="id_abfahrtQuick" class="quick"></div>
+          <div class="zeile"><label for="str">Straße:</label><input type="text" name="str" id="id_str" class="longInput"><label for="hnr">HNr:</label><input type="text" class="shortInput" name="hnr" id="id_hnr" maxlength="8"></div>
+          <div class="zeile"><label for="ort">Ort:</label><input type="text" name="ort" id="id_ort" class="longInput"><label for="startPLZ">PLZ:</label><input type="text" class="shortInput" name="startPLZ" id="id_startPLZ" maxlength="8"></div>
+          <div class="zeile"><label for="startVorl">Vorl:</label><input type="text" id="id_startVorl" name="startVorl" maxlength="8"></div>
+        </div>
+      </section>
+      <section class="accordion" id="ziel">
+        <div class="balken"><span>2</span><span>Ziel</span><button class="mini">+</button></div>
+        <div class="pannel">
+          <div class="zeile">
+            <label for="zielQuik">Quik:</label>
+            <input type="text" name="zielQuik" id="id_zielQuik" class="quick"></div>
+          <div class="zeile"><label for="zielStr">Straße:</label><input type="text" name="zielStr" id="id_zielStr" class="longInput"><label for="zielHNr">HNr:</label><input type="text" class="shortInput" name="zielHNr" id="id_zielHNr" maxlength="8"></div>
+          <div class="zeile">
+            <label for="zielOrt">Ort:</label>
+            <input type="text" name="zielOrt" id="id_zielOrt" class="longInput">
+            <label for="zielPLZ">PLZ:</label>
+            <input type="text" class="shortInput" name="zielPLZ" id="id_zielPLZ" maxlength="8"></div>
+          <div class="zeile">
+            <label for="zielVorl">Vorl:</label>
+            <input type="text" name="zielVorl" id="id_zielVorl" maxlength="8">
+          </div>
+        </div>
+      </section>
+      <section class="arccorion" id="id_konditionen">
+
+        <div class="balken"><span><strong>Konditionen</strong></span></div>
+        <div class="zeile">
+          <label for="zeit">Zeit / Datun:</label>
+          <input type="text" id="id_time" class="shortInput" name="zeit">
+          <input type="date" class="datum" name="datum" id="id_datum">
+          <label for="personen">Personen</label>
+          <input type="text" class="shortInput" name="personen" id="id_personen">
+        </div>
+        <div class="zeile">
+          <label for="optionen">Optionen:</label>
+          <input type="text" name="optionen" id="id_optionen">
+          <label for="preis">Preis:</label>
+          <input type="text" name="preis" id="id_preis">
+        </div>
+      </section>
+    </form>
+  </div>
+  <div class="rContainer">
+    <aside class="schnell">
+      <div class="balken" class="center">Schnellauswahl</div>
+    </aside>
+ </main>
+ 
+
+ <script src="./js/time.js"></script>
+</body>
+</html>
