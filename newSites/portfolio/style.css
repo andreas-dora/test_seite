@@ -130,7 +130,7 @@ nav a:hover, nav a:focus{
   width: 600px;
   padding: 0 6px 18px 6px;
   margin: 0 auto;
-  border: 2px solid white;
+  /* border: 2px solid white; */
   text-align: center; 
   display: flex;
   flex-direction: column;
