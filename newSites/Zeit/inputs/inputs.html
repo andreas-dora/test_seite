@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Input Felder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <h1>input</h1>
+    <h1>felder</h1>
+  </header>
+  
+  <section>
+    <article>
+      <h3>HTML Input Felder</h3>
+      <h5>und wie man sie füttert</h5>
+      <p>HTML stellt eine Reihe verschiedener Input Felder für Zeitangaben zur Verfügung. Möchte man die felder
+        mit Werten aus einer Datenbank oder einem Default-Datum/Zeit füllen darf man sich von ihrem
+        Erscheinungsbild nicht in die Irre führen lassen. Auch wenn es so aussieht als wolle, ein Input Feld vom
+        Typ "date" ein Datum im Format "tt.mm.jjjj" haben. 
+        W, wird man schnell sehen, dass es nur als Eingabefeld so
+        funktioniert.</p>
+      <p>Möchte man das Feld als Ausgabe nutzen, wenn es beispielsweise als default das aktuelle Datum Anzeigen soll,
+         merkt man schnell, dass es Daten in diesem Format nicht annimmt. Zum Glück hilft hier eine entsprechende Fehlermeldung
+         der Console unter Chrome weiter.</p>
+         <blockquote>inputs.js:8 The specified value "12.11.2021" does not conform to the required format, "yyyy-MM-dd".</blockquote>
+      <p>Ähnlich verhält es sich mit den Feldern vom Typ "time" und "datetime-local".</p>
+
+      <h4>type="datetime-local"</h4>
+      <blockquote>inputs.js:9 The specified value "12.11.2021" does not conform to the required format.  The format is "yyyy-MM-ddThh:mm" followed by optional ":ss" or ":ss.SSS"</blockquote>
+      <h4>type="date"</h4>
+      <label for="date">Date:</label>
+      <input type="date" name="date" id="id_date">
+      <hr>
+      <h4>type="time"</h4>
+      <input type="time" name="time" id="id_time">
+      <hr>
+      <h4>type="datetime-local"</h4>
+      <label for="localDateTime">localDateTime</label>
+      <input type="datetime-local" name="localDateTime" id="id_localDateTime">
+      <h4>type="datetime"</h4>
+      <label for="">Datetime</label>
+      <input type="datetime" name="datetime" id="id_datetime">
+    </article>
+  </section>
+  <script src="inputs.js"></script>
+</body>
+</html>

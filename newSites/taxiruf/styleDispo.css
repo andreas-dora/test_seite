@@ -35,7 +35,7 @@ body{
 }
 .neuerAuftrag{
   display: flex;
-  background-color: #e6e1dc;
+  background-color: gainsboro;
 }
 .balken{
   width: 100%;
@@ -61,8 +61,15 @@ label{
 }
 input{
   height: 100%;
-  font-size: 1em;
+  font-size: 1.05em;
   padding-left: .2em;
+}
+input:focus{
+  background-color: lightgoldenrodyellow;
+}
+input::placeholder{
+  color: red;
+  font-size: .8em;
 }
 .longInput{
   width: 320px;
@@ -78,8 +85,8 @@ input{
 }
 
 
-@media (min-width:1000px){
+@media (min-width:800px){
   .lContainer{
-    width: 45%;
+    width: 600px;
   }
 }

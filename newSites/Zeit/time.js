@@ -7,6 +7,9 @@ getTimeFeld.innerText = jetzt.getTime();
 
 
 document.getElementById('id_localeTimeString').innerText = jetzt.toLocaleTimeString();
+
+document.getElementById('id_timeString').innerText = jetzt.toTimeString();
+document.getElementById('id_dateString').innerText = jetzt.toDateString();
 document.getElementById('id_isoString').innerText = jetzt.toISOString();
 document.getElementById('id_toJSON').innerText = jetzt.toJSON();
 console.log(jetzt.toISOString());

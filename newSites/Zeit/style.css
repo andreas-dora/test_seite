@@ -30,7 +30,15 @@ h5{
   text-transform: uppercase;
   letter-spacing: .16em;
 }
-
+p, blockquote{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  margin-bottom: .6em;
+}
+blockquote{
+  margin-left: 2em;
+  font-style: italic;
+}
 .linkListe{
   max-width: 400px;
   text-align: right;
@@ -53,11 +61,15 @@ dl{
 /*############ table ################*/
 /*###################################*/
 
+table{
+  border-collapse: collapse;
+}
+
 th,td{
   padding: .6em 1.5em .3em .5em;
   text-align: left;
   border: 1px solid var(--c-dunkel);
-  border-collapse: collapse;
+ 
 }
 main{
   max-width: 1160px;
