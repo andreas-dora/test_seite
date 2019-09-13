@@ -1,0 +1,22 @@
+1. Github
+2. css in html verlinken 
+font in html und css importieren
+FÜR HTML:
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+FÜR CSS:
+body{ 
+    font-family: 'Roboto', sans-serif;
+}
+
+IN CSS MARGIN PADDING NULLEN: (ganz oben im script)
+
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}
+
+

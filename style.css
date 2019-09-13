@@ -1,0 +1,40 @@
+/* Gilt für alle Elemente */
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}
+
+.logo-container{
+    background-color: azure;
+    flex: 1;
+
+}
+nav{
+    background-color: rgb(177, 192, 238);
+    
+    flex: 2
+
+}
+
+.cart{
+    background-color:rgb(238, 192, 107);
+    flex: 1;
+
+}
+
+body{ 
+    font-family: 'Roboto', sans-serif;
+}
+
+header{
+    display: flex;
+    color: rgb(146, 7, 7);
+    width:90%;
+    margin:auto;
+    background-color: lightslategray;
+    height: 10vh;
+    align-items: center;
+
+
+}
