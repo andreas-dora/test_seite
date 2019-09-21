@@ -7,6 +7,12 @@ body{
     font-family: 'Roboto', sans-serif;
     background-color: ghostwhite;
 }
+#page{
+    max-width: 1080px;
+    min-width: 720px;
+    margin: 10px auto 0 auto;
+    
+}
 header h1{
     font-size: 48px;
 }
@@ -30,10 +36,11 @@ u{
     font-weight: 300;
     text-decoration: none;
 }
-
+/*
 .container{
     width: 90%;
 }
+*/
 a{
     text-decoration: none;
     color: black;
@@ -42,21 +49,23 @@ a:active{
     color: silver;
 }
 a:hover{
-
+    color: slategrey;
 }
-form{
-background-color: ghostwhite;
-margin: 5px 0 20px 0;
+#myForm{
+    width: 455px;
+    background-color: ghostwhite;
+    margin: 40px auto 20px auto;
 
 }
 ::placeholder{
     color: darkgray;
     font-weight: 300;
 
-}
-form{
+}/*
+#myForm{
+    width: 455px;
     margin: auto;
-}
+}*/
 input {
     height: 40px;
     font-size: 18px;
@@ -66,6 +75,8 @@ input {
     
     border: 1px solid ghostwhite;
     border-radius: 3px; 
+
+    -webkit-box-shadow: 0 3px 10px -6px silver;
     outline: none;
     margin: 5px 5px 5px 0;
     padding-left: 5px;
@@ -99,6 +110,8 @@ textarea{
     outline: none;
     resize: none;
     padding: 5px;
+    margin: 5px 0 5px 0;
+
 
 }
 textarea:focus, textarea:hover{
