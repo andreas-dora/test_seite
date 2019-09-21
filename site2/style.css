@@ -1,0 +1,43 @@
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Roboto', sans-serif;
+    background-color: ghostwhite;
+}
+header h1{
+    font-size: 48px;
+}
+nav li{
+    display: inline;
+    list-style: none;
+    font-size: 18px;
+    justify-content: space-around;
+
+
+
+}
+button{
+    font-family: 'Roboto', sans-serif; 
+}
+u{
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.container{
+    width: 90%;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+form{
+background-color: ghostwhite;
+}
+
+footer{
+    font-size: 18px;
+}
