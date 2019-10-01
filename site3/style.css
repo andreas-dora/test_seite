@@ -1,0 +1,134 @@
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}
+body{ 
+    font-family: 'Roboto', sans-serif;
+    background-color: ghostwhite;
+}
+#page{
+    max-width: 1080px;
+    min-width: 720px;
+    margin: 10px auto 0 auto;
+    
+}
+header h1{
+    font-size: 48px;
+}
+nav{
+    margin: 10px 0 20px 0;
+
+}
+nav li{
+    display: inline;
+    list-style: none;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: space-around;
+
+
+}
+button{
+    font-family: 'Roboto', sans-serif; 
+}
+u{
+    font-weight: 300;
+    text-decoration: none;
+}
+/*
+.container{
+    width: 90%;
+}
+*/
+a{
+    text-decoration: none;
+    color: black;
+}
+a:active{
+    color: silver;
+}
+a:hover{
+    color: slategrey;
+}
+#myForm{
+    width: 455px;
+    background-color: ghostwhite;
+    margin: 40px auto 20px auto;
+
+}
+::placeholder{
+    color: darkgray;
+    font-weight: 300;
+
+}/*
+#myForm{
+    width: 455px;
+    margin: auto;
+}*/
+input {
+    height: 40px;
+    font-size: 18px;
+    font-weight: 600;
+
+    background-color: white;
+    
+    border: 1px solid ghostwhite;
+    border-radius: 3px; 
+
+    -webkit-box-shadow: 0 3px 10px -6px silver;
+    outline: none;
+    margin: 5px 5px 5px 0;
+    padding-left: 5px;
+
+}
+input[type=submit]{
+    background-color: ghostwhite;
+    
+    border: 1px solid darkgray;
+}
+input:focus, input:hover{
+    border: 1px solid #000000;
+}
+input[type=text]:focus, input[type=text]:active{
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    
+}
+ #firstName, #lastName{
+    width: 220px;
+}
+#email, #submit {
+    width: 450px;
+}
+textarea{
+    width: 450px;
+    font-size: 18px;
+    background-color: white;
+    border: 1px solid ghostwhite;
+    border-radius: 3px;
+    outline: none;
+    resize: none;
+    padding: 5px;
+    margin: 5px 0 5px 0;
+
+
+}
+textarea:focus, textarea:hover{
+    border: 1px solid #000000;
+}
+textarea:focus, textarea:active{
+    border: 1px solid #000000;
+}
+
+button{
+    height: 30px;
+    width: 450px;
+}
+
+footer{
+    font-size: 18px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
