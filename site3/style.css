@@ -10,7 +10,7 @@ body{
 #page{
     max-width: 1080px;
     min-width: 720px;
-    margin: 10px auto 0 auto;    
+    margin: 10px auto 0 5px;    
 }
 
 header h1{
@@ -26,21 +26,11 @@ nav li{
     font-size: 16px;
     font-weight: 600;
     justify-content: space-around;
-
-
-}
-button{
-    font-family: 'Roboto', sans-serif; 
 }
 u{
     font-weight: 300;
     text-decoration: none;
 }
-/*
-.container{
-    width: 90%;
-}
-*/
 a{
     text-decoration: none;
     color: black;
@@ -51,12 +41,22 @@ a:active{
 a:hover{
     color: slategrey;
 }
-
-
-
+section{
+    width: 90%;
+}
+th{
+    text-align: left;
+    padding: 15px 50px 0 0;
+}
+th u{
+    font-weight: 500;
+}
+td{
+    padding: 0 50px 0 0;
+}
 footer{
     font-size: 18px;
-    position: absolute;
+    position: fixed;
     bottom: 5px;
     right: 5px;
 }
