@@ -1,0 +1,66 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+#page{
+    font-family: 'Roboto Mono', monospace;
+    background-color:dimgray;
+    color: cornsilk;
+
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+}
+.logo{
+    color: cornsilk;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+.navLinks{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+ a{
+    color: cornsilk;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.navLinks li{
+    list-style: none;
+}
+.burger{
+    display: none;
+}
+.burger div{
+    background-color: cornsilk;
+    width: 25px;
+    height: 2px;
+    margin: 5px;
+}
+mark{
+    font-size: 120%;
+}
+i{
+    font-style: normal;
+    font-size: 130%
+}
+footer{
+    font-size: 14px;
+    position: absolute;
+    bottom: 10px;
+    background-color: brown;
+    padding: 2px 5px 3px 5px;
+}
+@media screen and (max-width: 768px){
+    body{
+        display: none;
+    }
+}
