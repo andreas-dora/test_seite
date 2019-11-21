@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <title>Gästeliste</title>
+</head>
+<body>
+    <div class="container">
+        <section id="titel">
+            <h1>Gästeliste <u>07.09.</u></h1>
+            <p>Heute habe ich gelernt Dialogboxen zu bauen. Eine tolle Quelle: <a href="https://www.youtube.com/channel/UCpzRDg0orQBZFBPzeXm1yNg">Adam Khoury</a></p>
+        </section>
+        <section id="userInput">
+            <br>
+            <p>Mitarbeiter:</p>
+            <div class="inContainer">
+                <input type="text" id="uname" placeholder="Dein Vor- und Nachname">
+            </div>
+            <p>Deine Gäste:</p>
+            <div class="inContainer">
+                <input type="text" id="gast1" placeholder="Vor- und Nachname">
+            </div> 
+            <div class="inContainer">
+                <input type="text" id="gast2" placeholder="Vor- und Nachname">
+            </div>
+            <div class="inContainer">
+                <button id="send" class="myButton">Senden</button>             
+            </div>
+            
+        </section>
+        <div id="dialogOverlay"></div>
+                <div id="dialogBox">
+                    <div>
+                            <div id="dialogBoxHead"></div>
+                            <div id="dialogBoxBody"></div>
+                            <div id="dialogBoxFoot"></div>
+                    </div>
+                </div>
+    </div>
+        <br>
+        <hr>
+        <br>
+        
+  
+                <button onclick="alert('You look very pretty today.')">Initiate Default alert</button>
+                <button onclick="Alert.render('MALEDICTION!')">new Custom Alert</button>
+                <div id="dialogOverlay"></div>
+                <div id="dialogBox">
+                    <div>
+                            <div id="dialogBoxHead"></div>
+                            <div id="dialogBoxBody"></div>
+                            <div id="dialogBoxFoot"></div>
+                    </div>
+                </div>
+                <script type="text/javascript" src="sketch.js"></script>
+
+            </body>
+</html>

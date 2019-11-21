@@ -1,0 +1,56 @@
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}   
+:root{
+    --ghost:ghostWhite;
+    --backG:#1f5060;
+}
+body{
+    /* width: 900px; */
+    font-family: 'Roboto', sans-serif;
+} 
+body > div{
+    display: flex;
+    flex-flow: row wrap;
+}
+body > div > header, nav, main, aside, footer{
+    background-color: #cccccc; border-radius: 7px; margin: 5px; padding: 20px;
+}
+body > div > header{ order: 1; height: 100px; flex: 0 1 100%;    
+}
+body > div > nav{ order: 2; flex: 0 1 200px;    
+}
+body > div > main{ order: 3; min-height: 300px; flex: 1;    
+}
+body > div > aside{ order: 4; flex: 0 1 200px;    
+}
+body > div > footer{ order: 5; height: 100px; flex: 0 1 100%; 
+}
+
+
+
+
+
+
+#home{
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    bottom: 5px;
+    left: 5px;
+    z-index: 10;
+    background-color: darkmagenta;
+    color: cornsilk;
+}
+#next{
+    width: 60px;
+    height: 50px;
+    position: fixed;
+    bottom: 5px;
+    right: 5px;
+    z-index: 10;
+    background-color: darkmagenta;
+    color: cornsilk;
+}

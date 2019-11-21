@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}   
+:root{
+    --ghost:ghostWhite;
+    --codeBack: rgb(20,30,35);
+    --backG: rgb(10,15,30);
+    
+}
+body{
+    width: 900px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--backG);
+    margin: 0px auto;
+    color: ghostwhite;
+}
+/* 
+h1, h3, h5, a, strong{
+    font-family: 'Roboto', sans-serif;
+} */
+h1{
+    font-weight: 700;
+    font-style: italic;
+    font-size: 48px;
+}
+h5, a{
+    text-transform: uppercase;
+}
+header{
+    padding-top: 10px;
+
+}
+.blu{
+    color: lightskyblue;
+}
+.yel, strong{
+    color: rgb(226, 84, 172);
+}
+.codeContainer{
+    width: 450px;
+    height: auto;
+    padding: 10px;
+    background-color: var(--codeBack);
+    color: ghostwhite;
+    /* border: 1px solid darkslategray; */
+}

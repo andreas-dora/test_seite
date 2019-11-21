@@ -1,0 +1,10 @@
+<span class=blu>&lt;body&gt;</span>
+    <span class=blu>&lt;div class="parent"&gt;</span>
+        <span class=blu>&lt;div class="child" id="child1"&gt;</span>1<span class=blu>&lt;/div&gt;</span>
+        <span class=blu>&lt;div class="child" id="child2"&gt;</span>2<span class=blu>&lt;/div&gt;</span>
+        <span class=blu>&lt;div class="child" id="child3"&gt;</span>3<span class=blu>&lt;/div&gt;</span>
+    <span class=blu>&lt;/div&gt;</span>
+
+    <span class=blu>&lt;a href="../index.html"&gt;</span><span class=blu>&lt;button id="home"&gt;</span>HOME<span class=blu>&lt;/button&gt;</span><span class=blu>&lt;/a&gt;</span>
+    <span class=blu>&lt;a href="./flex2.html"&gt;</span><span class=blu>&lt;button id="next"&gt;</span>NEXT<span class=blu>&lt;/button&gt;</span><span class=blu>&lt;/a&gt;</span>
+<span class=blu>&lt;/body&gt;</span>

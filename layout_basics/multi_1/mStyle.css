@@ -1,0 +1,50 @@
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}   
+:root{
+    --ghost:ghostWhite;
+    --backG:#1f5060;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto Slab', serif; */
+}
+/* h1{
+    font-family: 'Roboto', sans-serif;
+
+} */
+div#multi{
+    width: 800px;
+    margin: 0px auto;
+
+    column-count: 3;
+    column-rule: 2px solid #000000;
+    column-gap: 50px;
+}
+h1, #subline{
+    column-span: all;
+}
+div#multi > div{ 
+    margin-bottom: 20px;
+    padding: 16px;
+    border: #000000 1px solid;
+    /* font-family: 'Roboto Slab', serif; */
+}
+div#multi > div:nth-child(2n+0){ 
+    background: #cae4ff;
+}
+div#multi > div:nth-child(2n+0){ 
+    background: #a4d1ff;
+}
+#home{
+    width: 60px;
+    height: 50px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    z-index: 10;
+    background-color: darkmagenta;
+    color: cornsilk;
+}

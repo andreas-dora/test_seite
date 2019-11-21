@@ -1,0 +1,171 @@
+*{
+    margin: 0px;
+    padding: 0 px;
+    box-sizing: border-box;
+}   
+:root{
+    --ghost:ghostWhite;
+    --backG:#2d7086;
+    --secC:silver;
+    --secdddC:#862d59;
+    --hiLiteC:#19404d;
+    --abox:#cc0000;
+}
+body{ 
+    font-family: 'Roboto', sans-serif;
+    background-color:var(--backG);
+}
+h1{
+    font-size: 48px;
+    color: var(--ghost);
+}
+u{
+    text-decoration: none;
+    font-weight: 300;
+}
+p{
+    font-size: 22px;
+    color: white;
+}
+
+.container{
+    width: 450px;
+    margin: 10px auto;
+    outline: none;
+    margin: 10 auto 5 auto;
+}
+.inContainer{
+    width: 450px;
+    margin: 10px auto;
+    outline: none;
+    margin: 2 auto 15 auto;
+}
+input{
+    height: 40px;
+    width: 450px;
+    font-size: 18px;
+    outline: none;
+    border: 2px solid #fff;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 6px 16px -6px black;
+}
+::placeholder{
+    font-size: 18px;
+    color: var(--backG);
+}
+#send{
+    height: 40px;
+    width: 450px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: silver;
+    border: 2px solid silver;
+    border-radius: 5px;
+    background-color: var(--backG);
+    -webkit-box-shadow: 0 6px 16px -6px black;
+}
+
+#ok{
+    height: 40px;
+    width: 50px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: var(--ghost);
+    border: 2px solid silver;
+    border-radius: 5px;
+    background-color: var(--abox);
+    -webkit-box-shadow: 0 6px 16px -6px black;
+}
+
+input:focus, input:hover{
+    border: 3px solid var(--hiLiteC);
+}
+
+input:focus, input:active{
+    background-color: #ffffff;
+    border: 3px solid #000000;
+}
+#send:focus, #send:hover{
+    border: 3px solid white;
+    color: #fff;
+}
+#ok:focus, #ok:hover{
+    border: 3px solid white;
+    color: #fff;
+}
+
+#dialogOverlay{
+    display: none;
+    opacity: .8;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background: var(--backG);
+    width: 100%;
+    z-index: 10;
+}
+#dialogBox{
+    display: none;
+    position: fixed;
+    background: var(--abox);
+    width: 300px;
+    border-radius: 3px;
+    z-index: 10;
+    -webkit-box-shadow: 0 6px 16px -6px black;
+
+}
+#dialogBox > div{
+    background-color: var(--ghost); 
+    margin:8px;
+}
+#dialogBox > div #dialogBoxHead{
+    background-color: var(--abox);
+    font-size: 22px;
+    padding: 10px;
+    color: var(--ghost);
+}
+#dialogBox > div #dialogBoxBody{
+    background-color: var(--abox);
+    font-size: 22px;
+    padding: 10px;
+    color: var(--ghost);
+}
+#dialogBox > div #dialogBoxFoot{
+    background-color: var(--abox);
+    font-size: 22px;
+    padding: 10px;
+    color: var(--ghost);
+}
+
+@media screen and (max-width:959px){
+    .container{
+        width:100%;
+    }
+    h1{
+        font-size: 30px;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+@media screen and (max-width:700px){
+    .container{
+        width:100%;
+    }
+    .inContainer{
+        width:100%;
+        margin: 2 auto 15 auto;
+    }
+    .input{
+        width:200px;
+    }
+    h1{
+        font-size: 28px;
+    }
+    p{
+        font-size: 16px;
+    }
+    #send{
+        width:100%;
+    }
+}
