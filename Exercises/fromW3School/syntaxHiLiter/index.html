@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./hiliter.css">
+    <title>Syntax Highlighter</title>
+</head>
+<body>
+    <h1>&lt;<span class="colTag">Syntax</span> high=<span class="colStr">"lighter"</span>&gt;</h1>
+
+    <p>Pack deinen Html-Code hier rein:</p>
+    <div class="container">
+            <textarea name="before" id="before" cols="30" rows="12"></textarea>
+            <button id="resetButton">Reset</button>
+            <button id="pButton">Process</button>
+        </div>
+        <div class="container">
+                <textarea name="after" id="after" cols="30" rows="12"></textarea>
+                <button id="copyButton">Copy</button>
+
+        </div>
+
+
+
+    
+    <P id="testP">Test Paragraph mit <span class="colStr">"Etwas in Anführungszeichen"</span> und etwas <span class="colTag"> was angeblich ein Tag ist</span></P>
+
+    <h4>Output: </h4>
+    <div class="ouputContainer">
+        <p id="finalStr">Kommt da noch was?</p>
+        <!-- <div id="outputStr">What?</div> -->
+    </div>
+    <script type="text/javascript" src="./sketch.js"></script>
+
+</body>
+</html>

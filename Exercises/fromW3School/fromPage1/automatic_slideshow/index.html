@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./automaticStyle.css">
+    <title>Automatic Slideshow</title>
+</head>
+<body>
+  <div class="page">
+      <h1>Einfache Slideshow</h1>
+      <!-- Slideshow container -->
+<div class="slideshow-container">
+
+              <!-- Full-width images with number and caption text -->
+              <div class="mySlides fade">
+                <div class="numbertext">1 / 4</div>
+                <img src="/fromW3School/bearbeitet/alignCenter.png" style="width:100%">
+                <div class="text">Nordlichter</div>
+              </div>
+            
+              <div class="mySlides fade">
+                <div class="numbertext">2 / 4</div>
+                <img src="/fromW3School/bearbeitet/AlignContentSpaceArround.png" style="width:100%">
+                <div class="text">Eine Straße in den Bergen</div>
+              </div>
+            
+              <div class="mySlides fade">
+                <div class="numbertext">3 / 4</div>
+                <img src="/fromW3School/bearbeitet/AlignContenFlexStartUndWrap.png" style="width:100%">
+                <div class="text">Vom Schnee bedekcte Gipfel</div>
+              </div>
+
+              <div class="mySlides fade">
+                <div class="numbertext">4 / 4</div>
+                <img src="/fromW3School/bearbeitet/AlignItemsBaseline.png" style="width:100%">
+                <div class="text">Blick ins Tall</div>
+              </div>
+            
+              <!-- Next and previous buttons -->
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            <br>
+            
+            <!-- The dots/circles -->
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span>
+              <span class="dot" onclick="currentSlide(2)"></span>
+              <span class="dot" onclick="currentSlide(3)"></span>
+              <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+  </div>
+
+
+    <script type="text/javascript" src="./automatic.js"></script>
+</body>
+</html>

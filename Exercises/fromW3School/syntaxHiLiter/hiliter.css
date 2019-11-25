@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(20, 30, 40);
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 18px;
+    color: silver;
+}
+textarea{
+    background-color: rgb(40, 50, 60);
+    color: ghostwhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+}
+.ouputContainer{
+    max-width: 900px;
+    height: 200px;
+    padding: 10px 5px 10px 5px;
+    background-color: rgb(40, 50, 60);
+    color: ghostwhite;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    overflow: auto;
+}
+button{
+    width: 60px;
+    height: 30px;
+}
+#finalStr{
+    width: 100%;
+}
+code{
+    color: silver;
+}
+.colStr{
+    color: goldenrod;
+}
+.colTag{
+    color: dodgerblue;
+}
+.colAtr{
+    color: lightskyblue;
+}
