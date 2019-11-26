@@ -1,0 +1,54 @@
+form{
+  max-width:600px;
+  min-width:320px;
+  background-color: rgb(20, 20, 40);
+  margin: 10px auto;
+  font-family: 'Sulphur Point', sans-serif;
+  border: 3px solid darkred;
+}
+input[type=text], input[type=password], input[type=email]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+button{
+  max-width: 100px;
+  background-color: #4caf50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  cursor: pointer;
+  width: 100%;
+}
+button:hover{
+  opacity:0.7;
+}
+h4{
+  color: lightseagreen;
+}
+.cancelbtn{
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+.container{
+  padding: 16px;
+}
+span.psw{
+  float: right;
+  padding-top: 16px;
+}
+@media screen and (max-width: 300px){
+  span.psw{
+      display: block;
+      float: none;
+  }
+  .cancelbtn{
+      width: 100%;
+  }
+  
+}

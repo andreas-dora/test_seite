@@ -1,0 +1,49 @@
+*{box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Sulphur Point', sans-serif;   background-color: rgb(20, 20, 40);
+   color: silver;
+   max-width:1000px;
+   
+}
+header{
+  width: 90%;
+  margin: 10px auto;
+  background-color: steelblue;
+  /* display: flex; */
+}
+
+h1{
+  color: slateblue;
+  font-size: 76px;
+}
+a{
+  color: silver;
+  text-decoration: none;
+}
+ul{
+  background-color: slategrey;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+}
+li{
+  list-style: none;
+  text-transform: uppercase;
+}
+main{
+  width: 90%;
+  height: 100%;
+  margin: 10px auto;
+  background-color: steelblue;
+  display: flex;
+  justify-content: space-between;
+}
+.column{
+  width: 22%;
+  height: 500px;
+  background-color: thistle;
+}
+
