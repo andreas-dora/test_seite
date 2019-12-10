@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+.container{
+  width: 150px; height: 200px; background-color: black;
+  padding: 3px;
+}
+
+.vCon{
+  width: 100%;
+  height: 8px;
+  padding: 2px;
+  border: 1px solid dimgray;
+}
+.vBar{
+  width:50%;
+  height: 100%;
+  background-color: green;
+}
