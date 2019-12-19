@@ -1,0 +1,15 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{background-color:dimgray; font-family: Arial, Helvetica, sans-serif;}
+.container{
+  width: 264px;
+  /* background-color: darkgrey; */
+  margin: 15px auto;
+  color: cornsilk
+}
+
+#detect{
+width: 260px;
+height: 400px;
+border: 1px solid cornsilk;
+margin: 0 auto;
+}
