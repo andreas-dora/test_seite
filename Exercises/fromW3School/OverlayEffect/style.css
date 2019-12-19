@@ -1,0 +1,40 @@
+*{padding:0; margin: 0; box-sizing: border-box;}
+body{
+  background-color: lightslategray;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.3em; font-size: 18px;
+}
+h1{margin-bottom: 10px;}
+h5{text-transform: uppercase; color: firebrick; margin-bottom: 6px;}
+.container{position: relative; width: 480px; background-color: whitesmoke; margin: 30px auto; padding: 14px;}
+
+#myBtn{position: absolute; bottom: 5px; right: 5px; width: 74px; height: 40px; background-color: gold; text-transform: uppercase; font-weight: bold; border: 1px solid black;
+}
+#myBtn:hover{
+  background-color: lightgoldenrodyellow;
+}
+
+#overlay{
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+  cursor: pointer;
+}
+#overText{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  line-height: 1.4em;
+  color: white;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%,-50%);
+
+}
