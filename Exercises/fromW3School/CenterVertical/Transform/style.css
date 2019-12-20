@@ -1,0 +1,20 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{background-color:dimgray; font-family: Arial, Helvetica, sans-serif;}
+
+
+.container{
+width: 260px;
+height: 400px;
+border: 1px solid cornsilk;
+margin: 0 auto;
+position: relative;
+margin: 15px auto;
+color: cornsilk
+}
+#vertical-center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
