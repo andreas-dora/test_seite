@@ -1,16 +1,27 @@
-input{
-  width: 150px; height: 30px;
+*{padding: 0; margin: 0; box-sizing: border-box;}
+body{width: 90%;font-family: Arial, Helvetica, sans-serif;background-color:lightgray;}
+header{margin: 5px auto; text-align: center;}
+h1{font-size: 10ex; color: firebrick;
 }
+main{display: flex;}
+h5{text-transform: uppercase; font-size:  2ex; margin-bottom: 5px;}
+input, button, .testFeld{height: 40px; width: 100%; margin-bottom: 5px; font-size:18px;}
+button{font-weight: bold; background-color: lightgoldenrodyellow;}
+.testFeld{background-color: whitesmoke; }
+.container{width: 300px; height: 500px; padding: 20px;margin: 10px; border: 1px solid white; }
+
 .tooltip {
+  position: relative;
   display: inline-block;
 }
-.tooltip .tooltiptext{
+
+.tooltip .tooltiptext {
   visibility: hidden;
   width: 140px;
   background-color: #555;
   color: #fff;
   text-align: center;
-  border-radius: 4px;
+  border-radius: 6px;
   padding: 5px;
   position: absolute;
   z-index: 1;
@@ -20,16 +31,18 @@ input{
   opacity: 0;
   transition: opacity 0.3s;
 }
-.tooltip .tooltiptext::after{
+
+.tooltip .tooltiptext::after {
   content: "";
   position: absolute;
-  top: 100%; 
-  left: 75%;
+  top: 100%;
+  left: 50%;
   margin-left: -5px;
   border-width: 5px;
   border-style: solid;
   border-color: #555 transparent transparent transparent;
 }
+
 .tooltip:hover .tooltiptext {
   visibility: visible;
   opacity: 1;

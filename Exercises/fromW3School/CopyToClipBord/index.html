@@ -8,12 +8,34 @@
   <title>Copy to Clipboard</title>
 </head>
 <body>
+<header>
   <h1>Copy to Clipboard</h1>
-  <br>
-  <h5>Ich versuche den Inhalt des Spans zu kopieren.</h5>
-  <p>Koppier das: <span id="zauberei">Das ist Zauberei</span></p>
-  <input type="text" value="Hello World" id="myInput">
-  <button id="myBtn">Copy Text</button>
+</header>
+  
+<main>
+  <div class="container">
+    <h5>Das Problem:</h5>
+    <p>Aus Sicherheitsgründen kann der Browser nur Inhalte aus Textfeldern (Input oder der Textarea copieren. In diesem Bespiel wird der "Hello World" String aus dem ersten Input-Feld kopiert</p> <br>
+    <label for="myInput"><h5>Kopier das:</h5></label>
+    <input type="text" value="Hello World" id="myInput"><br>
+    <button id="myBtn">Copy</button>
+    <label for=""><h5>hier rein:</h5></label>
+    <input type="text" class="Ziel">
+  </div>
+  
+  <div class="container">
+    <h5>Workaround</h5>
+    <p>Das Problem lässt sich folgendermaßen umgehen: Man wählt zunächst den gewünschten Inhalt aus. Erzeugt eine neues "textarea"-Element (readonly) und setzt als dessen "Value" den Wunschinhalt ein. Von dort aus kann, wie gewohnt kopiert werden. Anscließend wird das Feld wieder gelöscht. Ein Beispiel bei <a href="https://hackernoon.com/copying-text-to-clipboard-with-javascript-df4d4988697f" target="_blank">Hackernoon</a> zu finden.</p> <br>
+    <h5>Kopier das:</h5>
+    <div id="testFeld1" class="testFeld">Keine Zauberei</div>
+    <button id="cpBtn">Copy</button>
+    <label for=""><h5>hier rein:</h5></label>
+    <input type="text" class="Ziel">
+  </div>
+</main>
+
   <script type="text/javascript" src="./sketch.js"></script>
+
+
 </body>
 </html>
