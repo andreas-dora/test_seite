@@ -32,6 +32,28 @@
     <label for=""><h5>hier rein:</h5></label>
     <input type="text" class="Ziel">
   </div>
+  <div class="container">
+    <h5>code</h5>
+    <div class="codeBox">
+      <pre><code><p>const cpBtn = document.getElementById("cpBtn");
+cpBtn.addEventListener("click", myFun);
+<br>
+function myFun(){
+  var myCopy = document.getElementById("testFeld1");
+  const myHlp = document.createElement('textarea');
+  myHlp.value = myCopy.innerText;
+  myHlp.setAttribute('readonly', '');
+  myHlp.style.position = 'absolute'; 
+  myHlp.style.left = '-9999px';
+  document.body.appendChild(myHlp);
+  myHlp.select();
+  myHlp.setSelectionRange(0, 99999); /*For mobile devices*/
+  document.execCommand("copy");
+  alert("PENGO");
+  document.body.removeChild(myHlp);
+}</p></code></pre>
+    </div>
+  </div>
 </main>
 
   <script type="text/javascript" src="./sketch.js"></script>

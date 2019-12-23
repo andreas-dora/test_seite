@@ -9,7 +9,7 @@ input, button, .testFeld{height: 40px; width: 100%; margin-bottom: 5px; font-siz
 button{font-weight: bold; background-color: lightgoldenrodyellow;}
 .testFeld{background-color: whitesmoke; }
 .container{width: 300px; height: 500px; padding: 20px;margin: 10px; border: 1px solid white; }
-
+.codeBox{height: auto; padding: 5px; background-color: darkslategray; color: gold; overflow: AUTO; }
 .tooltip {
   position: relative;
   display: inline-block;

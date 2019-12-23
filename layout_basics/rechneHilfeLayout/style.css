@@ -1,0 +1,27 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+:root{
+  --backG: #222222;
+  --prm: ghostwhite;
+  --sec: silver;
+}
+body{background-color: var(--backG);}
+input{font-family: 'Roboto Mono', monospace; border: none;}
+
+.mC{width: 318px; height: 480px; margin: 10px auto; border: 1px solid var(--sec); padding: 10px;
+}
+.row{width:100%; height:35px; margin-bottom: 10px;}
+.numberIn, .multi,.numberOut{height: 100%;}
+.numberIn, .numberOut{font-size: 28px;}
+.numberIn{width:90px;}
+.multi{width: 75px; 
+  margin: 0 5px 0 5px;
+  font-size: 18px; color: var(--sec); }
+.multi,.numberOut{background-color: var(--backG); color: var(--prm);}
+.numberOut{
+  width: 112px;
+  text-align: right; padding-right: 5px;
+  /* background-color: black; */
+}
+#display{width: 100%; height:50px; background-color: var(--backG);color: var(--sec);text-align: right; font-size: 40px;margin-bottom: 15px; outline: none; border: none; 
+
+}

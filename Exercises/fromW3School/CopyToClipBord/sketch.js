@@ -34,5 +34,4 @@ function myFun(){
   document.execCommand("copy");
   alert("PENGO");
   document.body.removeChild(myHlp);
-
 }
