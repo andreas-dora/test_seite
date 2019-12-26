@@ -1,4 +1,4 @@
-var points = [40, 100, 1, 5, 25, 10];
+var points = [40, 100, 1, 5, 25, 10, 23, 77, 89, 93];
 document.getElementById("demo").innerHTML = points;
 
 function myFunction1() {
@@ -8,5 +8,11 @@ function myFunction1() {
 
 function myFunction2() {
   points.sort(function(a, b){return a - b});
+  document.getElementById("demo").innerHTML = points;
+}
+function myRandom(){
+  points.sort(function(a, b){
+    return 0.5 - Math.random()
+  });
   document.getElementById("demo").innerHTML = points;
 }
