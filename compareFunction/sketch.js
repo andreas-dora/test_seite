@@ -10,6 +10,12 @@ function myFunction2() {
   points.sort(function(a, b){return a - b});
   document.getElementById("demo").innerHTML = points;
 }
+
+function myFunction3(){
+  points.sort(function(a,b){return b-a});
+  document.getElementById("demo").innerHTML = points;
+}
+
 function myRandom(){
   points.sort(function(a, b){
     return 0.5 - Math.random()
