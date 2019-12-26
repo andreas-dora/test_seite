@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Kulim+Park:200,400,700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+  
+  <title>Script Test</title>
+</head>
+<body>
+  <header>
+    <header><h1>test dept.</h1></header>
+  </header>
+  <main>
+    <h2>Script Test.</h2>
+    <p id="myStr">Nach engerem und verbreitetem Verständnis ist Liebe ein starkes Gefühl, mit der Haltung inniger und tiefer Verbundenheit zu einer Person (oder Personengruppe), die den Zweck oder den Nutzen einer zwischenmenschlichen Beziehung übersteigt und sich in der Regel durch eine entgegenkommende tätige Zuwendung zum anderen ausdrückt. Das Gefühl der Liebe kann unabhängig davon entstehen, ob es erwidert wird oder nich</p>
+    <br>
+    <input type="text" name="such" id="such">
+    <button id="do1">Suchen</button>
+    <br>
+    <div id="result"></div>
+    <script type="text/javascript" src="sketch.js"></script>
+  </main>
+  <aside>
+    <h2>String Methods</h2>
+    <pre><code>
+      var such = document.getElementById("such");
+      window.alert(such.value);
+    </code></pre>
+
+
+    <h3>.lenght</h3>
+    <pre>
+      <code>
+        var myStr = document.getElementById("myStr").innerText;
+        <br>
+        alert(myStr.length);
+<br>
+        <h3>.indexOf()</h3>
+        var  x = myStr.indexOf(such.value);
+        <br>
+        <h3>.slice(start, end)</h3>
+        var x = myStr.slice(64, 69);
+        <p>= Gefühl</p>
+        <br>
+
+        <hr>
+        <h3>.substring(start, end)</h3>
+        var x = myStr.slice(64, 69);
+        <p>= Gefühl</p>
+        <h3>.substr(start, length)</h3>
+        var x = myStr.slice(64, 6);
+        <p>= Gefühl</p>
+        
+
+
+      </code>
+
+
+    </pre>
+  </aside>
+
+  
+</body>
+</html>
