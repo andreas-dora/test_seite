@@ -1,5 +1,9 @@
 var add = document.getElementById("addBtn");
 var ins = document.getElementById("insBtn");
+
+var myCollection = document.getElementsByTagName("p");
+var pSum =document.getElementById("pSumme");
+
 add.addEventListener("click", function(){
   let txt = document.getElementById("myInput");
   let para = document.createElement("p");
@@ -18,8 +22,11 @@ add.addEventListener("click", function(){
  para.appendChild(timeSpan);
  para.appendChild(myNode);
  hierraus.appendChild(para);
+
+ pSum.innerHTML = myCollection.length; // Anzahl der Elemente
 });
 
+//-------------- Insert Before
 
 ins.addEventListener("click", function(){
   let txt = document.getElementById("myInput");
