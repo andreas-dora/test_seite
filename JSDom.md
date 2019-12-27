@@ -20,7 +20,7 @@ document.replaceChild(neu gegen alt)
 document.write(text)
 
 ---
-## Adding Event Habdlers
+## Adding Event Handlers
 
 `document.getElementById(id).onclick = function(){code}`
 

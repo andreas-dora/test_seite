@@ -1,0 +1,78 @@
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+:root{
+    --secC: dimgray;
+}
+body{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.3em;
+}
+header, footer{
+    background-color:var(--secC);
+    font-family: 'Roboto Mono', monospace;
+    color: cornsilk;
+}
+header{
+    margin-bottom: 20px;
+}
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    min-height: 10vh;
+}
+a{
+    text-decoration: none;
+    color: darkslategray;
+}
+a:hover{
+    color: silver;
+}
+a:visited{
+    color: lightslategray;
+}
+.myHead{
+    color: cornsilk;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 20px;
+}
+.navLinks{
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+}
+.navLinks a{
+    color: cornsilk;
+
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.navLinks li{
+    list-style: none;
+}
+article{
+  width: 60%;
+  margin: 10px 10px 5px auto;
+}
+h2, p{
+  margin-bottom: 10px;
+}
+input{
+  width: 500px;
+  height: 40px;
+  font-size: 20px;
+}
+button{
+  width: 140px;
+  height: 40px;
+  background-color: ghostwhite;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+span{
+  color: dodgerblue;
+  font-weight: bold;
+}
