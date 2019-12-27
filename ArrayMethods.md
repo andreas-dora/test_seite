@@ -126,3 +126,80 @@ function myFunction2() {
 ---
 
 ## Ein Array in zufälliger Reihenfolge sortieren.
+
+```js
+var points = [40, 100, 1, 5, 25, 10];
+points.sort(function(a, b){return b - a});
+// now points[0] contains the highest value
+// and points[points.length-1] contains the lowest value
+```
+---
+
+## Math.max() / Math.min()
+Möchte man nur den höschsten order niedrigsten Wert aus einem Array ziehen kann es, je nach Größe des Array doch etwas zu Ressorcenraubend sein das ganze Array zu sortiern. Hierfür kann man die eingebauten Math.max.apply bzw. Math.min.apply Funktionen verwenden.
+
+
+```js
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+```
+```js
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array Sort</h2>
+
+<p>The highest number is <span id="demo"></span>.</p>
+
+<script>
+var points = [40, 100, 1, 5, 25, 10];
+document.getElementById("demo").innerHTML = myArrayMax(points);
+
+function myArrayMax(arr) {
+  return Math.max.apply(null, arr);
+}
+</script>
+
+</body>
+</html>
+```
+
+
+**und Math.min()**
+
+```js
+function myArrayMin(arr) {
+  return Math.min.apply(null, arr);
+}
+```
+
+---
+## My Min / Max JS Methods
+Die Schnelllste Möglichkeit das Minimum oder Maximum festzustelllen sind die maßgeschneiderten Functionen.
+```js 
+function myArrayMax(arr){
+  var leb = arr.length;
+  var max = -infinity;
+  while(len--){
+    if(arr[len]> maX){
+      Max =arr[len];
+    }
+  }
+  return max;
+}
+```
+
+
+---
+# Object Arrays sortieren
+
+```js 
+var cars = [
+ {type: "volvo", year: 2016},
+ {type: "saab", year: 2001},
+ {type: "BMW", year: 2010} 
+];
+
+cars.sort(function(a,b){return a.year -b.year});
