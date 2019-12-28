@@ -1,0 +1,13 @@
+*{margin: 0px; padding: 0px; box-sizing: border-box;}
+:root{
+    --secC: dimgray;
+}
+body{
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    line-height: 1.3em;
+}
+
+header{margin: 20px;}
+main{margin: 10px;}
+
+button{ width: 100px; height: 40px;}

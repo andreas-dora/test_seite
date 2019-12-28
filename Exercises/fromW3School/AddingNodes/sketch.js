@@ -76,13 +76,19 @@ ins.addEventListener("click", function(){
  
   let myPs = document.getElementsByTagName("p");
   let cPs = document.getElementsByClassName("msgP");
-
+  let last = cPs.length; 
  let hierraus = document.getElementById("postContainer");
  para.appendChild(timeSpan);
  para.appendChild(myNode);
- hierraus.appendChild(para);
+ if(last < 1){
+  hierraus.appendChild(para);
+ } else {
+  hierraus.insertBefore(cPs[last -1], para);
+ }
+//  hierraus.appendChild(para);
+
   
  pSum.innerHTML = myPs.length; // Anzahl der Elemente
- mpSum.innerHTML = cPs.length; // Anzahl der Elemente mit class msgP
+ mpSum.innerHTML = last; // Anzahl der Elemente mit class msgP
   // window.alert("INSERT HELAU");
 });
