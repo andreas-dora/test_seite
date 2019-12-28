@@ -73,6 +73,8 @@ button{
 }
 
 span{
-  color: dodgerblue;
   font-weight: bold;
+}
+.red{
+    color: firebrick;
 }
