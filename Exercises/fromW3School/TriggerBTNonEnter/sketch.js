@@ -11,4 +11,5 @@ input.addEventListener("keyup", function(event){
 
 function functionOne(){
   window.alert(input.value);
+  input.value ='';
 }
