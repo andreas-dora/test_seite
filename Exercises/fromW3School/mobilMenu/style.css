@@ -3,3 +3,30 @@
   background-color: #333333;
   position: relative;
 }
+.topnav #myLinks{
+  display: none;
+}
+.topnav a{
+  color: whitesmoke;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+}
+
+.topnav a.icon{
+  background-color: black;
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.topnav a:hover{
+  background-color: teal;
+  color: whitesmoke;
+}
+.active{
+  background-color: #4CAF50;
+  color: whitesmoke;
+}
