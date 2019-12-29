@@ -1,0 +1,49 @@
+*{padding: 0; margin: 0; box-sizing: border-box;}
+:root{
+  --backG: #111f1f;
+  --pri: rgb(250, 100, 10);
+}
+body{background-color: var(--backG); font-family: 'Roboto Mono', monospace; color: var(--pri);}
+
+button{width: 90px;
+height: 40px;
+background-color: var(--backG);
+color: var(--pri);
+font-family: 'Roboto Mono', monospace; color: var(--pri);
+font-size: 18px;
+border-color: var(--pri);
+}
+
+header{
+  margin-top: 10px;
+  margin-bottom: 40px;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.container{
+  width: 640px;
+  height: 360px;
+  border: 1px solid var(--pri);
+  margin: 10px auto;
+}
+fieldset{
+  padding: 30px;
+  color: var(--pri);
+  border-color: var(--pri);
+}
+legend{
+  padding: 0 8px ;
+}
+
+
+.myIn{ width: 300px;
+height: 40px;
+background-color: black;
+font-family: 'Roboto Mono', monospace; color: var(--pri);
+font-size: 18px;
+outline: none;
+border: none;
+color: var(--pri);
+margin-bottom: 10px;
+}
