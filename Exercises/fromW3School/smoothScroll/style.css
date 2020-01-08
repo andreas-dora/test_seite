@@ -1,0 +1,23 @@
+*{margin: 0; padding: 0%; box-sizing: border-box;}
+html {scroll-behavior: smooth;}
+
+body{background-color: var(--backG); font-family: 'Roboto Mono', monospace; color: var(--pri);  color: azure; font-size: larger;}
+h1, h3{text-transform: uppercase;
+}
+header{height: 100px;
+  background-color: dimgray;}
+.main{
+  padding: 20px;
+  width: 80%;
+  height: 520px;
+}
+a{ color: azure;}
+#section1{
+  background-color: indigo;
+}
+#section2{
+  background-color: darkviolet;
+}
+#section3{
+  background-color: rgb(155, 5, 82);
+}
