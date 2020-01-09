@@ -1,0 +1,26 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{font-family: Arial, Helvetica, sans-serif;background-color: dimgray; color: snow;}
+main{ width: 300px; height: 460px; margin: 30px auto; padding: 20px;
+border: 1px solid snow;}
+.myBtn{ width: 120px; height: 40px; background-color: dimgray; color: snow; font-size: 20px; border: 1px solid snow; outline: none;}
+.myBtn:hover{background-color: darkcyan;}
+
+.overlay{
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left:0;
+  top: 0;
+  background-color: dimgray;
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content{
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align:center;
+  margin-top:30px;
+}
