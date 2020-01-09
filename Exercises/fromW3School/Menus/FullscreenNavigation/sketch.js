@@ -2,5 +2,8 @@ const mBtn = document.getElementById("id_menuBtn");
 mBtn.addEventListener("click", navFunction);
 
 function navFunction(){
-  window.alert("PENIS-Finger");
+  document.getElementById("id_myNav").style.height = "100%";
+}
+function closeNav() {
+  document.getElementById("id_myNav").style.height = "0%";
 }
