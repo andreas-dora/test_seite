@@ -1,0 +1,17 @@
+*{margin:0; padding: 0; box-sizing: border-box;}
+:root{
+  --bacKG: darkviolet;
+  --main: ghostwhite;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bacKG);
+  color: var(--main);
+}
+
+a{
+  color: var(--main);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
