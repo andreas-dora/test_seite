@@ -1,0 +1,11 @@
+body{
+  font-family: 'Patrick Hand', cursive;
+  font-size: 160%;
+  background-color: rgb(80, 80, 80);
+  color: antiquewhite;
+}
+h1, h5{color: gold;}
+.container{
+  width: 600px;
+  padding: 30px;
+}

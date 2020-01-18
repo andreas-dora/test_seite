@@ -8,9 +8,9 @@ const nav = document.getElementById("myNav");
 window.onscroll = function() {scrolFun()};
 
 function scrolFun(){
-  if(document.body.scrollTop > 20 || document.documentElement.scrollTop > 20 ){
-    nav.style.top ="0";
+  if(document.body.scrollTop > 310 || document.documentElement.scrollTop > 310 ){
+    nav.style.bottom ="0";
   } else {
-    nav.style.top = "-50px";
+    nav.style.bottom = "-60px";
   }
 }

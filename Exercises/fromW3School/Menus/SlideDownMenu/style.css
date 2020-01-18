@@ -17,10 +17,11 @@ p{ line-height: 1.5em;}
 
 nav{
   position: fixed;
-  top: -50px;
+  bottom: -60px;
   width:100%;
   transition:top .3s;
   background-color: var(--bacKG);
+  border-top: 1px solid var(--main);
 }
 
 nav a{
