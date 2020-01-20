@@ -8,20 +8,21 @@ body{
 .grid-container{
   width: 80%;
   min-height: 20vw;
-  margin: 5vh auto;
+  margin: 20px auto 20px auto;
   display: grid;
-  grid-template-rows: 25% 25% 25% 25%;
-  grid-template-columns: 25% 25% 25% 25%;
+  /* grid-template-rows: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;  */
+  grid-template-columns: 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5% 12.5%;
   grid-gap: 1rem;
   grid-template-areas: 
-  "box1 box1 box1 box2"
-  "box3 box3 box3 box3"
-  "box4 box4 box4 box5"
-  "box4 box4 box4 box6"
-  "box7 box7 box7 box7"
+  "box1 box1 box1 box1 box1 box1 box1 box2"
+  "box3 box3 box3 box3 box3 box3 box3 box3"
+  "box4 box4 box5 box5 box6 box6 box7 box7"
+  "box4 box4 box5 box5 box6 box6 box8 box8"
+  "box9 box9 box9 box9 box9 box9 box9 box9"
 }
 
 .grid-container .grid-box{
+  min-height: 30px;
   background-color: gray;
   padding: 20px;
   font-size: 200%;
@@ -40,9 +41,9 @@ body{
 .grid-container .item5{grid-area: box5;animation-delay: 100ms;}
 .grid-container .item6{grid-area: box6;animation-delay: 200ms;}
 .grid-container .item7{grid-area: box7; animation-delay: 300ms;} 
-/* .grid-container .item8{grid-area: box8;animation-delay: 400ms;}
-.grid-container .item9{grid-area: box9;animation-delay: 500ms;} */
-/*.grid-container .item10{grid-area: box10;animation-delay: 600ms;} */
+.grid-container .item8{grid-area: box8;animation-delay: 400ms;}
+.grid-container .item9{grid-area: box9;animation-delay: 500ms;} /*
+.grid-container .item10{grid-area: box10;animation-delay: 600ms;} */
 
 @keyframes fadeIn {
   0% {transform: scale(0);}
