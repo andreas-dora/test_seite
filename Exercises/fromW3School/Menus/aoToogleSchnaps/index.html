@@ -1,37 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="style.css">
-  <title>Toggle Tabs</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="robots" content="noindex">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="author" content="Andreas Breitwieser">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,400,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  <title>AO Rechnungsstellug</title>
 </head>
 <body>
-  <div class="container">
-    <h1>Toogle Tabs</h1>
-    <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'London')">Bier</button>
-      <button class="tablinks" onclick="openCity(event, 'Paris')">Soft</button>
-      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Filler</button>
-      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Schnaps</button>
-    </div>
-    
-    <!-- Tab content -->
-    <div id="London" class="tabcontent">
-      <h3>London</h3>
-      <p>London is the capital city of England.</p>
-    </div>
-    
-    <div id="Paris" class="tabcontent">
-      <h3>Paris</h3>
-      <p>Paris is the capital of France.</p>
-    </div>
-    <div id="Tokyo" class="tabcontent">
-      <h3>Tokyo</h3>
-      <p>Tokyo is the capital of Japan.</p>
+  <h1>Toogle Schnaps</h1>
+  <div class="ware">
+    <h5>WARE: CLUB BAR</h5>
+    <div class="display">
+  <!-- Tab content -->
+  <div id="Bier" class="tabcontent">
+    <div class="table-Item">
+      <table>
+        <th>Bier</th><th>Kisten</th>
+        <tr><td>Becks</td><td class="right">9</td></tr>
+        <tr><td>Corona</td><td class="right">6</td></tr>
+        <tr><td>Radler</td><td class="right">4</td></tr>
+        <tr><td>Äpler</td>
+          <td class="right">4</td></tr>
+        <tr><td>Prosecco
+          <td class="right">1</td></tr>
+      </table>
     </div>
   </div>
+  
+  <div id="Soft" class="tabcontent">
+    
+    
+    <div class="table-item">
+      <table>
+        <th>Soft</th><th>Kisten</th>
+        <tr><td>Hassia mit</td><td>6</td></tr>
+        <tr><td>Hassia o.</td><td>6</td></tr>
+        <tr><td>Mate</td><td>4</td></tr>
+        <tr><td>Afri</td><td>3</td></tr>
+        <tr><td>Bluna</td><td>1</td></tr>
+        <tr><td>Dose Classic</td><td>1</td></tr>
+        <tr><td>Dose Acai</td><td>1</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="Filler" class="tabcontent">
+
+    <div class="table-item">
+      <table>
+        <th>Filler</th><th>Flaschen</th>
+        <tr><td>Maracuja</td><td>6</td></tr>
+        <tr><td>Wasser gr.</td><td>6</td></tr>
+        <tr><td>Tonic</td><td>12</td></tr>
+        <tr><td>Spicy Ginger</td><td>6</td></tr>
+        <tr><td>Bitter Lemon</td><td>6</td></tr>
+        <tr><td>Cola gr.</td><td>6</td></tr>
+      </table>
+    </div>
+  </div>
+  <div id="Schnaps" class="tabcontent">
+    <div class="table-item">
+      <table>
+        <th>Schnaps</th><th>Flaschen</th>
+        <tr><td>Vodka</td><td>12</td></tr>
+        <tr><td>Jägerm.</td><td>6</td></tr>
+        <tr><td>Berliner L.</td><td>12</td></tr>
+        <tr><td>Gin</td><td>9</td></tr>
+        <tr><td>Jack D</td><td>1</td></tr>
+        <tr><td>Rum</td><td>1</td></tr>
+      </table>
+    </div>
+  </div>
+
+
+
+    </div>
+    
+    <div class="tab">
+      <button class="tablinks" onclick="openCity(event, 'Bier')" id="defaultOpen">Bier</button>
+      <button class="tablinks" onclick="openCity(event, 'Soft')">Soft</button>
+      <button class="tablinks" onclick="openCity(event, 'Filler')">Filler</button>
+      <button class="tablinks" onclick="openCity(event, 'Schnaps')">Schnaps</button>
+    </div>
+    
+  
+  </div>
+
+
   <script type="text/javascript" src="sketch.js"></script>
 </body>
 </html>
