@@ -1,0 +1,53 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+:root{--main:antiquewhite; --back1:gray; --back2:gainsboro;}
+body{
+  font-family: Arial, Helvetica, sans-serif; background-color: var(--back2); color : var(--main);
+}
+
+
+.page{
+  
+  width: 80%;
+  min-height: 20vw;
+  margin: 5vh auto;
+  display: grid;
+  grid-template-rows: 25% 25% 25% 25%;
+  grid-template-columns: 25% 25% 25% 25%;
+  grid-gap: 1rem;
+  grid-template-areas: 
+  "box1 box1 box1 box1"
+  "box2 box2 box2 box2"
+  "box3 box3 box3 box4"
+  "box3 box3 box3 box5"
+  "box6 box6 box6 box6"
+}
+
+.page .grid-box{
+  background-color: var(--back1);
+  padding: 20px;
+  font-size: 200%;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  transition: all 450ms;
+  animation: fadeIn 0.25s ease-out normal backwards;
+}
+.page .grid-box:hover{
+  z-index: 1;
+  box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 0, 0.24);
+}
+
+.page .gHeader{grid-area: box1; animation-delay: 0;}
+.page .gNav{grid-area: box2;animation-delay: 100ms;}
+.page .gMain{grid-area: box3;animation-delay: 200ms;}
+.page .gLogin{grid-area: box4;animation-delay: 200ms;}
+.page .gDates{grid-area: box5;animation-delay: 100ms;}
+.page .gFooter{grid-area: box6;animation-delay: 200ms;}
+.page .item7{grid-area: box7; animation-delay: 300ms;} 
+/* .page .item8{grid-area: box8;animation-delay: 400ms;}
+.page .item9{grid-area: box9;animation-delay: 500ms;} */
+/*.page .item10{grid-area: box10;animation-delay: 600ms;} */
+
+@keyframes fadeIn {
+  0% {transform: scale(0);}
+  80% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+}
