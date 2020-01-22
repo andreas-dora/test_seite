@@ -116,19 +116,6 @@ button:hover{
   "box4 box4 box4 box5 box5 box5 box6 box6"
 
   "box7 box7 box7 box7 box7 box7 box7 box7"
-
-  
-  /* "box1 box1 box1 box1 box1 box1 box1 box2"
-  "box1 box1 box1 box1 box1 box1 box1 box2"
-
-  "box3 box3 box4 box4 box5 box5 box6 box6"
-  "box3 box3 box4 box4 box5 box5 box6 box6"
-
-  "box3 box3 box4 box4 box5 box5 box6 box6"
-  "box3 box3 box4 box4 box5 box5 box6 box6"
-
-  "box7 box7 box7 box7 box7 box7 box7 box7"
-  "box7 box7 box7 box7 box7 box7 box7 box7" */
 }
 
 .gridContainer .grid-box{
@@ -214,7 +201,7 @@ bottom: 0; */
 
 }
 @media only screen and (max-width: 700px){
-  #id_gridHead{font-size: 54px;}
+  #id_gridHead{font-size: 50px;}
 
   .gridContainer{
     grid-template-areas: 
@@ -233,7 +220,10 @@ bottom: 0; */
 
   }
 }
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 600px){
+  .navi a{
+    margin-bottom: 18px;
+  }
   #id_gridHead{font-size: 42px;}
 
   .gridContainer{
