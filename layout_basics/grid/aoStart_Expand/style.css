@@ -23,10 +23,6 @@ a{text-decoration: none;}
 .container{
   margin-bottom: 10px;
 }
-.vavBtn{
-  /* display: block; */
-  margin-bottom: 15px;
-}
 .navi li{
   list-style: none;
 
@@ -39,8 +35,6 @@ a{text-decoration: none;}
   margin-bottom: 12px;
   margin-right: 14px;
   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  transition: all 450ms;
-  animation: fadeIn 0.25s ease-out normal backwards;
 }
 .navi a:hover{
   cursor: pointer;
@@ -89,20 +83,20 @@ button:hover{
  auto 12.5% 
  auto 12.5% 
  12.5% auto;  */
-  grid-template-columns: 12.5% auto 12.5% auto 12.5% auto 12.5% auto; 
+  grid-template-columns: auto 12.5% 12.5% 12.5% auto 12.5% 12.5% auto; 
   grid-gap: 1rem;
   grid-template-areas: 
   "box1 box1 box1 box1 box1 box1 box1 box2"
   "box1 box1 box1 box1 box1 box1 box1 box2"
 
-  "box3 box3 box4 box4 box5 box5 box6 box6"
-  "box3 box3 box4 box4 box5 box5 box6 box6"
+  "box3 box3 box3 box3 box3 box3 box4 box4"
+  "box3 box3 box3 box3 box3 box3 box4 box4"
 
-  "box3 box3 box4 box4 box5 box5 box6 box6"
-  "box3 box3 box4 box4 box5 box5 box6 box6"
+  "box3 box3 box3 box3 box3 box3 box5 box5"
+  "box3 box3 box3 box3 box3 box3 box5 box5"
 
-  "box7 box7 box7 box7 box7 box7 box7 box7"
-  "box7 box7 box7 box7 box7 box7 box7 box7"
+  "box6 box6 box6 box6 box6 box6 box6 box6"
+  "box6 box6 box6 box6 box6 box6 box6 box6"
 }
 
 .gridContainer .grid-box{
@@ -110,8 +104,8 @@ button:hover{
   background-color: var(--backG);
   padding: 20px;
   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  /* transition: all 450ms;
-  animation: fadeIn 0.25s ease-out normal backwards; */
+  transition: all 450ms;
+  animation: fadeIn 0.25s ease-out normal backwards;
 }
 /* .gridContainer .grid-box:hover{
   box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 0, 0.24);
@@ -119,9 +113,7 @@ button:hover{
 
 .gridContainer .gHeader{grid-area: box1;}
 .gridContainer .gNav{grid-area: box2;}
-.gridContainer .gInfo{grid-area: box3;}
-.gridContainer .gLeft{grid-area: box4;}
-.gridContainer .gMain{grid-area: box5;
+.gridContainer .gMain{grid-area: box3;
 }
 .gridContainer .gMain .columns3{
   column-count: 3;
@@ -129,7 +121,7 @@ button:hover{
   column-gap: 50px;
 }
 .gridContainer .gLogin{grid-area: box4;}
-.gridContainer .gDates{grid-area: box6;}
+.gridContainer .gDates{grid-area: box5;}
 .gridContainer .gDates .dates{width: 100%;
 }
 
@@ -138,12 +130,6 @@ position: fixed;
 bottom: 0;
 }
 
-
-@keyframes fadeIn {
-  0% {transform: scale(0);}
-  80% {transform: scale(1.1);}
-  100% {transform: scale(1);}
-} 
 /*------------------- KEYFRAMES ---------*/
 @media only screen and (max-width: 1200px){
   .gridContainer{
@@ -161,7 +147,7 @@ bottom: 0;
     column-gap: 40px;
   }   
 }
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 700px){
   .gridContainer{
     width: 98%;
     font-size: 100%;
@@ -170,13 +156,14 @@ bottom: 0;
     "box1 box1 box1 box1 box1 box1 box1 box1"
 
     "box2 box2 box2 box2 box2 box2 box2 box2"
-    
-    "box4 box4 box4 box5 box5 box5 box3 box3"
-    "box4 box4 box4 box5 box5 box5 box3 box3"
-    "box4 box4 box4 box5 box5 box5 box6 box6"
-    "box4 box4 box4 box5 box5 box5 box6 box6"
   
-    "box7 box7 box7 box7 box7 box7 box7 box7"
+    "box3 box3 box3 box3 box3 box4 box4 box4"
+    "box3 box3 box3 box3 box3 box4 box4 box4"
+  
+    "box3 box3 box3 box3 box3 box5 box5 box5"
+    "box3 box3 box3 box3 box3 box5 box5 box5"
+  
+    "box6 box6 box6 box6 box6 box6 box6 box6"
   }
   .gridContainer .gMain .columns3{
     column-count: 1;
@@ -184,39 +171,27 @@ bottom: 0;
   }     
 
 }
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 600px){
   .gridContainer{
     grid-template-areas: 
     "box1 box1 box1 box1 box1 box1 box1 box1"
     "box1 box1 box1 box1 box1 box1 box1 box1"
     
     "box2 box2 box2 box2 box2 box2 box2 box2"
+    "box4 box4 box4 box4 box4 box5 box5 box5"
+    "box4 box4 box4 box4 box4 box5 box5 box5"
 
-    "box3 box3 box3 box3 box3 box3 box6 box6"
-    "box3 box3 box3 box3 box3 box3 box6 box6"
-
-    "box4 box4 box4 box4 box5 box5 box5 box5"
-    "box4 box4 box4 box4 box5 box5 box5 box5"
-
-    "box7 box7 box7 box7 box7 box7 box7 box7"
-
-  }
-}
-@media only screen and (max-width: 500px){
-  .gridContainer{
-    grid-template-areas: 
-    "box1 box1 box1 box1 box1 box1 box1 box1"
-    "box1 box1 box1 box1 box1 box1 box1 box1"
-    
-    "box2 box2 box2 box2 box2 box2 box2 box2"
     "box3 box3 box3 box3 box3 box3 box3 box3"
-
+    "box3 box3 box3 box3 box3 box3 box3 box3"
     "box6 box6 box6 box6 box6 box6 box6 box6"
-
-    "box4 box4 box4 box4 box4 box4 box4 box4"
-    "box5 box5 box5 box5 box5 box5 box5 box5"
-
-    "box7 box7 box7 box7 box7 box7 box7 box7"
-
+    "box6 box6 box6 box6 box6 box6 box6 box6" 
   }
 }
+
+
+/* 
+@keyframes fadeIn {
+  0% {transform: scale(0);}
+  80% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+} */

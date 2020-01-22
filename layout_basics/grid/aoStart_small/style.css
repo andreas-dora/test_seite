@@ -1,13 +1,15 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
-:root{--main:#000; --backG:gainsboro; --special:gray}
+:root{--main: ghostwhite; --backG:#50161f; /* #50161f #641b26 */
+   --special:#77212e}
 
 body{
-  font-family: Arial, Helvetica, sans-serif; background-color: var(--special); color : var(--main);  font-size: 125%;
+  font-family: 'Roboto', sans-serif; background-color: var(--backG); color : var(--main);  font-size: 125%;
 }
 /*--------------- TAGS ------------------*/
 h1, h2{
   margin-bottom: 20px;
 }
+#id_gridHead{font-size: 72px;}
 h3{
   margin-bottom: 18px;
 
@@ -18,8 +20,11 @@ p{line-height: 1.4em;
 li{margin-left: 14px;}
 td{padding-bottom: 4px;}
 ul{padding-bottom: 10px;}
-a{text-decoration: none;}
+a{text-decoration: none; color: silver}
+a:hover{color: white}
 /*--------------- ----------------------*/
+.light{font-weight: 100;}
+.bold{font-weight: bold;}
 .container{
   margin-bottom: 10px;
 }
@@ -47,6 +52,13 @@ a{text-decoration: none;}
   z-index: 1;
   box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 0, 0.24);
 }
+.navi .delay0{animation-delay: 50ms;}
+.navi .delay1{animation-delay: 100ms;}
+.navi .delay2{animation-delay: 200ms;}
+.navi .delay3{animation-delay: 300ms;}
+.navi .delay4{animation-delay: 400ms;}
+.navi .delay5{animation-delay: 500ms;}
+
 .login{
   display: block;
   width: 100%;
@@ -63,10 +75,10 @@ button{
   height: 36px;
   /* margin-top: 10px; */
   background-color: var(--special);
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
 
   color: white;
   border: none;
@@ -74,14 +86,15 @@ button{
   outline: none;
 }
 button:hover{
+  cursor: pointer;
   z-index: 1;
   box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 0, 0.24);
 }
 
 /*-------- The Grid ---------------------*/
 .gridContainer{
-  width: 90%;
-  min-height: 20vw;
+  max-width:1000px;
+  /* min-height: 20vw; */
   margin: 20px auto 20px auto;
   position: relative;
   display: grid;
@@ -92,7 +105,20 @@ button:hover{
   grid-template-columns: 12.5% auto 12.5% auto 12.5% auto 12.5% auto; 
   grid-gap: 1rem;
   grid-template-areas: 
-  "box1 box1 box1 box1 box1 box1 box1 box2"
+  "box1 box1 box1 box1 box1 box1 box1 box1"
+  "box1 box1 box1 box1 box1 box1 box1 box1"
+
+  "box2 box2 box2 box2 box2 box2 box2 box2"
+  
+  "box4 box4 box4 box5 box5 box5 box3 box3"
+  "box4 box4 box4 box5 box5 box5 box3 box3"
+  "box4 box4 box4 box5 box5 box5 box6 box6"
+  "box4 box4 box4 box5 box5 box5 box6 box6"
+
+  "box7 box7 box7 box7 box7 box7 box7 box7"
+
+  
+  /* "box1 box1 box1 box1 box1 box1 box1 box2"
   "box1 box1 box1 box1 box1 box1 box1 box2"
 
   "box3 box3 box4 box4 box5 box5 box6 box6"
@@ -102,11 +128,11 @@ button:hover{
   "box3 box3 box4 box4 box5 box5 box6 box6"
 
   "box7 box7 box7 box7 box7 box7 box7 box7"
-  "box7 box7 box7 box7 box7 box7 box7 box7"
+  "box7 box7 box7 box7 box7 box7 box7 box7" */
 }
 
 .gridContainer .grid-box{
-  min-height: 30px;
+  /* min-height: 30px; */
   background-color: var(--backG);
   padding: 20px;
   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -133,9 +159,11 @@ button:hover{
 .gridContainer .gDates .dates{width: 100%;
 }
 
-.gridContainer .gFooter{grid-area: box6;
-position: fixed;
-bottom: 0;
+.gridContainer .gFooter{grid-area: box7;
+  font-size: 16px; 
+  text-align: right;
+/* position: fixed;
+bottom: 0; */
 }
 
 
@@ -153,19 +181,20 @@ bottom: 0;
 }
 @media only screen and (max-width: 1000px){
   .gridContainer{
-    width: 96%;
+    width: 95%;
     font-size: 100%;
   }
-  .gridContainer .gMain .columns3{
+  /* .gridContainer .gMain .columns3{
     column-count: 2;
     column-gap: 40px;
-  }   
-}
+  }    */
+} 
 @media only screen and (max-width: 900px){
+  #id_gridHead{font-size: 66px;}
   .gridContainer{
-    width: 98%;
+    width: 96%;
     font-size: 100%;
-    grid-template-areas: 
+    /* grid-template-areas: 
     "box1 box1 box1 box1 box1 box1 box1 box1"
     "box1 box1 box1 box1 box1 box1 box1 box1"
 
@@ -176,15 +205,17 @@ bottom: 0;
     "box4 box4 box4 box5 box5 box5 box6 box6"
     "box4 box4 box4 box5 box5 box5 box6 box6"
   
-    "box7 box7 box7 box7 box7 box7 box7 box7"
+    "box7 box7 box7 box7 box7 box7 box7 box7" */
   }
-  .gridContainer .gMain .columns3{
+  /* .gridContainer .gMain .columns3{
     column-count: 1;
     column-gap: 40px;
-  }     
+  }      */
 
 }
 @media only screen and (max-width: 700px){
+  #id_gridHead{font-size: 54px;}
+
   .gridContainer{
     grid-template-areas: 
     "box1 box1 box1 box1 box1 box1 box1 box1"
@@ -203,6 +234,8 @@ bottom: 0;
   }
 }
 @media only screen and (max-width: 500px){
+  #id_gridHead{font-size: 42px;}
+
   .gridContainer{
     grid-template-areas: 
     "box1 box1 box1 box1 box1 box1 box1 box1"
