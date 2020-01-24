@@ -1,9 +1,7 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
 :root{--main: ghostwhite; --backG:#50161f; --special:#77212e; --hilite: #9be4e4;}/* #50161f #641b26 */
-body{
-  /* font-family: 'Roboto', sans-serif;  */
-  font-family: Arial, Helvetica, sans-serif;
-  background-color: var(--backG); color : var(--main);  font-size: 125%;}
+html {scroll-behavior: smooth;}
+body{font-family: Arial, Helvetica, sans-serif;background-color: var(--backG); color : var(--main);  font-size: 125%;}
 /*--------------- TAGS Typo ------------------*/
 h1, h2{margin-bottom: 20px;}
 h5{margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.2em;}
@@ -121,7 +119,7 @@ button:hover{
   "box5 box5 box5 box5 box5 box5 box6 box6"
   "box7 box7 box7 box7 box7 box7 box8 box8"
   "box9 box9 box9 box9 box9 box9 box10 box10"
-  "box11 box11 box11 box11 box11 box11 box12 box12"
+  "box11 box11 box11 box11 box11 box11 box11 box11"
   "box13 box13 box13 box13 box13 box13 box12 box12"
 }
 
@@ -130,6 +128,7 @@ button:hover{
   padding: 20px;
   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
+.gridContainer .chapterHead{border-top: 2px solid var(--main);}
 .gridContainer .gHeader{grid-area: box1;}
 .gridContainer .gNav{grid-area: box2;padding: 0 20px 0 20px ;}
 .gridContainer .gNav .flexContainer{display: flex; }
