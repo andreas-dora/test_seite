@@ -17,6 +17,22 @@ td{padding-bottom: 4px;}
 ul{padding-bottom: 10px;}
 a{text-decoration: none; color: silver}
 a:hover{color: white}
+/*------------------ Sticky HEader ---------------*/
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  /* width: 100%; */
+  max-width:1100px;
+  width: 94%;
+  margin: 0 auto;
+  background-color: lightslategray;
+}
+/* Ich weiß nicht für was das gut sein soll */
+/* .sticky + .content {padding-top: 60px;} */
 /*--------------- Klassen ----------------------*/
 .light{font-weight: 100;}
 .bold{font-weight: bold;}

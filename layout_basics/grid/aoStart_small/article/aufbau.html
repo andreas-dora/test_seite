@@ -12,19 +12,20 @@
 </head>
 <body>
   <div class="gridContainer">
-    <div class="gHeader grid-box">
+    <div class="gHeader grid-box" >
       <span id="id_gridHead">
         <span class="light">Aufbau </span><span class="bold">GASTRO</span>
       </span>
     </div>
-    <div class="gNav grid-Box">
+    <div class="gNav grid-Box" id="myNav">
       <div class="flexContainer">
         <div class="flexOne">Home</div>
-        <div class="flexTwo">Up</div>
+        <div class="flexTwo"><a href="#id_scroll0">Up</a>
+        </div>
       </div>
     </div>
 
-    <div class="gInhalt grid-Box">
+    <div class="gInhalt grid-Box" id="id_scroll0">
       <h2>Inhalt</h2>
       <div class="flexContainer">
         <div class="flexOne">
@@ -53,7 +54,7 @@
 
     <div class="gAside grid-box">
 
-      <button class="dwnBtn">Download Pdf</button>
+      <button class="dwnBtn" id="test">Download Pdf</button>
     </div>
 
 
@@ -174,11 +175,11 @@
 <div class="gChapterThreeAside"></div>
 
 
-    <div class="gFooter grid-box">
+    <!-- <div class="gFooter grid-box">
       <span class="light">&copy; 2020 Andreas Breitwieser |</span> <a href="#">Impressum</a>
-    </div>
+    </div> -->
 
   </div>
-  
+  <script type="text/javascript" src="sketch.js"></script>
 </body>
 </html>
