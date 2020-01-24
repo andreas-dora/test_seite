@@ -6,6 +6,7 @@ body{
   background-color: var(--backG); color : var(--main);  font-size: 125%;}
 /*--------------- TAGS Typo ------------------*/
 h1, h2{margin-bottom: 20px;}
+h5{margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.2em;}
 #id_gridHead{font-family: 'Roboto', sans-serif; font-size: 72px;}
 h3{margin-bottom: 18px;}
 p{line-height: 1.5em;
@@ -35,7 +36,7 @@ a:hover{color: white}
 /* .sticky + .content {padding-top: 60px;} */
 /*--------------- Klassen ----------------------*/
 .light{font-weight: 100;}
-.bold{font-weight: bold;}
+.bold{font-weight: bold;  animation: fadeEffect 1s;}
 .container{margin-bottom: 10px;}
 
 .navi li{list-style: none;}
@@ -120,10 +121,11 @@ button:hover{
   "box5 box5 box5 box5 box5 box5 box6 box6"
   "box7 box7 box7 box7 box7 box7 box8 box8"
   "box9 box9 box9 box9 box9 box9 box10 box10"
+  "box11 box11 box11 box11 box11 box11 box12 box12"
+  "box13 box13 box13 box13 box13 box13 box12 box12"
 }
 
 .gridContainer .grid-box{
-  /* min-height: 30px; */
   background-color: var(--backG);
   padding: 20px;
   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
@@ -142,6 +144,9 @@ button:hover{
 .gridContainer .gChapterTwoAside{grid-area: box8;}
 .gridContainer .gChapterThree{grid-area: box9;}
 .gridContainer .gChapterThreeAside{grid-area: box10;}
+.gridContainer .gChapterFourHead{grid-area: box11;}
+.gridContainer .gChapterFourAside{grid-area: box12;}
+.gridContainer .gChapterFour{grid-area: box13;}
 /* .gridContainer .gChapterFour{grid-area: box11;}
 .gridContainer .gChapterFourAside{grid-area: box12;} */
 /* .gridContainer .gFooter{grid-area: box14;
@@ -150,7 +155,84 @@ button:hover{
 } */
 
  
- 
+ /*---------------- Kühlschränke und Ware ----------------*/
+ .fourGrid{
+  width: 96%;
+  display: grid;
+  grid-column-gap: 8px;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+
+.fourGrid .item{
+  padding: 10px 3px;
+  border: 1px solid white;
+  text-align: center;
+
+}
+.fourGrid .head{
+  border: 1px solid white;
+  text-align: center;
+}
+/*-------------------------- TAble -----------------------*/
+
+.ware{
+  max-width: 320px;
+  margin: 0  auto;
+  background-color:var(--backG);
+  color: var(--main);
+}
+.display{width:98%;
+  margin: 0 auto 5px auto;
+  height: 320px;
+  border: 1px solid var(--main);
+}
+
+.table-Item{width: 90%;}
+table{font-family: 'Roboto', sans-serif;  width: 100%;}
+td{font-size: 20px; padding-top: 8px;}
+th{text-transform: uppercase;font-weight: lighter;
+}
+.td_0{width:70%;}
+.td_1{text-align: center;width: 30%;}
+
+.tab{bottom: 0;width: 100%;overflow: hidden; }
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  width: 25%;
+  background-color: var(--special);
+  /* margin: 5px; */
+  text-transform: uppercase;
+  color: var(--main);
+  float: left;
+  border: 2px solid var(--backG);
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button:hover {
+  background-color: var(--backG);
+  border-color: var(--special);
+}
+
+/* Create an active/current tablink class */
+.tab button:active {
+  background-color: var(--backG);
+  border-color: var(--special);
+}
+
+/* Style the tab content */
+.tabcontent {
+  height: 310px;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+  
+  /* Go from zero to full opacity */
+@keyframes fadeEffect {from {opacity: 0;}to {opacity: 1;}}
 
 
 
@@ -196,7 +278,12 @@ button:hover{
     "box7 box7 box7 box7 box7 box7 box7 box7"
     "box8 box8 box8 box8 box8 box8 box8 box8"
     "box9 box9 box9 box9 box9 box9 box9 box9"
-    "box10 box10 box10 box10 box10 box10 box10 box10" 
+    "box10 box10 box10 box10 box10 box10 box10 box10"
+    "box11 box11 box11 box11 box11 box11 box11 box11" 
+    "box12 box12 box12 box12 box12 box12 box12 box12"
+    "box13 box13 box13 box13 box13 box13 box13 box13"
+
+
   }
 }
 @media only screen and (max-width: 700px){
