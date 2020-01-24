@@ -1,0 +1,225 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+:root{--main: ghostwhite; --backG:#50161f; --special:#77212e; --hilite: #9be4e4;}/* #50161f #641b26 */
+body{
+  /* font-family: 'Roboto', sans-serif;  */
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--backG); color : var(--main);  font-size: 125%;}
+/*--------------- TAGS Typo ------------------*/
+h1, h2{margin-bottom: 20px;}
+#id_gridHead{font-family: 'Roboto', sans-serif; font-size: 72px;}
+h3{margin-bottom: 18px;}
+p{line-height: 1.5em;
+  margin-bottom: 6px;}
+strong{color: var(--hilite);}
+ul li{margin-left: 28px; line-height: 1.5em;}
+ol li{margin-left:36px; line-height: 1.5em;}
+td{padding-bottom: 4px;}
+ul{padding-bottom: 10px;}
+a{text-decoration: none; color: silver}
+a:hover{color: white}
+/*--------------- Klassen ----------------------*/
+.light{font-weight: 100;}
+.bold{font-weight: bold;}
+.container{margin-bottom: 10px;}
+
+.navi li{list-style: none;}
+
+/*==========================================================================*/
+/*--------------- Buttons ----------------------*/
+button{font-family: 'Roboto', sans-serif;
+  background-color: var(--special);
+  color: white;
+  border: none;
+  outline: none;
+  color: white;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+button:hover{
+  cursor: pointer; z-index: 3;
+  box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 0, 0.24);
+}
+
+.navBtn{
+  max-width: 320px;
+  min-width: 280px;
+  width: 100%; 
+  /* min-width: 280px; */
+  height: 42px;
+  /* display: block; */
+  text-align: left;
+  font-size: 20px;
+  padding: 8px 4px 6px 10px;
+  margin-bottom: 15px;
+  transition: all 450ms;
+  animation: fadeIn 0.25s ease-out normal backwards;
+}
+
+.dwnBtn{
+  max-width: 300px;
+  width: 100%;
+  height: 36px;
+  background-color: var(--special);
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.navi .delay0{animation-delay: 50ms;}
+.navi .delay1{animation-delay: 100ms;}
+.navi .delay2{animation-delay: 200ms;}
+.navi .delay3{animation-delay: 300ms;}
+.navi .delay4{animation-delay: 400ms;}
+.navi .delay5{animation-delay: 500ms;}
+/*==========================================================================*/
+.login{
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding-left: 10px;
+  border: none;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+/*==========================================================================*/
+/*==========================================================================*/
+/*------------------------------- LAYOUT -----------------------------------*/
+.flexOne{flex: 1;
+ margin-right: 20px;}
+.flexTwo{flex: 1;}
+
+
+.gridContainer{
+  max-width:1100px;
+  margin: 20px auto 20px auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 12.5% auto 12.5% auto 12.5% auto 12.5% auto; 
+  grid-gap: 1rem;
+  grid-template-areas: 
+  "box1 box1 box1 box1 box1 box1 box1 box1"
+  "box2 box2 box2 box2 box2 box2 box2 box2"
+  "box3 box3 box3 box3 box3 box3 box4 box4"
+  "box5 box5 box5 box5 box5 box5 box6 box6"
+  "box7 box7 box7 box7 box7 box7 box8 box8"
+  "box9 box9 box9 box9 box9 box9 box10 box10"
+}
+
+.gridContainer .grid-box{
+  /* min-height: 30px; */
+  background-color: var(--backG);
+  padding: 20px;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+.gridContainer .gHeader{grid-area: box1;}
+.gridContainer .gNav{grid-area: box2;padding: 0 20px 0 20px ;}
+.gridContainer .gNav .flexContainer{display: flex; }
+.gridContainer .gNav .flexContainer div{background-color: var(--special); text-transform: uppercase; padding: 10px 30px;}
+.gridContainer .gInhalt{grid-area: box3;}
+.gridContainer .gInhalt .flexContainer{display: flex; flex-wrap: wrap;}
+
+.gridContainer .gAside{grid-area: box4;}
+.gridContainer .gChapterOne{grid-area: box5;}
+.gridContainer .gChapterOneAside{grid-area: box6;}
+.gridContainer .gChapterTwo{grid-area: box7;}
+.gridContainer .gChapterTwoAside{grid-area: box8;}
+.gridContainer .gChapterThree{grid-area: box9;}
+.gridContainer .gChapterThreeAside{grid-area: box10;}
+/* .gridContainer .gChapterFour{grid-area: box11;}
+.gridContainer .gChapterFourAside{grid-area: box12;} */
+/* .gridContainer .gFooter{grid-area: box14;
+  font-size: 16px; 
+  text-align: right;
+} */
+
+ 
+ 
+
+
+
+
+
+@keyframes fadeIn {
+  0% {transform: scale(0);}
+  80% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+} 
+/*------------------- Media Querie ------------------------------*/
+@media only screen and (max-width: 1200px){
+  .gridContainer{
+    width: 94%;
+    font-size: 110%;
+  }
+}
+@media only screen and (max-width: 1000px){
+  .gridContainer{
+    width: 95%;
+    font-size: 100%;
+  }
+
+} 
+@media only screen and (max-width: 900px){
+  #id_gridHead{font-size: 66px;}
+  .gridContainer{
+    width: 96%;
+    font-size: 100%;
+    grid-template-areas: 
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    
+    "box2 box2 box2 box2 box2 box2 box2 box2"
+
+    "box3 box3 box3 box3 box3 box3 box3 box3"
+
+    "box4 box4 box4 box4 box4 box4 box4 box4"
+
+    "box5 box5 box5 box5 box5 box5 box5 box5"
+    
+    "box6 box6 box6 box6 box6 box6 box6 box6"
+    "box7 box7 box7 box7 box7 box7 box7 box7"
+    "box8 box8 box8 box8 box8 box8 box8 box8"
+    "box9 box9 box9 box9 box9 box9 box9 box9"
+    "box10 box10 box10 box10 box10 box10 box10 box10" 
+  }
+}
+@media only screen and (max-width: 700px){
+  #id_gridHead{font-size: 50px;}
+
+  /* .articleContainer{
+    grid-template-areas: 
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    
+    "box2 box2 box2 box2 box2 box2 box2 box2"
+
+    "box3 box3 box3 box3 box3 box3 box3 box3"
+
+    "box4 box4 box4 box4 box4 box4 box4 box4"
+    "box4 box4 box4 box4 box5 box5 box5 box5"
+
+    "box7 box7 box7 box7 box7 box7 box7 box7"
+
+  } */
+}
+@media only screen and (max-width: 600px){
+  .navi a{ margin-bottom: 18px;}
+  #id_gridHead{font-size: 42px;}
+
+  /* .articleContainer{
+    grid-template-areas: 
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    
+    "box2 box2 box2 box2 box2 box2 box2 box2"
+    "box3 box3 box3 box3 box3 box3 box3 box3"
+
+    "box6 box6 box6 box6 box6 box6 box6 box6"
+
+    "box4 box4 box4 box4 box4 box4 box4 box4"
+    "box5 box5 box5 box5 box5 box5 box5 box5"
+
+    "box7 box7 box7 box7 box7 box7 box7 box7"
+  } */
+}
+
