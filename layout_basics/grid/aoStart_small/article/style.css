@@ -14,21 +14,18 @@ ul li{margin-left: 28px; line-height: 1.5em;}
 ol li{margin-left:36px; line-height: 1.5em;}
 td{padding-bottom: 4px;}
 ul{padding-bottom: 10px;}
-a{text-decoration: none; color: silver}
-a:hover{color: white}
+a{text-decoration: none; color: white}
+a:hover{color: var(--hilite)}
 /*------------------ Sticky HEader ---------------*/
-.content {
-  padding: 16px;
-}
+/* .content {padding: 16px;} */
 
 .sticky {
   position: fixed;
   top: 0;
-  /* width: 100%; */
   max-width:1100px;
   width: 94%;
   margin: 0 auto;
-  background-color: lightslategray;
+  /* background-color: lightslategray; */
 }
 /* Ich weiß nicht für was das gut sein soll */
 /* .sticky + .content {padding-top: 60px;} */
@@ -145,11 +142,15 @@ button:hover{
 .gridContainer .gHeader{grid-area: box1;}
 .gridContainer .gNav{grid-area: box2;padding: 0 20px 0 20px ;}
 .gridContainer .gNav .flexContainer{display: flex; }
-.gridContainer .gNav .flexContainer div{background-color: var(--special); text-transform: uppercase; padding: 10px 30px;}
+.gridContainer .gNav .flexContainer div{background-color: var(--special); text-transform: uppercase; 
+  padding: 10px 30px; 
+}
+
+
 .gridContainer .gInhalt{grid-area: box3;}
 .gridContainer .gInhalt .flexContainer{display: flex; flex-wrap: wrap;}
 
-.gridContainer .gAside{grid-area: box4;}
+.gridContainer .gInhaltAside{grid-area: box4;}
 .gridContainer .gChapterOne{grid-area: box5;}
 .gridContainer .gChapterOneAside{grid-area: box6;}
 .gridContainer .gChapterTwo{grid-area: box7;}
@@ -159,7 +160,6 @@ button:hover{
 .gridContainer .gChapterFourHead{grid-area: box11;}
 .gridContainer .gChapterFourAside{grid-area: box12;}
 .gridContainer .gChapterFour{grid-area: box13;}
-
 .gridContainer .gChapterFiveHead{grid-area: box14;}
 .gridContainer .gChapterFiveAside{grid-area: box15;}
 .gridContainer .gChapterFive{grid-area: box16;}
@@ -170,10 +170,10 @@ button:hover{
 .gridContainer .gChapterSevenHead{grid-area: box20;}
 .gridContainer .gChapterSevenAside{grid-area: box21;}
 .gridContainer .gChapterSeven{grid-area: box22;}
-.gridContainer .gChapterEightHead{grid-area: box23;}
+/* .gridContainer .gChapterEightHead{grid-area: box23;}
 .gridContainer .gChapterEightAside{grid-area: box24;}
-.gridContainer .gChapterEight{grid-area: box25;}
-.gridContainer .gFooter{grid-area: box26; font-size: 16px; text-align: right;} 
+.gridContainer .gChapterEight{grid-area: box25;} */
+.gridContainer .gFooter{grid-area: box23; font-size: 16px; text-align: right;} 
 
  
  /*---------------- Kühlschränke und Ware ----------------*/
@@ -184,37 +184,34 @@ button:hover{
   grid-template-columns: 25% 25% 25% 25%;
 }
 
-.fourGrid .item{
-  padding: 10px 3px;
-  border: 1px solid white;
-  text-align: center;
-
-}
-.fourGrid .head{
-  border: 1px solid white;
-  text-align: center;
-}
+.fourGrid .item{padding: 10px 3px;border: 1px solid white; text-align: center;}
+.fourGrid .head{border: 1px solid white;text-align: center;}
 /*-------------------------- TAble -----------------------*/
-
 .ware{
   max-width: 320px;
   margin: 0  auto;
   background-color:var(--backG);
   color: var(--main);
 }
-.display{width:98%;
+.display{max-width:300px;
+  width: 100%;
   margin: 0 auto 5px auto;
   height: 320px;
   border: 1px solid var(--main);
 }
-
 .table-Item{width: 90%;}
-table{font-family: 'Roboto', sans-serif;  width: 100%;}
+table{font-family: 'Roboto', sans-serif;  
+  width: 100%;}
 td{font-size: 20px; padding-top: 8px;}
 th{text-transform: uppercase;font-weight: lighter;
 }
-.td_0{width:70%;}
-.td_1{text-align: center;width: 30%;}
+.td_0{
+  /* max-width: 180px;  */
+  width: 70%;}
+.td_1{
+  width: 30%;
+  /* max-width: 90px; */
+  text-align: center;}
 
 .tab{bottom: 0;width: 100%;overflow: hidden; }
 
@@ -255,15 +252,12 @@ th{text-transform: uppercase;font-weight: lighter;
   /* Go from zero to full opacity */
 @keyframes fadeEffect {from {opacity: 0;}to {opacity: 1;}}
 
-
-
-
-
 @keyframes fadeIn {
   0% {transform: scale(0);}
   80% {transform: scale(1.1);}
   100% {transform: scale(1);}
 } 
+/*===============================================================*/
 /*------------------- Media Querie ------------------------------*/
 @media only screen and (max-width: 1200px){
   .gridContainer{
@@ -276,7 +270,6 @@ th{text-transform: uppercase;font-weight: lighter;
     width: 95%;
     font-size: 100%;
   }
-
 } 
 @media only screen and (max-width: 900px){
   #id_gridHead{font-size: 66px;}
@@ -285,14 +278,10 @@ th{text-transform: uppercase;font-weight: lighter;
     font-size: 100%;
     grid-template-areas: 
     "box1 box1 box1 box1 box1 box1 box1 box1"
-    "box1 box1 box1 box1 box1 box1 box1 box1"
-    
+    "box1 box1 box1 box1 box1 box1 box1 box1" 
     "box2 box2 box2 box2 box2 box2 box2 box2"
-
     "box3 box3 box3 box3 box3 box3 box3 box3"
-
     "box4 box4 box4 box4 box4 box4 box4 box4"
-
     "box5 box5 box5 box5 box5 box5 box5 box5"
     
     "box6 box6 box6 box6 box6 box6 box6 box6"
@@ -313,48 +302,16 @@ th{text-transform: uppercase;font-weight: lighter;
     "box21 box21 box21 box21 box21 box21 box21 box21"
     "box22 box22 box22 box22 box22 box22 box22 box22"
     "box23 box23 box23 box23 box23 box23 box23 box23"
-    "box24 box24 box24 box24 box24 box24 box24 box24"
+    /* "box24 box24 box24 box24 box24 box24 box24 box24"
     "box25 box25 box25 box25 box25 box25 box25 box25"
-    "box26 box26 box26 box26 box26 box26 box26 box26"
+    "box26 box26 box26 box26 box26 box26 box26 box26" */
   }
 }
 @media only screen and (max-width: 700px){
   #id_gridHead{font-size: 50px;}
-
-  /* .articleContainer{
-    grid-template-areas: 
-    "box1 box1 box1 box1 box1 box1 box1 box1"
-    "box1 box1 box1 box1 box1 box1 box1 box1"
-    
-    "box2 box2 box2 box2 box2 box2 box2 box2"
-
-    "box3 box3 box3 box3 box3 box3 box3 box3"
-
-    "box4 box4 box4 box4 box4 box4 box4 box4"
-    "box4 box4 box4 box4 box5 box5 box5 box5"
-
-    "box7 box7 box7 box7 box7 box7 box7 box7"
-
-  } */
 }
 @media only screen and (max-width: 600px){
   .navi a{ margin-bottom: 18px;}
   #id_gridHead{font-size: 42px;}
-
-  /* .articleContainer{
-    grid-template-areas: 
-    "box1 box1 box1 box1 box1 box1 box1 box1"
-    "box1 box1 box1 box1 box1 box1 box1 box1"
-    
-    "box2 box2 box2 box2 box2 box2 box2 box2"
-    "box3 box3 box3 box3 box3 box3 box3 box3"
-
-    "box6 box6 box6 box6 box6 box6 box6 box6"
-
-    "box4 box4 box4 box4 box4 box4 box4 box4"
-    "box5 box5 box5 box5 box5 box5 box5 box5"
-
-    "box7 box7 box7 box7 box7 box7 box7 box7"
-  } */
 }
 
