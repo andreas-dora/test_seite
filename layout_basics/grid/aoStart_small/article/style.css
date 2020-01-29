@@ -121,8 +121,19 @@ button:hover{
   "box9 box9 box9 box9 box9 box9 box10 box10"
   "box11 box11 box11 box11 box11 box11 box11 box11"
   "box13 box13 box13 box13 box13 box13 box12 box12"
-  "box15 box15 box15 box15 box15 box15 box14 box14"
-  "box17 box17 box17 box17 box17 box17 box16 box16"
+  
+  "box14 box14 box14 box14 box14 box14 box14 box14"
+  "box16 box16 box16 box16 box16 box16 box15 box15"
+
+  "box17 box17 box17 box17 box17 box17 box17 box17"
+  "box19 box19 box19 box19 box19 box19 box18 box18"
+
+  "box20 box20 box20 box20 box20 box20 box20 box20"
+  "box22 box22 box22 box22 box22 box22 box21 box21"
+
+  "box23 box23 box23 box23 box23 box23 box23 box23"
+  "box25 box25 box25 box25 box25 box25 box24 box24"
+  "box26 box26 box26 box26 box26 box26 box26 box26"
 }
 
 .gridContainer .grid-box{
@@ -148,12 +159,21 @@ button:hover{
 .gridContainer .gChapterFourHead{grid-area: box11;}
 .gridContainer .gChapterFourAside{grid-area: box12;}
 .gridContainer .gChapterFour{grid-area: box13;}
-/* .gridContainer .gChapterFour{grid-area: box11;}
-.gridContainer .gChapterFourAside{grid-area: box12;} */
-/* .gridContainer .gFooter{grid-area: box14;
-  font-size: 16px; 
-  text-align: right;
-} */
+
+.gridContainer .gChapterFiveHead{grid-area: box14;}
+.gridContainer .gChapterFiveAside{grid-area: box15;}
+.gridContainer .gChapterFive{grid-area: box16;}
+
+.gridContainer .gChapterSixHead{grid-area: box17;}
+.gridContainer .gChapterSixAside{grid-area: box18;}
+.gridContainer .gChapterSix{grid-area: box19;}
+.gridContainer .gChapterSevenHead{grid-area: box20;}
+.gridContainer .gChapterSevenAside{grid-area: box21;}
+.gridContainer .gChapterSeven{grid-area: box22;}
+.gridContainer .gChapterEightHead{grid-area: box23;}
+.gridContainer .gChapterEightAside{grid-area: box24;}
+.gridContainer .gChapterEight{grid-area: box25;}
+.gridContainer .gFooter{grid-area: box26; font-size: 16px; text-align: right;} 
 
  
  /*---------------- Kühlschränke und Ware ----------------*/
@@ -287,7 +307,15 @@ th{text-transform: uppercase;font-weight: lighter;
     "box15 box15 box15 box15 box15 box15 box15 box15"
     "box16 box16 box16 box16 box16 box16 box16 box16"
     "box17 box17 box17 box17 box17 box17 box17 box17"
-
+    "box18 box18 box18 box18 box18 box18 box18 box18"
+    "box19 box19 box19 box19 box19 box19 box19 box19"
+    "box20 box20 box20 box20 box20 box20 box20 box20"
+    "box21 box21 box21 box21 box21 box21 box21 box21"
+    "box22 box22 box22 box22 box22 box22 box22 box22"
+    "box23 box23 box23 box23 box23 box23 box23 box23"
+    "box24 box24 box24 box24 box24 box24 box24 box24"
+    "box25 box25 box25 box25 box25 box25 box25 box25"
+    "box26 box26 box26 box26 box26 box26 box26 box26"
   }
 }
 @media only screen and (max-width: 700px){
