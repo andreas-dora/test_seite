@@ -1,0 +1,8 @@
+body{background-color: dimgray; font-family: 'Bebas Neue', cursive; font-size: 160%; color: snow
+} 
+/* .rsc{width: 100%;
+    height: auto;} */
+ .rsc{  max-width: 120%;
+  height: auto;}
+   
+ 

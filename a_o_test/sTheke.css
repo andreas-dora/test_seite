@@ -1,0 +1,365 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+:root{--main: ghostwhite; --backG:#50161f; --special:#77212e; --hilite: #9be4e4;}/* #50161f #641b26 */
+html {scroll-behavior: smooth;}
+body{font-family: Arial, Helvetica, sans-serif;background-color: var(--backG); color : var(--main);  font-size: 125%;}
+/*--------------- TAGS Typo ------------------*/
+h1, h2{margin-bottom: 20px;}
+h5{margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.2em;}
+#id_gridHead{font-family: 'Roboto', sans-serif; font-size: 72px;}
+h3{margin-bottom: 18px;}
+p{line-height: 1.5em;
+  margin-bottom: 6px;}
+strong{color: var(--hilite);}
+ul li{margin-left: 28px; line-height: 1.5em;}
+ol li{margin-left:36px; line-height: 1.5em;}
+td{padding-bottom: 4px;}
+ul{padding-bottom: 10px;}
+a{text-decoration: none; color: white}
+a:hover{color: var(--hilite)}
+/*------------------ Sticky HEader ---------------*/
+/* .content {padding: 16px;} */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  max-width:1100px;
+  width: 94%;
+  margin: 0 auto;
+  /* background-color: lightslategray; */
+}
+/* Ich weiß nicht für was das gut sein soll */
+/* .sticky + .content {padding-top: 60px;} */
+/*--------------- Klassen ----------------------*/
+.light{font-weight: 100;}
+.bold{font-weight: bold;  animation: fadeEffect 1s;}
+.container{margin-bottom: 10px;}
+
+.navi li{list-style: none;}
+
+/*==========================================================================*/
+/*--------------- Buttons ----------------------*/
+button{font-family: 'Roboto', sans-serif;
+  background-color: var(--special);
+  color: white;
+  border: none;
+  outline: none;
+  color: white;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+button:hover{
+  cursor: pointer; z-index: 3;
+  box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 0, 0.24);
+}
+
+.navBtn{
+  max-width: 320px;
+  min-width: 280px;
+  width: 100%; 
+  /* min-width: 280px; */
+  height: 42px;
+  /* display: block; */
+  text-align: left;
+  font-size: 20px;
+  padding: 8px 4px 6px 10px;
+  margin-bottom: 15px;
+  transition: all 450ms;
+  animation: fadeIn 0.25s ease-out normal backwards;
+}
+
+.dwnBtn{
+  max-width: 300px;
+  width: 100%;
+  height: 36px;
+  background-color: var(--special);
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+.navi .delay0{animation-delay: 50ms;}
+.navi .delay1{animation-delay: 100ms;}
+.navi .delay2{animation-delay: 200ms;}
+.navi .delay3{animation-delay: 300ms;}
+.navi .delay4{animation-delay: 400ms;}
+.navi .delay5{animation-delay: 500ms;}
+/*==========================================================================*/
+.login{
+  display: block;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  padding-left: 10px;
+  border: none;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+/*==========================================================================*/
+/*==========================================================================*/
+/*------------------------------- LAYOUT -----------------------------------*/
+.flexOne{flex: 1;
+ margin-right: 20px;}
+.flexTwo{flex: 1;}
+
+
+.gridContainer{
+  max-width:1100px;
+  margin: 20px auto 20px auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-gap: 1rem;
+  grid-template-areas: 
+  "box1 box1 box1 box1 box1 box1 box1 box1"
+  "box2 box2 box2 box2 box2 box2 box2 box2"
+  "box3 box3 box3 box3 box3 box3 box4 box4"
+  "box5 box5 box5 box5 box5 box5 box6 box6"
+  "box7 box7 box7 box7 box7 box7 box8 box8"
+  "box9 box9 box9 box9 box9 box10 box10 box10"
+  "box11 box11 box11 box11 box11 box11 box11 box11"
+  "box13 box13 box13 box13 box13 box12 box12 box12"
+  
+  "box14 box14 box14 box14 box14 box14 box14 box14"
+  "box16 box16 box16 box16 box16 box15 box15 box15"
+
+  "box17 box17 box17 box17 box17 box17 box17 box17"
+  "box19 box19 box19 box19 box19 box18 box18 box18"
+
+  "box20 box20 box20 box20 box20 box20 box20 box20"
+  "box22 box22 box22 box22 box22 box21 box21 box21"
+
+  "box23 box23 box23 box23 box23 box23 box23 box23"
+  "box25 box25 box25 box25 box25 box24 box24 box24"
+  "box26 box26 box26 box26 box26 box26 box26 box26"
+}
+
+.gridContainer .grid-box{
+  background-color: var(--backG);
+  padding: 20px;
+  /* box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+}
+.gridContainer .chapterHead{border-top: 2px solid var(--main);}
+.gridContainer .gHeader{grid-area: box1;}
+.gridContainer .gNav{grid-area: box2;padding: 0 20px 0 20px ;}
+.gridContainer .gNav .flexContainer{display: flex; justify-content: space-between; background-color: var(--special);}
+.gridContainer .gNav .flexContainer div{background-color:var(--special); 
+  text-transform: uppercase; 
+  padding: 10px 30px; border: 1px solid var(--special); 
+}
+.gridContainer .gNav .flexContainer div:hover{background-color:var(--backG); border: 1px solid var(--special); }
+
+.gridContainer .gInhalt{grid-area: box3;}
+.gridContainer .gInhalt .flexContainer{display: flex; flex-wrap: wrap;}
+.gridContainer .gInhalt .flexContainer div{flex: 1}
+
+.gridContainer .gInhaltAside{grid-area: box4;}
+.gridContainer .gChapterOne{grid-area: box5;}
+.gridContainer .gChapterOneAside{grid-area: box6;}
+.gridContainer .gChapterTwo{grid-area: box7;}
+.gridContainer .gChapterTwoAside{grid-area: box8;}
+.gridContainer .gChapterThree{grid-area: box9;}
+.gridContainer .gChapterThreeAside{grid-area: box10;}
+.gridContainer .gChapterFourHead{grid-area: box11;}
+.gridContainer .gChapterFourAside{grid-area: box12;}
+.gridContainer .gChapterFour{grid-area: box13;}
+.gridContainer .gChapterFiveHead{grid-area: box14;}
+.gridContainer .gChapterFiveAside{grid-area: box15;}
+.gridContainer .gChapterFive{grid-area: box16;}
+
+.gridContainer .gChapterSixHead{grid-area: box17;}
+.gridContainer .gChapterSixAside{grid-area: box18;}
+.gridContainer .gChapterSix{grid-area: box19;}
+.gridContainer .gChapterSevenHead{grid-area: box20;}
+.gridContainer .gChapterSevenAside{grid-area: box21;}
+.gridContainer .gChapterSeven{grid-area: box22;}
+/* .gridContainer .gChapterEightHead{grid-area: box23;}
+.gridContainer .gChapterEightAside{grid-area: box24;}
+.gridContainer .gChapterEight{grid-area: box25;} */
+.gridContainer .gFooter{grid-area: box23; font-size: 16px; text-align: right;} 
+
+ figure{margin: 9 auto;}
+ img{max-width: 320px; margin: 0 auto;
+width: 100%;}
+ /*---------------- Kühlschränke und Ware ----------------*/
+ .fourGrid{
+  width: 96%;
+  display: grid;
+  grid-column-gap: 8px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.fourGrid .item{padding: 10px 3px;border: 1px solid white; text-align: center;}
+.fourGrid .head{border: 1px solid white;text-align: center;}
+/*-------------------------- TAble -----------------------*/
+.ware{
+  max-width: 320px;
+  margin: 0  auto;
+  background-color:var(--backG);
+  color: var(--main);
+}
+.display{max-width:300px;
+  width: 100%;
+  margin: 0 auto 5px auto;
+  height: 320px;
+  border: 1px solid var(--main);
+}
+.table-Item{width: 90%;}
+table{font-family: 'Roboto', sans-serif;  
+  width: 100%;}
+td{font-size: 20px; padding-top: 8px;}
+th{text-transform: uppercase;font-weight: lighter;
+}
+.td_0{
+  /* max-width: 180px;  */
+  width: 70%;}
+.td_1{
+  width: 30%;
+  /* max-width: 90px; */
+  text-align: center;}
+
+.tab{bottom: 0;width: 100%;overflow: hidden; }
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+  width: 25%;
+  background-color: var(--special);
+  /* margin: 5px; */
+  text-transform: uppercase;
+  color: var(--main);
+  float: left;
+  border: 2px solid var(--backG);
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+.tab button:hover {
+  background-color: var(--backG);
+  border-color: var(--special);
+}
+
+/* Create an active/current tablink class */
+.tab button:active {
+  background-color: var(--backG);
+  border-color: var(--special);
+}
+
+/* Style the tab content */
+.tabcontent {
+  height: 310px;
+  display: none;
+  padding: 6px 12px;
+  border-top: none;
+  animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+  
+  /* Go from zero to full opacity */
+@keyframes fadeEffect {from {opacity: 0;}to {opacity: 1;}}
+
+@keyframes fadeIn {
+  0% {transform: scale(0);}
+  80% {transform: scale(1.1);}
+  100% {transform: scale(1);}
+} 
+/*===============================================================*/
+/*------------------- Media Querie ------------------------------*/
+@media only screen and (max-width: 1200px){
+  .gridContainer{
+    width: 94%;
+    font-size: 110%;
+  }
+}
+@media only screen and (max-width: 1000px){
+  .gridContainer{
+    width: 98%;
+    font-size: 100%;
+    grid-template-areas: 
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    "box2 box2 box2 box2 box2 box2 box2 box2"
+    "box3 box3 box3 box3 box3 box3 box4 box4"
+    "box5 box5 box5 box5 box5 box5 box6 box6"
+    "box7 box7 box7 box7 box7 box7 box8 box8"
+    "box9 box9 box9 box9 box9 box9 box10 box10"
+    "box11 box11 box11 box11 box11 box11 box11 box11"
+    "box13 box13 box13 box13 box13 box13 box12 box12"
+    
+    "box14 box14 box14 box14 box14 box14 box14 box14"
+    "box16 box16 box16 box16 box16 box16 box15 box15"
+  
+    "box17 box17 box17 box17 box17 box17 box17 box17"
+    "box19 box19 box19 box19 box19 box19 box18 box18"
+  
+    "box20 box20 box20 box20 box20 box20 box20 box20"
+    "box22 box22 box22 box22 box22 box22 box21 box21"
+  
+    "box23 box23 box23 box23 box23 box23 box23 box23"
+    "box25 box25 box25 box25 box25 box25 box24 box24"
+    "box26 box26 box26 box26 box26 box26 box26 box26"
+  }
+} 
+
+
+@media only screen and (max-width: 900px){
+  #id_gridHead{font-size: 66px;}
+  .sticky {width: 98%;}
+  .gridContainer{
+    width: 96%;
+    font-size: 100%;
+    grid-template-areas: 
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    "box1 box1 box1 box1 box1 box1 box1 box1" 
+    "box2 box2 box2 box2 box2 box2 box2 box2"
+    "box3 box3 box3 box3 box3 box3 box3 box3"
+    "box4 box4 box4 box4 box4 box4 box4 box4"
+    "box5 box5 box5 box5 box5 box5 box5 box5"
+    
+    "box6 box6 box6 box6 box6 box6 box6 box6"
+    "box7 box7 box7 box7 box7 box7 box7 box7"
+    "box8 box8 box8 box8 box8 box8 box8 box8"
+    "box9 box9 box9 box9 box9 box9 box9 box9"
+    "box10 box10 box10 box10 box10 box10 box10 box10"
+    "box11 box11 box11 box11 box11 box11 box11 box11" 
+    "box12 box12 box12 box12 box12 box12 box12 box12"
+    "box13 box13 box13 box13 box13 box13 box13 box13"
+    "box14 box14 box14 box14 box14 box14 box14 box14"
+    "box15 box15 box15 box15 box15 box15 box15 box15"
+    "box16 box16 box16 box16 box16 box16 box16 box16"
+    "box17 box17 box17 box17 box17 box17 box17 box17"
+    "box18 box18 box18 box18 box18 box18 box18 box18"
+    "box19 box19 box19 box19 box19 box19 box19 box19"
+    "box20 box20 box20 box20 box20 box20 box20 box20"
+    "box21 box21 box21 box21 box21 box21 box21 box21"
+    "box22 box22 box22 box22 box22 box22 box22 box22"
+    "box23 box23 box23 box23 box23 box23 box23 box23"
+  }
+  .fourGrid{
+    width: 96%;
+    margin: 0 auto;
+    display: grid;
+    grid-column-gap: 4px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+  .fourGrid .item{padding: 8px 3px; font-size: 16px;}
+.fourGrid .head{border: 1px solid white;text-align: center;}
+}
+@media only screen and (max-width: 700px){
+  #id_gridHead{font-size: 50px;}
+}
+@media only screen and (max-width: 600px){
+  .gridContainer{
+    width: 98%;
+    margin: 20px auto 20px auto;
+    position: relative;
+    /* grid-template-columns: 1fr;  */
+    column-gap: 0;
+    row-gap: 1em;
+  }
+  .gridContainer .grid-box{padding: 10px 2px;}
+  .navi a{ margin-bottom: 18px;}
+  #id_gridHead{font-size: 42px;}
+  .fourGrid{
+    width: 98%;}
+  .fourGrid .item{padding: 8px 3px; font-size: 16px;}
+}
+
+
