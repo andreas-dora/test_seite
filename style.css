@@ -1,0 +1,64 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+:root{--main: snow; --backG:#50161f; --special:#77212e; --hilite: white;}/* #50161f #641b26 */
+html {scroll-behavior: smooth;}
+body{font-family: Arial, Helvetica, sans-serif;background-color: var(--backG); color : var(--main);  font-size: 125%;}
+/*--------------- TAGS Typo ------------------*/
+h1, h2{margin-bottom: 20px;}
+h5{margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.2em;}
+#id_gridHead{font-family: 'Roboto', sans-serif; font-size: 72px;}
+h3{margin-bottom: 18px;}
+p{line-height: 1.5em;
+  margin-bottom: 6px;}
+strong{color: var(--hilite);}
+ul li{margin-left: 28px; line-height: 1.5em;}
+ol li{margin-left:36px; line-height: 1.5em;}
+td{padding-bottom: 4px;}
+ul{padding-bottom: 10px;}
+a{text-decoration: none; color: white}
+a:hover{color: var(--hilite)}
+
+
+
+.gridContainer{
+  max-width:1000px;
+  margin: 20px auto 20px auto;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+  grid-gap: 1rem;
+  grid-template-areas: 
+  "box1 box1 box1 box1 box1 box1 box1 box1"
+  "box2 box2 box2 box2 box2 box2 box2 box2"
+  "box3 box3 box3 box3 box3 box4 box4 box4"
+  "box5 box5 box5 box5 box5 box5 box5 box6"
+   "box7 box7 box7 box7 box7 box7 box8 box8"
+  "box9 box9 box9 box9 box9 box9 box9 box9"
+  /*"box11 box11 box11 box11 box11 box11 box11 box11"
+  "box13 box13 box13 box13 box13 box12 box12 box12"
+  
+  "box14 box14 box14 box14 box14 box14 box14 box14"
+  "box16 box16 box16 box16 box16 box15 box15 box15"
+
+  "box17 box17 box17 box17 box17 box17 box17 box17"
+  "box19 box19 box19 box19 box19 box18 box18 box18"
+
+  "box20 box20 box20 box20 box20 box20 box20 box20"
+  "box22 box22 box22 box22 box22 box21 box21 box21"
+
+  "box23 box23 box23 box23 box23 box23 box23 box23"
+  "box25 box25 box25 box25 box25 box24 box24 box24"
+  "box26 box26 box26 box26 box26 box26 box26 box26" */
+}
+
+.gridContainer .gBox{
+  background-color: var(--special);
+  padding: 20px;
+
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.gridContainer .gHead{grid-area: box1;}
+.gridContainer .gNav{grid-area: box2;}
+.gridContainer .gFDrei{grid-area: box3;}
+.gridContainer .gDreiAside{grid-area: box4;}
+.gridContainer .gFooter{grid-area: box9;}
