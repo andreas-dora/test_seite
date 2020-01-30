@@ -4,14 +4,26 @@ html {scroll-behavior: smooth;}
 body{font-family: Arial, Helvetica, sans-serif;background-color: var(--backG); color : var(--main);  font-size: 125%;}
 /*----------------------My Button-------------*/
 .linkCon{width: 200px; height: 40px; border: 1px solid var(--backG);margin-bottom: 10px; box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);}
-.linkCon button{width: 100%; height: 100%; outline: none; border: 1px solid var(--backG); background-color: var(--special);font-size: 14px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase; color: gainsboro;}
+.linkCon button{width: 100%; height: 100%; outline: none;  border: 1px solid var(--backG); background-color: var(--backG);font-size: 14px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase; color: gainsboro;}
 
   .linkCon:hover{
     z-index: 1;
-    box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 160, 0.24);
+    box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 160, 0.24); color: white;
   }
   
+/*--------------- NAV ------------------*/
+.gNav{background-color: var(--special);}
+.flxCon{display: flex; flex-wrap: wrap; justify-content: space-around;}
+.flxCon .flx{flex: 1; text-align: center;
+}
+.flxCon a{text-transform: uppercase; padding: 10px 30px; }
+.flxCon a{text-transform: uppercase; display: block;
+  padding: 10px 25px; border: 2px solid var(--special);
+}
+.flxCon a:hover{background-color: var(--backG);}
 /*--------------- TAGS Typo ------------------*/
+
+
 h1, h2{margin-bottom: 20px;}
 h5{margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.2em;}
 #id_gridHead, h5, button{font-family: 'Roboto', sans-serif; }
@@ -65,7 +77,7 @@ a:hover{color: var(--hilite)}
 }
 
 .gridContainer .gBox{
-  background-color: var(--special);
+  /* background-color: var(--special); */
   padding: 20px;
 
   box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
