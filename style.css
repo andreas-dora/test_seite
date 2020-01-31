@@ -76,3 +76,24 @@ a:hover{color: var(--hilite)}
 .gridContainer .gFDrei{grid-area: box3;}
 .gridContainer .gDreiAside{grid-area: box4;}
 .gridContainer .gFooter{grid-area: box9;}
+
+@media only screen and (max-width: 900px){
+  #id_gridHead{font-size: 66px;}
+  .sticky {width: 98%;}
+  .gridContainer{
+    width: 96%;
+    font-size: 100%;
+    grid-template-areas: 
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    "box1 box1 box1 box1 box1 box1 box1 box1" 
+    "box2 box2 box2 box2 box2 box2 box2 box2"
+    "box3 box3 box3 box3 box3 box3 box3 box3"
+    "box4 box4 box4 box4 box4 box4 box4 box4"
+    "box5 box5 box5 box5 box5 box5 box5 box5"
+    
+    "box6 box6 box6 box6 box6 box6 box6 box6"
+    "box7 box7 box7 box7 box7 box7 box7 box7"
+    "box8 box8 box8 box8 box8 box8 box8 box8"
+    "box9 box9 box9 box9 box9 box9 box9 box9"
+  }
+  }

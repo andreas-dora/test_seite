@@ -2,8 +2,13 @@
 :root{--main: snow; --backG:#50161f; --special:#77212e; --hilite: white;}/* #50161f #641b26 */
 html {scroll-behavior: smooth;}
 body{font-family: Arial, Helvetica, sans-serif;background-color: var(--backG); color : var(--main);  font-size: 125%;}
+/*----------------------TYPO-------------*/
+h1, h2{ margin-bottom: 20px;}
+h3, h4, h5{ margin-bottom: 15px;}
+p{margin-bottom: 8px;}
+hr{margin-bottom: 30px;}
 /*----------------------My Button-------------*/
-.linkCon{width: 200px; height: 40px; border: 1px solid var(--backG);margin-bottom: 10px; box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);}
+.linkCon{width: 200px; height: 40px; border: 1px solid var(--backG);margin-bottom: 20px; box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);}
 .linkCon button{width: 100%; height: 100%; outline: none;  border: 1px solid var(--backG); background-color: var(--backG);font-size: 14px; font-weight: bold; letter-spacing: 0.2em; text-transform: uppercase; color: gainsboro;}
 
   .linkCon:hover{
@@ -88,3 +93,25 @@ a:hover{color: var(--hilite)}
 .gridContainer .gFDrei{grid-area: box3;}
 .gridContainer .gDreiAside{grid-area: box4;}
 .gridContainer .gFooter{grid-area: box9;}
+
+
+@media only screen and (max-width: 900px){
+  #id_gridHead{font-size: 66px;}
+  .sticky {width: 98%;}
+  .gridContainer{
+    width: 96%;
+    font-size: 100%;
+    grid-template-areas: 
+    "box1 box1 box1 box1 box1 box1 box1 box1"
+    "box1 box1 box1 box1 box1 box1 box1 box1" 
+    "box2 box2 box2 box2 box2 box2 box2 box2"
+    "box3 box3 box3 box3 box3 box3 box3 box3"
+    "box4 box4 box4 box4 box4 box4 box4 box4"
+    "box5 box5 box5 box5 box5 box5 box5 box5"
+    
+    "box6 box6 box6 box6 box6 box6 box6 box6"
+    "box7 box7 box7 box7 box7 box7 box7 box7"
+    "box8 box8 box8 box8 box8 box8 box8 box8"
+    "box9 box9 box9 box9 box9 box9 box9 box9"
+  }
+  }

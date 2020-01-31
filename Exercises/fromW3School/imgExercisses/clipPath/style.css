@@ -1,0 +1,15 @@
+body{background-color: dimgray; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: gainsboro; }
+.codeCon{background-color: rgb(10, 10, 20); font-size: 22px;}
+.green{color: springgreen; }
+.blue{color: skyblue;}
+.orange{color: lightsalmon;}
+.gold{color:goldenrod}
+.container{
+  width: 400px;
+  margin: 0 auto;
+}
+img{
+  clip-path: polygon(0% 0%, 
+  100% 3%, 98% 99%, 3% 93%);
+
+}
