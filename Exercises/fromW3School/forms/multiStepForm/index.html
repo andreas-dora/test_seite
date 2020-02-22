@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Multi Step Form</title>  
+</head>
+<body>
+  <header><h1>My Multi Step Form</h1>
+  <h5>For the Sake of Colt Steele</h5>
+  </header>
+  <main>
+    <form id="regForm" action="">
+      <div class="tab">
+        <h5>Name</h5>
+        <p><input type="name" id="firstname" placeholder="First name" oninput="this.className = ''"></p>
+        <p><input type="name" id="lastname" placeholder="Last name" oninput="this.className = ''"></p>
+      </div>
+      <div class="tab">
+        <h5>Login Info:</h5>
+      <p><input type="name" id="username" placeholder="Username" oninput="this.className = ''"></p>
+      <p><input type="password" id="password" placeholder="Password" oninput="this.className = ''"></p>
+    </div>
+    <div class="tab">
+      <h5>Contact Info:</h5>
+        <p><input type="email" id="email" placeholder="E-mail..." oninput="this.className = ''"></p>
+        <p><input type="number" id="phone" placeholder="Phone..." oninput="this.className = ''"></p>
+    </div>
+    <div class="tab">
+      <h5>Birthday</h5>
+      <p><input type="number" id="day" placeholder="dd" oninput="this.className = ''"></p>
+      <p><input type="number" id="month" placeholder="mm" oninput="this.className = ''"></p>
+      <p><input type="number" id="year" placeholder="yyyy" oninput="this.className = ''"></p>
+    </div>
+    <div style="overflow: auto;">
+      <div style="float: right;">
+        <button type="button" id="preBtn" onclick="nxtPrv (-1)">Prev</button>
+        <button type="button" id="nxtBtn" onclick="nxtPrv (-1)">Next</button>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 40px;">
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+      <span class="step"></span>
+    </div>
+    </form>
+    <br>
+    <hr>
+    <br>
+    <h5>TYPO</h5>
+    <p>Rubik <span class="light">Google Fonts</span></p>
+  </main>
+  <script type="text/javascript" src="sketch.js"></script>
+</body>
+</html>

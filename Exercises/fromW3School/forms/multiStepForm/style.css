@@ -1,0 +1,41 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+body{font-family: 'Rubik', sans-serif ; font-size: 130%;}
+h5{margin-bottom: 10px;
+  text-transform: uppercase; letter-spacing: 0.2em;
+}
+
+#regForm{
+  background-color: gainsboro;
+  margin: 100px auto;
+  padding: 40px;
+  width: 70%;
+  min-width: 300px;
+}
+input{
+  padding: 10px;
+  width: 100%;
+  font-family: 'Rubik', sans-serif ; 
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+  margin-bottom: 8px;
+}
+input.invalid{
+  background-color: #ffdddd;
+}
+.step{
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: white;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+.step.active{
+  opacity: 1;
+}
+.step.finish {
+  background-color: #4CAF50;
+}
