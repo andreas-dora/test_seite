@@ -1,4 +1,7 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
+:root{
+  --innen: rgb(169, 169, 169);
+}
 body{font-family: 'Rubik', sans-serif ; font-size: 130%; background-color: #e6eef8;}
 h5{margin-bottom: 10px;
   text-transform: uppercase; letter-spacing: 0.2em;
@@ -7,30 +10,57 @@ h5{margin-bottom: 10px;
 #regForm{
   background-color: gainsboro;
   margin: 100px auto;
-  padding: 40px;
+  padding: 30px;
   width: 70%;
   min-width: 300px;
+  box-shadow:  0 0.2rem 0.3rem 0.1rem var(--innen);
+
 }
 input{
+  height: 100%;
   padding: 10px;
-  width: 100%;
-  font-family: 'Rubik', sans-serif ; 
+margin: 10px;
+flex: 1;  font-family: 'Rubik', sans-serif ; 
   font-size: 17px;
-  border: 1px solid #aaaaaa;
-  margin-bottom: 8px;
+  border: none;
+  border-radius: 2px;
+  background-color: #e6eef8;
+  outline: gainsboro;
+  margin-bottom: 12px;
+}
+.right{
+  box-shadow: inset -0.1rem 0.2rem 0.3rem 0.1rem var(--innen);
+
+}
+.left{
+
+  box-shadow: inset 0.1rem 0.2rem 0.3rem 0.1rem var(--innen);
+   /* inset -0.1rem 0 0.3rem 0.05rem rgb(169, 169, 169); */
+}
+.middle{
+  box-shadow: inset 0rem 0.2rem 0.3rem 0.1rem var(--innen);
+
 }
 input.invalid{
   background-color: #ffdddd;
 }
+.container{
+  width: 100%; height: 44px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .step{
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: white;
+  background-color:  #e6eef8;
   border: none;
   border-radius: 50%;
   display: inline-block;
-  opacity: 0.5;
+  /* opacity: 0.5; */
+  box-shadow: inset 0 0.15rem 0.1rem 0.1rem rgb(169, 169, 169);
+
 }
 
 .step.active{
@@ -40,20 +70,22 @@ input.invalid{
   background-color: #4CAF50;
 }
 .tab{
-  margin-bottom: 16px;
-  display: none;
+  margin-bottom:30px;
+  /* display: none; */
+  
 }
 
 button{
   height: 36px;
   width: 120px;
   border: none;
-  border-radius: 6px;
-  background-color: #e6eef8;
+  border-radius: 2px;
+  background-color: silver;
+  text-transform: uppercase; font-weight: bold; font-size: 14px; letter-spacing: 0.2em;
+  /* background-color: #e6eef8; */
   outline: gainsboro;
- 
+  box-shadow:  -0.1rem 0.1rem 0.2rem 0.1rem rgb(133, 132, 132);
+
 }
-  button:hover{
-    cursor: pointer; z-index: 3;
- 
-  }
+  /* button:hover{
+  } */
