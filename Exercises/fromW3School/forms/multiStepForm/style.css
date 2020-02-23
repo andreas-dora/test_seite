@@ -1,5 +1,5 @@
 *{margin: 0; padding: 0; box-sizing: border-box;}
-body{font-family: 'Rubik', sans-serif ; font-size: 130%;}
+body{font-family: 'Rubik', sans-serif ; font-size: 130%; background-color: #e6eef8;}
 h5{margin-bottom: 10px;
   text-transform: uppercase; letter-spacing: 0.2em;
 }
@@ -39,3 +39,21 @@ input.invalid{
 .step.finish {
   background-color: #4CAF50;
 }
+.tab{
+  margin-bottom: 16px;
+  display: none;
+}
+
+button{
+  height: 36px;
+  width: 120px;
+  border: none;
+  border-radius: 6px;
+  background-color: #e6eef8;
+  outline: gainsboro;
+ 
+}
+  button:hover{
+    cursor: pointer; z-index: 3;
+ 
+  }
