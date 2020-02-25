@@ -20,9 +20,8 @@ h1{
 .dark{opacity: 0;
   animation-name: licht;
   animation-duration: 1.5s;
-  animation-delay: 2s;
+  animation-delay: 1s;
   animation-fill-mode: forwards;
-
 }
 main{
   height: 100vh;
@@ -64,12 +63,11 @@ main{
 @keyframes licht{
   0% {opacity: 0;}
   10% {opacity: 1;}
-  20% {opacity: 0;}
   40% {opacity: 1;}
+  50% {opacity: 0;}
   70% {opacity: 0;}
   80% {opacity: 1;}
   100% {opacity: 1;}
-
 }
 
 /* 

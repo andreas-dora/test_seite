@@ -1,0 +1,17 @@
+body{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+h1{
+  font-family: 'Barlow', sans-serif ;
+  font-size: 30vh;
+  font-weight: 900;
+  background-image: url("./ocean-1-731730.png");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
