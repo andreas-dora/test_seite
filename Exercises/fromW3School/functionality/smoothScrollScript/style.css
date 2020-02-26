@@ -1,0 +1,13 @@
+.box{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.box1{
+  background-color: firebrick;
+  justify-content: center;
+}
+.box2{
+  background-color: lightskyblue;
+  justify-content: space-around;
+}
