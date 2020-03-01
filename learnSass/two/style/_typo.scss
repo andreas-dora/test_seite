@@ -1,0 +1,41 @@
+#id_gridHead{
+  font-size: 72px;
+}
+h1, h2, h3, #id_gridHead{font-family: 'Roboto', sans-serif;}
+h1, h2{margin-bottom: 20px;}
+h3{margin-bottom: 30px;}
+h4{
+  margin-bottom: 20px; 
+  @include upper(20px);
+}
+h5{
+  margin-bottom: 18px; 
+  @include upper(16px);
+}
+p{
+  font-size: 17px;
+  line-height: 1.5em;
+  margin-bottom: 6px;
+}
+.light{
+  font-weight: 100;
+}
+.bold{
+  font-weight: bold;  
+  animation: fadeEffect 1s;
+}
+ul li{margin-left: 28px; line-height: 1.5em;}
+ol li{margin-left:36px; line-height: 1.5em;}
+.neu{color: $wichtig;}
+a{
+  text-decoration: none;
+  color: $link;
+  &:hover{
+    color: $white;
+  }
+}
+figcaption{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-top: 16px;
+}

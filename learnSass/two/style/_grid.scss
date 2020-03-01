@@ -1,0 +1,79 @@
+.flexOne{flex: 1;
+  margin-right: 20px;}
+ .flexTwo{flex: 1;}
+ 
+ 
+ .gridContainer{
+   max-width:1100px;
+   margin: 20px auto 20px auto;
+   position: relative;
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+   grid-gap: 1rem;
+   grid-template-areas: 
+   "box1 box1 box1 box1 box1 box1 box1 box1"
+   "box2 box2 box2 box2 box2 box2 box2 box2"
+   "box3 box3 box3 box3 box3 box3 box4 box4"
+   "box5 box5 box5 box5 box5 box5 box6 box6"
+   "box7 box7 box7 box7 box7 box7 box6 box6"
+   "box9 box9 box9 box9 box9 box10 box10 box10"
+   "box11 box11 box11 box11 box11 box11 box11 box11"
+   "box13 box13 box13 box13 box13 box13 box12 box12"
+   
+   "box14 box14 box14 box14 box14 box14 box14 box14"
+   "box16 box16 box16 box16 box16 box16 box15 box15"
+ 
+   "box17 box17 box17 box17 box17 box17 box17 box17"
+   "box19 box19 box19 box19 box19 box18 box18 box18"
+ 
+   "box20 box20 box20 box20 box20 box20 box20 box20"
+   "box22 box22 box22 box22 box22 box21 box21 box21"
+ 
+   "box23 box23 box23 box23 box23 box23 box23 box23"
+   "box25 box25 box25 box25 box25 box24 box24 box24"
+   "box26 box26 box26 box26 box26 box26 box26 box26"
+ }
+ 
+ .gridContainer .grid-box{
+   background-color: var(--backG);
+   padding: 20px;
+   /* box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); */
+ }
+ .gridContainer .chapterHead{border-top: 2px solid var(--main);}
+ .gridContainer .gHeader{grid-area: box1;}
+ .gridContainer .gNav{grid-area: box2;padding: 0 20px 0 20px ;}
+ .gridContainer .gNav .flexContainer{display: flex; justify-content: space-between; background-color: var(--special);}
+ .gridContainer .gNav .flexContainer div{background-color:var(--special); 
+   text-transform: uppercase; 
+   padding: 10px 30px; border: 1px solid var(--special); 
+ }
+ .gridContainer .gNav .flexContainer div:hover{background-color:var(--backG); border: 1px solid var(--special); }
+ 
+ .gridContainer .gInhalt{grid-area: box3;}
+ .gridContainer .gInhalt .flexContainer{display: flex; flex-wrap: wrap;}
+ .gridContainer .gInhalt .flexContainer div{flex: 1}
+ 
+ .gridContainer .gInhaltAside{grid-area: box4;}
+ .gridContainer .gChapterOne{grid-area: box5;}
+ .gridContainer .gChapterOneAside{grid-area: box6;}
+ .gridContainer .gChapterTwo{grid-area: box7;}
+ .gridContainer .gChapterTwoAside{grid-area: box8;}
+ .gridContainer .gChapterThree{grid-area: box9;}
+ .gridContainer .gChapterThreeAside{grid-area: box10;}
+ .gridContainer .gChapterFourHead{grid-area: box11;}
+ .gridContainer .gChapterFourAside{grid-area: box12;}
+ .gridContainer .gChapterFour{grid-area: box13;}
+ .gridContainer .gChapterFiveHead{grid-area: box14;}
+ .gridContainer .gChapterFiveAside{grid-area: box15;}
+ .gridContainer .gChapterFive{grid-area: box16;}
+ 
+ .gridContainer .gChapterSixHead{grid-area: box17;}
+ .gridContainer .gChapterSixAside{grid-area: box18;}
+ .gridContainer .gChapterSix{grid-area: box19;}
+ .gridContainer .gChapterSevenHead{grid-area: box20;}
+ .gridContainer .gChapterSevenAside{grid-area: box21;}
+ .gridContainer .gChapterSeven{grid-area: box22;}
+ /* .gridContainer .gChapterEightHead{grid-area: box23;}
+ .gridContainer .gChapterEightAside{grid-area: box24;}
+ .gridContainer .gChapterEight{grid-area: box25;} */
+ .gridContainer .gFooter{grid-area: box23; font-size: 16px; text-align: right;} 

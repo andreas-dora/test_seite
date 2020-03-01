@@ -1,0 +1,27 @@
+button{
+  background-color: $comp;
+  color: $main;
+  border: none;
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  &:hover{
+    cursor: pointer; z-index: 33;
+    box-shadow: 0 1.5rem 2.8rem rgba(0, 0, 0, 0.65), 0 1rem 1rem rgba(0, 0, 0, 0.24);
+  }
+}
+.dwnBtn{
+  @include upper(14px);
+  max-width: 300px;
+  width: 100%;
+  height: 36px;
+}
+.navBtn{
+  max-width: 320px;
+  min-width: 280px;
+  width: 100%; 
+  padding: 8px 4px 6px 10px;
+  margin-bottom: 4px;
+  font-size: 16px;
+  text-align: left;
+  // transition: all 450ms;
+  // animation: fadeIn 0.25s ease-out normal backwards;
+}
