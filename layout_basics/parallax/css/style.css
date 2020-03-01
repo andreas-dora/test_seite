@@ -1,0 +1,65 @@
+/* *{
+  margin: 0;
+} */
+body{
+  height: 100%;
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  line-height: 1.8em;
+  color: snow;
+}
+.pimg{
+  position: relative;
+  opacity: .9;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  /* ZUm Entferenen in media@
+  background-attachment: scroll; */
+
+}
+.pimg1{
+  background-image: url('../img/img1.jpg');
+  min-height: 100vh;
+}
+.pimg2{
+  background-image: url('../img/img2.jpg');
+  min-height: 400px;
+}
+.pimg3{
+  background-image: url('../img/img3.jpg');
+  min-height: 400px;
+}
+.section{
+  text-align: center;
+  padding: 50px 80px;
+}
+
+.section-light{
+  background-color: darkslateblue;
+}
+.section-dark{
+  background-color: darkslategray;
+}
+.ptext{
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  text-align: center;
+  font-size: 32px;
+  text-transform: uppercase;
+}
+.ptext .border{
+  background-color: dimgray;
+  padding: 20px 30px;
+}
+
+@media (max-width:568px){
+.pimg{
+  background-attachment: scroll;
+}
+
+}
