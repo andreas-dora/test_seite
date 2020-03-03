@@ -1,0 +1,41 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --clr-main: #fffafa;
+  --clr-back:#808080;
+}
+body{
+  background-color: var(--clr-back);
+  color: var(--clr-main);
+  font-family: Arial, Helvetica, sans-serif;
+}
+form{
+  width: 300px;
+  margin: 20vh auto;
+  padding: 30px;
+  border: 2px solid var(--clr-main);
+}
+
+input{
+  width: 100%;
+  height: 36px;
+  margin-bottom: 10px;
+  padding: 8px 2px;
+  font-size: 16px;
+  /* box-shadow: inset 4px 4px 10px rgba(0, 0, 0, 0.2
+  );*/
+} 
+button{
+  width: 40%;
+  height: 36px ;
+  display: block;
+  margin: 0 auto;
+  color: var(--clr-back);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  /* box-shadow:  4px 4px 10px rgba(0, 0, 0, 0.4); */
+}
