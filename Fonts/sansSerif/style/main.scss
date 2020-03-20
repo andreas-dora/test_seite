@@ -1,0 +1,65 @@
+$back: rgb(50,50,60);
+$main: rgb(240,240,220);
+
+@mixin upper() {
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Work Sans', sans-serif;
+  color: $main;
+  background-color: $back;
+}
+
+.wrapper{
+  width: 90%;
+  margin: 0 auto;
+}
+
+/*##########################################*/
+/*##################### TYPO ###############*/
+/*##########################################*/
+h2{
+  margin-bottom: 40px;
+}
+
+h5{ 
+  @include upper();
+  margin-bottom: 30px;
+}
+
+p{
+  line-height: 1.4em;
+  margin-bottom: 20px;
+}
+li{
+  line-height: 1.4em;
+}
+hr{
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+/*#######################################################*/
+/*#######################################################*/
+/*#######################################################*/
+
+
+/*##########################################*/
+/*#################### Media ###############*/
+/*##########################################*/
+
+@page{
+  size: 6in 9in;
+  margin: 0,5in;
+  background-color: white;
+  color: black;
+}
