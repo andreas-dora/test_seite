@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fancy Link</title>
+  <style>
+    .fancy-link {
+  text-decoration: none;
+  background-image: linear-gradient(skyblue, skyblue);
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  background-size: 0% 3px;
+  transition: background-size 500ms ease-in-out;
+
+  /* extra styling   */
+  font-weight: var(--fw-bold);
+}
+
+.fancy-link:hover {
+  background-size: 100% 3px;
+  color: white;
+}
+  </style>
+  <link rel="stylesheet" href="basic.css">
+</head>
+<body>
+  <nav>
+    <div class="navLink"><a href="#">Back</a></div>
+    <div class="navLink"><a href="#">Home</a></div>
+    <div class="navLink"><a href="#">Next</a></div>
+    <input type="text" placeholder="Suche">
+
+  </nav>
+<div class="container">
+  <div class="headCon">
+    <h1 class="title">CSS Tip of the day 02</h1>
+  </div>
+  <div class="subCon">
+    <h5>Fancy Link</h5>
+  </div>
+  <div class="textCon">
+    <p>Lorem ipsum dolor <a class="fancy-link" href="#">sit amet consectetur adipisicing elit. Impedit repudiandae assumenda beatae</a>, quo iure quaerat voluptate placeat. A eius cum, rem aspernatur ipsa illum. Commodi ullam cupiditate aliquid ducimus consequatur.</p>
+  </div>
+ 
+</div>
+
+
+<button class="neumo">Create</button>
+</body>
+</html>
