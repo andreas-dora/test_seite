@@ -2,14 +2,7 @@
 // const navbarMenu = document.querySelector(".navbar ul");
 const navbarLinks = document.querySelectorAll(".navLink");
 
-// navbarToggler.addEventListener("click", navbarTogglerClick);
 
-// function navbarTogglerClick() {
-//   navbarToggler.classList.toggle("open-navbar-toggler");
-//   navbarMenu.classList.toggle("open");
-// }
-
-// navbarLinks.forEach(elem => elem.addEventListener("click", navbarLinkClick));
 
 for(let i=0; i<navbarLinks.length; i++) {
   navbarLinks[i].addEventListener("click", navbarLinkClick);
