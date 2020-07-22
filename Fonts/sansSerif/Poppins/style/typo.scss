@@ -1,0 +1,35 @@
+h1{
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+h4{
+  line-height: 1.8em;
+  margin-bottom: 20px;
+}
+p{
+  font-size: 110%;
+  line-height: 1.8em;
+  margin-bottom: 16px;
+  letter-spacing: 3.6em;
+}
+.light{
+  font-weight: 300;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #0c5065;
+}
+a:hover{
+  color: $myGreen;
+}
+ul{
+  list-style: none;
+}
+li{
+  line-height: 1.6em;
+}
+code{
+  font-size: 115%;
+  line-height: 1.7em;
+}
