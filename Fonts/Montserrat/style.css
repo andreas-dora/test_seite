@@ -1,0 +1,56 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background: gainsboro;
+  font-family: 'Montserrat', sans-serif;
+}
+main{
+  width: 1000px;
+  margin: 40px auto;
+  padding: 24px 24px;
+  background-color: ghostwhite;
+  box-shadow: 0 1.5rem 1.2rem rgba(0, 0, 0, 0.25), 0 1rem 1rem rgba(0, 0, 160, 0.24);
+}
+article{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+section{
+  width: 600px;
+}
+
+/* ############################################################################## */
+/* #################################### Font #################################### */
+/* ############################################################################## */
+
+
+h1{
+  margin-bottom: 20px;
+  font-size: 60px;
+}
+h4{
+  line-height: 1.8em;
+  margin-bottom: 20px;
+}
+p{
+  font-size: 18px;
+  line-height: 1.8em;
+  margin-bottom: 16px;
+}
+.light{
+  font-weight: 300;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(24, 63, 75);
+  line-height: 1.6em;
+}
+ul{
+  list-style: none;
+}

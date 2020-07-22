@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monserat</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <h1 class="light">Monserrat von Google Fonts</h1>
+    <h4>Dies ist ein Font Test. Er dient lediglich dazu mir etwas mehr Überblick zu verschaffen. Überblick könnnen wir alle dringend gebrauchen, oder glaubst du das etwa nicht?</h4>
+    <article>
+      <section>
+        <p>Hier fürs erste ein Beispiel dafür, wie man Daten aus Google Kalender in eine Tabelle importiert.  Ich hab mir dafür einen Testkalender mit Dummi-Terminen vorbereitet. In den Einstellungen des Kalender findeSt Du unterhalb der Benachrichtigungen die Kalender-ID. Die werden wir gleich brauchen.  Ich hab mir außerdem eine ganz frische Tabelle erstellt, von der aus ich in AppSkript einsteige. Zuerst nehme ich mit SpreadsheetApp(), getActiveSpreadsheet() und getActiveSheet() kontakt zur Tabelle auf und Poste über getRange() und setValue() irgend was hinein, nur um zusehen ob ich soweit richtig bin. Hat es funktioniert, lösche ich den Unfug wieder um kümmere mich um den Kontakt zu meinem Test-Kalender. Für das Arbeiten mit Kalendern, ist <strong>CalendarApp()</strong> zuständig. Wer hätte das geahnt. Da ich nur auf einen meiner Kalender zugreifen möchte entscheide Ich mich für <strong>getCalenderById()</strong>. Die Kalender-ID wird hier als String übergeben, also in Anführungszeichen. Das ganze verstaue Ich in der Variable **myCal**. Von dieser Variable aus habe ich nun Zugriff auf alle  die Klasse Calendar betreffenden Methoden.  Ich entscheide mich für **getEvents(start time, end Time)** in der einfachen Variante, ohne weitere Optionen. Daten möchte die Methode nach amerikanischer Notierung übergeben bekommen: MM.TT.JJJJ</p>
+      </section>
+      <aside>
+        <figure>
+          <img src="./../img/klein.png" alt="Ein kleines Bild nur zu Testzwecken
+          ">
+          <figcaption>Ein kleines Testbild</figcaption>
+        </figure>
+
+      </aside>
+      <div class="codeBlock">
+        <div class="codeheader"><h3>Mein Beispielcode:</h3></div>
+     
+          <code>
+            <pre>
+function getDates() {
+  const tab = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  const myCal = CalendarApp.getCalendarById("eqjfva6pc0bkka7qi9cmjhupgc@group.calendar.google.com");
+  // Logger.log(myCal.getColor());
+  const events = myCal.getEvents(new Date("8.1.2020 00:00"),new Date("8.30.2020 23:59"));
+//  Logger.log('Number of events: ' + events.length);
+  
+  for(let i =0; i<events.length; i++){
+    var date = events[i].getStartTime();
+    var title = events[i].getTitle();
+    var location =events[i].getLocation();
+    tab.getRange(2+i,1).setValue(date).setNumberFormat("dd.mm h:mm"); 
+    tab.getRange(2+i,2).setValue(title); 
+    tab.getRange(2+i,3).setValue(location); 
+  }
+}
+            </pre>
+ 
+          </code>
+        <div class="codeFooter">
+          <button>Copy</button>
+        </div>
+      </div>
+    </article>   
+      <ul>
+        <li><a href="https://fonts.google.com/specimen/Montserrat?sidebar.open&selection.family=Montserrat:wght@300;400;700;900">Google Fonts</a></li>
+        <li><a href="./../../index.html">Home</a></li>
+        <li><a href="https://github.com/andreas-dora" target="_blank">Github</a></li>
+      </ul>
+      
+  </main>
+</body>
+</html>
