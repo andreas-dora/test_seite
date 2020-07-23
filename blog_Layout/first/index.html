@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Barlow</title>
+  <title>AppScript Einführung</title>
   <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style/main.css">
 </head>
 <body>
-  <div class="topnav" id="id_topnav">
+  <!-- <div class="topnav" id="id_topnav">
     <a href="#">Friends Electric</a>
     <a href="#">Kontakt</a>
     <div class="dropdown">
@@ -24,8 +24,8 @@
       
     </div>
     <a href="javascript:void(0);" class="icon" onclick="navBar()">&#9776;</a>
-  </div>
-  <!-- <header>
+  </div> -->
+  <header>
     <div class="navCon">
       <nav>
         <div class="navLink"><a href="#">Back</a></div>
@@ -33,7 +33,7 @@
         <div class="navLink"><a href="#">Index</a></div>
       </nav>
     </div>
-  </header> -->
+  </header>
   <main>
     <div class="headCon">
       <div class="infoline">Friends Electric</div>
@@ -131,88 +131,135 @@
 
 <p>*Anwender ohne Gmail-Adresse können mit Hilfe von <strong>mailApp</strong> Nachrichten verschicken</p>
 
-<hr />
-
-<h2>Der Skirpteditor</h2>
-
-<p>In den einzelnen Anwendungen ist im Menü <strong>Tools</strong> der Punkt <strong>Skripteditor</strong> zu finden. Für den Anfang möchte ich mich auf Tabellen konzentrieren. Also bitte mal eine frische Tabelle öffnen, dem Ding einen Namen geben und den <strong>Skripteditor</strong> öffnen. Schwups, findet man sich in einem Text-Editor wieder. Wie bereits erwähnt hat man es hier mit Javaskript zu tun. In der Welt von Google gibt es natürlich ein paar Besonderheiten. Anstelle von cosole.log() benutzt man hier <strong>Logger.log()</strong>. </p>
-<div class="textCon">
-  <pre><code class="js">function myFunction() {
-    Logger.log(&quot;Was geht ab?&quot;);
-  }</code></pre>
-</div>
-
-
-<p>Hat man den Code gespeichert, kann er über die &#8220;Play&#8221;-Taste ausgeführt werden. Die Ausgabe des Loggers findet man im Menü <strong>Ansicht</strong> unter <strong>Protokolle</strong>.</p>
-
-<hr />
-
-<h2>Ein- und auskommentieren</h2>
-
-<p>Das ein- und auskommentieren funktioniert, wie in Javascript gewohnt mit Doppelslash für einzeilige Kommentare und Slash plus Sternchen für mehrzeilige. </p>
-
-<div class="textCon"><pre><code>
-/*
-Das ist mein Code und
-das ist ein mehrzeiliger
-Komentar!
-*/
-function myFunction() {
-  const integer_1 = 17;
-  const integer_2 = 4;
-  const result = integer_1 + integer_2; // hier wird gerechnet
-  Logger.log(result); 
-// Dieser Kommentar ist unnötig
-}
-  </code></pre>
-</div>
-
-
-<hr />
-
-<h2>Syntax Highlighting</h2>
-
-<p>Der Online Editor für AppSkript ist nicht sonderlich komfortabel. Jede klammer die man öffnet, muss man auch selbst wieder schließen. Aber immerhin ist das Syntax Highlighting recht hilfreich.
-Variablen werden beim Initialisieren dunkelblau dargestellt, und später hellblau. Strings sind rot, Zahlen egal ob Integer oder Float sind grün.
-Auskommentiertes wird braun wiedergegeben.
-In Zeile 13 hab ich mich ein wenig vertippt. Die falsch geschriebene Variable wird nicht blau dargestellt.</p>
-
-<p>Die Benutzeroberfläche ist weitestgehend selbsterklärend. Unter dem Hauptmenü findet man Vignetten für:
-- Rückgängig
-- Ne, doch nicht
-- Einrücken
-- Speichern
-- Trigger hinzufügen
-- Ausführen
-- Funktionsauswahl</p>
-
-<p>Es lohnt auf jeden Fall hier ein wenig zu experimentieren. Mal ein </p>
-
-<div class="textCon">
-  <pre><code class="js">
-function myFunction() {
-  const string_1 = &quot;Käsekuchen&quot;;
-  const string_2 = &quot;schmeckt mir nicht&quot;;
-  const result  = string_1 + &quot; &quot; + string_2;
-  Logger.log(result);
-}
-  </code></pre>
-</div>
-
-<ul>
-  <li><a href="https://fonts.google.com/specimen/Montserrat?sidebar.open&selection.family=Montserrat:wght@300;400;700;900">Google Fonts</a></li>
-  <li><a href="./../../index.html">Home</a></li>
-  <li><a href="https://github.com/andreas-dora" target="_blank">Github</a></li>
-</ul>
-
 </section>
 <aside>
   <figure>
-    <img src="../img/colormix_small.png" alt="Eine Farbabstuffung">
+    <img id="id_img_001" src="../img/colormix_small.png" alt="Eine Farbabstuffung">
     <figcaption>So schöne Farben in Google Tabellen</figcaption>
   </figure>
+  <div class="imgModal" id="id_modal_1">
+    <span class="close">&times;</span>
+    <img class="modalImg" id="img_1" src="../img/colormix.png" alt="Hmm, lecker Bierchen">
+    <div id="id_caption_1">Lalal</div>
+  </div>
 </aside>
-    </article>
+
+</article>
+ <article>
+   <section>
+    <h2>Der Skirpteditor</h2>
+  
+    <p>In den einzelnen Anwendungen ist im Menü <strong>Tools</strong> der Punkt <strong>Skripteditor</strong> zu finden. Für den Anfang möchte ich mich auf Tabellen konzentrieren. Also bitte mal eine frische Tabelle öffnen, dem Ding einen Namen geben und den <strong>Skripteditor</strong> öffnen. Schwups, findet man sich in einem Text-Editor wieder. Wie bereits erwähnt hat man es hier mit Javaskript zu tun. In der Welt von Google gibt es natürlich ein paar Besonderheiten. Anstelle von cosole.log() benutzt man hier <strong>Logger.log()</strong>. </p>
+    <div class="textCon">
+      <pre><code class="js">function myFunction() {
+        Logger.log(&quot;Was geht ab?&quot;);
+      }</code></pre>
+    </div>
+    
+    
+    <p>Hat man den Code gespeichert, kann er über die &#8220;Play&#8221;-Taste ausgeführt werden. Die Ausgabe des Loggers findet man im Menü <strong>Ansicht</strong> unter <strong>Protokolle</strong>.</p>
+   </section>
+   <aside></aside>
+ </article>
+
+</article>
+<article>
+  <section>
+
+  </section>
+  <aside></aside>
+</article>
+
+
+
+
+</article>
+<article>
+  <section>
+    <h2>Ein- und auskommentieren</h2>
+  
+    <p>Das ein- und auskommentieren funktioniert, wie in Javascript gewohnt mit Doppelslash für einzeilige Kommentare und Slash plus Sternchen für mehrzeilige. </p>
+    
+    <div class="textCon">
+      <pre><code>/*
+    Das ist mein Code und
+    das ist ein mehrzeiliger
+    Komentar!
+    */
+    function myFunction() {
+      const integer_1 = 17;
+      const integer_2 = 4;
+      const result = integer_1 + integer_2; // hier wird gerechnet
+      Logger.log(result); 
+    // Dieser Kommentar ist unnötig
+    }</code></pre>
+    </div>
+  </section>
+  <aside></aside>
+</article>
+
+
+</article>
+<article>
+  <section>
+    <h2>Syntax Highlighting</h2>
+  
+    <p>Der Online Editor für AppSkript ist nicht sonderlich komfortabel. Jede klammer die man öffnet, muss man auch selbst wieder schließen. Aber immerhin ist das Syntax Highlighting recht hilfreich.
+    Variablen werden beim Initialisieren dunkelblau dargestellt, und später hellblau. Strings sind rot, Zahlen egal ob Integer oder Float sind grün.
+    Auskommentiertes wird braun wiedergegeben.
+    In Zeile 13 hab ich mich ein wenig vertippt. Die falsch geschriebene Variable wird nicht blau dargestellt.</p>
+    
+    <p>Die Benutzeroberfläche ist weitestgehend selbsterklärend. Unter dem Hauptmenü findet man Vignetten für:
+    - Rückgängig
+    - Ne, doch nicht
+    - Einrücken
+    - Speichern
+    - Trigger hinzufügen
+    - Ausführen
+    - Funktionsauswahl</p>
+    
+    <p>Es lohnt auf jeden Fall hier ein wenig zu experimentieren. Mal ein </p>
+    
+    <div class="textCon">
+      <pre><code class="js">function myFunction() {
+      const string_1 = &quot;Käsekuchen&quot;;
+      const string_2 = &quot;schmeckt mir nicht&quot;;
+      const result  = string_1 + &quot; &quot; + string_2;
+      Logger.log(result);
+    }</code></pre>
+    </div>
+    
+    <ul>
+      <li><a href="https://fonts.google.com/specimen/Montserrat?sidebar.open&selection.family=Montserrat:wght@300;400;700;900">Google Fonts</a></li>
+      <li><a href="./../../index.html">Home</a></li>
+      <li><a href="https://github.com/andreas-dora" target="_blank">Github</a></li>
+    </ul>
+    
+  </section>
+  <aside></aside>
+</article>
+
+
+
+</article>
+<article>
+  <section>
+
+
+
+  </section>
+  <aside></aside>
+</article>
+
+</article>
+<article>
+  <section>
+
+  </section>
+  <aside></aside>
+</article>
+
+
 
     <footer>Alle Angaben ohne Gewähr | &copy; 2020 Andreas Breitwieser | <a href="#">Impressum</a></footer>  
   </main>
