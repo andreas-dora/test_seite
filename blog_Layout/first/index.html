@@ -8,9 +8,36 @@
   <link rel="stylesheet" href="./style/main.css">
 </head>
 <body>
+  <div class="topnav" id="id_topnav">
+    <a href="#">Friends Electric</a>
+    <a href="#">Kontakt</a>
+    <div class="dropdown">
+      <button class="dropbtn">Rubriken
+        <i class="fa fa caret-down"></i>
+      </button>
+      <div class="dropdownContent">
+        <a href="#">AppScript</a>
+        <a href="#">Raspberry</a>
+        <a href="#">IFTTT</a>
+        <a href="#">und mehr</a>
+      </div>
+      
+    </div>
+    <a href="javascript:void(0);" class="icon" onclick="navBar()">&#9776;</a>
+  </div>
+  <!-- <header>
+    <div class="navCon">
+      <nav>
+        <div class="navLink"><a href="#">Back</a></div>
+        <div class="navLink"><a href="#">Home</a></div>
+        <div class="navLink"><a href="#">Index</a></div>
+      </nav>
+    </div>
+  </header> -->
   <main>
     <div class="headCon">
       <div class="infoline">Friends Electric</div>
+      <div class="infoline">Autor: Andreas Breitwieser</div>
 
       <div class="dateline">20.07.2020</div>
       <div class="headline">Googles AppScript</div>
@@ -189,5 +216,6 @@ function myFunction() {
 
     <footer>Alle Angaben ohne Gewähr | &copy; 2020 Andreas Breitwieser | <a href="#">Impressum</a></footer>  
   </main>
+  <script type="text/javascript" src="sketch.js"></script>
 </body>
 </html>
