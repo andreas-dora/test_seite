@@ -1,0 +1,300 @@
+$barlow: 'Barlow', sans-serif;
+$mainFont: Helvetica, Arial, sans-serif;
+$background: #f8f8ff;
+$gains: #dcdcdc;
+$myCol_1: #034f67; 
+$myGreen: #1dc71d;
+$printGray: #9d9d9d; 
+$lineHi_1: 1.8em;
+// font-family: 'Lato', sans-serif;
+// font-family: 'Source Code Pro', monospace;
+
+@mixin upper {
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+body{
+  background: $background;
+  font-family: $mainFont; 
+}
+
+main{
+  max-width: 1000px;
+  margin: 40px auto;
+  
+  background-color: $background;
+  // box-shadow: 0 1.5rem 1.2rem rgba(0, 0, 0, 0.25), 0 1rem 1rem rgba(0, 0, 160, 0.24);
+}
+
+.headCon{
+  padding: 24px 24px;
+}
+article{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 2px solid $myCol_1;
+  margin-bottom: 5vh;
+}
+section{
+  padding: 24px 24px;
+  width: 67%;
+  flex: 2;
+}
+
+aside{
+  padding: 24px 24px;
+  width: 30%;
+  flex: 1;
+  figure{
+    max-width: 300px;
+      img{width: 100%;
+      } 
+  }
+}
+
+hr{
+  border-top: 2px solid $myCol_1;
+  margin-top: 8vh;
+  margin-bottom: 10vh;
+}
+
+.textCon{
+  border: 2px solid $myCol_1;
+  padding: 16px 16px 20px 16px;
+  overflow: auto;
+  margin-top: 4vh;
+  margin-bottom: 4vh;
+}
+
+footer{
+  text-align: right;
+}
+
+/* ############################################################################## */
+/* #################################### Typo #################################### */
+/* ############################################################################## */
+
+// 
+.infoline{
+  display: none;
+}
+.dateline{
+  text-align: right;
+  margin-bottom: 4vh;
+}
+.headline{
+  font-family: $barlow;
+  font-weight: 300;
+  margin-bottom: 5vh;
+  font-size: 72px;
+  color: $myCol_1;
+}
+h1{
+  font-family: $barlow;
+  margin-bottom: 5vh;
+  font-size: 72px;
+  color: $myCol_1;
+}
+.subline{
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.8em;
+  margin-bottom: 4vh;
+}
+
+h2{
+  font-family: $barlow;
+  margin-bottom: 5vh;
+  font-size: 48px;
+  font-weight: 300;
+  color: $myCol_1;
+}
+
+h5{
+  @include upper();
+  color: $myCol_1;
+  font-size: 110%;
+  margin-bottom: 16px;
+}
+
+h4{
+  line-height: 1.8em;
+  margin-bottom: 20px;
+  
+}
+p{
+  font-size: 110%;
+  line-height: 1.8em;
+  margin-bottom: 16px;
+}
+.light{
+  font-weight: 300;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color: $myCol_1;
+}
+a:hover{
+  color: $myGreen;
+}
+ul{
+  list-style: none;
+  margin-bottom: 20px;
+}
+li{
+  line-height: 1.8em;
+}
+code{
+  font-size: 115%;
+  line-height: 1.7em;
+}
+/* ############################################################################## */
+/* ################################## Button #################################### */
+/* ############################################################################## */
+
+.btnCon{
+  width: 80px;
+  height: 32px;
+}
+.myBtn{
+  width: 100%;
+  height: 100%;
+  font-family: $mainFont;
+  @include upper();
+}
+/* ############################################################################## */
+/* ################################### Table #################################### */
+/* ############################################################################## */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+thead{
+  background-color: $myCol_1;
+  color: $background;
+  @include upper();
+}
+
+th{
+  text-align: left;
+  padding: 10px 10px;
+  border: 1px solid  $myCol_1;
+}
+td {
+  text-align: left;
+  padding: 10px 10px;
+  border: 1px solid $myCol_1;
+}
+
+
+/* ############################################################################## */
+/* ############################### CodeBlock #################################### */
+/* ############################################################################## */
+.codeBlock{
+  width: 100%;
+  background-color: rgb(240, 240, 250);
+  margin-bottom: 20px;
+
+  // box-shadow: 0 0.6rem  0.6rem rgba(0, 0, 0, 0.16);
+}
+pre{
+  padding-top: 10px;
+}
+
+.codeHeader{
+  background-color:$myCol_1;
+  padding: 10px 5px;
+  color: $background;
+}
+/* ############################################################################## */
+/* ################################### media #################################### */
+/* ############################################################################## */
+
+
+// @media only screen and (max-width: 600px) {...}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+// @media only screen and (min-width: 600px) {...}
+
+/* Medium devices (landscape tablets, 768px and up) */
+// @media only screen and (min-width: 768px) {...}
+
+/* Large devices (laptops/desktops, 992px and up) */
+// @media only screen and (min-width: 992px) {...}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+//@media only screen and (min-width: 1200px) {...}
+
+/* ############################################################################## */
+/* ################################### print #################################### */
+/* ############################################################################## */
+
+// @page{
+//   size: landscpe;
+// }
+
+@media print{
+  body{
+    background-color: #fff;
+  }
+  .infoline{
+    display: block;
+  }
+  main{
+    width: 94%;
+  }
+  article{
+    border-bottom: 1pt solid $printGray;
+  }
+  section{
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .headline, h2{
+    color: $printGray;
+  }
+
+  h1, h3, h2, h4, h5{
+    color: #000;
+  }
+  p{ 
+    font-size: 14pt;
+    line-height: 20pt;
+  }
+  a{
+    color: $printGray;
+  }
+  button{display: none;}
+
+  thead{
+    background-color: #fff;
+    color: #000;
+  }
+  th, th{
+    border: 1px solid $printGray;
+  }
+  hr{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-top: 1px solid $printGray;
+  }
+  .textCon{
+    border: 1px solid $printGray;
+  }
+  li{
+    a::after{
+      content: " <" attr(href)">";
+    }
+  }
+}

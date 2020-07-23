@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Barlow</title>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,200;0,300;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style/main.css">
+</head>
+<body>
+  <main>
+    <div class="headCon">
+      <div class="infoline">Friends Electric</div>
+
+      <div class="dateline">20.07.2020</div>
+      <div class="headline">Googles AppScript</div>
+      <div class="subline">Dies ist ein Font Test. Er dient lediglich dazu mir etwas mehr Überblick zu verschaffen. Überblick könnnen wir alle dringend gebrauchen, oder glaubst du das etwa nicht?
+      </div>
+    </div>
+    <article>
+      <section>
+<p>Den Benutzern von Googles Office Produkten, der GSuite, steht mit AppScript ein Werkzeug zur Verfügung das es ermöglicht Arbeitsprozesse zu automatisieren. AppScript Ist das Pendant zu Microsofts Visual Basic. Die verwendete Sprache ist hier zeitgemäß Javascript. Für alle GSuite Anwendungen und noch viel mehr stehen in AppScript Dienste zur bereit, mit denen man auf die Funktionalität der Anwendung zugreifen kann. </p>
+<br>
+<h5>Die G Suite Dienste im Überblick:</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Anwendung</th>
+	<th>Aufgabe</th>
+	<th>Dienst</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Google Kalender</td>
+	<td>Kalender Funktionen</td>
+	<td><a href="https://developers.google.com/apps-script/reference/calendar">CalendarApp</a></td>
+</tr>
+<tr>
+	<td>Google Kontakte</td>
+	<td>Adressbuch Funktionen</td>
+	<td><a href="https://developers.google.com/apps-script/reference/contacts">ContactsApp</a></td>
+</tr>
+<tr>
+	<td>Data Studio</td>
+	<td></td>
+	<td><a href="https://developers.google.com/apps-script/reference/data-studio/data-studio-app">DataStudioApp</a></td>
+</tr>
+<tr>
+	<td>Google Drive</td>
+	<td>Dateiverwaltung</td>
+	<td><a href="https://developers.google.com/apps-script/reference/drive">DriveApp</a></td>
+</tr>
+<tr>
+	<td>Google Docs</td>
+	<td>Textverarbeitung</td>
+	<td><a href="https://developers.google.com/apps-script/reference/document">DocumentApp</a></td>
+</tr>
+<tr>
+	<td>Google Formulare</td>
+	<td>Formulare erstellen</td>
+	<td><a href="https://developers.google.com/apps-script/reference/forms">FormApp</a></td>
+</tr>
+<tr>
+	<td>Gmail*</td>
+	<td>Email</td>
+	<td><a href="https://developers.google.com/apps-script/reference/gmail">GmailApp</a></td>
+</tr>
+<tr>
+	<td>Groups</td>
+	<td>?</td>
+	<td><a href="https://developers.google.com/apps-script/reference/groups">GroupsApp</a></td>
+</tr>
+<tr>
+	<td>Language</td>
+	<td>Übersetzungen</td>
+	<td><a href="https://developers.google.com/apps-script/reference/language">LanguageApp</a></td>
+</tr>
+<tr>
+	<td>Maps</td>
+	<td>?</td>
+	<td><a href="">?</a></td>
+</tr>
+<tr>
+	<td>Google Slides</td>
+	<td>Präsentationen</td>
+	<td><a href="https://developers.google.com/apps-script/reference/forms">SlidesApp</a></td>
+</tr>
+<tr>
+	<td>Google Tabellen</td>
+	<td>Tabellenkalkulation</td>
+	<td><a href="https://developers.google.com/apps-script/reference/spreadsheet">SpreadsheetApp</a></td>
+</tr>
+</tbody>
+</table>
+
+<p>*Anwender ohne Gmail-Adresse können mit Hilfe von <strong>mailApp</strong> Nachrichten verschicken</p>
+
+<hr />
+
+<h2>Der Skirpteditor</h2>
+
+<p>In den einzelnen Anwendungen ist im Menü <strong>Tools</strong> der Punkt <strong>Skripteditor</strong> zu finden. Für den Anfang möchte ich mich auf Tabellen konzentrieren. Also bitte mal eine frische Tabelle öffnen, dem Ding einen Namen geben und den <strong>Skripteditor</strong> öffnen. Schwups, findet man sich in einem Text-Editor wieder. Wie bereits erwähnt hat man es hier mit Javaskript zu tun. In der Welt von Google gibt es natürlich ein paar Besonderheiten. Anstelle von cosole.log() benutzt man hier <strong>Logger.log()</strong>. </p>
+<div class="textCon">
+  <pre><code class="js">function myFunction() {
+    Logger.log(&quot;Was geht ab?&quot;);
+  }</code></pre>
+</div>
+
+
+<p>Hat man den Code gespeichert, kann er über die &#8220;Play&#8221;-Taste ausgeführt werden. Die Ausgabe des Loggers findet man im Menü <strong>Ansicht</strong> unter <strong>Protokolle</strong>.</p>
+
+<hr />
+
+<h2>Ein- und auskommentieren</h2>
+
+<p>Das ein- und auskommentieren funktioniert, wie in Javascript gewohnt mit Doppelslash für einzeilige Kommentare und Slash plus Sternchen für mehrzeilige. </p>
+
+<div class="textCon"><pre><code>
+/*
+Das ist mein Code und
+das ist ein mehrzeiliger
+Komentar!
+*/
+function myFunction() {
+  const integer_1 = 17;
+  const integer_2 = 4;
+  const result = integer_1 + integer_2; // hier wird gerechnet
+  Logger.log(result); 
+// Dieser Kommentar ist unnötig
+}
+  </code></pre>
+</div>
+
+
+<hr />
+
+<h2>Syntax Highlighting</h2>
+
+<p>Der Online Editor für AppSkript ist nicht sonderlich komfortabel. Jede klammer die man öffnet, muss man auch selbst wieder schließen. Aber immerhin ist das Syntax Highlighting recht hilfreich.
+Variablen werden beim Initialisieren dunkelblau dargestellt, und später hellblau. Strings sind rot, Zahlen egal ob Integer oder Float sind grün.
+Auskommentiertes wird braun wiedergegeben.
+In Zeile 13 hab ich mich ein wenig vertippt. Die falsch geschriebene Variable wird nicht blau dargestellt.</p>
+
+<p>Die Benutzeroberfläche ist weitestgehend selbsterklärend. Unter dem Hauptmenü findet man Vignetten für:
+- Rückgängig
+- Ne, doch nicht
+- Einrücken
+- Speichern
+- Trigger hinzufügen
+- Ausführen
+- Funktionsauswahl</p>
+
+<p>Es lohnt auf jeden Fall hier ein wenig zu experimentieren. Mal ein </p>
+
+<div class="textCon">
+  <pre><code class="js">
+function myFunction() {
+  const string_1 = &quot;Käsekuchen&quot;;
+  const string_2 = &quot;schmeckt mir nicht&quot;;
+  const result  = string_1 + &quot; &quot; + string_2;
+  Logger.log(result);
+}
+  </code></pre>
+</div>
+
+<ul>
+  <li><a href="https://fonts.google.com/specimen/Montserrat?sidebar.open&selection.family=Montserrat:wght@300;400;700;900">Google Fonts</a></li>
+  <li><a href="./../../index.html">Home</a></li>
+  <li><a href="https://github.com/andreas-dora" target="_blank">Github</a></li>
+</ul>
+
+</section>
+<aside>
+  <figure>
+    <img src="../img/colormix_small.png" alt="Eine Farbabstuffung">
+    <figcaption>So schöne Farben in Google Tabellen</figcaption>
+  </figure>
+</aside>
+    </article>
+
+    <footer>Alle Angaben ohne Gewähr | &copy; 2020 Andreas Breitwieser | <a href="#">Impressum</a></footer>  
+  </main>
+</body>
+</html>
