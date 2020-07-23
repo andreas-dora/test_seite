@@ -523,9 +523,17 @@ td {
   body{
     background-color: #fff;
   }
-  .infoline{
-    display: block;
+  nav, .navLink{
+    display: none;
   }
+  .infoline, .dateline{
+    display: block;
+    font-family: $barlow;
+    font-size: 14pt;
+    line-height: 18pt;
+    text-align: left;
+  }
+
   main{
     width: 94%;
   }
@@ -536,9 +544,24 @@ td {
     width: 100%;
     margin: 0 auto;
   }
+  figure, figcaption{
+    display: none;
+  }
+  img{
+    display: none;
+  }
 
-  .headline, h2{
+  .headline{
     color: $printGray;
+    font-size: 48pt;
+  }
+  .subline{
+    font-size: 14pt;
+  }
+   
+  h2{
+    color: $printGray;
+    font-size: 36pt;
   }
 
   h1, h3, h2, h4, h5{

@@ -442,8 +442,15 @@ td {
   body {
     background-color: #fff;
   }
-  .infoline {
+  nav, .navLink {
+    display: none;
+  }
+  .infoline, .dateline {
     display: block;
+    font-family: "Barlow", sans-serif;
+    font-size: 14pt;
+    line-height: 18pt;
+    text-align: left;
   }
   main {
     width: 94%;
@@ -455,8 +462,22 @@ td {
     width: 100%;
     margin: 0 auto;
   }
-  .headline, h2 {
+  figure, figcaption {
+    display: none;
+  }
+  img {
+    display: none;
+  }
+  .headline {
     color: #9d9d9d;
+    font-size: 48pt;
+  }
+  .subline {
+    font-size: 14pt;
+  }
+  h2 {
+    color: #9d9d9d;
+    font-size: 36pt;
   }
   h1, h3, h2, h4, h5 {
     color: #000;

@@ -31,7 +31,39 @@ a:hover{color: var(--hilite)}
 .bold{font-weight: bold;  animation: fadeEffect 1s;}
 .container{margin-bottom: 10px;}
 
+
+/*##############################################*/
+/*#################### Nav #####################*/
+/*##############################################*/
+.gNav{
+  width: 100%;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-between;
+}
+.gNav a{
+  float: left;
+  padding: 6px 14px;
+  color: snow;
+  font-size: 0.8em;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5em;
+  font-weight: bold;
+}
 .navi li{list-style: none;}
+/*##############################################*/
+/*################## Grid ######################*/
+/*##############################################*/
+
 
 .gridContainer{
   max-width:1000px;
