@@ -11,5 +11,8 @@ body{background-color: dimgray; font-family: 'Trebuchet MS', 'Lucida Sans Unicod
 img{
   clip-path: polygon(0% 0%, 
   100% 3%, 98% 99%, 3% 93%);
-
+}
+img{
+  clip-path: polygon(0% 0%, 
+  100% 3%, 98% 99%, 3% 93%);
 }

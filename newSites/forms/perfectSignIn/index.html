@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="author" content="Andreas Breitwieser">
+  <title>Perfect Sign in</title>
+  <script src="https://kit.fontawesome.com/ed5a369c51.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h3>Einlog</h3>
+  <form action="" class="login">
+    <section class="login__section">
+      <label for="mail">Email</label>
+      <input type="email" id="mail" name="mail" autocomplete="email" class="login__input" required> 
+    </section>
+    <section class="login__section">
+      <label for="pwd">Passwort</label>
+      <input type="password" id="pwd" name="pwd" autocomplete="current-password" class="login__input" required>
+      <button id="pwdBtn"><i class="far fa-eye"></i></i>
+      </button>
+    </section>
+    <section><input type="submit" value=Abschick class="login__button">
+    </section>
+  </form>
+  <i class="far fa-eye-slash"></i>
+
+
+  <article>
+    <h3>Anmerkungen</h3>
+    <p>Autocomplete nur für das Sign-in Formular nicht für das Sign-up Formular.</p>
+    <p>Im Sign-up Formular kann das Input-Feld "new-password" heißen</p>
+    <p>Im Sign-in macht es Sinn das Feld "current-passord" zu nennen.</p>
+  </article>
+
+</body>
+</html>
