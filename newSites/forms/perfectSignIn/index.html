@@ -20,14 +20,14 @@
     </section>
     <section class="login__section">
       <label for="pwd">Passwort</label>
-      <input type="password" id="pwd" name="pwd" autocomplete="current-password" class="login__input" required>
-      <button id="pwdBtn"><i class="far fa-eye"></i></i>
+      <input type="password" id="pwd" name="pwd" autocomplete="current-password" class="login__input" required aria-describedby="password-constraints">
+      <div id="password-constraints">Eight or more characters with a mix of letters, numbers and symbols.</div>
+      <button id="pwdBtn" aria-label="Passwort anzeigen"><i class="far fa-eye"></i>
       </button>
     </section>
-    <section><input type="submit" value=Abschick class="login__button">
+    <section><button type="submit" id="id_signInBtn" value=Abschick class="login__button">Senden</button>
     </section>
   </form>
-  <i class="far fa-eye-slash"></i>
 
 
   <article>
@@ -37,5 +37,6 @@
     <p>Im Sign-in macht es Sinn das Feld "current-passord" zu nennen.</p>
   </article>
 
+  <script type="text/javascript" src="pass.js"></script>
 </body>
 </html>

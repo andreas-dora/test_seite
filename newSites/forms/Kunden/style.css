@@ -1,0 +1,13 @@
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+
+:root{
+  --c-Back: silver;
+}
+
+body{
+  font-family: 'Baloo Tamma 2', cursive;
+}

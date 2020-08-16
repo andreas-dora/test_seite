@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="author" content="Andreas Breitwieser">
+  <title>Kunden Formular</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <h1>One Million Happy Customers</h1>
+  <form action="">
+    <label for="id_kundenForm__firma>Firma</label>
+    <input type="text" name="firma" id="id_kundenForm__firma">
+    <label for="id_kundenForm__zusatz">Zusatz</label>
+    <input type="id_kundenForm__zusatz" name="zusatz" id="id_kundenForm__zusatz">
+
+    <label for="id_kundenForm__anrede">Anrede</label>
+    <select name="anrede" id="id_kundenForm__anrede">
+      <option value="Damen und Herren">Damen und Herren</option>
+      <option value="Frau">Frau</option>
+      <option value="Herr">Herr</option>
+    </select>
+    <label for="id_kundenForm__vorname">Vorname</label>
+    <input type="text" name="vorname" id="id_kundenForm__vorname">
+
+    <label for="id_kundenForm__nachname">Nachname</label>
+    <input type="text" name="nachname" id="id_kundenForm__nachname">
+
+    <label for="id_kundenForm__str">Straße</label>
+    <input type="text" name="str" id="id_kundenForm__str">
+
+    <label for="id_kundenForm__hnr">Hausnummer</label>
+    <input type="number" name="hnr" id="id_kundenForm__hnr" class="kundenForm__noSpinner" maxlength="4">
+
+    <label for="id_kundenForm__plz">Postleitzahl</label>
+    <input type="number" name="plz" id="id_kundenForm__plz" class="kundenForm__noSpinner" maxlength="5">
+    
+    <label for="id_kundenForm__ort">Ort</label>
+    <input type="text" name="ort" id="id_kundenForm__ort">
+
+    <label for="id_kundenForm__tel1">Tel 1:</label>
+    <input type="tel" name="tel1" id="id_kundenForm__tel1" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+    <label for="id_kundenForm__tel2">Tel 2:</label>
+    <input type="tel" name="tel2" id="id_kundenForm__tel2" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+    <label for="id_kundenForm__fax">Fax:</label>
+    <input type="tel" name="fax" id="id_kundenForm__fax" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}">
+  </form>
+</body>
+</html>
