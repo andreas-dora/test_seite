@@ -7,29 +7,36 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Tab Gallery</h1>
+  
   <main>
+    <h1>Tab Gallery</h1>
+    <p>(Click auf die Bilder)</p>
     <div class="row">
       <div class="column">
-        <img src="../img/sketchup/dora_pult.JPG" alt="Dora Pult" onclick="tabGal(this);">
+        <img src="../img/sketchup/dora_pult.JPG" alt="Dora Pult" style="width:100%" onclick="tabGal(this);">
+      </div>
+
+      <div class="column">
+        <img src="../img/sketchup/flohmarkt.JPG" alt="Flohmarkt" 
+        style="width:100%" onclick="tabGal(this);">
       </div>
       <div class="column">
-        <img src="../img/sketchup/flohmarkt.JPG" alt="Flohmarkt" onclick="tabGal(this);">
+        <img src="../img/sketchup/floh2.JPG" alt="Flohmarkt" 
+        style="width:100%" onclick="tabGal(this);">
       </div>
+
       <div class="column">
-        <img src="../img/sketchup/gmSketch_1.JPG" alt="Dora Pult" onclick="tabGal(this);">
+        <img src="../img/sketchup/gmSketch_1.JPG" alt="Dora Pult" style="width:100%" onclick="tabGal(this);">
       </div>
-      <div class="column">
-        <img src="../img/sketchup/IMG_3502.JPG" alt="Dora Pult" onclick="tabGal(this);">
-      </div>
+
     </div>
+
 
     <div class="container">
       <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
-      <img id="expandImg" style="width:100%">
+      <img id="expandedImg" style="width:100%">
       <div id="imgtext"></div>
     </div>
-
 
   </main>
   <script type="text/javascript" src="tab.js"></script>
