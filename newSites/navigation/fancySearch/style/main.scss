@@ -1,0 +1,112 @@
+*{
+  margin: 0; 
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --clr-sec: #c0c0c0;
+  --clr-blue: #1e90ff;
+  --clr-dark: #333;
+  --clr-snow: #fffafa;
+}
+body{
+  background: var(--clr-sec);
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  color: var(--clr-dark);
+}
+header{text-align: center; margin: 5vh auto;}
+main{
+  display: flex;
+  justify-content: center;
+   align-items: center;
+}
+
+
+/*###########################################*/
+/*###########################################*/
+/*###########################################*/
+
+.content{
+  background-color: var(--clr-snow);
+  width: 70vw;
+  padding: 3em;
+  box-shadow: 0 0 0.3em rgba($color: #000000, $alpha: 0.15);
+}
+//    box-shadow: inset 0 0.4em 0.3em rgba($color: #000000, $alpha: 0.15);
+
+
+// input{
+//   width: 300px; 
+//   padding: 8px;
+// }
+// button{
+//   padding: 8px;
+// }
+.searchBar{
+  --size: 50px;
+
+  border: 2px solid firebrick;
+  display: flex;
+  border-radius: 50px;
+  height: var(--size);
+  width: var(--size);
+  padding: 3px;
+  position: relative;
+  transition: width 500ms cubic-bezier(.18,.89,.32,1.15);
+  // transition: width 300ms ease-in-out;
+  overflow: hidden;
+
+  &__input {
+    flex-grow: 1;
+    font-size: 1.5rem;
+    padding: 0 0.5em;
+    border: 0;
+    background: transparent;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    line-height: clac(var(--size) - 3px);
+    opacity: 0;
+    cursor: pointer;
+
+
+    &:focus{
+      outline: 0;
+    }
+  }
+  &__submit{
+    text-transform: uppercase;
+    font-size: 1rem;
+    cursor: pointer;
+    background: transparent;
+
+    padding: 0.5em;
+    border: 0;
+    border-radius: 50px;
+    width: calc(var(--size) - 10px);
+    height: calc(var(--size) - 10px);
+    margin-left: auto;
+  }
+  &:focus-within {
+    width: 100%;
+
+    .searchBar__input{
+      opacity: 1;
+      cursor: text;
+      width: calc(100% - var(--size))
+    }
+
+    .searchBar__submit {
+      background: firebrick;
+      color: var(--clr-snow);
+
+      &:focus,
+      &:hover {
+        outline: 0;
+        background: red;
+      }
+    }
+  }
+}

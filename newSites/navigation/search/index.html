@@ -5,17 +5,23 @@
   <meta name="author" content="Andreas Breitwieser"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Search Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Are Friends Electric ?</h1>
-  </header>
+
   <div class="topnav">
     <a href="#">Google Sheets</a>
     <a href="#">IFTTT</a>
     <a href="#">Raspberry & Friends</a>
-    <input type="text" placeholder="Suche">
+    <div class="searchContainer">
+      <form action="https://google.com/search" target="_blank" method="GET">
+        <input type="text" placeholder="Suche" name="q">
+        <button type="submit" name="q">Search</button>
+      </form>
+    </div>
+
+    
   </div>
 </body>
 </html>

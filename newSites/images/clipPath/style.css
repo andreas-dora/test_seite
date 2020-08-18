@@ -11,11 +11,15 @@ body{
 
 
 main{
-  max-width: 800px;
-  margin: 10vh auto;  
-  position: relative;
+  height: 100vh;
+  display: flex;
+    justify-content: center;
+  align-items: center;
+  /* margin: 10vh auto;  
+  position: relative; */
 }
 article{
+  max-width: 800px;
   margin: 0;
   display: flex;
 
@@ -30,15 +34,17 @@ a{
   text-decoration: none;
   color: lightgoldenrodyellow;
 }
+a:hover{
+  color: #f27f33;
+}
 p{
   font-size: 1.1rem;
   line-height: 1.45rem;
-  /* float: left; */
+
   vertical-align: bottom;
 }
 img{
   clip-path: polygon(0% 0%, 100% 3%, 98% 99%, 3% 93%);
-  /* float: right; */
   margin-left: 2em;
   margin-bottom: 0.5em;
   width: 40%;
