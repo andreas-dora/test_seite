@@ -159,7 +159,7 @@ p{
 // a:hover{
 //   color: $myGreen;
 // }
-li a, td a, footer a{
+li a, dd a, p a, footer a{
   color: $myCol_1;
   font-weight: bold;
   text-decoration: none;
@@ -171,7 +171,7 @@ li a, td a, footer a{
   // font-weight: var(--fw-bold);
 }
 
-li a:hover, td a:hover, footer a:hover{
+li a:hover, dd a:hover, p a:hover, footer a:hover{
   background-size: 100% 2px;
   
 }
@@ -181,11 +181,12 @@ ul{
   list-style: none;
   margin-bottom: 20px;
 }
-li{
+li, dt, dd{
+  font-size: 1.1rem;
   line-height: 1.8em;
 }
 code{
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.7em;
 }
 /* ############################################################################## */

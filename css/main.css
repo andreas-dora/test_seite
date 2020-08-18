@@ -145,7 +145,7 @@ p {
   font-weight: 300;
 }
 
-li a, td a, footer a {
+li a, dd a, p a, footer a {
   color: #034f67;
   font-weight: bold;
   text-decoration: none;
@@ -158,7 +158,7 @@ li a, td a, footer a {
   transition: background-size 500ms ease-in-out;
 }
 
-li a:hover, td a:hover, footer a:hover {
+li a:hover, dd a:hover, p a:hover, footer a:hover {
   background-size: 100% 2px;
 }
 
@@ -167,12 +167,13 @@ ul {
   margin-bottom: 20px;
 }
 
-li {
+li, dt, dd {
+  font-size: 1.1rem;
   line-height: 1.8em;
 }
 
 code {
-  font-size: 1.2em;
+  font-size: 1.1em;
   line-height: 1.7em;
 }
 
