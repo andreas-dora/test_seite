@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+header {
+  left: 0;
+  right: 0;
+  position: absolute;
+  margin: 1em;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  margin: 1em;
+}
+
+nav a {
+  font-weight: 900;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: pink;
+  padding: 0.5em;
+}
+
+/*###########################*/
+/*###########################*/
+/*###########################*/
+.home-hero {
+  background-image: url(../../../../img/IMG_2724.JPG);
+  padding: 10em 0;
+}
+/*# sourceMappingURL=main.css.map */
