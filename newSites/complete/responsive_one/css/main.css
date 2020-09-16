@@ -30,7 +30,9 @@ nav a {
   font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
-  background-color: pink;
+  letter-spacing: 0.2em;
+  background-color: black;
+  color: dodgerblue;
   padding: 0.5em;
 }
 
@@ -38,7 +40,19 @@ nav a {
 /*###########################*/
 /*###########################*/
 .home-hero {
-  background-image: url(../../../../img/IMG_2724.JPG);
-  padding: 10em 0;
+  background-image: url(../../../../img/cardioid.png);
+  padding: 18em 0;
 }
+
+/*###########################*/
+/*###########################*/
+/*###########################*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*###########################*/
+/*########### typo ##########*/
+/*###########################*/
 /*# sourceMappingURL=main.css.map */
