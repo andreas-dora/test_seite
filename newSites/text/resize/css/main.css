@@ -1,0 +1,49 @@
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: silver;
+  color: black;
+  font-family: 'Kumbh Sans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125em;
+  line-height: 1.6;
+}
+
+
+.container{
+  /* width: min(500px, 70%) ; */
+  /* width: 70%;
+  max-width: 70%; */
+  /* margin: 4vh auto 0 auto; */
+
+  width: max(400px, 50%, 50vh);
+  background-color: ghostwhite;
+  padding: 20px 30px;
+  border-radius: 4px;
+  box-shadow: 0 0 3em rgba(0, 0, 0, .2);
+}
+.container h1{
+  font-family: 'Fira Sans', sans-serif;
+  color: firebrick;
+  font-size: clamp(2rem, 5vw, 5rem );
+}
+
+.container p{
+  font-size: clamp(1rem, 1.2rem, 1.6rem );
+
+  /* font-size: clamp(1rem, 1.2rem, 2rem); */
+}
+.container a{
+  text-decoration: none;
+  font-family: 'Fira Sans', sans-serif;
+  color: firebrick;
+  /* font-size: 1.1em; */
+}
