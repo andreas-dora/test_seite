@@ -58,7 +58,7 @@ nav a:hover{
   grid-gap: 2em;
   /* grid-template-columns: 1fr 1fr 1fr; */
   /* grid-template-columns: repeat(3, 1fr); */
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
 }
 .grid-item{
   overflow: hidden;
