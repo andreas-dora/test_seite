@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Cairo', sans-serif;
+  min-height: 100vh;
+  background-color: darkseagreen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 140%;
+  line-height: 1.6;
+  /* letter-spacing: 0.5rem; */
+  padding: 2em;
+}
+.title{
+  font-size: 4rem;
+  line-height: 1.2;
+  margin: 0 0 4vh ;
+}
+/* .title h1{
+  margin-bottom: ;
+} */
+p{
+  font-family: 'Crimson Text', serif;
+}
+
+.hero{
+  display: grid;
+  grid-gap: 2em;
+  align-items: center;
+}
+img{
+  max-width: 100%;
+  height: auto;
+}
+@media (min-width: 960px){
+  .hero{
+    grid-template-columns: repeat(2,1fr);
+  }
+}

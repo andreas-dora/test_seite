@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Picture Element</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="hero">
+    <div class="hero-text">
+      <h1 class="title">HTML Picture-Element</h1>
+      <p>This Element is cooler than you could imagine. In meinem Picture-Tag sind nun nicht nur Bilddateien in verschiedenen Größen sondern auch für verschiedene Auflösungen (Retina) hinterlegt. Außerdem, wechselt der Bildauschnitt von hoch zu quer.
+    </div>
+    <picture>
+      <source media="(min-width: 960px)" 
+              srcset="../../../img/pictuterElement/all-business-large.jpg 534w,
+                      ../../../img/pictuterElement/all-business-large@3x.jpg 1068w,
+                      ../../../img/pictuterElement/all-business-large@3x.jpg 1602w">
+      <source media="(min-width: 600px)"  
+              srcset="../../../img/pictuterElement/all-business-medium.jpg 474w,
+                     ../../../img/pictuterElement/all-business-medium@2x.jpg 984w,
+                    ../../../img/pictuterElement/all-business-medium@3x.jpg 1422w">
+      <source srcset="../../../img/pictuterElement/all-business-small.jpg,
+                     ../../../img/pictuterElement/all-business-small@2x.jpg,
+                     ../../../img/pictuterElement/all-business-small@3x.jpg,">
+      <img src="../../../img/pictuterElement/all-business-small.jpg" alt="Kitty Yo">
+    </picture>
+    <!-- <pre>
+      <code>
+        
+          <picture>
+            <source media="(min-width: 960px)" 
+                    srcset="../../../img/pictuterElement/all-business-large.jpg 534w,
+                            ../../../img/pictuterElement/all-business-large@3x.jpg 1068w,
+                            ../../../img/pictuterElement/all-business-large@3x.jpg 1602w">
+            <source media="(min-width: 600px)"  
+                    srcset="../../../img/pictuterElement/all-business-medium.jpg 474w,
+                           ../../../img/pictuterElement/all-business-medium@2x.jpg 984w,
+                          ../../../img/pictuterElement/all-business-medium@3x.jpg 1422w">
+            <source srcset="../../../img/pictuterElement/all-business-small.jpg,
+                           ../../../img/pictuterElement/all-business-small@2x.jpg,
+                           ../../../img/pictuterElement/all-business-small@3x.jpg,">
+            <img src="../../../img/pictuterElement/all-business-small.jpg" alt="Kitty Yo">
+          </picture>
+        
+
+      </code>
+    </pre> -->
+  </div>
+
+</body>
+</html>
