@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="author" content="Andreas Breitwieser">
+  <title>Image srcset</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+
+  </header>
+  <main>
+    <section class="maxwidth">
+      <article>
+        <h2>the right size</h2>
+        <p>Auf dieser Seite gibt es einige schöne Dinge zu entdecken. Das Problem mit dem Standard Blindtext "Lorem Ipsum" Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci quasi sapiente, aperiam asperiores pariatur aut quae, numquam molestias error vel sed eum voluptatem reiciendis? A vel at aspernatur deserunt ex!</p>
+        <h3>Das richtige Bildformat wählen</h3>
+        <p>Für die Verwendeung von Bildern auf Webseiten stehen drei Dateiformate zur Verfügung.</p>
+        <ul>
+          <li>jpeg</li>
+          <li>png</li>
+          <li>webp</li>
+        </ul>
+        <h5>jpeg</h5>
+        <p>De</p>
+        <h5>PNG</h5>
+        <p>Dieses Dateiformat bringt die Möglichkeit der Transparenz mit sich. Außerdem kommt PNG in zwei bittiefen daher PNG 24 und PNG 8. PNG 8 hat eine reduzierte Farbtiefe. PNG 24 ist ist ein verlusstloses Format. Es lässt sich also nich kompremieren. Der Einsatz von PNGs bietet sich, wenn man Grafiken (weniger Farben) verwendet oder die Transparenz benötigt.
+        </p>
+        <h5>WebP</h5>
+        <p>  WebP wurde von 2010 von Google eingeführt. WebP kan komprimiert oder unkomprimiert eingesatz werden, es kann transparent. Die Dateigröße ist in allen Fällen geringer als bei PNG oder jepegs. WebP wird mittlerweile von allen aktuellen Browsern unterstützt. WebP Dateien sind bis zu 85% kleiner als jepegs. Mit <strong>HTML-Picture-Element</strong> ist es möglich JPEG-Dateien für alte Browser einzubinden. Zum Konvertieren in das WebP Format stehen einigen <a href="http://" target="_blank" rel="noopener noreferrer">Online Dienste</a> zur Verfügung. Es Gibt aber auch Konverter-Plugins für zB. Wordpress, Drupal, Grunt, Gulp und Node.</p>
+        <a href="https://www.keycdn.com/support/optimus/webp-converter" target="_blank" rel="noopener noreferrer">Mehr Information</a>
+      
+      </article>
+     
+    </section>
+    <figure>
+      <img src="../../../img/medium/0640-pexels-vova-krasilnikov-2796145.jpeg" 
+      srcset="../../../img/small/0360-pexels-vova-krasilnikov-2796145.jpg 360w, ../../../img/medium/0640-pexels-vova-krasilnikov-2796145.jpeg 640w,
+      ../../../img/big/1080-pexels-vova-krasilnikov-2796145.jpeg 1080w"
+      sizes="(min-width: 760px) 50vw, 100vw"
+      alt="Tapes">
+      <figcaption>
+        Foto von Philipp Birmes von Pexels
+      </figcaption>
+    </figure>
+  </main>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+:root {
+  --backgroud: rgba(154, 154, 154, 0.85);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  background-color: gainsboro;
+  font-family: 'Kumbh Sans', sans-serif;
+    color: black;
+}
+section{
+  background-color: ghostwhite;
+}
+.maxwidth{
+  max-width: 1080px;
+  margin: 0 auto;
+}
+article{
+  width: 600px;
+}
+h2{
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: rgb(107, 69, 142);
+}
+p{
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  line-height: 1.6;
+}
