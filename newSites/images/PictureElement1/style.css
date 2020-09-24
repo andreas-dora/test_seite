@@ -6,7 +6,7 @@
 body{
   font-family: 'Cairo', sans-serif;
   min-height: 100vh;
-  background-color: darkseagreen;
+  background-color: rgb(184, 235, 184);
   display: flex;
   justify-content: center;
   align-items: center;

@@ -11,13 +11,14 @@
   <div class="hero">
     <div class="hero-text">
       <h1 class="title">HTML Picture-Element</h1>
-      <p>This Element is cooler than you could imagine. In meinem Picture-Tag sind nun nicht nur Bilddateien in verschiedenen Größen sondern auch für verschiedene Auflösungen (Retina) hinterlegt. Außerdem, wechselt der Bildauschnitt von hoch zu quer.
+      <p>This Element is cooler than you could imagine. In meinem Picture-Tag sind nun nicht nur Bilddateien in verschiedenen Größen sondern auch für verschiedene Auflösungen (Retina) hinterlegt. Außerdem, wechselt der Bildauschnitt von hoch zu quer. Die große Stärke des Picture-Tags ist aber, dass Stil aller Bildvarianten gleichzeitig bearbeitet werden kann.
     </div>
     <picture>
       <source media="(min-width: 960px)" 
               srcset="../../../img/pictuterElement/all-business-large.jpg 534w,
                       ../../../img/pictuterElement/all-business-large@3x.jpg 1068w,
-                      ../../../img/pictuterElement/all-business-large@3x.jpg 1602w">
+                      ../../../img/pictuterElement/all-business-large@3x.jpg 1602w"
+                      sizes="50vw">
       <source media="(min-width: 600px)"  
               srcset="../../../img/pictuterElement/all-business-medium.jpg 474w,
                      ../../../img/pictuterElement/all-business-medium@2x.jpg 984w,
@@ -25,7 +26,7 @@
       <source srcset="../../../img/pictuterElement/all-business-small.jpg,
                      ../../../img/pictuterElement/all-business-small@2x.jpg,
                      ../../../img/pictuterElement/all-business-small@3x.jpg,">
-      <img src="../../../img/pictuterElement/all-business-small.jpg" alt="Kitty Yo">
+      <img class="super-img" src="../../../img/pictuterElement/all-business-small.jpg" alt="Kitty Yo">
     </picture>
     <!-- <pre>
       <code>

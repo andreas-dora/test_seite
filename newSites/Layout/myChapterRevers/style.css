@@ -51,7 +51,7 @@ article {
 }
 
 aside {
-  background-color: maroon;
+  background-color: red;
   padding: 24px 24px 0 36px;
   /* width: 30%; */
   min-width: 300px;
@@ -59,10 +59,10 @@ aside {
       -ms-flex: 1;
           flex: 1;
 }
-/* 
+
 aside figure {
   max-width: 600px;
-} */
+}
 
 img{
   max-width: 100%;
