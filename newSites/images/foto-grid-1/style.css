@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Cairo', sans-serif;
+  background-color: silver;
+}
+main{
+  min-height: 80vh;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+img{
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+.foto-grid{
+  width: 100%;
+  
+  background-color: blanchedalmond;
+  display: grid;
+  height: 100%;
+
+  /* grid-template-rows: 5fr 3fr 3fr; */
+  grid-template-columns: repeat(8,1fr);
+  
+  grid-template-areas: 
+  "eins eins eins eins zwei zwei zwei zwei"
+  "drei drei drei vier vier vier fuenf fuenf"
+  "sechs sechs sechs sieben sieben sieben acht acht";
+  grid-gap: 1em;
+
+}
+.grid-item{
+  object-fit: cover;
+}
+
+.eins{
+  grid-area: eins;
+}
+.zwei{
+  grid-area: zwei;
+}
+.drei{
+  grid-area: drei;
+}
+.vier{
+  grid-area: vier;
+}
+.fuenf{
+  grid-area: fuenf;
+}
+.sechs{
+  grid-area: sechs;
+}
+.sieben{
+  grid-area: sieben;
+}
+.acht{
+  grid-area: acht;
+
+}
+
+
+/*##########################*/
+/*##########################*/
+/*##########################*/
+
+.greens{
+  width: 100%;
+  min-height: 10vh;
+  display: flex;
+  justify-items: auto;
+}
+.greens div{
+  flex: 1;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.mono{
+  font-family: 'Cutive Mono', monospace;
+  bottom: 1em;
+}
+
+.green-one{
+  background-color: #62B843;
+}
+.green-two{
+  background-color: #519734;
+}
+.green-three{
+  background-color: #6DAA58;
+}
+.green-four{
+  background-color: #049767;
+}
+.green-five{
+  background-color: #309754;
+}
