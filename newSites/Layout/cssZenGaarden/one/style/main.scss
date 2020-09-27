@@ -1,0 +1,33 @@
+$clr-accent: firebrick;
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #fafaff;
+  font-family: 'Cairo', sans-serif;
+    font-size: 100%;
+}
+header{
+  width: 100%;
+  background-color: gray;
+  color: ghostwhite;
+}
+
+section{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p{
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 0.6em;
+}
+h1, h2, h3, h4, h5
