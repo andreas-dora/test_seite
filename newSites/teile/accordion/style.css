@@ -1,0 +1,51 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+
+body{
+  background-color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+main{
+  max-width: 700px;
+  min-height: 100vh;
+  padding: 3em;
+  margin: 0 auto;
+  background-color: rgb(232, 231, 231);
+}
+
+/*###############################*/
+/*###############################*/
+/*###############################*/
+.accordion{
+  border: 2px solid silver;
+  background-color:gray;
+  padding: 16px;
+  border-radius: 10px;
+  margin: 6px auto;
+  box-shadow: 0 6px 16px -6px black;
+  -webkit-box-shadow: 0 6px 16px -6px black;
+}
+.accordion__btn{
+  background-color:gray;
+  color: white;
+  border-style: none; 
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: .4em;
+}
+.accordion__btn:hover{
+  color: lightskyblue;}
+
+.accordion__panel{ 
+  height: auto;
+  background-color:gray;
+  color: ghostwhite;
+  border-radius: 0 0 10px 10px;
+  border-top: 0;  
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
