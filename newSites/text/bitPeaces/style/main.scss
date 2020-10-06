@@ -20,7 +20,7 @@ h1, h2, h3, h4, h5, .headline, .subline{
 }
 
 .headline{
-  font-size: clamp(2em, 10vw, 8em);
+  font-size: clamp(2.4em, 10vw, 8em);
   font-weight: 300;
   color: $col-blue;
 
@@ -58,21 +58,21 @@ a{
     font-weight: bold;
   }
   &__head{
-    background-color: rgb(239, 235, 235);
+    // background-color: rgb(239, 235, 235);
     padding: 10px;
   }
 }
 
 article{
   // background-color: rgb(221, 218, 218);
-  padding: 10px;
+  padding: 6px 10px;
   flex: 2;
 }
 
 aside{
   // background-color: silver;
   flex: 1;
-  padding: 10px;
+  padding: 6px 10px;
 
 }
 footer {

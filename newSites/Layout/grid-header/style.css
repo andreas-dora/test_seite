@@ -1,0 +1,75 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+.serif{
+  font-family: 'IBM Plex Sans Condensed', sans-serif;
+  /* font-family: 'Fira Code', monospace; */
+      text-align: center;
+}
+.white{
+  color: white;
+  font-size: 3rem;
+  line-height: 1;
+  
+}
+
+header{
+  height: 100vh;
+  width: 98%;
+  margin: 0 auto;
+  background-color: #dad3cc;
+  display: grid;
+  grid-template-columns:  repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+}
+.hero-img{
+  background-color: rgb(160, 157, 157);
+  grid-column: 2 / 16;
+  grid-row: 3 / 15;
+}
+.kreis{
+  background-color: transparent;
+  grid-column: 3 / 15;
+  grid-row: 4 / 13;
+  z-index: 10;
+  border-radius: 100%;
+  box-shadow: -2px 2px 2px magenta;
+
+}
+
+.vorname{
+  /* background-color: lightpink; */
+  grid-column: 4 / 13;
+  grid-row: 2 / 4;
+  z-index: 15;
+}
+.nachname{
+  /* background-color: lightpink; */
+  /* display: flex; */
+  /* justify-content: space-evenly;  */
+  /* justify-items: center; */
+  grid-column: 4 / 13;
+  grid-row: 14 / 16;
+  z-index: 20;
+}
+
+.github{
+  grid-column: 12 / 14;
+  grid-row: 16;
+}
+.contact{
+  grid-column: 7 / 10;
+  grid-row: 16;
+}
+.codepen{
+  grid-column: 3 / 6;
+  grid-row: 16;
+}
+

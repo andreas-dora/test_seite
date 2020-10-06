@@ -1,0 +1,62 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 100%;
+  font-weight: bold;
+  color: white;
+}
+section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+  justify-items: stretch;
+}
+.item{
+  flex: 1;
+  padding: 1em;
+  font-size: clamp(0.7em, 5vw, 2.8em);
+
+}
+.red{
+  background-color: #77212e;
+ 
+}
+.red p{
+  animation: fadeEffect 3s ease-in; 
+  animation-delay: 100ms;
+}
+.gray{
+  background-color: #e6e1dc;
+  color: #034f67;
+}
+.gray p{
+  animation: fadeEffect 3s ease-in; 
+  animation-delay: 200ms;
+}
+.blue{
+  background-color:#034f67;
+}
+.blue p{
+  animation: fadeEffect 3s ease-in; 
+  animation-delay: 300ms;
+}
+.dark{
+  background-color: #373434;
+}
+.dark p{
+  animation: fadeEffect 3s ease-in; 
+  /* animation-delay: 400ms; */
+}
+.chili{
+  background-color:#9B2335 ;
+}
+
+
+@keyframes fadeEffect {from {opacity: 0;}to {opacity: 1;}}
