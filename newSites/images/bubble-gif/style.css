@@ -1,0 +1,42 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+.container{
+  max-width: 730px;
+  height: 88vh;
+  margin: 6vh auto;
+  padding: 20px;
+  border: 1px solid #034f67;
+  columns: 2;
+  gap: 2em;
+
+}
+p{
+  float: left;
+}
+/* img{
+  display: block;
+  margin-left: auto;
+  width: 60%;
+} */
+
+/* .floaty-container{
+  width: 150px;
+ } */
+ .floaty-container .floaty{
+  /* width: 30%; */
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+}
+
+article{
+  max-width: 760px;
+  columns: 2 320px;
+}

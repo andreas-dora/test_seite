@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #fafaff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 110%;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, .headline, .subline {
+  font-family: 'Cairo', sans-serif;
+}
+
+.headline {
+  font-size: clamp(2.4em, 10vw, 8em);
+  font-weight: 300;
+  color: #034f67;
+}
+
+.subline {
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+dl {
+  margin-bottom: 0.7em;
+}
+
+a {
+  text-decoration: none;
+  color: #034f67;
+}
+
+/*###################################*/
+/*###################################*/
+/*###################################*/
+.headCon {
+  padding: 10px;
+  margin-bottom: 1em;
+}
+
+.chapter {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  border-bottom: 1px solid silver;
+  margin-bottom: 2em;
+}
+
+.chapter a {
+  font-weight: bold;
+}
+
+.chapter__head {
+  padding: 10px;
+}
+
+article {
+  padding: 6px 10px;
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+}
+
+aside {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 6px 10px;
+}
+
+footer {
+  text-align: right;
+  padding: 24px 24px;
+}
+
+footer a {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .flex-Container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+/*# sourceMappingURL=main.css.map */
