@@ -57,6 +57,9 @@ section{
 .chili{
   background-color:#9B2335 ;
 }
+.alarm{
+  background-color:#f9423a;
+}
 
 
 @keyframes fadeEffect {from {opacity: 0;}to {opacity: 1;}}
