@@ -1,0 +1,97 @@
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  /* font-family: 'Cairo', sans-serif; */
+  font-family: 'Josefin Sans', sans-serif;
+  background-color: #CDEEF4;;
+}
+
+main{
+  margin: 10vh 23vw;
+  height: 80vh;
+  width: 55vw;
+  display: grid;
+  grid-template-rows: 2fr 25px 1fr 25px 1fr 25px 1fr 25px 2fr;
+  grid-template-columns: 25px 1fr 25px 1fr 50px;
+  grid-gap: 1px;
+}
+h1, h2 {
+  font-size: 8.5vw;
+  word-spacing: -0.1em;
+  text-transform: uppercase;
+  margin: 0;
+  align-self: center;
+  justify-self: center;
+  display: block;
+  margin: 0.14em 0 0 0;
+  padding: 0;
+  line-height: 0.7;
+}
+h1{
+  grid-column: 1 / -1;
+  
+
+}
+h1 .part1{
+  grid-row: 3;
+  letter-spacing: -0.1em;
+}
+
+h1 .part2{
+  grid-row: 7;
+  font-size: 12vw;
+  letter-spacing: 12px;  
+  font-size: 8.9vw;
+
+}
+h2{
+  grid-row: 5 / 6;
+  grid-column: 1 / -1;
+  align-self: center;
+  justify-self: center;
+  font-size: 8.9vw;
+  word-spacing: 0em;
+}
+.rect{
+  background: #2D3691;
+}
+.rect1{
+  grid-row: 1;
+grid-column: 1;
+}
+.rect2{
+  grid-row: 1;
+  grid-column: 3
+}
+.rect3{
+  grid-row: 2;
+  grid-column: 1 / -1;
+}
+.rect4{
+  grid-row: 4;
+  grid-column: 1 / -1;
+}
+.rect5{
+  grid-row: 6;
+  grid-column: 1 / -1;
+}
+.rect6{
+  grid-row: 8;
+  grid-column: 1 / -1;
+}
+.rect7{
+  grid-row: 9;
+  grid-column: 1;
+}
+.circle1{
+  grid-row: 1;
+  grid-column: 5;
+}
+.circle2{
+  grid-row: 9;
+  grid-column: 5;
+  align-self: self-end;
+}
