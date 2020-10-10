@@ -3,26 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="author" content="Andreas Breitwieser">
   <title>Writing Mode</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <h1>Writing-Mode: &</h1>
+    <h1 class="right">Text-orientation:</h1>
+  </header>
 <main>
-  <div class="container">
-    <h1>Writing-Mode</h1>
-  </div>
+
+  <section>
+    <div class="container">
+      <h2>Writing-Mode</h2>
+    </div>
+    <div class="center-container">
+      <h3>Optionen:</h3>
+      <dl>
+        <dd><a href="#" id="test">vertical-lr;</a></dd>
+        <dd><a href="#">vertical-rl;</a></dd>
+        <dd><a href="#">horizontal-tb;</a></dd>
+      </dl>
+    </div>
+  </section>
+
+<hr>
+<section>
+  <h2>text-orientation:</h2>
   <div class="center-container">
     <h3>Optionen:</h3>
     <dl>
-      <dd>vertical-lr;</dd>
-      <dd>vertical-rl;</dd>
-      <dd>sideways-rl;</dd>
-      <dd>sideways-lr;</dd>
-      <dd>horizontal-tb;</dd>
-      <dd></dd>
+      <dd><a href="#" id="test">upright;</a></dd>
+      <dd><a href="#">sideways;</a></dd>
+      <dd><a href="#">sideways-right;</a></dd>
     </dl>
   </div>
+</section>
+
 </main>
+<script type="text/javascript" src="sketch.js"></script>
 </body>
 </html>

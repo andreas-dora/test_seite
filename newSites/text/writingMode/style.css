@@ -9,15 +9,33 @@ body{
   color: rgba(12, 12, 10, 0.8);
   font-weight: 400;
 }
+header{
+  margin-bottom: 5vh;
+}
 main{
+  max-width: 900px;
+  margin: 0 auto;
+}
+section{
+  padding-top: 5vh;
   display: flex;
+
 }
 h1{
-  color: #f9423a;
-  writing-mode: vertical-lr;
   text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: clamp(1em, 5vw, 4em);
+  line-height: 1.1;
+}
+
+
+h2{
+  color: #f9423a;
+  text-transform: uppercase;
+  writing-mode: vertical-lr; /* <----- */
+  text-orientation: sideways-right;
   letter-spacing: 2px;
-  font-size: 3em;
+  font-size: 2em;
   margin-top: 1em;
 }
 .center-container{
@@ -28,4 +46,15 @@ h1{
 dd{
   line-height: 1.4;
   border-top: 3px solid black;
+}
+a{
+  color: #1b1b1b;
+  text-decoration: none;
+}
+a:hover, a:focus{
+  color: #f9423a;
+}
+hr{
+  margin-top: 10vh;
+  border-top: 3px solid #2c2c2c;
 }
