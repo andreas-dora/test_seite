@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid deeppink; */
+}
+
+body{
+  font-family: Futura, Arial, sans-serif;
+  background-color: dimgray;
+ 
+}
+
+header{
+  min-height: 100vh;
+  background-image: url(../../../img/speakers/header/1440x1080-hero.webp);
+  background-position-x: 40%;
+  background-position-y: 30%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: rgba(16, 16, 19, .6);
+  background-blend-mode: darken;
+  position: relative;
+}
+header .headCon{
+  /* margin-left: auto;
+  margin-right: auto; */
+  position: sticky;
+  top: 40%;
+  left: 30%;
+  color: white;
+  background: black;
+}
+nav{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  /* background-color: red; */
+  background: black;
+  /* background: transparent; */
+}
+nav .wrapper{
+  max-width: 1000px;
+  margin: 0 auto;
+  /* background: lightslategray; */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+}
+nav a{
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.2em;
+  padding: 0.3em 1.2em;
+  border: 3px solid white;
+  margin-top: 0.5em;
+
+}
+section{
+  min-height: 100vh;
+}
+.trigger{
+  background-color: inherit;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.6em;
+  font-weight: bold;
+  padding: 0.3em 0.6em;
+  outline: none;
+
+  border: 6px solid white;
+  transition: border-color 600ms;
+  /* transition: color 600ms; */
+}
+.trigger:hover, .trigger:focus{
+  color: #f9423a;
+  border-color: #f9423a;
+  /* transform: scaleY(1.3) ; */
+}
+
+.holder{
+  background-color:lightskyblue;
+  position: relative;
+
+}
+/* .eins{
+  /* display: block; */
+  /* position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%, -50% ); 
+} */
