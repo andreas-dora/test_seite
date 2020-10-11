@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Scroll</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="#">A.</a>
+    <ul>
+      <li><a href="#html">HTML</a></li>
+      <li><a href="#css">CSS</a></li>
+      <li><a href="#js">javascript</a></li>
+    </ul>
+    <button class="navbar-toggler">
+      <span></span>
+    </button>
+  </nav>
+  <header class="intro"  id="zero">
+  </header>
+
+  <section class="green" id="html">
+   
+   <article>
+   
+   https://gs.statcounter.com/browser-market-share
+
+    <h2>Smooth Scroll mit window.requestAnimationFrame()</h2>
+    RequestAnimationFrame() ist im ersten Moment etwas umständlich, bietet dafür aber breiten Browser-Support und flüssige Animation.
+    <a href="https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame">MDN</a>
+   </article>
+  </section>
+
+  <section id="css">
+    <h1>CSS 3</h1>
+    <article>
+      <h1>HTML 5</h1>
+      <h1>Smooth Scroll</h1>
+      <h2>mit Window.scrollTo()</h2>
+      <p>window.scrollTo(x-coord, y-coord);</p>
+      <p>window.scrollTo(options); </p>
+      <p>ScrollToOptions.top</p>
+      
+      <p>Specifies the number of pixels along the Y axis to scroll the window or element.</p>
+      <p>ScrollToOptions.left</p>
+      <p>Specifies the number of pixels along the X axis to scroll the window or element.</p>
+      <p>ScrollToOptions.behavior</p>
+      <p>Specifies whether the scrolling should animate smoothly, or happen instantly in a single jump. This is actually defined on the ScrollOptions dictionary, which is implemented by ScrollToOptions.</p>
+    </article>
+
+    
+<div class="codeBlock">
+  <h5 class="codeHead">Beispiel:</h5>
+  <pre>
+    <code>
+      window.scrollTo({
+        top: 100,
+        left: 100,
+        behavior: 'smooth'
+      });
+    </code>
+  </pre>
+</div>
+
+    <p>Die Options werden vom Safari und IE nicht unterstützt.</p>
+
+<div class="codeBlock">
+  <h5 class="codeHead">Praxis:</h5>
+  <pre>
+    <code>
+      function smoothScroll(event){
+        event.preventDefault();
+        const targetId = event.currentTarget.getAttribute("href");
+        // console.log(targetId);
+        window.scrollTo({
+          top: targetId==='#' ? 0 : document.querySelector(targetId).offsetTop, 
+          behavior: 'smooth'
+        });
+      }
+      // Wenn die TargetId '#' entspricht zu Pixel 0 gehen ansonsten den Selector targetId als offset von oben benutzen
+    </code>
+  </pre>
+</div>
+
+<article>
+  <p>Wie gewohnt läuft das GAnze mit Chrome und Firefox. IE bewegt sich allerdings gar nicht, was wohl an der preventDefault() Anweisung liegt</p>
+</article>
+
+
+
+
+    <h5>Das Ziel eines Links in JS auslesen</h5>
+    <pre>
+      <code>
+    const navBarLinks = document.querySelectorAll('.navbar a');
+    navBarLinks.forEach(elem => elem.addEventListener('click', navbarLinksClick));
+    function navbarLinksClick(){
+      console.log(event.target);
+    }
+
+    //------------------ ODER SO:
+
+    function smoothScroll(event){
+      const targetId = event.currentTarget.getAttribute("href");
+      console.log(targetId);
+    }
+      </code>
+    </pre>
+
+
+    
+  </section>
+
+  <section class="green" id="js">
+    <h1>JS</h1>
+  </section>
+
+  
+  <script type="text/javascript" src="smooth.js"></script>
+</body>
+</html>

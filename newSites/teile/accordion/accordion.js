@@ -1,9 +1,7 @@
 // const test = document.getElementById("test");
 // test.addEventListener("click", functionOne);
 
-// function functionOne(){
-//   alert("PENIS");
-// }
+
 
 var accord = document.getElementsByClassName("accordion__btn");
 var i;
