@@ -71,6 +71,16 @@ function easeInOutCubic(t, b, c, d) {
 	return c/2*(t*t*t + 2) + b;
 };
 
+//------------------------------------
+
+function easeInOutQuart(t, b, c, d) {
+	t /= d/2;
+	if (t < 1) return c/2*t*t*t*t + b;
+	t -= 2;
+	return -c/2 * (t*t*t*t - 2) + b;
+};
+
+
 
 //--------------------------------------------
 // VERSUCH 1: Window.scrollTo()
