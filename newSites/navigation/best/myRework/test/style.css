@@ -1,0 +1,33 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 4em;
+  color: silver;
+}
+
+.navbar{ background-color: gray;}
+.logo{
+  /* float: left; */
+}
+ul{
+  float: right;
+  background-color: cadetblue;
+  list-style: none;
+}
+li{
+  border: 1px solid rgb(111, 54, 204);
+  display: inline-block;
+  margin: 0 1em;
+}
+a{
+  color: black;
+  font-size: 1.2em;
+  text-decoration: none;
+  border: 1px solid red;
+  padding: 2em;
+  display: inline-block;
+
+}

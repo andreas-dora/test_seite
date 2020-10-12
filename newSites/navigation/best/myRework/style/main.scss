@@ -33,12 +33,18 @@ body {
   font-family: 'Cairo', sans-serif;
   font-size: 100%;
   line-height: 1.6;
-  background-color: gray;
+  background-color: $col-hellgrau;
 }
 header{
+  min-height: 100vh;
+  background: rgba(242, 202, 209, 0.2);
   background-image: url("../../../../../img/speakers/header/1440x1080-hero.webp");
   background-position: center;
   background-repeat: no-repeat;
+
+  background-blend-mode: lighten;
+  //  background: rgba(20, 20, 29, 0.5);
+
 }
 section{
   min-height: 100vh;
