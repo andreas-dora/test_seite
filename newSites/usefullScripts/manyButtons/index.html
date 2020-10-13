@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Buttons</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Flexi-Boxi!</h1>
+    <p>Und viele, viele Buttons. Für dein schönes Userinterface</p>
+  </header>
+  <section>
+
+    <div class="textBox">
+<h2>Hopsa</h2>    
+<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sequi amet accusamus ipsam odio vitae, adipisci vel aspernatur similique soluta officiis facere architecto, ratione placeat fugit officia laborum earum eos. Facere vitae officiis id, magnam quaerat itaque ab, perferendis deleniti dolor impedit iure hic nesciunt aut? Tenetur vero reprehenderit assumenda blanditiis. Laudantium minus hic sunt perferendis est laboriosam in ullam! Veniam accusamus ipsa, cumque tempore dolorem reiciendis, unde sunt facilis fugiat nam expedita tenetur quibusdam nihil ab commodi facere minus quis laudantium voluptate illum fuga perspiciatis harum. Voluptatibus, autem reiciendis. Placeat.</p></div>
+
+<div class="codeBox">
+  <dl>
+    <dt><span class="yellow">.actionBox</span>{</dt>
+    <dd><span class="blue">display</span>: <span class="red">flex</span>;</dd>
+    <dd><span class="blue">flex-direction</span>: <span class="red" id="direct">unset</span>;</dd>
+    <dd><span class="blue">flex-wrap</span>: <span class="red" id="wrap">unset</span>;</dd>
+    <dd><span class="blue">flex-direction: </span><span class="red" id="direction">unset</span>;</dd>
+    <dd><span class="blue">align-content</span>: <span class="red" id="alignContent">unset</span>;</dd>
+    <dd><span class="blue">justify-content</span>: <span class="red" id="jContent">unset</span>;</dd>
+    <dd><span class="blue">align-items</span>: <span class="red" id="aItems">unset</span>;</dd>
+    <dt>}</dt>
+  </dl>
+</div>
+    <div class="flexContainer">
+      <div class="container" id="actionBox">
+        <div class="rot mini">1</div>
+        <div class="gelb mini">2</div>
+        <div class="blau mini">3</div>
+        <div class="pink mini">4</div>
+      </div>
+  
+     
+    <div class="container" id="actionBox">
+      <div class="rot mini">1</div>
+      <div class="gelb mini">2</div>
+      <div class="blau mini">3</div>
+      <!-- <div class="pink mini">4</div> -->
+    </div>
+    </div>
+
+    <div class="flexContainer even">
+      <div class="rowContainer">
+        <div id="flex_direction" class="btnGrp">
+          <fieldset>
+            <legend>flex-direction</legend>
+            <button id="column">column</button>
+            <button id="row">row</button>
+            <button id="column-reverse">column-rev.</button>
+            <button id="row-reverse">row-rev.</button>
+          </fieldset>
+        </div>
+    
+        <div id="flex_wrap" class="btnGrp">
+          <fieldset>
+            <legend>flex-wrap</legend>
+            <button id="wrap">wrap</button>
+            <button id="wrap-reverse">wrap-reverse</button>
+            <button id="nowrap">nowrapd</button>
+          </fieldset>
+        </div>
+        </div>
+       
+    </div>
+
+
+    
+
+   
+
+ 
+
+  <!-- </div> -->
+<!--   
+    <div id="flex_direction" class="btnGrp">
+      <fieldset>
+        <legend>flex-direction</legend>
+        <button id="column">column</button>
+        <button id="row">row</button>
+        <button id="column-reverse">column-rev.</button>
+        <button id="row-reverse">row-rev.</button>
+      </fieldset>
+    </div>
+
+    <div id="flex_wrap" class="btnGrp">
+      <fieldset>
+        <legend>flex-wrap</legend>
+        <button id="wrap">wrap</button>
+        <button id="wrap-reverse">wrap-reverse</button>
+        <button id="nowrap">nowrapd</button>
+      </fieldset>
+    </div> -->
+    <div id="align_content" class="btnGrp">
+      <fieldset>
+        <legend>align-content</legend>
+        <button id="baseline">baseline</button>
+        <button id="center">center</button>
+        <button id="flex-end">flex-end</button>
+        <button id="flex-start">flex-start</button>
+        <button id="stretch">stretch</button>
+      </fieldset>
+    </div>
+    <div id="justify_content" class="btnGrp">
+      <fieldset>
+        <legend>justify-content</legend>
+        <button id="space-around">space-around</button>
+        <button id="space-between">space-between</button>
+        <button id="space-evenly">space-evenly</button>
+        <button id="stretch">stretch</button>
+      </fieldset>
+    </div>
+    <div id="align_items" class="btnGrp">
+      <fieldset>
+        <legend>align-items</legend>
+        <button id="baseline">baseline</button>
+        <button id="center">center</button>
+        <button id="flex-end">flex-end</button>
+        <button id="flex-start">flex-start</button>
+        <button id="stretch">stretch</button>
+      </fieldset>
+    </div>
+
+    <div class="info" class="btnGrp">
+      <h5>Queryselector</h5>
+      <p> Damit der Queryselector erkennen kann, ob er nach id oder Klasse suchen soll, braucht Raute oder Punkt als Vorzeichen.</p>
+    </div>
+
+
+  </section>
+  <script type="text/javascript" src="sketch.js"></script>
+</body>
+</html>
