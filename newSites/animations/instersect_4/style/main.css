@@ -1,0 +1,102 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: 'Cantarell', sans-serif;
+  background-color: #e6e1dc;
+}
+
+section {
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% auto;
+      grid-template-columns: 70% auto;
+}
+
+.content .left {
+  position: relative;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.content .left p {
+  background: white;
+  position: absolute;
+  margin-top: -25%;
+  right: 17%;
+  color: red;
+  padding: 1em;
+  border-radius: 15px;
+  width: 20vw;
+  text-align: left;
+}
+
+.content .content .yellow {
+  width: 50;
+}
+
+.content .github {
+  position: absolute;
+  margin-top: 32px;
+  left: 19%;
+  width: 8vh;
+}
+
+.content .right {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+}
+
+.content .right h2 {
+  color: white;
+  font-size: 1.7rem;
+}
+
+.content .right p {
+  line-height: 1.6em;
+}
+
+.anim {
+  opacity: 0;
+}
+
+@-webkit-keyframes anim1 {
+  from {
+    -webkit-transform: translateY(-300px);
+            transform: translateY(-300px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes anim1 {
+  from {
+    -webkit-transform: translateY(-300px);
+            transform: translateY(-300px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+    opacity: 1;
+  }
+}
+/*# sourceMappingURL=main.css.map */
