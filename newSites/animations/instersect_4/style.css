@@ -1,0 +1,30 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  height: 100vh;
+  font-family: 'Cantarell', sans-serif;
+  background-color: #e6e1dc;
+}
+section{
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 70% auto;
+
+}
+.content .left{
+  position: relative;
+  text-align: center;
+  display: grid;
+  place-items: center;
+}
+.content .yellow{
+  width: 50;
+}

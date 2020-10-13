@@ -1,0 +1,112 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+header{
+  width: 1200px;
+  height: 100vh;
+  margin: 0 auto;
+  line-height: 1.5;
+  font-family: 'Cantarell', sans-serif;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+}
+header h1{
+  font-weight: 300;
+  font-size: clamp(4em, 9.2vw, 12em);
+  line-height: 1;
+}
+header h4{
+  font-size: 24px;
+  width: 20cm;
+}
+.menu{
+  margin-top: 5vh;
+  width: 300px;
+  margin-left: auto;
+  /* align-self: start; */
+}
+dl{
+  text-align: right;
+  /* font-size: 1.2em; */
+  color: black;
+}
+dt{
+  font-weight: bold;
+  border-bottom: 6px solid black;
+  font-size: 1.8em;
+}
+dd{
+  border-bottom: 2px solid black;
+  font-size: 1.6em;
+
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover, a:focus{
+  color: #f9423a;
+}
+/*############################Y#########################y*/
+/*############################Y#########################y*/
+/*############################Y#########################y*/
+main{
+  max-width: 1000px;
+margin: 5vw auto;}
+body{
+  font-family: 'Cairo', sans-serif;
+  font-size: 100%;
+}
+.section{
+  padding-top: 5vw;
+  margin-bottom: 5em;
+}
+.serif{
+  font-family: 'Crimson Text', serif;
+  font-size: 20px;
+  line-height: 1.4;
+  width: 56ch;
+}
+.arial{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  line-height: 1.4;
+  width: 56ch;
+}
+.arial h1{
+  padding-top: 4em;
+
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 16px;
+
+}
+.serif h1{
+  padding-top: 4em;
+  font-size: 36px;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+p{
+  margin-bottom: 10px;
+}
+.mono{
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+.arial{
+  font-family: Arial, Helvetica, sans-serif;
+}
+img{
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  height:auto;
+  display: block;
+}
+
+figcaption{
+  float: right;
+}

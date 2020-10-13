@@ -46,7 +46,7 @@ section {
 }
 
 .navbar a.logo {
-  /* float: left; */
+  float: left;
   height: inherit;
   line-height: inherit;
   padding: 0 30px;
@@ -62,7 +62,7 @@ section {
 }
 
 .navbar ul {
-  /* float: right; */
+  float: right;
   list-style: none;
   height: inherit;
   line-height: inherit;
@@ -84,7 +84,9 @@ section {
   background-color: rgba(255, 255, 255, 0.15);
 }
 
-
+.navbar .nav__btn {
+  display: none;
+}
 
 .intro {
   width: 100%;
@@ -121,9 +123,17 @@ section {
   background-color: #333;
 }
 
+@media (max-width: 991px) {
+  .navbar ul {
+    padding: 0 10px;
+  }
+  .navbar ul li a {
+    min-width: 100px;
+    padding: 0 20px;
+  }
+}
 
-
-
+@media (max-width: 767px) {
   .navbar {
     padding: 0;
   }
@@ -198,89 +208,5 @@ section {
             transform: translateY(-3px) rotate(-45deg);
     /* transform: translateY(-3px) scale(0.75) rotate(-45deg); */
   }
-
-  @media (min-width: 768px) {
-    *, *:before, *:after {
-      margin: 0;
-      -webkit-box-sizing: border-box;
-              box-sizing: border-box;
-    }
-    .navbar .nav__btn {
-      display: none;
-    }
-    .navbar{
-      width: 100%;
-      /* display: flex;
-      
-      align-items: flex-end; */
-      height: 80px;
-      /* float: unset; */
-      line-height: 80px;
-      font-size: 18px;
-      clear: both;
-      display: table;
-    }
-    .navbar .logo{
-      color: red;
-      border: 1px solid greenyellow;
-      /* float: left; */
-      /* flex: 2; */
-      display: block;
-    }
-    .navbar ul{
-      overflow: auto;
-      /* width: 100%; */
-      /* float: right; */
-      /* flex: 2; */
-      /* width: 100%; */
-      /* display: block; */
-     /* float: right; */
-      /* display: flex; */
-    /* justify-content: space-evenly; */
-
-      display: block;
-      height: 80px;
-      /* height: auto; */
-      max-height: unset;
-      
-    
-    }
-    .navbar ul li{
-      width: 100%;
-      display: inline-block;
-
-      /* display: block; */
-      /* max-width: 100%; */
-
-      /* padding:0.1em 2em; */
-      border: 1px solid white;
-      margin: 0;
-      padding: 0;
-      clear: both;
-      max-width: 60px;
-
-
-    }
-    .navbar ul li a{
-      /* max-width: 60px; */
-
-      display: inline-block;
-      /* max-width: 100%; */
-      /* padding:0.1em 1em; */
-      border: 1px solid red;
-      margin: 0;
-      padding: 0;
-      font-size: 1.1em;
-      clear: both;
-    }
 }
-
- @media (min-width: 992px) {
-  .navbar ul {
-    padding: 0 10px;
-  }
-  .navbar ul li a {
-    min-width: 100px;
-    padding: 0 20px;
-  }
-} 
+/*# sourceMappingURL=main.css.map */

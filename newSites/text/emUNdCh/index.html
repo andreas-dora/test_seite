@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <header>
+    <div class="menu">
+      <dl>
+        <dt><a href="../../../index.html">Home</a></dt>
+        <dd><a href="#two">Text mit em</a></dd>
+        <dd><a href="#two">Monserat &</a></dd>
+        <dd><a href="#two">Arial mit ch</a></dd>
+        <dd><a href="../../animations/Rrotate/index.html">Rotate</a></dd>
+      </dl>
+    </div>
+    <h1>Character</h1>
+    <h1>Breite</h1>
+    <h4>Mit der CSS Charcter-UNit 'ch' lassen sich Textbreiten über Zeichenzahl begrenzen. Das gibt gute Anhaltspunkte, ist für die Praxis aber recht umständlich. </h4>
+
+ 
+
+  </header>
+  <main>
+    <section>
+      <article id="two" class="serif">
+        <h1 class="light">Chrimson für die Augen</h1>
+        <h4>Mit 56 Lettern und 20 Pixeln kommet die Chrimson auf ein gefälliges Format.</h4>
+        <p>Beim gedruckten Wort, hatte man mal Zeilenlänge von 45 bis 70 Zeichen als optimaal lesbar ausgemacht. In den 90er Jahren hatte ich als Redakteur und Autor für CoffeeTable-Magazine gearbeitet. Um ungefähre Textlängen auf Papier montierten Layouts zu ermitteln musste ich ab und an die durschnittlichen Zeilen abzählen. CSS hält dafür die ch-Unit (Character) bereit. Damit lassen sich Breiten nach Zeichen einstellen. Was das für die unterschiedlichen Bildschirme Bedeutet lässt sich nicht ganz so klar sagen. Eine gute Ausgangsbasis für sein Layout sollte man damit aber schon haben. Die Character-UNit geht von der Null als durchschnittsbreite aus.</p><p>
+        Ich habe hier mal vier Textblöcke mit verschiedenen Fonts vorbereitet. Mit Arial, dem Serifen-Font Crimson, der serifenlosen Cairo, die ich gerne für Überschriften verwende und der Monospace-Schrift IBM Plex.
+        Da sich due Charcter-Unit wie gesagt auf die Zeichenzahl bezieht, dedeutet das, dass die Spaltenbreite sich nach verwendeter Schriftgröße und auch nach Typo stark unterscheidet. 
+      </p> <p>Eine weitere Besonderheit der Charcter-Unit ist, dass ihre Breite sich nur auf den Schriftsatz begrenzt. Das "Article"- Element in dem dieser Text liegt ist nach wie vor 1000 Pixel breit. </p>
+      </article>
+
+    </section>
+    <section class="arial">
+      <figure>
+        <img src="../../../img/pexels-lumn-167699.webp" alt="Foto von Lum3n von Pexels">
+        <figcaption>&copy; Lum3n von Pexels</figcaption>
+      </figure>
+    </section>
+    <section>
+      <article class="arial">
+        <h1>Chrimson für die Augen</h1>
+        <p>Beim gedruckten Wort, hatte man mal Zeilenlänge von 45 bis 70 Zeichen als optimaal lesbar ausgemacht. In den 90er Jahren hatte ich als Redakteur und Autor für CoffeeTable-Magazine gearbeitet. Um ungefähre Textlängen auf Papier montierten Layouts zu ermitteln musste ich ab und an die durschnittlichen Zeilen abzählen. CSS hält dafür die ch-Unit (Character) bereit. Damit lassen sich Breiten nach Zeichen einstellen. Was das für die unterschiedlichen Bildschirme Bedeutet lässt sich nicht ganz so klar sagen. Eine gute Ausgangsbasis für sein Layout sollte man damit aber schon haben. Die Character-UNit geht von der Null als durchschnittsbreite aus.</p><p>
+        Ich habe hier mal vier Textblöcke mit verschiedenen Fonts vorbereitet. Mit Arial, dem Serifen-Font Crimson, der serifenlosen Cairo, die ich gerne für Überschriften verwende und der Monospace-Schrift IBM Plex.
+        Da sich due Charcter-Unit wie gesagt auf die Zeichenzahl bezieht, dedeutet das, dass die Spaltenbreite sich nach verwendeter Schriftgröße und auch nach Typo stark unterscheidet. 
+      </p> <p>Eine weitere Besonderheit der Charcter-Unit ist, dass ihre Breite sich nur auf den Schriftsatz begrenzt. Das "Article"- Element in dem dieser Text liegt ist nach wie vor 1000 Pixel breit. Nachdem ich unter dem Foto einen zweiten Text-Block mit 'ch' eingefügt habe ist das Bild auf Article-Breite geschrumpft. Abstände auf Article-Ebene lassen sich nicht mehr mit Margin kontrollieren. Paragraph und Headline-Elemente allerdings schon.</p>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
