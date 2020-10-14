@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Mixer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Color Mixer: <span id="rgbText"></span></h1>
+    <label for="myColor">get Color</label>
+    <input name="myColor" type="color">
+    <div class="flexContainer">
+      <div class="mixer">
+        <div class="display" id="display"></div>
+        <div class="sliderGrp">
+          <div>
+            
+            <span id="sliderOutput-R"></span>
+            <input type="range" min="0" max="255" step="1" value="0" class="slider" id="slider-R" name="slider-R">
+            <label for="slider-R">R: </label>
+            <input type="number" class="numberIn" name="number-R" id="number-R">
+          </div>
+          <div>
+            <label for="slider-G">G: </label>
+            <span id="sliderOutput-G"></span>
+            <input type="range" min="0" max="255" step="1" value="0" class="slider" id="slider-G" name="slider-G">
+          </div>
+
+
+          <div>
+            <label for="slider-B">B: </label>
+            <span id="sliderOutput-B"></span>
+            <input type="range" min="0" max="255" value="0" step="1" class="slider" id="slider-B" name="slider-B">
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </header>
+  <script type="text/javascript" src="slider.js"></script>
+</body>
+</html>
