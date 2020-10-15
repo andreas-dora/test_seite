@@ -4,32 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="grid.css">
 <body>
   <section>
+    <div class="headContainer">
+      <h1>Gute Verhältnisse</h1>
+    </div>
 
-    <h1>Aspect Ratio</h1>
+    
 
-<div class="flexCon">
 
-  <article>
+    <article>
+      <p>
+        Seitenverhältnisse spielen in der Gestaltung seit je her eine tragende Rolle der Goldene Schnitt (61,8 / 38,2)  wurde bereits vor 2300 Jahren verwendet. Im dynamisch Web Design behalten Bilder zwar leicht ihr Verhältnis. Ansonsten werden Container ohne feste Weite knallhart zusammengeschoben. Die CSS-Property aspect-ratio ist ist noch in der Experimentierphase. 
+        Mit padding-top lässt sich das Problem recht leicht lösen.
+      </p>
+      <p> Man nimmt sich einen Container mit width:100% und gibt bei padding-top das gewünschte Verhältnis in Prozent ein. 
+        Um diese Prozentzahl zu finden muss man nur Höhe durch Breite teilen und anschließend mit 100 multiplizieren.
+        Beispiel: Für 8:5 wird also die 5 durch 8 geteilt und mit 100 multipliziert. Daraus ergibt sich ein padding-top:62.5%.</p>
+<!--         
+        <p>Solange der Conatainer ein Weite von 100% funktioniert das auch sehr gut.  Wenn das Kistchen aber nur einen Teil der Weite einnehmen soll, läuft die Sache aus dem Ruder. 
+        In diesem Fall muss man den padding-top durch den gleichen Wert teilen. Also bei width: 30% darf man auch nur noch ein padding-top von 30% von 62.5% haben.
+        Das lässt sich auf zwei Arten lösen:</p>
+    <p> 1. Man lässt den Container bei 100% und stopft diesen in einen weiteren Container, der dann entsprechend mit width:20% oder so verjüngt wird.</p>
+<p>
+  2. Man benutzt in css "calc" was einem sogar die vorangegangene Rechenarbeit erspart. Der Browsersupport von calc liegt bei 98%. Da selbst die ältesten Maschinen solche Rechenaufgaben in Übergeschwindigkeit lösen, spricht alles für die diese Lösung.
+</p>
+<p>
+  Mit den Angaben: <strong>height: 0;</strong> und
+    <strong>overflow: hidden;</strong> verhindert man, dass sich die Höhe von anderen Elementen, die sich in der gleichen Ebene befinden beeinflusst.
+  </p>
+  <h3>Text Inhalte</h3>
+  <p>
+    Das padding würde Text natürlich sofort verdrängen. Damit das nicht passiert geben wir der Kiste "postion: relative;" und stopfen einen Wrapper -Container mit position: absolut rein.
+    Wenn man nun noch mit clamp() die Schriftgröße beschreibt bekommt ein wirklich dynamisches Element.
+  </p>
+  
+ 
 
-    <h4>HTML</h4>
-
-    <pre><code class="html">
-      &lt;div class=&quot;container&quot;&gt;
-      &lt;div class=&quot;box1&quot;&gt;
-        &lt;div class=&quot;content&quot;&gt;1:1&lt;/div&gt;
-      &lt;/div&gt;
-    &lt;/div&gt;
-    </code></pre>
-    <br>
-    <h3>CSS</h3>
-
-<pre><code class="css">
-.container{
-  width: 20%;
-  }
+     
+   -->
+    
+     
+<!--       
+  
+      <h3>CSS</h3>
+  
+  <pre><code class="css">
 .box1 {
   background-color: var(--display);
   width: 100%;
@@ -47,94 +68,99 @@
   align-items: center;
   justify-content: center;
 }
-</code></pre>
+  </code></pre>
+  
+   -->
+  
+  
+  
+<!--   
+  <h3>Seitenverhältnis</h3>
+  
+  <table>
+  <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  </colgroup>
+  
+  <thead>
+  <tr>
+    <th>Verhältnis</th>
+    <th>padding-top</th>
+    <th>Anwendung</th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <tr>
+    <td>1:1</td>
+    <td>100%</td>
+    <td>Quadrat</td>
+  </tr>
+  <tr>
+    <td>16:9</td>
+    <td>56.25%</td>
+    <td>TV / Youtube</td>
+  </tr>
+  <tr>
+    <td>4:3</td>
+    <td>75%</td>
+    <td>Röhren-TV</td>
+   
+  </tr>
+  <tr>
+    <td>8:5</td>
+    <td>62.5%</td>
+    <td>goldener Schnitt</td>
+  </tr>
+  </tbody>
+  </table> -->
+  
+    </article>
+
+    <!-- <aside>
+      <div class="box1">
+        <div class="content">1:1</div>
+      </div>
 
 
+      <pre><code class="html">
+        &lt;div class=&quot;container&quot;&gt;
+        &lt;div class=&quot;box1&quot;&gt;
+          &lt;div class=&quot;content&quot;&gt;1:1&lt;/div&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+      </code></pre>
+    </aside> -->
+ 
 
-
-<hr />
-
-<h3>Seitenverhältnis</h3>
-
-<table>
-<colgroup>
-<col/>
-<col/>
-<col/>
-</colgroup>
-
-<thead>
-<tr>
-	<th>Verhältnis</th>
-	<th>padding-top</th>
-	<th>Anwendung</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-	<td>1:1</td>
-	<td>100%</td>
-	<td>Quadrat</td>
-</tr>
-<tr>
-	<td>16:9</td>
-	<td>56.25%</td>
-	<td>TV / Youtube</td>
-</tr>
-<tr>
-	<td>4:3</td>
-	<td>75%</td>
-	<td>Röhren-TV</td>
-	<td style="text-align:left;">Digitalkamera</td>
-</tr>
-<tr>
-	<td>8:5</td>
-	<td>62.5%</td>
-	<td>goldener Schnitt</td>
-</tr>
-</tbody>
-</table>
-
-  </article>
-</div>
+ 
+<!-- 
 
 <div class="box5">
   <div class="content">8:5</div>
 </div>
 
-  
+   -->
 
-<div class="container">
-  <div class="box1">
-    <div class="content">1:1</div>
-  </div>
-</div>
-
+<!-- 
     <div class="flexContainer">
 
 
-      
+       -->
         
     
-      <div class="container">
-        <div class="ratioBox box2">
-          <div class="content">16:9</div>
-        </div>
+<!--    
+      <div class="ratioBox box2">
+        <div class="content">16:9</div>
       </div>
-
-      <div class="container">
-        <div class="box3">
-          <div class="content">4:3</div>
-        </div>
+      <div class="box3">
+        <div class="content">4:3</div>
       </div>
-
-      <div class="container">
-        <div class="box4">
-          <div class="content">3:2</div>
-        </div>
+      <div class="box4">
+        <div class="content">3:2</div>
       </div>
-
       <div class="box6">
         <div class="content">8:5</div>
       </div>
@@ -152,15 +178,15 @@
         <div class="content">8:5</div>
       </div>
       
-    </div>
+    </div> -->
   </section>
  
-<br>
 
 
 
+
+<!--   
   
-  
-  <footer></footer>
+  <footer></footer> -->
 </body>
 </html>

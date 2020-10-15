@@ -1,0 +1,50 @@
+$c-mainblau: #034f67;
+$c-hellgrau: #e6e1dc;
+$c-bikini: #77212e;
+$c-dunkel: #373434;
+$c-chili: #9B2335;
+$c-alarm: #f9423a;
+
+$c-accent: #034f67;
+$c-hilite: #f9423a;
+$c-back: #000000;
+$c-text: #ffffff;
+
+$-sans: Arial, Helvetica, sans-serif;
+
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid pink; */
+}
+body{
+  display: grid;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 120%;
+  // align-items: center;
+  grid-template-rows: auto;
+  grid-template-columns: repeat(3, auto);
+
+  justify-items: center;
+  align-items: center;
+
+}
+h1, h2, h3, h4, h5{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  // height: 100%;
+}
+
+// .section-1{
+//   min-height: 100vh;
+//   display: grid;
+//   grid-template-rows: auto;
+//   grid-template-columns: repeat (3, auto);
+//   justify-items: center;
+//   align-items: center;
+//   margin: 0 auto;
+// }
+
+.container{
+  background-color: lemonchiffon;
+}

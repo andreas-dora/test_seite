@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  border: 1px solid deeppink;
+  /* border: 1px solid deeppink; */
 }
 :root{
   /* --display: #e6e1dc; */
@@ -10,11 +10,18 @@
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
 }
 section{
   max-width: 1000px;
   margin: 4vh auto;
   border: 1px solid #bfbfbf;
+}
+.headContainer{
+  padding: 0 1em;
+}
+.headContainer h1{
+  font-size: clamp(4em, 6vw, 7em);
 }
 .flexContainer{
   width: 100%;
@@ -23,6 +30,22 @@ section{
   justify-content: space-between;
   /* background-color: silver; */
 }
+article{
+  padding: 1em;
+}
+aside{
+  padding: 1em;
+}
+
+/*############################*/
+/*############################*/
+/*############################*/
+p{
+  line-height: 1.5;
+  margin-bottom: 0.8em;
+}
+
+
 .container{
   width: 20%;
   padding: 2px;
@@ -31,6 +54,8 @@ section{
 }
   /* border: 1px solid #bfbfbf;} */
 .box1 {
+  height: 0;
+  overflow: hidden;
   background-color: var(--display);
   width: 100%;
   padding-top: 100%; 
@@ -38,25 +63,30 @@ section{
 }
 
 .box2 {
+  height: 0;
+  overflow: hidden;
   background-color: var(--display);
-  width: 100%;
-  padding-top: 56.25%; 
-  position: relative;
+  width: 20%;
+  padding-top: calc(20%*9/16);
+    position: relative;
 }
 .box3 {
+
   background-color: var(--display);
-  width: 100%;
-  padding-top: 75%; 
-  position: relative;
+  width: 20%;
+  padding-top: calc(20%*3/4); 
+   position: relative;
 }
 .box4 {
+
   background-color: var(--display);
-  width: 100%;
-  padding-bottom: 66.66%; 
-  position: relative;
+  width: 20%;
+  padding-top: calc(20%*2/3);
+    position: relative;
 }
 .box5 {
-  display: inline-block;
+  height: 0;
+  overflow: hidden;
   background-color: var(--display);
   width: 20%;
   padding-top: calc(20%*5/8); 
@@ -64,12 +94,12 @@ section{
 
 }
 .box6 {
-  display: inline-block;
+  height: 0;
+  overflow: hidden;
   background-color: #f9423a;
   width: 20%;
   padding-top: calc(20%*5/8); 
   position: relative;
-
 }
 
 .content{
@@ -91,4 +121,11 @@ section{
 
 footer{
   margin-top: 15vh;
+}
+pre{
+  background-color: rgb(235, 232, 232);
+}
+code{
+  font-size: 16px;
+  line-height: 1.5;
 }
