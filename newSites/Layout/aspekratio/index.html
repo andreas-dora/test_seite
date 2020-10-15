@@ -9,78 +9,158 @@
   <section>
 
     <h1>Aspect Ratio</h1>
+
+<div class="flexCon">
+
+  <article>
+
+    <h4>HTML</h4>
+
+    <pre><code class="html">
+      &lt;div class=&quot;container&quot;&gt;
+      &lt;div class=&quot;box1&quot;&gt;
+        &lt;div class=&quot;content&quot;&gt;1:1&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    </code></pre>
+    <br>
+    <h3>CSS</h3>
+
+<pre><code class="css">
+.container{
+  width: 20%;
+  }
+.box1 {
+  background-color: var(--display);
+  width: 100%;
+  padding-top: 100%; 
+  position: relative;
+}
+.content{
+  position: absolute;
+  font-size: clamp(1em, 4vw, 5em);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</code></pre>
+
+
+
+
+<hr />
+
+<h3>Seitenverhältnis</h3>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Verhältnis</th>
+	<th>padding-top</th>
+	<th>Anwendung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1:1</td>
+	<td>100%</td>
+	<td>Quadrat</td>
+</tr>
+<tr>
+	<td>16:9</td>
+	<td>56.25%</td>
+	<td>TV / Youtube</td>
+</tr>
+<tr>
+	<td>4:3</td>
+	<td>75%</td>
+	<td>Röhren-TV</td>
+	<td style="text-align:left;">Digitalkamera</td>
+</tr>
+<tr>
+	<td>8:5</td>
+	<td>62.5%</td>
+	<td>goldener Schnitt</td>
+</tr>
+</tbody>
+</table>
+
+  </article>
+</div>
+
+<div class="box5">
+  <div class="content">8:5</div>
+</div>
+
+  
+
+<div class="container">
+  <div class="box1">
+    <div class="content">1:1</div>
+  </div>
+</div>
+
     <div class="flexContainer">
-      <div class="box1">
-        <div class="content">1:1</div>
-      </div>
 
-      <!-- <div class="container">
-       
-      </div> -->
 
+      
+        
+    
       <div class="container">
         <div class="ratioBox box2">
-          <div class="content">1:1</div>
+          <div class="content">16:9</div>
         </div>
-        
-
       </div>
 
       <div class="container">
-        <div class="ratioBox box3"></div>
-        <!-- <div class="text-1"><h1 class="ratio">1:1</h1></div> -->
-
+        <div class="box3">
+          <div class="content">4:3</div>
+        </div>
       </div>
 
       <div class="container">
-        <div class="box4"></div>
+        <div class="box4">
+          <div class="content">3:2</div>
+        </div>
+      </div>
+
+      <div class="box6">
+        <div class="content">8:5</div>
       </div>
 
     </div>
-    
+    <div class="flexContainer">
+      <div class="box5">
+        <div class="content">8:5</div>
+      </div>
+      
+      <div class="box5">
+        <div class="content">8:5</div>
+      </div>
+      <div class="box5">
+        <div class="content">8:5</div>
+      </div>
+      
+    </div>
   </section>
  
+<br>
+
 
 
   
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/hp-jkoPkWH0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   
-  <div class="codeBox">
-    .container {
-      background-color: red;
-      width: 100%;
-      padding-top: 100%; /* 1:1 Aspect Ratio */
-      position: relative; /* If you want text inside of it */
-    }
-    
-    /* If you want text inside of the container */
-    .text {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-    }
-  </div>
-  <div class="codeBox">
-    
-      <td>.container {</td>
-        <dd>padding-top: 56.25%;</dd>
-       /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
-    }
-    <hr>
-    .container {
-      padding-top: 75%; /* 4:3 Aspect Ratio (divide 3 by 4 = 0.75) */
-    }
-    .container {
-      padding-top: 66.66%; /* 3:2 Aspect Ratio (divide 2 by 3 = 0.6666)  */
-    }
-    .container {
-      padding-top: 62.5%; /* 8:5 Aspect Ratio (divide 5 by 8 = 0.625) */
-    }
-  </div>
-
-
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/VkC7O-66n3U" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <footer></footer>
 </body>
 </html>

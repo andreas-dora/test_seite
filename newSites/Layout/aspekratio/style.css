@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  border: 1px solid deeppink;
 }
 :root{
   /* --display: #e6e1dc; */
@@ -19,18 +20,19 @@ section{
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   /* background-color: silver; */
 }
 .container{
   width: 20%;
-  padding: 0.4em;
-  margin: 1em;
-  background-color: ghostwhite;
+  padding: 2px;
+  /* margin: 1em; */
+  background-color: #f9423a;
 }
+  /* border: 1px solid #bfbfbf;} */
 .box1 {
   background-color: var(--display);
-  width: 20%;
+  width: 100%;
   padding-top: 100%; 
   position: relative;
 }
@@ -50,13 +52,30 @@ section{
 .box4 {
   background-color: var(--display);
   width: 100%;
-  padding-top: 66.66%; 
+  padding-bottom: 66.66%; 
   position: relative;
 }
+.box5 {
+  display: inline-block;
+  background-color: var(--display);
+  width: 20%;
+  padding-top: calc(20%*5/8); 
+  position: relative;
+
+}
+.box6 {
+  display: inline-block;
+  background-color: #f9423a;
+  width: 20%;
+  padding-top: calc(20%*5/8); 
+  position: relative;
+
+}
+
 .content{
   position: absolute;
   color:white;
-  font-size: clamp(1em, 5vw, 6em);
+  font-size: clamp(1em, 4vw, 5em);
   top: 0;
   left: 0;
   width: 100%;
@@ -68,4 +87,8 @@ section{
 .codeBox{
   max-width: 405px;
   padding: 1em;
+}
+
+footer{
+  margin-top: 15vh;
 }
