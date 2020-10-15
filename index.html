@@ -6,6 +6,8 @@
   <meta name="robots" content="noindex">
   <meta http-equiv="pragma" content="no-cache">
   <meta http-equiv="author" content="Andreas Breitwieser">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <meta name="description" content="Code Fragemente">
   <title>Bits & Pieces</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style/main.css">
@@ -203,6 +205,34 @@ $c-text: #ffffff;
 $-sans: Arial, Helvetica, sans-serif;
 $-serif:
       </code></pre>
+      <br>
+      <code><pre>
+  *, *:before, *:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid pink; */
+  }
+  :root{
+  --c-mainblau: #034f67;
+  --c-hellgrau: #e6e1dc;
+  --c-bikini: #77212e;
+  --c-dunkel: #373434;
+  --c-chili: #9B2335;
+  --c-alarm: #f9423a;
+  
+  --c-back: #f8f8ff;
+  --c-text: #000000;
+  --c-accent: #696969;
+  --c-hilite: #f9423a;
+  
+  --sans: Arial, Helvetica, sans-serif;
+  --serif:'Times New Roman', Times, serif;
+  --code: 'Courier New', Courier, monospace;
+  --maxW: 1000px;
+  --topOffset: 4em;
+  }
+      </pre></code>
     </article>
     <aside>
       <dl>
@@ -225,9 +255,14 @@ $-serif:
     </dl>
   </aside>
 
+
 </div>
 
-
+<div class="chapter">
+  <div class="chapter head">
+    <h1>DOM</h1>
+  </div>
+</div>
 
 
     <footer>&copy; 2020 Andreas Breitwieser | <a href="#">Impressum</a></footer>  
