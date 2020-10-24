@@ -31,8 +31,7 @@
 
 body{
   background-color: var(--c-back);
-  font-family: var(--sans);
-  font-size: 100%;
+  font-family: 'Darker Grotesque', sans-serif;  font-size: 100%;
   /* background-color: lightblue; */
 }
 .wrapper{
@@ -139,10 +138,10 @@ figcaption{
 /*########################################## --- HEADER & NAV
 ############################################ 
 ############################################ */
-header{
-  min-height: 100vh;
-  padding-top: var(--topOffset);
-}
+/* header{
+  min-height: 50vh;
+  color: gold;
+} */
 
 /*########################################## --- SECTION & ARTICLES
 ############################################ 
@@ -181,65 +180,68 @@ aside{
 section{
   min-height: 100vh;
   margin-top: 0.5em;
-}
-
-
-.grid-container{
-  margin: 2em auto;
   display: grid;
-  grid-auto-rows: min-content;
-  grid-template-columns: 0.5fr 2fr minmax(30ch, 70ch) 1fr;
-  /* gap: 0.3em; */
+  grid-template-columns: minmax(10vw, 40vw) max-content min-content;
+  grid-template-rows: 0.5em auto 1fr min-content auto 0.5vh;
 }
 
- h1{
-  grid-row: 1;
-  grid-column: 2 / 4;
-  align-self: end; 
+
+
+
+section h1{
+
+  /* align-self: end;  */
   /* text-align: right; */
   text-transform: uppercase;
   /* align-self: start; */
-  font-size: clamp(1.8em, 4.5vw, 4.3em);
-  letter-spacing: 0.05em;
+  font-size: calc(5rem + 12vw); 
+  /* letter-spacing: 0.05em; */
   line-height: 1;
-  color: orange;
-  margin-bottom: 0.5em;
+  /* color: orange; */
+  /* margin-bottom: 0.5em; */
+  line-height: 1;
+  display: contents;
+  opacity: 0.8;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  margin: 0;
 }
+h1 span:nth-of-type(1){
+   grid-row: 2;
+   grid-column: 1 / 3;
+   color: rgb(128, 94, 9);
+   /* align-self: start; */
+}
+h1 span:nth-of-type(2){
+   grid-row: 2;
+   grid-column: 2 / 4;
+   color: gainsboro;
+   /* align-self: end; */
+}
+section h2{
 
-img{
-  grid-row: 2;
-  grid-column: 3;
-  height: 66vh;
-  width: 100%;
-  object-fit: cover;
- }
-
-.main-content {
+  text-transform: uppercase;
+  font-size: calc(2rem + 7vw); 
   grid-row: 3;
-  grid-column: 3;
-  background-color: orange;
-}
-.text-box{
-  padding: 0.4em
-}
-.text-box .credit{
-  text-align: right;
-  line-height: 1;
-  margin-bottom: 0.4em;
-}
-
-.text-box {
-  font-size: 1.4em;
-}
-.text-box h3{
-  line-height: 1;
-  margin-bottom: 0.6em;
+  grid-column: 2 / 4;
+  justify-self: self-end;
+  /* text-align: center; */
+  /* align-self: start; */
+  /* background-color: silver; */
+  color: silver;
+  border: 1px solid ghostwhite;
+  font-weight: 500;
+  letter-spacing: 10vw;
+  
 }
 
+.one{
+  width: 100%;
+  padding-top: 100%;
+  grid-row: 4;
+  grid-column: 1;
+  border: 1px solid white;
 
-@media (min-width: 600px){
-  h1{
-    text-align: right;
-    margin-bottom: 0.2em;
-  }
 }
+
+
