@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="author" content="Andreas Breitwieser">
+  <title>XXXX MINIMUM XXXX</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <h1>Thunder DOM</h1>
+        <h1>Query Selector Methoden</h1>
+
+      <div class="inhalt">
+        <dl>
+          <dt>Inhalt</dt>
+          <dd><a href="#">Query Selector</a></dd>
+          <dd><a href="#">classList bearbeiten</a></dd>
+          <dd><a href="#">Atributes bearbeiten</a></dd>
+          <dd><a href="#">HTML Elemente hinzufügen</a></dd>
+        </dl>
+        <dt>
+          dh
+
+        </dt>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrapper">
+    <section>
+      
+        <article>
+          <h1>Query Selector Methoden</h1>
+  
+          <br>
+          <h4>by ID</h4>
+          <code class="snippet">document.querySelector('#test').innerText ="Hey!";</code class="snippet">
+          <hr>
+          <h4>by Class</h4>
+          <code class="snippet">document.querySelector('.btn').className;</code class="snippet">
+          <p>Die Methode spukt einen Unübersichtlichen String ausKlassen aus auf 'btn' zutrift'</p>
+          
+          <p>der schaut so aus: "btn inlineBtn" Auf die Frage nach der <strong>.classList</strong> bekommt man die Array, die <strong>DOM Token List</strong> </p>
+          <pre><code class="snippet">DOMTokenList(2)
+            0: "btn"
+            1: "inlineBtn"
+            length: 2       ​
+            value: "btn inlineBtn"</code class="snippet"></pre>
+            <p>Das Ergeniss ist nicht nur Übersichtlicher, man kann die Elemente des Arrays lassen sich aus einem Skript auch leichter anwählen:</p>
+            <code class="snippet">document.querySelector('.btn').classList[0];</code class="snippet">
+           <hr>
+           
+          
+        
+        </article>
+        <aside>
+          <h4>Tip</h4>
+          <p>The DOM Property Viewer is new in Firefox 48. It is disabled by default. Enable it in the Developer Tools Settings.</p>
+          <a href="https://developer.mozilla.org/de/docs/Tools/DOM_Property_Viewer">mdn </a>
+        </aside>
+     
+        
+    </section>
+    <section>
+      <article>
+        <h1>Methoden zur Bearbeitung der Element.classList</h1>
+     
+    
+        <dl>
+          <dt><a href="https://developer.mozilla.org/de/docs/Web/API/Element/classList" target="_blank" rel="noopener noreferrer">MDN Reference</a></dt>
+          <dd>Hinzufügen: <code>document.querySelector('.snippet').classList.add('fire');</code></dd>
+          <dd>Entfernen: <code>document.querySelector('.snippet').classList.remove('fire');</code></dd>
+          <dd>Umschalten: <code>document.querySelector('.snippet').classList.toggle('fire');</code></dd>
+          <dd>Man sollte Elemente nicht mit dem Klassen-Listen Element anwählen das man 'togglen' möchten</dd>
+          <dd>Prüfen: <code>document.querySelector('#test').classList.contains('btn');</code></dd>
+        </dl>
+        
+        <hr>
+        
+        <dl>
+          <dt>Attributes bearbeiten: </dt>
+          <dd>Prüfen: <code>document.querySelector('#test').hasAttribute('id');</code></dd>
+          <dd>Abfragen: <code>document.querySelector('#test').getAttribute('id');</code></dd>
+          <dd>Ändern: <code>document.querySelector('#test').setAttribute('id', 'newOne');</code></dd>
+          <dd>Mit .setAttribute() können auch Attribute nicht nur verändert und hinzugefügt werden:</dd>
+          <dd>HINWEIS: Die Firefox-Console gibt beim ändern und hinzufügen die Medldung 'undifined' zurück </dd>
+  
+        </dl>
+       
+      </article>
+      
+    </section>
+    <section class="section-1">
+      <h1>Eine Ungeordnete Liste</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About me</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      
+      <h1>Ein Titelliste</h1>
+
+      <dl>
+        <dt>Grid</dt>
+        <dd><a href="./newSites/Layout/jenSimmons/" target="_blank" rel="noopener noreferrer">Jen Simmons Nachbau</a></dd>
+        <dd><a href="./newSites/Layout/gridAutoFit/index.html" target="_blank" rel="noopener noreferrer">Grid auto-fit</a></dd>
+        <dd><a href="./newSites/Layout/gridAutoFill/index.html" target="_blank" rel="noopener noreferrer">Grid auto-fit</a></dd>
+        <dd><a href="./newSites/Layout/Footer-FlexBox/index.html" target="_blank" rel="noopener noreferrer">Fixed Footer mit FlexBox</a></dd>
+        <dd><a href="./newSites/Layout/Footer-Grid/index.html" target="_blank" rel="noopener noreferrer">Fixed Footer mit Grid</a></dd>
+        <dd>
+        <a href="./newSites/Layout/grid-header/index.html" target="_blank" rel="noopener noreferrer">Grid HEader Baustelle</a></dd>
+      </dl>
+      <hr>
+      <button class="btn inlineBtn" id="test">Test</button>
+      <button class="btn inlineBtn">Create</button>
+      <button class="btn inlineBtn">Send</button>
+      <button class="btn inlineBtn">clear</button>
+      <button class="btn blockBtn">Create</button>
+      <button class="btn blockBtn">Kaufen</button>
+      <button class="btn blockBtn">Login</button>
+
+    </section>
+    
+    <section class="section-center">
+      <button class="btn">Hey Ho</button>
+      <button class="btn">Hey Ho</button>
+    </section>
+    
+  </main>
+  <footer>
+    <div class="wrapper">
+      <span class="textRight">&copy; Andreas Breitwieser | Impressum</span>
+    </div>
+  </footer>
+  <script type="text/javascript" src="./js/qselector.js"></script>
+</body>
+</html>
