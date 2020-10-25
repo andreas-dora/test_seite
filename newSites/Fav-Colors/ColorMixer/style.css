@@ -53,6 +53,23 @@ header {
   width: 280px;
 }
 
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  height: 30px;
+  width: 40px;
+  -moz-appearance: textfield;
+}
+.hex-input{
+  height: 30px;
+  width: 60px;
+}
+
 section {
   min-height: 100vh;
   padding-top: 10vh;

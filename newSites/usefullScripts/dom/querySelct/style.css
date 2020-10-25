@@ -20,7 +20,7 @@
 --sans: Arial, Helvetica, sans-serif;
 --serif:'Times New Roman', Times, serif;
 --code: 'Courier New', Courier, monospace;
---maxW: 1000px;
+--maxW: 1280px;
 --topOffset: 4em;
 }
 
@@ -43,7 +43,7 @@ body{
 ############################################ */
 
 h1, h2, h3, h4, h5{
-  font-family: var(--sans);
+  font-family: 'Cantarell', sans-serif;
 }
 h1, h2, h3{
   line-height: 1;
@@ -104,21 +104,26 @@ dl{
 .btn{
   background-color: var(--c-back);
   color: var(--c-accent);
-  width: 100px;
+  width: 110px;
   height: 50px;
   margin: 1em 1em;
 
   font-family: inherit;
+  font-size: 0.8em;
   text-transform: uppercase;
   font-weight: bold;
   letter-spacing: .1em;
   border: none;  
-  outline: 3px solid var(--c-accent);
+  outline: 6px solid var(--c-accent);
 }
 .btn:focus, .btn:hover{
   cursor: pointer;
   outline-color: var(--c-hilite);
-  color:var(--c-hilite)
+  color:var(--c-hilite);
+  transform:perspective(400px) rotateY(-20deg);
+}
+.btn:active{
+  transform:perspective(400px) rotateY(-40deg);
 }
 .blockBtn{
   display: block;
@@ -127,6 +132,27 @@ dl{
 }
 .inlineBlockBtn{
   display: inline-block;
+}
+
+input{
+  height: 50px;
+  /* width: 100%; */
+  min-width: 180px;
+  outline: 6px solid var(--c-accent);
+  font-size: 0.8em;
+  border: none;
+  margin: .4em .6em;
+}
+input:hover, input:focus{
+  outline-color: var(--c-hilite);
+  color:var(--c-hilite);
+}
+input::placeholder{
+  font-size: 1.3em;
+}
+label{
+  font-size: 1.3em;
+  padding: 0.5em;
 }
 /*########################################## --- IMG
 ############################################ 
@@ -152,17 +178,30 @@ header{
 ############################################ */
 
 section{
+  /* min-width: 610px; */
   min-height: 100vh;
   padding-top: var(--topOffset);
   box-shadow: 2px 1px 2px 1px rgba(0, 0, 0, 0.3);
 }
-
-article{
-  max-width: 600px;
+section h1{
   padding: 1em;
 }
+.flexBox{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+article{
+width: 100%;  
+padding: 1em;
+  flex: 2;
+}
 aside{
+  width: 100%;
   padding: 1em;
+  flex: 1;
+  border: 1px solid pink;
 }
 /*########################################## --- SECTION.CENTER
 ############################################ 
@@ -173,6 +212,7 @@ aside{
   align-items: center;
   justify-content: space-evenly;
 }
+
 
 /*########################################## --- FOOTER
 ############################################ 
@@ -189,8 +229,16 @@ footer{
 /*########################################## --- CODEBLOCK
 ############################################ 
 ############################################ */
+pre{
+  background-color: white;
+  margin-bottom: 1em;
+  padding: 1em 04em;
+  border: 1px solid silver;
+  box-shadow: inset -1px 1px 4px 1px rgba(0, 0, 0, 0.2);
+}
 
 code{
+  background-color: white;
   font-family: var(--code);
   margin-bottom: 0.5em;
 }
@@ -201,7 +249,23 @@ code{
 .fire{
   color: var(--c-hilite);
 }
-
+.app{
+  border: none;  
+  outline: 6px solid var(--c-accent);
+  padding: .5em;
+}
 /*########################################## --- MEDIA
 ############################################ 
 ############################################ */
+
+@media (min-width: 768px){
+  .flexBox{
+    flex-direction: row;
+  }
+  /* article{
+    min-width: 380px;
+  } */
+  aside{
+    min-width: 360px;
+  }
+}

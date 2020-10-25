@@ -76,7 +76,7 @@ img{
   height: auto;
   display: block;
 }
-@media (max-width: 768px){
+@media (min-width: 768px){
   .revers-order{
     order: -1;
   }

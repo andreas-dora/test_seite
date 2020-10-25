@@ -7,14 +7,13 @@
   <meta http-equiv="pragma" content="no-cache">
   <meta http-equiv="author" content="Andreas Breitwieser">
   <title>XXXX MINIMUM XXXX</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
     <div class="wrapper">
       <h1>Thunder DOM</h1>
-        <h1>Query Selector Methoden</h1>
 
       <div class="inhalt">
         <dl>
@@ -23,9 +22,10 @@
           <dd><a href="#">classList bearbeiten</a></dd>
           <dd><a href="#">Atributes bearbeiten</a></dd>
           <dd><a href="#">HTML Elemente hinzufügen</a></dd>
+          <dd><a href="">HTML Template Tag</a></dd>
         </dl>
         <dt>
-          dh
+          
 
         </dt>
       </div>
@@ -34,28 +34,37 @@
 
   <main class="wrapper">
     <section>
-      
+      <h1>Query Selector Methoden</h1>
+      <div class="flexBox">
         <article>
-          <h1>Query Selector Methoden</h1>
-  
+          
           <br>
           <h4>by ID</h4>
-          <code class="snippet">document.querySelector('#test').innerText ="Hey!";</code class="snippet">
+          <code >document.querySelector('#test').innerText ="Hey!";</code >
           <hr>
           <h4>by Class</h4>
-          <code class="snippet">document.querySelector('.btn').className;</code class="snippet">
+          <code >document.querySelector('.btn').className;</code >
           <p>Die Methode spukt einen Unübersichtlichen String ausKlassen aus auf 'btn' zutrift'</p>
           
           <p>der schaut so aus: "btn inlineBtn" Auf die Frage nach der <strong>.classList</strong> bekommt man die Array, die <strong>DOM Token List</strong> </p>
-          <pre><code class="snippet">DOMTokenList(2)
+          <pre><code >DOMTokenList(2)
             0: "btn"
             1: "inlineBtn"
             length: 2       ​
-            value: "btn inlineBtn"</code class="snippet"></pre>
+            value: "btn inlineBtn"</code ></pre>
             <p>Das Ergeniss ist nicht nur Übersichtlicher, man kann die Elemente des Arrays lassen sich aus einem Skript auch leichter anwählen:</p>
-            <code class="snippet">document.querySelector('.btn').classList[0];</code class="snippet">
+            <code >document.querySelector('.btn').classList[0];</code >
            <hr>
            
+           <button class="btn clr">red</button>
+           <button class="btn clr">green</button>
+           <button class="btn clr">blue</button>
+
+           <hr>
+
+           <button class="btn choice">Ja</button>
+           <button class="btn choice">Nein</button>
+           <button class="btn choice">Vielleicht</button>
           
         
         </article>
@@ -64,8 +73,102 @@
           <p>The DOM Property Viewer is new in Firefox 48. It is disabled by default. Enable it in the Developer Tools Settings.</p>
           <a href="https://developer.mozilla.org/de/docs/Tools/DOM_Property_Viewer">mdn </a>
         </aside>
+      </div>
+        
      
         
+    </section>
+    <section>
+      <h1>QuerySelectorAll - Eventbubbling - und der HTML Template-Tag</h1>
+      <div class="flexBox">
+
+      
+      <article>
+        <p>Unsere kleine Gästelisten-App (grauer Conatiner) ermöglicht es auf Knopf (add) neue Positionen hinzuzufügen. Aus einem <strong>template-tag</strong> holt sich die App die den HTML-Code und kopiert ihn in den App-Container. Da die neuen Elemente (Pro Eintrag ein Input-Flrd und ein Deletb-Button) noch nicht Existent waren könnnen wir die mit gängigen Abfragen nicht erreichen. </p> 
+        <p>Ein einiger Eventlistner auf dem ganzen App-Container lösst das Problem. Jeder Klick inden Kontainer löst nun eine JS-Funktion aus, die an erster Stelle zu Fragen hat was da angeklickt wurde. </p>
+        <p>Ein nicht zu unterschätzender Vorteil dieser dieser Methode ist, dass die gesamte GL-App mir mit nur einem EventListener auskommt. Egal wie lang die Gästeliste wird unser Skript bleibt unverändert knackick und unsere Seite so schön geschmeidig.</p>
+        <br>
+        <h4>Bubbling und Capture Phase</h4>
+        <p>Jedes DOM-Event, ganz egal ob click-, hover- oder Thunde-Dom-Event, in der 'Bubbeling'-Phase die von seinem Ursprung (e.target) ausgehend die gesamte Verzeichnisstruktur hinauf, bishin zu body, html und window. Was bedeutet das wir unseren Event-Listener auch gut an der nächsten Dom-Etage aufstellen können. Im Bubbeling wird das Klingeln also immer von Child zu Parent getrangen. Das gegenstück zur Blubber-Phase ist die eigentlich vorangehende  Capturing-Phasse, sie wird die VErszeichnis-Struktur hinunter von PArent zu Child geleitet.   </p>
+       
+
+
+      </article>
+      <aside>
+   
+
+        <div id="app" class="app">
+          <div>
+            <button id="addBtn" class="btn add">Add</button>
+          </div>
+
+          <div class="inputBox">
+            <label for="Gast">Gast</label><br>
+            <input type="text" placeholder="Name">
+            <button class="btn del">Delete</button>
+          </div>
+          
+        </div>
+        <template id="temp">
+          <div class="inputBox">
+            <label for="Gast">Gast</label><br>
+            <input type="text" placeholder="Name">
+            <button class="btn del">Delete</button>
+          </div>
+        </template>
+      </aside>
+      <article>
+        
+
+
+<pre><code>    
+&lt;div id=&quot;app&quot; class=&quot;app&quot;&gt;
+    &lt;div&gt;
+      &lt;button id=&quot;addBtn&quot; class=&quot;btn add&quot;&gt;Add&lt;/button&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&quot;inputBox&quot;&gt;
+      &lt;label for=&quot;Gast&quot;&gt;Gast&lt;/label&gt;&lt;br&gt;
+      &lt;input type=&quot;text&quot; placeholder=&quot;Name&quot;&gt;
+      &lt;button class=&quot;btn del&quot;&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+  &lt;template id=&quot;temp&quot;&gt;
+    &lt;div class=&quot;inputBox&quot;&gt;
+      &lt;label for=&quot;Gast&quot;&gt;Gast&lt;/label&gt;&lt;br&gt;
+      &lt;input type=&quot;text&quot; placeholder=&quot;Name&quot;&gt;
+      &lt;button class=&quot;btn del&quot;&gt;Delete&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/template&gt;
+
+</code></pre>
+
+<P>Unsere vom App-Kontainer ausgelösste Lösch-Funktion empfängt das Event 'e'. Mit e.target wird der tatsichliche Auslöser der Events abgefragt. Hat dieser Klasse 'del' (delete)  wird es ernst. Ein Blick zurück auf das HTML zeigt, dass die zu lÖchenden Elemente (Label, Input und BUtton, gemnsam in einem KOntainerchen sitzen. Das macht die Sache leicht: Unsere Löschfunktion muss nur das <strong>.parentElment </strong> schnappen und kann dann die drei Teilchen gemeinsam "re-movern".</P> 
+
+
+<pre><code>
+  document.querySelector('#app').addEventListener('click', deleftFun)
+  function deleftFun(e){
+    if(e.target.classList.contains('del')){
+      e.target.parentElement.remove();
+    }
+  }
+  document.querySelector('#addBtn').addEventListener('click', addBox);
+</code></pre>
+
+<p>Und dies ist der Teil des Skripts mit dem das PAket aus dem Template-String kopiert wird.</p>
+  <pre><code>
+
+  function addBox(){
+    var temp = document.getElementById('temp').content;
+    var copy = document.importNode(temp,true);
+    document.getElementById('app').appendChild(copy);
+  }
+
+</code></pre>
+      </article>
+    </div>
     </section>
     <section>
       <article>
@@ -96,15 +199,122 @@
       </article>
       
     </section>
+    <section>
+      <article>
+        <h1>HTML Elemente hinzufügen</h1>
+        <p>Vier Arbeitsschritte sind notwenig um ein HTML hinzuzufügen</p>
+        <ol>
+          <li>createElement()</li>
+          <li>createTextNode()</li>
+          <li>appendChild()</li>
+        </ol>
+
+        <dl>
+          <dt></dt>
+          <dd>An dieser Stelle soll das neue Elemt eingepflanzt werden:</dd>
+          <dd><code>const box = document.querySelector('.zielBox');</code></dd>
+        </dl>
+
+<pre><code>
+const box = document.querySelector('#zielBox');
+var newElement = document.createElement('a');
+var newContent = document.createTextNode("THIS IS NEW");
+newElement.appendChild(newContent);
+box.appendChild(newElement);
+</code></pre>
+
+<br>
+
+<h5>Dieser Code ersparrt einen Arbeitsschritt</h5>
+<pre><code>
+const box = document.querySelector('#zielBox');
+var newElement = document.createElement('a');
+newElement.append('A NEW LINK');
+box.appendChild(newElement);
+</code></pre>
+
+<p>Fügt man dem Anchor noch das href hinzu ist auch schon alles getan:</p>
+<code>newElement.setAttribute('href','www.castel-of-dolphins.de');</code>
+
+
+<hr>
+<h1>HTML template Tag</h1>
+<p>Der Inhalt des tempalte-Tags wird im Browser nicht dargestellt. Hier schllummert meine Vorlage:</p>
+
+  <pre><code>    
+    &lt;template id=&quot;temp&quot;&gt;
+      &lt;div class=&quot;inputBox&quot;&gt;
+        &lt;label for=&quot;Gast&quot;&gt;Gast&lt;/label&gt;
+        &lt;input type=&quot;text&quot; placeholder=&quot;Name&quot;&gt;
+        &lt;button class=&quot;btn del&quot;&gt;Delete&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+  </code></pre>
+<p>Mit ein vier Zeilen Javascript wird der Inhalt des Template vervielfälltigt.</p> 
+  
+
+<pre><code>
+<p>function addBox(){
+ var temp = document.getElementById(&#8216;temp&#8217;).content;
+ var copy = document.importNode(temp,true);
+ document.getElementById(&#8216;app&#8217;).appendChild(copy);
+}
+document.querySelector(&#8216;#addBtn&#8217;).addEventListener(&#8216;click&#8217;, addBox);
+</p>
+</code></pre>
+
+<!-- 
+        <div id="zielBox" style="background-color: maroon; color: white; width: 300px; height: 200px;">
+          <h5>HERE WE GO</h5>
+        </div>
+      </article>
+    </section>
+    <section>
+      <article>
+        <h1>Style bearbeiten</h1>
+        <p><strong>Good to know: </strong>Stile die über javascript hinzugefügt oder bearbeitet wurden, sind nicht in .css Datei eingetragen, sie leben wie Inline-cSS im im HTML. Mit folgender Methode kann man sie abfragen:</p>
+        <code>document.querySelector('#zielBox').style;</code> -->
+
+      </article>
+    </section>
+    <section>
+      <article>
+        <h1>Events</h1>
+        <p>Es gibt zwei Arten von Events: <strong>Browser-Level Events</strong> und <strong>DOM Events</strong></p>
+        <a href="hhttps://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener noreferrer">MDN Events Reference</a>
+
+        <hr>
+
+        <h3>Default Events verhindern</h3>
+        <div class="formContainer">
+          <form action="">
+            <fieldset>
+              <legend>Test Form</legend>
+              <label class="test-form" for="test-put">Enter Something small:</label>
+              <input type="text" name="test-put" id="test-put">
+              <button class="btn"  id="test-form" type="submit">Submitter</button>
+              
+  
+            </fieldset>
+          </form>
+<pre><code>
+  function stopSubmit(e){
+    e.preventDefault();
+    dontSub.innerText = "HuHaha";
+  }
+</code></pre>          
+        </div>
+      </article>
+    </section>
+    <section>
+      <div class="hinweis"><h3>Wichtiger Hinweis!</h3>
+        <p>Zu ihrer Sicherheit müssen wir ihnen mitteilen, dass die Funktion <strong>Klimaneutraler Chat</strong> kurz ICNCS0,  derzeit nicht zur Verfügung steht. Sollten Sie dennoch ein leises Rauschen hören, könnte dies bis auf weiteres diverse Ursachen haben. Bitte prüfen Sie, ob ihre Fenster und die Türen aller im Haushalt befindlichen Kühlgeräte gut verschlossen sind.</p>
+        Hier gehts zum C-K-Hörschwäche-Schnell-Test kurz C-K-H.S-T (ohne Umlaute) <a href="#"> Klicken sie genau hier.</a>
+
+      </div>
+    </section>
     <section class="section-1">
-      <h1>Eine Ungeordnete Liste</h1>
-      <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About me</a></li>
-        <li><a href="#">Portfolio</a></li>
-        <li><a href="#">Blog</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
+
       
       <h1>Ein Titelliste</h1>
 

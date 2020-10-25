@@ -7,8 +7,7 @@ const bInput = document.getElementById('b-input');
 
 const display = document.getElementById('display');
 const rgbSlider = document.querySelectorAll('.slider');
-// var hexGreen = '00';
-// var hexRed = '00';
+
 
 // document.querySelector('#app').addEventListener('click', deleftFun)
 // function deleftFun(e){

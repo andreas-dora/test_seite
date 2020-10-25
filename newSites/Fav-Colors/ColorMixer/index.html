@@ -9,32 +9,51 @@
 </head>
 <body>
   <header>
-    <h1>Color Mixer: <span id="rgbText"></span></h1>
+  
     <label for="myColor">get Color</label>
     <input name="myColor" type="color">
+
+
     <div class="flexContainer">
       <div class="mixer">
         <div class="display" id="display"></div>
-        <div class="sliderGrp">
-          <div>
-            
-            <span id="sliderOutput-R"></span>
-            <input type="range" min="0" max="255" step="1" value="0" class="slider" id="slider-R" name="slider-R">
-            <label for="slider-R">R: </label>
-            <input type="number" class="numberIn" name="number-R" id="number-R">
-          </div>
-          <div>
-            <label for="slider-G">G: </label>
-            <span id="sliderOutput-G"></span>
-            <input type="range" min="0" max="255" step="1" value="0" class="slider" id="slider-G" name="slider-G">
-          </div>
+        
+              <label for="hex">HEX</label>
+              <input type="text" name="hex-input" class="hex-input" id="hex-input">
+              <form class="rgbForm" action="">
+              <label for="r-input">R</label>
+              <input type="number" class="rgb-input" name="r-input" id="r-input"> 
+              <label for="g-input">G</label>
+              <input type="number" class="rgb-input" name="g-input" id="g-input"> 
+              
+              <label for="b-input">B</label>
+              <input type="number" class="rgb-input" name="b-input" id="b-input"> 
+              
 
+            </form>
+            <div class="sliderGrp">
+              <div>
+              <input type="range" min="0" max="255" step="1" value="0" class="slider" id="slider-R" name="slider-R">
+              <label for="slider-R">R: </label>
+             
+            </div>
+           
 
+            <div>
+              <label for="slider-G">G: </label>
+              <span id="sliderOutput-G"></span>
+              <input type="range" min="0" max="255" step="1" value="0" class="slider" id="slider-G" name="slider-G">
+            </div>
+  
+  
+            <div>
+              <label for="slider-B">B: </label>
+              <span id="sliderOutput-B"></span>
+              <input type="range" min="0" max="255" value="0" step="1" class="slider" id="slider-B" name="slider-B">
+            </div>
+  
           <div>
-            <label for="slider-B">B: </label>
-            <span id="sliderOutput-B"></span>
-            <input type="range" min="0" max="255" value="0" step="1" class="slider" id="slider-B" name="slider-B">
-          </div>
+
 
 
         </div>
