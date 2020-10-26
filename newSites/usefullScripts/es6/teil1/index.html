@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Mixer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  </head>
+<body>
+  <header>
+    <h1>ES6  Features</h1>
+
+    <ul>
+      <li>Template Literales</li>
+      <li></li>
+    </ul>
+
+  </header>
+
+  <section>
+
+    <article>
+      <h3>Template Literales</h3>
+      <p>Quasi die Vorstufe zu Template-String. Mit Template Literales, lassen sich wunderbar Strings verbinden:</p>
+
+ 
+    <pre><code>
+const first = 'Andi';
+const last = 'Arbeit';
+
+const full = `${first} ${last}`;
+console.log(full);
+    </code></pre>
+    <p><strong>Output:</strong> Andi Arbeit</p>
+    <p>Da ich mir nie merken kann, wo auf meiner Tastatur der Backslash versteckt ist, freut es mich toll, dass man in einem Template-String Zeilenumbrüche mirt der Enter-Taste erzeugen kann. Siehe da:</p>
+
+<pre><code>
+  const umbruch = `${first} ${last}, 
+Du bist lustig.`;
+
+document.querySelector('.ziel').innerText = umbruch;
+
+</code></pre>
+<p>Der oben stehende Code wird genau so ausgegeben:</p>
+
+    <p class="blue"><span class="ziel"></span></p>
+
+    <br>
+    <p>Beginnt der Inhalt eines Template-Strings mit Umlaut, muss ein wenig aufpassen, dass der erste BAcktick nicht zu einem "Accent" wird: </p>
+    <code>const achtung = Ùm Himmels willen.`</code>
+
+  </article>
+
+
+
+  </section>
+  <section>
+    <h1>Destruction Objects</h1>
+    <pre><code>
+  const personalInfo = {
+    firstName: 'Andi',
+    lastName: 'Arbeit',
+    city: 'Offenbach',
+    state: 'Ding',
+    zipCode: '1234'
+  };
+    </code></pre>
+
+    <p>Mit dieser Methode kann man sich ordentlich Arbeit sparen. Angebommen wir müssen aus dem oben stehendem  Objekt "personalInfo" häufiger auf die Eintträge für Vor und Nachmen zugreifen. Damit man nicht jedes mal auf das Objekt Personal Info stellt man einaml folgendes klar: </p>
+    <code>const {firstName, lastName} = personalInfo;</code> 
+    <P>Nun bräuchte man nur noch die enstprechenden Variablen aufzurufen: </P>
+    <code>const {firstName, lastName} = personalInfo;</code>
+    <p>Die Decostructer-Methode hat aber noch mehr zu bieten. Wir können sie auch nutzen die entsetzlich langen Variablen gegen kürzere zu ersetzen:</p>
+const {firstName: fn, lastName: ln} = personalInfo;
+<code>const {firstName: fn, lastName: ln} = personalInfo;</code>
+Nun wird die nächste Zeile wirklich kurz und knackig:
+<code>console.log(`${fn} und auch ${ln}`);</code>
+
+    <article>
+
+    </article>
+  </section>
+
+  <script type="text/javascript" src="sketch.js"></script>
+</body>
+</html>
