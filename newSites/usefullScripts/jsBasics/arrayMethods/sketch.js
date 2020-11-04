@@ -1,10 +1,25 @@
-var stack = [];
-stack.push("eins");
-stack.push("zwei");
-stack.push("drei");
-stack.push("vier", "fünf", "sechs");
+var todoList = [
+  'Aufstehen',
+  'Frühstück',
+  'Einkaufen',
+  'Aufräumen',
+  'Daten sichern',
+  'Coding',
+  'Workout'
+];
 
-console.log(stack.indexOf('zwei'));
+var niceOutput = todoList.join(', und dann: ');
+console.log(niceOutput);
+
+//----------------------
+// var stack = [];
+// stack.push("eins");
+// stack.push("zwei");
+// stack.push("drei");
+// stack.push("eins", "zwei", "drei");
+
+// console.log(stack.indexOf('zwei'));
+// console.log(stack.lastIndexOf('zwei'));
 //----------------
 
 // var contacts = [
