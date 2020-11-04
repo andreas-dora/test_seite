@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Array Methods</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section class="inhalt">
+      <h1>Inhalt / Übersicht</h1>
+      <article>
+        <h1>Array Methods</h1>
+
+        <dl>
+          <dt>Einfügen:</dt>
+          <dd>push()</dd>
+          <dd>unshift()</dd>
+          <dd>splice()</dd>
+          <dt>Entfernen:</dt>
+          <dd>pop()</dd>
+          <dd>push()</dd>
+          <dd>splice()</dd>
+          <dt>Kopieren:</dt>
+          <dd>slice()</dd>
+          <dt>Sotieren:</dt>
+          <dd>sort()</dd>
+          <dd>reverse()</dd>
+        </dl>
+
+
+        <h4>Alphabetische Übersicht</h4>
+
+        <table>
+        <colgroup>
+        <col/>
+        <col/>
+        </colgroup>
+        
+        <thead>
+        <tr>
+          <th>Methode</th>
+          <th>Beschreibung</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+          <td>concat()</td>
+          <td>Hängt Elemente (oder Arrays) an</td>
+        </tr>
+        <tr>
+          <td>filter()</td>
+          <td>Filtert Elemente heraus</td>
+        </tr>
+        <tr>
+          <td>forEach()</td>
+          <td>Wendet eine Funktion auf alle Elemente an</td>
+        </tr>
+        <tr>
+          <td>join()</td>
+          <td>Wandelt ein Array in einen String um</td>
+        </tr>
+        <tr>
+          <td>map()</td>
+          <td>Bildet die Elemente auf Basis einer Umwandlungfunktion ab</td>
+        </tr>
+        <tr>
+          <td>pop()</td>
+          <td>Entfernt das letzte Element</td>
+        </tr>
+        <tr>
+          <td>push()</td>
+          <td>Fügt am Ende ein neues Element hinzu</td>
+        </tr>
+        <tr>
+          <td>reduce()</td>
+          <td>Auf Basis einer übergebenen Funktion werden alle Werte zusammen gefasst</td>
+        </tr>
+        <tr>
+          <td>revers()</td>
+          <td>Kehrt die Reihenfolge der Elemente in einem Array um</td>
+        </tr>
+        <tr>
+          <td>shift()</td>
+          <td>Entfernt das letzte Element eines Arrays</td>
+        </tr>
+        <tr>
+          <td>slice()</td>
+          <td>Schneidet ein einzelnes Element heraus</td>
+        </tr>
+        <tr>
+          <td>splice()</td>
+          <td>Fügt ein neues Element an einer bestimmten Position ein</td>
+        </tr>
+        <tr>
+          <td>sort()</td>
+          <td>Sortiert ein Array auf Basis einer Funktion</td>
+        </tr>
+        </tbody>
+        </table>
+        
+        
+        
+      </article>
+    </section>
+    <section>
+      <article>
+       
+
+     
+
+
+<h2>Elemente hinzufügen</h2>
+
+<h4>Elemente am Ende hinzufügen mit push()</h4>
+
+<pre><code class="js"> 
+ var todoList = [];
+var plusPunkt;
+
+plusPunkt = todoList.push('Bad putzen');
+console.log(plusPunkt);
+
+plusPunkt = todoList.push('Einkaufen');
+console.log(plusPunkt);
+
+plusPunkt = todoList.push('Rasen mähen');
+console.log(plusPunkt);
+
+plusPunkt = todoList.push('Kochen');
+console.log(plusPunkt);
+
+console.log(todoList);
+</code></pre>
+
+<hr />
+
+<h4>Elemente am Anfang hinzufügen mit unshift()</h4>
+
+<pre><code class="js"> var todoList = [];
+var plusPunkt;
+
+plusPunkt = todoList.push('Bad putzen');
+plusPunkt = todoList.push('Einkaufen');
+plusPunkt = todoList.push('Rasen mähen');
+plusPunkt = todoList.push('Kochen');
+
+plusPunkt = todoList.unshift('Frühstück');
+
+console.log(todoList);
+</code></pre>
+
+<hr />
+
+<h4>Mit splice() Elemente an einer bestimmten Position hinzufügen</h4>
+
+<p>Die Methode <strong>splice()</strong> erwartet 2 bis 3 Argumente:
+1. Die Stelle an der Eingefügt werden soll.
+2. Die Anzahl der Positionen die gelöscht werden sollen
+3. Den neuen Inhalt</p>
+
+
+<pre><code class="js">var todoList = [
+  'Frühstück',
+  'Einkaufen',
+  'Aufräumen',
+  'Coding'
+];
+
+todoList.splice(3, 0, 'Daten sichern');
+console.log(todoList);
+</code></pre>
+      </article>
+    </section>
+    <section>
+      <article>
+
+
+
+
+<h2>Elemente entfernen</h2>
+
+<h4>Das letzte Element mit pop() entfernen</h4>
+
+<pre><code class="js">var todoList = [
+  'Frühstück',
+  'Einkaufen',
+  'Aufräumen',
+  'Coding',
+  'Workout'
+];
+
+var item1 = todoList.pop();
+console.log(todoList);
+</code></pre>
+
+<hr />
+
+<h4>Mit shift() das erste Element enfernen</h4>
+
+<pre><code class="js">var todoList = [
+  'Frühstück',
+  'Einkaufen',
+  'Aufräumen',
+  'Coding',
+  'Workout'
+];
+
+var item1 = todoList.shift();
+console.log(todoList);
+</code></pre>
+      </article>
+
+    </section>
+    <section>
+
+<article>
+
+<h2>Sortieren</h2>
+
+<p>Für das Sortieren der Elemente eines Arrays stehen zwei Methoden zur Verfügung.</p>
+
+<p><strong>reverse()</strong> gibt den Inhalt eines Array einfach in umgekehrter Reihenfolge wieder.</p>
+
+<p><strong>sort()</strong> ermöglicht es ein Array anhand einer übergebenen Vergleichsfunktion zu sortieren.</p>
+
+<pre><code class="js">var werte = [
+  7, 9, 6, 3, 8, 2, 4, 1, 5
+];
+
+function compare(wert1, wert2){
+  if (wert1 &lt; wert2){
+    return -1;
+  }
+  else if(wert1 &gt; wert2){
+    return 1;
+  }
+  else {
+    return 0;
+  }
+}
+
+werte.sort(compare);
+console.log(werte);
+</code></pre>
+
+<h4>Beispiel für alphabetische Sortierung</h4>
+
+<pre><code class="js">var contacts = [
+  {
+    firstName: 'Britta',
+    lastName: 'Master',
+    email: 'britta@test.de'
+  },
+  {
+    firstName: 'Andi',
+    lastName: 'Dora',
+    email : 'andi.dora@test.de'
+  },
+  {
+    firstName: 'Elira',
+    lastName: 'Klaviara',
+    email: 'elvira@klaviara.de'
+  }
+]
+
+function compareByFirstName(contact1, contact2){
+  return contact1.firstName.localeCompare(contact2.firstName)
+}
+
+contacts.sort(compareByFirstName);
+console.group(contacts);
+</code></pre>
+</article>
+
+      
+    </section>
+  </main>
+  <script type="text/javascript" src="sketch.js"></script>
+</body>
+</html>
