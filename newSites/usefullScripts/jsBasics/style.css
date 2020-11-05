@@ -5,12 +5,15 @@
 body{
   font-family: Arial, Helvetica, sans-serif;
   font-size: 100%;
-  background-color: #a6966c;
+  /* background-color: #a6966c; */
 }
 h1, h2, h3, h4{
-  color:#034f67;
+  color:#a6966c;
   line-height: 1;
   margin-bottom: 1em;
+}
+h4{
+  font-size: 1.8em;
 }
 p{
   font-size: 1.1em;
@@ -19,6 +22,24 @@ p{
 }
 .headline{
   padding: 0 .5em;
+}
+ul, ol dl{
+  line-height: 1.6;
+  font-size: 1.1em;
+  margin-bottom: 1.4em;
+}
+li, dl{
+  margin-left: 1.8em;
+}
+a{
+  text-decoration: none;
+  font-weight: bold;
+  color: #034f67;
+}
+
+hr{
+  margin: 1em 0 2em 0;
+  border-bottom: 3px solid #a6966c;
 }
 section{
   max-width: 1200px;
@@ -67,7 +88,4 @@ pre{
   font-size: 1.2em;
   line-height: 1.5;
   overflow: scroll;
-}
-h1, h2, h3, h4{
-  color:#034f67;
 }
