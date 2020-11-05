@@ -13,12 +13,32 @@
     </header>
   </header>
   <section class="inhalt">
-    <h1>Inhalt</h1>
+    <div class="headline"><h1><h1>Inhalt</h1></h1></div>
+<article>
+
+  
+
+  <ol>
+    <li><a href="#id_01">Das Date Object</a></li>
+    <li><a href="#id_02">Nützliche toString() Methoden</a></li>
+    <li><a href="#id_03">Intevall-Funktion</a></li>
+    <li><a href="#id_04">Details mit get Methoden ermitteln</a></li>
+    <li><a href="#id_05">Formatieren</a></li>
+    <li><a href="#id_06">UTC</a></li>
+    <li><a href="#id_07">Termine erstellen</a></li>
+    <li><a href="#id_08">Restzeit berechnen</a></li>
+  </ol>
+</article>
+<aside>
+  <h5>Reference</h5>
+  <a href="https://www.w3schools.com/jsref/jsref_obj_date.asp" target="_blank" rel="noopener noreferrer">Reference</a>
+</aside>
 
   </section>
-  <section>
+  <section id="id_01">
+    <div class="headline"><h2>Das Date Objekt</h2></div>
     <article>
-      <h2>Das Date Objekt</h2>
+      
       <p>Die Funktion **newDate()** gibt eine Instanz des Date-Objects zurück. Diese ist sehr ausführlich.</p>
       <code class="js">var jetzt = new Date();</code>
       <br>
@@ -27,7 +47,69 @@
     <span id="dateobject"></span>
   </aside>
   </section>
-  <section>
+
+  <section id="id_02">
+    <div class="headline">
+      <h2>String Methoden</h2>
+    </div>
+    <article>
+      
+
+<p>Um die gewünschten Details aus dem Date Object zu ziehen stehen ein paar praktische Konvertierungsmethoden zur Verfügung die schön formatierte Ergebnisse liefern.</p> 
+<p>Hat man noch spezieller Wünsche an die Formatierung kann man die im übernachsten Abschnitt aufgelisteten **get** Methoden verwenden um die gewünschten Informationen zu extrahieren.</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Methode</th>
+	<th>Rückgabe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>toLocaleDateString()</td>
+	<td>5.11.2019</td>
+</tr>
+<tr>
+	<td>toLocaleTimeString()</td>
+	<td>09:55:21</td>
+</tr>
+<tr>
+	<td>toLocaleString()</td>
+	<td>5.11.2019, 09:55:21</td>
+</tr>
+</tbody>
+</table>
+    </article>
+<pre>
+  <code>  
+var jetzt = new Date();
+console.log(jetzt.toLocaleDateString());
+console.log(jetzt.toLocaleTimeString());
+console.log(jetzt.toLocaleString());
+</code>
+</pre>        
+  </section>
+  <section id="id_03">
+    <div class="headline">
+      <h2>Die Uhr zum Laufen bringen</h2>
+    </div>
+    <article>
+      <p>Um eine Uhr oder einen Timer zum laufende zu bringen benötigt man eine Intervall-Funktion. Die Intervall-Funktion sorgt dafür, dass die genante Funktion (tellTime) wiederholt wird sobald die Intervall-Zeit (hier 1 Sekunde) abgelaufen ist. Der ganze Zauber steckt also in der letzten Zeile.</p>
+    </article>
+    <aside>
+      <h5>Output</h5>
+      <p><span id="zeitOutput"></span></p>
+    </aside>
+
+  </section>
+  <section  id="id_04">
     <div class="headline"><h2>Die wichtigsten get Methoden</h2></div>
     <article>
       
@@ -89,16 +171,159 @@
 </tr>
 </tbody>
 </table>
-
+<p>Die Methode <strong>getMonth()</strong>  gibt einen Wert von 0-11 wieder. Ohne weitere Formatierung handelt an sich hier einen Fehler ein. 
+</p>
+<p>Ebenso macht der Wochentag als Wert zwischen 0 und 6 aus der <strong>getDay()</strong>-Methode ohne Formatierung keinen Sinn. </p>
 <p>Der <strong>UTC-Zeitstempel</strong> ist die Anzahl der Millisekunden, die seit dem 01. Januar 1970 00:00:00 Uhr UTC vergangen sind</p>
     </article>
     <aside>
       <h5>Unformatiert</h5>
-      <span id="uTime"></span>
-      <br>
-      <span id="uDate"></span>
+      <p>Uhrzeit: <span id="uTime"></span></p>
+      <p>Wochentag: <span id="uTag"></span></p>
+      <p>Daum: <span id="uDate"></span></p>
+      <p>UTC: <span id="utc"></span></p>
+     
     </aside>
-    <section></section>
+<pre>
+  <code>
+    const dobject = document.getElementById('dateobject');
+const uTime = document.getElementById('uTime'); // Zeit ohne weitere Formatierung
+const uWT = document.getElementById('uTag'); // Zeit ohne weitere Formatierung
+const uDate = document.getElementById('uDate'); // Date ohne weitere Formatierung
+const utc = document.getElementById('utc'); // Date ohne weitere Formatierung
+
+
+var jetzt = new Date();
+dobject.innerText = jetzt;
+var h = jetzt.getHours();
+var m = jetzt.getMinutes();
+var s = jetzt.getSeconds();
+
+var wt = jetzt.getDay();  // Wochentag
+var tag = jetzt.getDate();
+var monat = jetzt.getMonth();
+var jahr = jetzt.getFullYear();
+uTime.innerText = h+":"+m+":"+":"+s;
+uWT.innerText = wt;
+uDate.innerText = tag+"."+monat+"."+jahr;
+utc.innerText = jetzt.getTime();
+  </code>
+</pre>
+
+
+  </section>
+  <section id="id_05">
+    <div class="headline"><h1>Datum und Urzeit formatieren</h1></div>
+
+    <article>
+      <h4>Tage und Monate</h4>
+
+<p>Um Wochentage und Monate als wunschgemäße Strings, wie &#8216;Freitag&#8217; und &#8216;Mai&#8217; ausgegeben zu bekommen fast man diese Arrays zusammen. Die Methoden <strong>getDay()</strong> und <strong>getMonth</strong> liefern die richtige Index-Nummern. Gut zu wissen: Die JS-Woche beginnt mit Sonntag.</p>
+</article>
+<pre><code class="js">const volleTage = ['Sonntag', 'Montag', 'Dienstag', 'Mittwoch', 'Donnerstag', 'Freitag', 'Samstag'];
+
+const volleMonate = ['Januar', 'Februar', 'März', 'April', 'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'];
+
+var jetzt = new Date();
+var wochentag = jetzt.getDay();  
+var monat = jetzt.getMonth();
+
+console.log(volleTage[wochentag]);
+console.log(volleMonate[monat]);
+</code></pre>
+
+<article>
+  <h4>Stunden, Minuten und Co. mit Nullen polstern</h4>
+
+<p>Um Ausgaben wie &#8216;07&#8217; zu erhalten kann man mit der <strong>padStart()</strong> Funktion Strings feste Nummern-Polster verschaffen. Die Methode möchte zwei Argumente:
+- Anzahl der Stellen
+- gewünschte Nummer
+ Die Methode funktioniert nur bei Strings. </p>
+</article>
+
+<pre><code class="js">var stunde = 7;
+console.log(stunde.toString().padStart(2,0));
+</code></pre>
+    </article>
+  </section>
+  <section id="id_06">
+    <div class="headline"><h2>UTC</h2></div>
+    <article>
+      <p>UTC Zeit, das sind die Millisekunden die Seit dem 01.Januar 1970 00:00:00 Uhr vergangen sind. Arbeitet man nicht Zufällig mit Daten aus den frühen Siebzigern kommt da Einiges zusammen:</p>
+
+<blockquote>
+<p><strong>1604552158003</strong></p>
+</blockquote>
+
+<p>Das sieht erstmal gar nicht schön aus, aber man kann wunderbar damit rechnen. Aus diesem Grund arbeiten Datenbanken auch sehr gerne mit diesem Format.
+Hat man bereits eine Instanz des Date Objects erweckt kann man die UTC mit <strong>getTime()</strong> abfragen.</p>
+
+<pre><code class="js">var jetzt = new Date();
+console.log(jetzt.getTime());
+</code></pre>
+
+<p>Anderenfalls hilft:</p>
+
+<pre><code class="js">var n = Date.now();
+console.log(n)
+</code></pre>
+
+<p>So eine UTC lässt sich genauso leicht in etwas lesbares verwandeln:</p>
+
+<pre><code class="js">var myUtc = 1604554130384;
+var n = new Date(myUtc);
+console.log(n.toLocaleString());
+</code></pre>
+    </article>
+  </section>
+
+  <section id="id_07">
+    <div class="headline"><h2>Termine erstellen</h2></div>
+    <article>
+     
+
+<p>Mit <strong>new Date()</strong> erweckt man wie bereits gesehen eine Instanz des Date Objects auf Grundlage der aktuellen Zeit. Möchte man einen Wunschtermin erstellen braucht man <strong>new Date()</strong> nur die entsprechenden Parameter zu übergeben.
+Man kann die UTC verwenden:</p>
+
+<pre><code class="js">var meinTermin = new Date(1607554130384);
+console.log(meinTermin);
+</code></pre>
+
+<p>Einen in der Schreibweise: &#8216;Monat Tag Jahr&#8217; übergeben:</p>
+
+<pre><code class="js">var meinTermin = new Date('3 19 2021');
+console.log(meinTermin);
+</code></pre>
+
+<p>Möchte man besonders ausführlich sein muss bei den Monaten einer abgezogen werden damit man auf die Index-Nummer 0&#8211;11 kommt.</p>
+<pre><code>var meinTermin = new Date(
+  2021,
+  2, // Monat
+  19,
+  12,
+  31
+);
+console.log(meinTermin);</code></pre>
+</article>
+
+
+
+</section>
+<section id="id_08">
+  <div class="headline">
+    <h2>Restzeit berechnen</h2>
+  </div>
+  <article>
+
+    
+    <p>Super: Wenn man nicht nur die Gegenwart kennt, kann man den Abstand zwischen Terminen berechnen:</p>
+    </article>
+    <pre><code class="js">var gegenwart = Date.now();
+var deadLine = new Date('11 7 2021');
+var restZeit = deadLine.getTime() - gegenwart;
+console.log(&quot;Verbleibende Stunden: &quot; + Math.round(restZeit/3600000));
+console.log(&quot;Verbleibende Tage: &quot; + Math.round(restZeit/86400000));
+</code></pre>
   </section>
   <script src="date.js"></script>
 </body>
