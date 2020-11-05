@@ -4,12 +4,30 @@ body{
   background-color: #a6966c;
 }
 
+section{
+  max-width: 1200px;
+  background-color: snow;
+}
 article{
   max-width: 640px;
-  background-color: snow;
+
   padding: 1em;
   margin: 1em;
 }
+aside{
+  max-width: 420px;
+  background-color: #034f67;
+  color: white;
+  padding: .1em 1em 1em 1em;
+  margin: 1em auto;
+}
+h5{
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  font-weight: bold;
+  text-align: center;
+}
+
 th, td{
   padding: 0.2em 0.5em;
   border: 1px solid #a6966c;
@@ -20,7 +38,8 @@ pre{
   padding: 1em;
   font-size: 1.2em;
   line-height: 1.5;
+  overflow: scroll;
 }
-h1, h2, h3, h4, h5{
+h1, h2, h3, h4{
   color:#034f67;
 }

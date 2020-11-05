@@ -15,7 +15,71 @@
   </section>
   <section>
     <article>
-      <h2>Länge ermitteln</h2>
+      <h1>String Methods?</h1>
+
+      <h2>Die länge ermitteln</h2>
+
+<pre><code class="js">var userName = &quot;Max Mustermann&quot;;
+console.log(userName.length);
+</code></pre>
+
+<h2>Einen String durchsuchen</h2>
+
+<p>Wie Arrays können String mit <strong>indexOf()</strong> und <strong>lastIndexOf()</strong> durchsucht werden. Im Gegensatz zu Arrays kann man Strings auch auf einzelne Zeichen oder Teilstrings durchsuchen.</p>
+
+<p>Der Methode <strong>indexOf()</strong> kann optional ein zweites Argument übergeben werden um nach einem bestimmten (hier zweiten) Auftreten von &#8216;M&#8217; zu suchen:</p>
+
+<pre><code class="js"> var userName = &quot;Max Mustermann&quot;;
+console.log(userName.indexOf('M', 2));
+</code></pre>
+
+<h2>Case sensitive</h2>
+
+<p>Die Suche in einem String ist &#8216;case sensitive&#8217;. Daher lohnt es sich einen &#8216;Arbeits-String&#8217; zu erzeugen in dem alle Zeichen klein geschrieben sind bevor man auf die Suche geht.</p>
+
+<pre><code class="js">var userName = &quot;Max Mustermann&quot;;
+var klein = userName.toLowerCase();
+console.log(klein.lastIndexOf('m'));
+</code></pre>
+
+<p>Mit <strong>toUpperCase()</strong> wandelt man einen String in Großbuchstaben um.</p>
+
+<hr />
+
+<h2>Einen Teil-String erzeugen</h2>
+
+<p>Zum erzeugen von Substrings stehen drei Methoden zur verfügung:
+- slice()
+- substring()
+- substr()</p>
+
+<p>Den Methoden kann neben dem Start-Index optional ein zweiter Wert übergeben werden.
+Bei <strong>slice()</strong> und <strong>substring()</strong> ist das der End-Index, bei <strong>substr()</strong> gibt man die gewünschte Länge (Anzahl der Zeichen) an</p>
+
+<pre><code class="js">var userName = &quot;Max Matthias Mustermann&quot;;
+var lastName = userName.substring(userName.lastIndexOf(' ')+1, userName.lenght);
+console.log(lastName);
+</code></pre>
+
+<hr />
+
+<h2>Verbinden</h2>
+
+<pre><code class="js">var first = &quot;Max&quot;;
+var last = &quot;Mustermann&quot;;
+name = first + &quot; &quot; + last;
+console.log(name);
+</code></pre>
+
+<hr />
+
+<h2>Wiederholen:</h2>
+
+<pre><code class="js">var myString = &quot;+++ Eilmeldung &quot;
+console.log(myString.repeat(3));
+</code></pre>
+
+<hr />
     </article>
   </section>
   <script type="text/javascript" src="string.js"></script>

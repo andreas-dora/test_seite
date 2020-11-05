@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Basics</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header>
+    <header>
+      <h1>Datum und Uhrzeit</h1>
+    </header>
+  </header>
+  <section class="inhalt">
+    <h1>Inhalt</h1>
+
+  </section>
+  <section>
+    <article>
+      <h2>Das Date Objekt</h2>
+      <p>Die Funktion **newDate()** gibt eine Instanz des Date-Objects zurück. Diese ist sehr ausführlich.</p>
+      <code class="js">var jetzt = new Date();</code>
+      <br>
+    </article>
+    <aside><h5>Date Object:</h5>
+    <span id="dateobject"></span>
+  </aside>
+  </section>
+  <section>
+    <div class="headline"><h2>Die wichtigsten get Methoden</h2></div>
+    <article>
+      
+<p>Mit den folgenden Methoden lassen sich die gewünschten Informationen aus dem Date-Object quetschen:</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Methode</th>
+	<th>Rückgabe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>getDate()</td>
+	<td>Monatstag (1&#8211;31)</td>
+</tr>
+<tr>
+	<td>getDay()</td>
+	<td>Wochentag (0&#8211;6)</td>
+</tr>
+<tr>
+	<td>getMonth()</td>
+	<td>Monat (0&#8211;11)</td>
+</tr>
+<tr>
+	<td>getFullYear()</td>
+	<td>Das Jahr</td>
+</tr>
+<tr>
+	<td>getYear()</td>
+	<td>VERALTET</td>
+</tr>
+<tr>
+	<td>getHours()</td>
+	<td>Stunden (0&#8211;23)</td>
+</tr>
+<tr>
+	<td>getMinutes()</td>
+	<td>Minuten (0&#8211;59)</td>
+</tr>
+<tr>
+	<td>getSeconds()</td>
+	<td>Sekunden 0&#8211;59</td>
+</tr>
+<tr>
+	<td>getMilliseconds()</td>
+	<td>Millisekunden (0&#8211;999)</td>
+</tr>
+<tr>
+	<td>getTime()</td>
+	<td>UTC Zeitstempel</td>
+</tr>
+</tbody>
+</table>
+
+<p>Der <strong>UTC-Zeitstempel</strong> ist die Anzahl der Millisekunden, die seit dem 01. Januar 1970 00:00:00 Uhr UTC vergangen sind</p>
+    </article>
+    <aside>
+      <h5>Unformatiert</h5>
+      <span id="uTime"></span>
+      <br>
+      <span id="uDate"></span>
+    </aside>
+    <section></section>
+  </section>
+  <script src="date.js"></script>
+</body>
+</html>
