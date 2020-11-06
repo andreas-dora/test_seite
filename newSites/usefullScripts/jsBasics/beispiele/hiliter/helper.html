@@ -1,5 +1,12 @@
 
 
+<form action="">
+<label for="output">Output</label><br>
+<textarea name="" id="codeBox" cols="30" rows="10"></textarea>
+<button class="btn">Copy</button>
+</form>
 
-&lt;<span class="tag">button</span>&gt;<span class="text">Create</span>&lt;/<span class="tag">button</span>&gt;
 
+
+/ \&lt;([a-z]+)&gt;(.*?)&lt;/([a-z]+)&gt;
+&lt;<span class="tag">$1</span>&gt;<span class="text">$2</span>&lt;/<span class="tag">$3</span>&gt;

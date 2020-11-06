@@ -27,7 +27,7 @@
 }
 body{
   background-color: black;
-  color: gray;
+  color: var(--c-bronze);
   font-family: 'Space Grotesk', sans-serif;
   font-size: 100%;
 }
@@ -35,6 +35,8 @@ section{
   display: flex;
 }
 .container{ 
+  min-width: 300Px;
+
   max-width: 500px;
   height: 80vh;
   border: 3px solid var(--c-bronze);
@@ -43,6 +45,7 @@ section{
   padding: 0.5em;
 }
 .codeContainer{
+  min-width: 300Px;
   flex: 2;
   border: 3px solid var(--c-bronze);
   margin: 0.5em;
@@ -52,6 +55,7 @@ textarea{
   width: 100%;
   height: 31vh;
   font-size: 1.6em;
+  overflow: scroll;
 }
 .btn{
   height: 50px;

@@ -427,7 +427,91 @@ console.log(rXp.test(myMobil));
     </article>
 
 
-  </section>
+	</section>
+	<section>
+
+
+
+<h2>test()</h2>
+
+<pre><code class="js">const testString =&quot;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+ quia suscipit in praesentium! Ullam est sunt assumenda aliquid ducimus.&quot;;
+
+var testEx = /\best\b/;
+
+console.log(testEx.test(testString));
+</code></pre>
+
+<div class="headline"><h2>Die exec() Methode</h2></div>
+<article>
+<p>So gut die Test-Methode auf die kurze Distanz oder als Indikator
+ist, für das bearbeiten großer Textmengen ist exec() die Bessere Wahl.
+Genau wie bei <strong>test()</strong> übergibt man <strong>exec()</strong> ein String der auf den den Regulären Ausdruck geprüft wird. Der Vorteil der Execute Funktion ist, dass sie konkrete Informationen das Vorkommen liefert.</p>
+
+</article>
+<pre><code class="js">const testString = 'Liebe Freunde, meine neue Nummer lautet:
+	 +49 69 1234567. Fax:  +49 69 4578911. Ich Wünsch euch schöne Ferien.';
+var rXp = /\+?\d{2}\s\d{2,3}\s\d{5,7}/;
+
+console.log(rXp.exec(testString));
+</code></pre>
+
+<article><p>Die Methode Liefert die Stelle zurück an der die &#8216;Expression&#8217; gefunden wurde (index: 41).
+	Die Eigenschaft **Input enthält den bearbeiten String.</p>
+	</article>
+<div class="headline"><h4>Verbesserung</h4></div>
+
+<pre><code class="js">const testString = 'Liebe Freunde, meine neue Nummer lautet: 
+	+49 69 1234567. 
+	Fax:  +49 69 4578911. 
+	Ich Wünsch euch schöne Ferien.';
+var rXp = /\+?\d{2}\s\d{2,3}\s\d{5,7}/;
+var result = rXp.exec(testString);
+console.log(
+  'Nummer ' + result[0] + ' gefunden an Index: ' +result.index + '.' 
+);
+</code></pre>
+
+<p>Nun wird folgendes Ausgegeben:
+<strong>Nummer +49 69 1234567 gefunden an Index: 41.</strong></p>
+
+
+<div class="headline">
+	<h2>Weitersuchen mit einem loop und /g</h2>
+
+</div>
+<article>
+	<p>Damit der gesamte Text durchsucht werden kann, baut man die Suchanfrage in einen Loop ein, der solange Läuft wie Ergebnisse bringt.
+		Der Regex muss auf jeden Fall das Global-Fähnchen <strong>/g</strong> angehängt werden.
+		Die Funktion gibt schön geordnete Ergebnisse zurück:
+		Nummer +49 69 1234567 gefunden an Index: 41.<br/>
+		Nummer +49 69 4578911 gefunden an Index: 63.</p>
+</article>
+
+	</section>
+	<section>
+		<article>
+			<div class="headline">
+				<h2>Die match() Methode</h2>
+			</div>
+<p>Es wird ein Array mit den Nummern wiedergegen.</p>
+		
+		</article>
+<pre><code>const rex =/\+?\d{2}\s\d{2}\s\d{5,7}/g
+const string = "Eine Telefonnummer: 49 30 1234567 und die Nebenstelle: 49 30 98798798";
+var result = string.match(rex);
+console.log(result);</code>
+</pre>
+	</section>
+	<section>
+		<div class="headline"><h2>replace()</h2></div>
+<pre><code>var rex =/\+?\d{2}\s\d{2}\s\d{5,7}/g
+var text = "Eine Telefonnummer: 49 30 1234567 und die Nebenstelle: 49 30 98798798";
+text = text.replace(rex, '<Telefonnummer durch überangedne Programierkunst verborgen>')
+console.log(text);</code></pre>
+		
+		
+	</section>
   <script type="text/javascript" src="regEx.js"></script>
 </body>
 </html>
