@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="pragma" content="no-cache">
+  <meta http-equiv="author" content="Andreas Breitwieser">
+  <title>Regex Groups </title>
+  <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section>
+      <h1>Groups</h1>
+      <h5>Regular Expressions</h5>
+      <!-- <pre>
+        <code>
+
+        </code>
+      </pre> -->
+      <span class="code">&lt;<span class="tag">button</span>&gt;<span class="text">Create</span>&lt;/<span class="tag">button</span>&gt;</span>
+      <span class="regEx">&lt;([a-z]+)&gt;(.*?)&lt;/([a-z]+)&gt;</span>
+
+      <span class="replacement">&lt;<span class="tag">$1</span>&gt;<span class="text">$2</span>&lt;/<span class="tag">$3</span>&gt;</span>
+
+      <div class="textContainer">
+        <p>Im Suchen und Ersetzen geht es manchmal um mehr, als schwärzen. Mitunter will oder muss man Informationen erhalten. Beim Highlighten von HTML-Code zum Beispiel finden sich schnell unverzichbare Informationen die rundum von störenden Gebimsel umgeben sind. Beim Uwandeln der Tags möchte man weder Tagnames, Klassen oder Werte verlieren.</p><span class="thin large">Regular Expression Groups</span>
+        <p>Bei der Berschreibung der RegEx-Zeichenkette werden empfindlichen Breiche die Klassenliste mit runden Klammern umschlossen. Jerder mit Klammern Umschlossene Berreich ist dann eine Gruppe (Tag Name)(Atrubut)(Value). 
+          Das zauberhafte daran ist, dass die Werte der Gruppen automatisch in durchnummerierten Variablen, mit einem Dollar als Vorzeichen hinterlegt werden. In der Replacement Anweisung braucht man die Variablen bloß noch an entsprechender Stelle einzusetzen.
+        </p>
+       
+      </div>
+
+  </section></main>
+</body>
+</html>

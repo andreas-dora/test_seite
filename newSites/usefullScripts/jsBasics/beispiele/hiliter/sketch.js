@@ -1,13 +1,20 @@
 var inbox = document.querySelector('#inbox');
+var codeBox = document.querySelector('.codeBox');
 const start = document.getElementById('start');
 var firstCheck = /<(.*?)>/;
-// const testString = '"<button id="row-reverse">row-rev.</button>"';
-// const fString = "Peter";
+
 start.addEventListener('click', checkFun);
-var workString;
+let myNode = document.createTextNode('nknkkn');
+  // codeBox.appendChild(myNode);
+  // console.log(myNode.nodeValue);
+
 function checkFun(){
+  
   if(firstCheck.test(inbox.value)){
-    console.log('BUHA');
+    let workString = inbox.value;
+
+    console.log(workString);
+    // codeBox.value = inBox.value;
   } else {
     console.log('NIX');
   }
