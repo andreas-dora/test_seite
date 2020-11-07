@@ -298,7 +298,12 @@ $-serif:
   </div>
 </div>
 
-    <footer>&copy; 2020 Andreas Breitwieser | <a href="#">Impressum</a></footer>  
+    <footer>&copy; 2020 Andreas Breitwieser | <a href="#">Impressum</a></footer><br>
+    <sub class="modi"></sub>  
   </main>
+  <script>
+    modi = document.querySelector('.modi');
+    modi.innerText =document.lastModified;
+  </script>
 </body>
 </html>

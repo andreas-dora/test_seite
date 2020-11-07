@@ -1,115 +1,250 @@
-!<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Regular Expressions</title>
+	<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <header>
-    <h1>Regular Expressions</h1>
+    <h1>Reguläre</h1>
+		<h1>Expression</h1>
+		
+		<h2>Regex - Rregex</h2>
+
+		<div class="linkContainer">
+			<dl>
+				<dt>Konstruktion</dt>
+        <dd><a href="#id_01">Initiaddsierung</a></dd>
+        <dd><a href="#id_02">Die test() Methode</a></dd>
+        <dd><a href="#id_03">Eigene Klassen erstellen</a></dd>
+        <dd><a href="#id_04">Vordefinierte Klassen</a></dd>
+        <dd><a href="#id_05">Begrenzungen</a></dd>
+        <dd><a href="#id_06">Quantifizieren</a></dd>
+        </dl>
+		</div>
+
+		<div class="linkContainer">
+        <dl>
+					<dt>Anwendug</dt>
+          <dd><a href="" id="id_07">Übersicht Methoden</a></dd>
+          <dd><a href="" id="id_08">Methode 1</a></dd>
+          <dd><a href="" id="id_07">Methode 2</a></dd>
+         <dd><a href="" id="id_07">Methode 2</a></dd>
+         <dd><a href="" id="id_07">Methode 2</a></dd>
+         <dd><a href="" id="id_07">Methode 2</a></dd>
+        </dl>
+		</div>
   </header>
   <section class="inhalt" id="id_00">
     <div class="headline"><h1>Inhalt</h1></div>
     <article>
-      <h4>Erstellen</h4>
-      <ul>
-        <li>Einleitung</li>
-        <li><a href="#id_01">Initialisierung</a></li>
-        <li><a href="#id_02">Die test() Methode</a></li>
-        <li><a href="#id_03">Eigene Klassen erstellen</a></li>
-        <li><a href="#id_04">Vordefinierte Klassen</a></li>
-        <li><a href="#id_05">Begrenzungen</a></li>
-        <li><a href="#id_06">Quantifizieren</a></li>
-        </ul>
-        <h4>Anwendung</h4>
-        <ul>
-          <li><a href="" id="id_07">Übersicht Methoden</a>
-          <li><a href="" id="id_08">Methode 1</a></li>
-          <li><a href="" id="id_07">Methode 2</a></li>
-         <li><a href="" id="id_07">Methode 2</a></li>
-         <li><a href="" id="id_07">Methode 2</a></li>
-         <li><a href="" id="id_07">Methode 2</a></li>
-        </ul>
+      
+		</article>
+		
+		</section>
+	<section id="00">
+			<table>
+			<colgroup>
+			<col/>
+			<col/>
+			</colgroup>
+			
+			<thead>
+			<tr>
+				<th>Zeichen</th>
+				<th>Bedeutung</th>
+			</tr>
+			</thead>
+			
+			<tbody>
+			<tr>
+				<td>\n</td>
+				<td>neue Zeile</td>
+			</tr>
+			<tr>
+				<td>\r</td>
+				<td>Return</td>
+			</tr>
+			<tr>
+				<td>\t</td>
+				<td>Tab</td>
+			</tr>
+			<tr>
+				<td>a|b</td>
+				<td>&#8220;a&#8221; ODER &#8220;b&#8221;</td>
+			</tr>
+				<td>[abc]</td>
+				<td> Einer davon</td>
+			</tr>
+				<td>[^abc]</td>
+				<td> KEINER davon</td>
+			</tr>
+			</tbody>
+			</table>			<table>
+				<caption>Definierte Klassen</caption>
+				<colgroup>
+				<col/>
+				<col/>
+				<col/>
+				</colgroup>
+				
+				<thead>
+				<tr>
+					<th>Klasse</th>
+					<th>Steht für:</th>
+				
+				</tr>
+				</thead>
+				
+				<tbody>
+				<tr>
+					<td>.</td>
+					<td>Bliebiges Zeichen, kein Umbruch</td>
+		
+				</tr>
+				<tr>
+					<td>\d</td>
+					<td>eine Ziffer von 0&#8211;9</td>
+		
+				</td>
+				<tr>
+					<td>\D</td>
+					<td>Keine Ziffer</td>
+	
+				</td>
+				</tr>
+				<tr>
+					<td>\s</td>
+					<td>WhiteSpace</td>
+				
+				</tr>
+				<tr>
+					<td>\S</td>
+					<td>KEIN WhiteSpace </td>
+					
+				</tr>
+				<tr>
+					<td>\w</td>
+					<td>Wortzeichen</td>
+				
+				</tr>
+				<tr>
+					<td>\W</td>
+					<td>KEIN Wortzeichen</td>
+			
+				</tr>
+				</tbody>
+				</table>
+						<div class="headline"><h2>Alles auf einen Blick</h2></div>
+		<table>
+			<caption id="begrenzungen">Begrenzungen</caption>
+			<colgroup>
+			<col />
+			<col/>
+			</colgroup>
+			
+			<thead>
+			<tr>
+				<th >Zeichen</th>
+				<th>Erklärung</th>
+			</tr>
+			</thead>
+			
+			<tbody>
+			<tr>
+				<td >^</td>
+				<td>Nichts steht vor der Beschreibung</td>
+			</tr>
+			<tr>
+				<td >$</td>
+				<td>Nichts steht hinter der Beschreibung</td>
+			</tr>
+			<tr>
+				<td >\b</td>
+				<td>Anfang oder Ende eine Wortes</td>
+			</tr>
+			<tr>
+				<td >\B</td>
+				<td>Hier ist keine Wortgrenze</td>
+			</tr>
+			</tbody>
+			</table>
+			<table>
+	<caption>Quantifizierer</caption>
+	<colgroup>
+	<col/>
+	<col/>
+	<col/>
+	</colgroup>
+	
+	<thead>
+	<tr>
+		
+		<th>Zeichen</th>
+		<th>Beschreibung</th>
+	</tr>
+	</thead>
+	
+	<tbody>
+	<tr>
+	
+		<td>x?</td>
+		<td>optional</td>
+	</tr>
+	<tr>
 
-        <h4>Regex im Texteditor</h4>
-    </article>
+		<td>x*</td>
+		<td>Beliebig viele</td>
+	</tr>
+	<tr>
 
+		<td>x+</td>
+		<td>Minimum 1 x</td>
+	</tr>
+	<tr>
+	
+		<td>x{n}</td>
+		<td>Genaue Anzahl </td>
+	</tr>
+	<tr>
 
-
-  </section>
+		<td> x{2,}</td>
+		<td>Minimum 2, mehr möglich </td>
+	</tr>
+	<tr>
+		<td>x{n,n}</td>
+		<td>min max</td>
+	
+	</tr>
+	</tbody>
+	</table>	</section>
   <section id="id_01">
-    <article>
-
-
-
-
-
-<h2>Einleitung</h2>
-
-<p>Reguläre Ausdrücke sind die Beschreibungen von Zeichenmuster. Diese Beschreibungen können je nach Aufgabe sehr allgemein gehalten oder äußerst präzise ausgearbeitet werden. Sie sind der Antrieb von &#8216;Suchen und Ersetzen&#8217; und können dieser Funktion Superkräfte verleihen. JS kennt den Typ <strong>RegExp</strong>. Über diesen Tellerrand hinaus spricht man in der Kurzform von <strong>Regex</strong>. Sie sind der Kernbestandteil von Editoren und Sprachen. </p>
-
-<hr />
-
-<h2>Initialisierung</h2>
-
-<p>Die Constructor Function sollte gewählt werden, wenn der Inhalt der RegEx dynamisch bestimmt werden soll (zB über Benutzereingaben):</p>
-
-<pre><code class="js">var rXp = new RegExp('abcd');
-</code></pre>
-
-<p>Laterale Schreibweise sollte gewählt werden, wenn die Zeichenkette unverändert bleibt:</p>
-
-<pre><code class="js">const rXp = /abcde/;
-</code></pre>
-
-<h2>Die test Funktion test()</h2>
-
-<pre><code class="js">const palindrom = &quot;In Girum Imus Nocte Et Consumimur Igni&quot;;
+		<div class="headline"><h2>Einleitung</h2></div>
+    <article><p>Reguläre Ausdrücke sind die Beschreibungen von Zeichenmuster. Diese Beschreibungen können je nach Aufgabe sehr allgemein gehalten oder äußerst präzise ausgearbeitet werden. Sie sind der Antrieb von &#8216;Suchen und Ersetzen&#8217; und können dieser Funktion Superkräfte verleihen. JS kennt den Typ <strong>RegExp</strong>. Über diesen Tellerrand hinaus spricht man in der Kurzform von <strong>Regex</strong>. Sie sind der Kernbestandteil von Editoren und Sprachen. </p><hr /><h2>Initialisierung</h2><p>Die Constructor Function sollte gewählt werden, wenn der Inhalt der RegEx dynamisch bestimmt werden soll (zB über Benutzereingaben):</p><pre><code class="js">var rXp = new RegExp('abcd');
+</code></pre><p>Laterale Schreibweise sollte gewählt werden, wenn die Zeichenkette unverändert bleibt:</p><pre><code class="js">const rXp = /abcde/;
+</code></pre><h2>Die test Funktion test()</h2><pre><code class="js">const palindrom = &quot;In Girum Imus Nocte Et Consumimur Igni&quot;;
 const firstExpr = /imu/;
 console.log(firstExpr.test(palindrom));
-</code></pre>
-
-<p>Rückgabe: true</p>
-
-<hr />
-
-<h2>Telefonnummern</h2>
-
-<p>Die Große Herausforderung ist die richtige Formulierung der RexEx. Ein beliebtes Beispiel (weil häufig benötigt) ist das Ausfindgmachen von Telefonnummern. Um den richtigen Ausdruck zu finden macht man sich am besten erstmal ein paar Notizen:</p>
-
-<h4>Vereinfachtes Beispiel Internationale Telfonnummer:</h4>
-
-<ul>
+</code></pre><p>Rückgabe: true</p><hr /><h2>Telefonnummern</h2><p>Die Große Herausforderung ist die richtige Formulierung der RexEx. Ein beliebtes Beispiel (weil häufig benötigt) ist das Ausfindgmachen von Telefonnummern. Um den richtigen Ausdruck zu finden macht man sich am besten erstmal ein paar Notizen:</p><h4>Vereinfachtes Beispiel Internationale Telfonnummer:</h4><ul>
 <li>Internationale Telefonnummern können mit einem &#8216;+&#8217; beginnen oder zwei Nullen</li>
 <li>Sie bestehen aus einer Ländervorwahl von 2 Ziffern</li>
 <li>es folgt ein Leerzeichen</li>
 <li>die Ortsvorwahl mit zwei Ziffern</li>
 <li>ein Leerzeichen</li>
 <li>die eigentliche Nummer mit 5 bis 7 Ziffern</li>
-</ul>
-
-<p><strong>Also: 11 bis 13 Ziffern</strong></p>
-
-<hr />
-
-<h4>Die einfachste Formilierung</h4>
-
-<table>
+</ul><p><strong>Also: 11 bis 13 Ziffern</strong></p><hr /><h4>Die einfachste Formilierung</h4><table>
 <colgroup>
 <col/>
 <col/>
-</colgroup>
-
-<thead>
+</colgroup><thead>
 <tr>
 	<th>Ausdruck</th>
 	<th>Bedeutung</th>
 </tr>
-</thead>
-
-<tbody>
+</thead><tbody>
 <tr>
 	<td>.</td>
 	<td>Ein beliebiges Zeichen aber kein Umbruch</td>
@@ -127,68 +262,24 @@ console.log(firstExpr.test(palindrom));
 	<td>Das Zeichen &#8220;a&#8221; oder &#8220;b&#8221;</td>
 </tr>
 </tbody>
-</table>
-
-<p>13 Punkte beschreiben also (etwas umständlich) einen Zeichenkette die mindestens 13 Stellen hat.</p>
-
-<pre><code class="js">const numberOne = '49 69 1234567';
-const palindrom = &quot;In Girum Imus Nocte Et Consumimur Igni&quot;;
-
-const eXp = /............./;
-
-console.log(eXp.test(numberOne));
+</table><p>13 Punkte beschreiben also (etwas umständlich) einen Zeichenkette die mindestens 13 Stellen hat.</p><pre><code class="js">const numberOne = '49 69 1234567';
+const palindrom = &quot;In Girum Imus Nocte Et Consumimur Igni&quot;;const eXp = /............./;console.log(eXp.test(numberOne));
 console.log(eXp.test(palindrom));
-</code></pre>
-
-<p>Unser Prüfung ist bei der Telefonnummer erfolgreich, schlägt aber leider auch bei dem Palindrom an.</p>
-
-<hr />
-
-<h4>Zeichenklassen verwenden /[abc]/</h4>
-
-<p>Innerhalb von eckigen Klammern werden Zeichenklassen definiert.
-Damit lassen sich drei verschiedene Dinge tun:</p>
-
-<h4>Einfache Klassen bestimmen:</h4>
-
-<p>[abc] - Ein Kleinbuchstabe &#8220;a&#8221;, &#8220;b&#8221; oder &#8220;c&#8221;</p>
-
-<h4>Verneinungen:</h4>
-
-<p>[^abc] - IST NICHT &#8220;a&#8221;, &#8220;b&#8221; oder &#8220;c&#8221;</p>
-
-<h4>Bereiche definieren</h4>
-
-<p>[a-zA-Z] - Ein Klein- oder Großbuchstaben von a-z
-[0&#8211;9] - Ein Ziffer zwischen 0 und 9</p>
-
-<p>Damit kann man die Beschreibung der Telefonnummer schon etwas verfeinern:</p>
-
-<pre><code class="js">const eXp = /[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9][0-9][0-9][0-9]/;
-</code></pre>
-
-<p>Fehleranfällig sind zwei &#8220;.&#8221;, die ja alles außer einem Zeilenumbruch sein können. </p>
-
-<hr />
-
-<h4>Vordefinierte Klassen</h4>
-
-<table>
+</code></pre><p>Unser Prüfung ist bei der Telefonnummer erfolgreich, schlägt aber leider auch bei dem Palindrom an.</p><hr /><h4>Zeichenklassen verwenden /[abc]/</h4><p>Innerhalb von eckigen Klammern werden Zeichenklassen definiert.
+Damit lassen sich drei verschiedene Dinge tun:</p><h4>Einfache Klassen bestimmen:</h4><p>[abc] - Ein Kleinbuchstabe &#8220;a&#8221;, &#8220;b&#8221; oder &#8220;c&#8221;</p><h4>Verneinungen:</h4><p>[^abc] - IST NICHT &#8220;a&#8221;, &#8220;b&#8221; oder &#8220;c&#8221;</p><h4>Bereiche definieren</h4><p>[a-zA-Z] - Ein Klein- oder Großbuchstaben von a-z
+[0&#8211;9] - Ein Ziffer zwischen 0 und 9</p><p>Damit kann man die Beschreibung der Telefonnummer schon etwas verfeinern:</p><pre><code class="js">const eXp = /[0-9][0-9].[0-9][0-9].[0-9][0-9][0-9][0-9][0-9][0-9][0-9]/;
+</code></pre><p>Fehleranfällig sind zwei &#8220;.&#8221;, die ja alles außer einem Zeilenumbruch sein können. </p><hr /><h4>Vordefinierte Klassen</h4><table>
 <colgroup>
 <col/>
 <col/>
 <col/>
-</colgroup>
-
-<thead>
+</colgroup><thead>
 <tr>
 	<th>Klasse</th>
 	<th>Steht für:</th>
 	<th>Kurz für</th>
 </tr>
-</thead>
-
-<tbody>
+</thead><tbody>
 <tr>
 	<td>.</td>
 	<td>Jedes Zeichen aber kein Umbruch</td>
@@ -221,107 +312,59 @@ Damit lassen sich drei verschiedene Dinge tun:</p>
 	<td>[^\w]</td>
 </tr>
 </tbody>
-</table>
-
-<p>Die Telefonnummern-Beschreibung lässt sich damit wie folgt verbessern</p>
-
-<pre><code class="js">const eXp = /\d\d \d\d \d\d\d\d\d\d\d/;
-</code></pre>
-
-<hr />
-
-<h4>Begrenzungen</h4>
-
-<table>
+</table><p>Die Telefonnummern-Beschreibung lässt sich damit wie folgt verbessern</p><pre><code class="js">const eXp = /\d\d \d\d \d\d\d\d\d\d\d/;
+</code></pre><hr /><h4>Begrenzungen</h4><table>
 <caption id="begrenzungen">Begrenzungen</caption>
 <colgroup>
-<col style="text-align:center;"/>
+<col />
 <col/>
-</colgroup>
-
-<thead>
+</colgroup><thead>
 <tr>
-	<th style="text-align:center;">Ausdruck</th>
+	<th >Ausdruck</th>
 	<th>Erklärung</th>
 </tr>
-</thead>
-
-<tbody>
+</thead><tbody>
 <tr>
-	<td style="text-align:center;">^</td>
+	<td >^</td>
 	<td>Nichts steht vor der folgenden Beschreibung</td>
 </tr>
 <tr>
-	<td style="text-align:center;">$</td>
+	<td >$</td>
 	<td>Nichts steht hinter der vorangegangenen Beschreibung</td>
 </tr>
 <tr>
-	<td style="text-align:center;">\b</td>
+	<td >\b</td>
 	<td>Anfang oder Ende eine Wortes</td>
 </tr>
 <tr>
-	<td style="text-align:center;">\B</td>
+	<td >\B</td>
 	<td>Hier ist keine Wortgrenze</td>
 </tr>
 </tbody>
-</table>
-
-<hr />
-
-<h4>Begrenzungen der gesamten Zeichenkette</h4>
-
-<p><strong>Anfang</strong> Mit dem Zirkumflex &#8220;^&#8221; stellt man sicher, dass nichts vor der Beschreibung in der Zeichenkette steht.</p>
-
-<pre><code class="js">var meinKuchen = &quot;Käsekuchen&quot;;
+</table><hr /><h4>Begrenzungen der gesamten Zeichenkette</h4><p><strong>Anfang</strong> Mit dem Zirkumflex &#8220;^&#8221; stellt man sicher, dass nichts vor der Beschreibung in der Zeichenkette steht.</p><pre><code class="js">var meinKuchen = &quot;Käsekuchen&quot;;
 var eXp = /^Käsekuchen/;
 console.log(eXp.test(meinKuchen));
-</code></pre>
-
-<p><strong>Ende:</strong> Mit dem Dollar-Zeichen stellt man sicher das keine weiteren Zeichen nach den beschriebenen folgen:</p>
-
-<pre><code class="js">var meinKuchen = &quot;Käsekuchen&quot;;
+</code></pre><p><strong>Ende:</strong> Mit dem Dollar-Zeichen stellt man sicher das keine weiteren Zeichen nach den beschriebenen folgen:</p><pre><code class="js">var meinKuchen = &quot;Käsekuchen&quot;;
 var laden = &quot;Käsekuchenladen&quot;
 var eXp = /^Käsekuchen$/;
 console.log(eXp.test(meinKuchen));
 console.log(eXp.test(laden));
-</code></pre>
-
-<h2>Begrenzung eines Wortes</h2>
-
-<p>Mit dem \b Lassen Sich Vorne wie Hinten Wortgrenzen festhalten. Der \B Großbuchstabe stellt auch hier die Verneinung dar: Keine Wortgrenze</p>
-
-<pre><code class="js">var meinString = &quot;Im Land der Käsekuchen&quot;;
+</code></pre><h2>Begrenzung eines Wortes</h2><p>Mit dem \b Lassen Sich Vorne wie Hinten Wortgrenzen festhalten. Der \B Großbuchstabe stellt auch hier die Verneinung dar: Keine Wortgrenze</p><pre><code class="js">var meinString = &quot;Im Land der Käsekuchen&quot;;
 var eXp = /\Bkuchen\b/;
 console.log(eXp.test(meinString));
-</code></pre>
-
-<p>Verbesserte Beschreibung der Telfonnummer:</p>
-
-<pre><code class="js">const eXp = /^\d\d\s\d\d\s\d\d\d\d\d\d\d$/;
-</code></pre>
-
-<hr />
-
-<h2>Quantifizierer anwenden</h2>
-
-<p>Mit diesem diesen Mengenangaben lassen sich die Beschreibungen verkürzen, flexibler oder ganz nach Wunsch präziser gestalten.</p>
-
-<table>
+</code></pre><p>Verbesserte Beschreibung der Telfonnummer:</p><pre><code class="js">const eXp = /^\d\d\s\d\d\s\d\d\d\d\d\d\d$/;
+</code></pre><hr /><h2>Quantifizierer anwenden</h2><p>Mit diesem diesen Mengenangaben lassen sich die Beschreibungen verkürzen, flexibler oder ganz nach Wunsch präziser gestalten.</p><table>
 <colgroup>
 <col/>
 <col/>
 <col/>
-</colgroup>
-
-<thead>
+</colgroup><thead>
 <tr>
 	<th>Für</th>
 	<th>Zeichen</th>
 	<th>Beschreibung</th>
 </tr>
-</thead>
-
-<tbody>
+</thead><tbody>
 <tr>
 	<td>Optional</td>
 	<td>x?</td>
@@ -353,39 +396,25 @@ console.log(eXp.test(meinString));
 	<td>Minimum 2 &#8216;x&#8217;, maximal 4 &#8216;x&#8217;</td>
 </tr>
 </tbody>
-</table>
-
-<p>Die Tel-Beschreibung lässt sich jetzt entscheidend verbessern. Wie Eingangs erwähnt kann die Nummer optional mit einen &#8216;+&#8217; beginnen. Das &#8216;+&#8217;.<br/>
+</table><p>Die Tel-Beschreibung lässt sich jetzt entscheidend verbessern. Wie Eingangs erwähnt kann die Nummer optional mit einen &#8216;+&#8217; beginnen. Das &#8216;+&#8217;.<br/>
 Weil &#8216;+&#8217;, wie eben beschrieben für &#8216;Minimum 1 mal&#8217; stehen muss das Zeichen mit dem Escape-Char &#8216;\&#8217; (Backslash) maskiert werden.
-Also: &#8216;\+?&#8217;</p>
-
-<pre><code class="js">const myMobil = '+49 155 1234567';
+Also: &#8216;\+?&#8217;</p><pre><code class="js">const myMobil = '+49 155 1234567';
 var rXp = /^\+?\d{2}\s\d{2,3}\s\d{5,7}$/;
 console.log(rXp.test(myMobil));
-</code></pre>
-
-<hr />
-
-<h2>Methoden</h2>
-
-<table>
+</code></pre><hr /><h2>Methoden</h2><table>
 <colgroup>
 <col/>
 <col/>
 <col/>
 <col/>
-</colgroup>
-
-<thead>
+</colgroup><thead>
 <tr>
 	<th>Methode</th>
 	<th>Typ</th>
 	<th>Aufgebe</th>
 	<th>Rückgabe</th>
 </tr>
-</thead>
-
-<tbody>
+</thead><tbody>
 <tr>
 	<td>test()</td>
 	<td>RegExp</td>
@@ -424,71 +453,35 @@ console.log(rXp.test(myMobil));
 </tr>
 </tbody>
 </table>
-    </article>
-
-
-	</section>
-	<section>
-
-
-
-<h2>test()</h2>
-
-<pre><code class="js">const testString =&quot;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
- quia suscipit in praesentium! Ullam est sunt assumenda aliquid ducimus.&quot;;
-
-var testEx = /\best\b/;
-
-console.log(testEx.test(testString));
-</code></pre>
-
-<div class="headline"><h2>Die exec() Methode</h2></div>
+    </article>	</section>
+	<section><h2>test()</h2><pre><code class="js">const testString =&quot;Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+ quia suscipit in praesentium! Ullam est sunt assumenda aliquid ducimus.&quot;;var testEx = /\best\b/;console.log(testEx.test(testString));
+</code></pre><div class="headline"><h2>Die exec() Methode</h2></div>
 <article>
 <p>So gut die Test-Methode auf die kurze Distanz oder als Indikator
 ist, für das bearbeiten großer Textmengen ist exec() die Bessere Wahl.
-Genau wie bei <strong>test()</strong> übergibt man <strong>exec()</strong> ein String der auf den den Regulären Ausdruck geprüft wird. Der Vorteil der Execute Funktion ist, dass sie konkrete Informationen das Vorkommen liefert.</p>
-
-</article>
+Genau wie bei <strong>test()</strong> übergibt man <strong>exec()</strong> ein String der auf den den Regulären Ausdruck geprüft wird. Der Vorteil der Execute Funktion ist, dass sie konkrete Informationen das Vorkommen liefert.</p></article>
 <pre><code class="js">const testString = 'Liebe Freunde, meine neue Nummer lautet:
-	 +49 69 1234567. Fax:  +49 69 4578911. Ich Wünsch euch schöne Ferien.';
-var rXp = /\+?\d{2}\s\d{2,3}\s\d{5,7}/;
-
-console.log(rXp.exec(testString));
-</code></pre>
-
-<article><p>Die Methode Liefert die Stelle zurück an der die &#8216;Expression&#8217; gefunden wurde (index: 41).
++49 69 1234567. Fax: +49 69 4578911. Ich Wünsch euch schöne Ferien.';
+var rXp = /\+?\d{2}\s\d{2,3}\s\d{5,7}/;console.log(rXp.exec(testString));
+</code></pre><article><p>Die Methode Liefert die Stelle zurück an der die &#8216;Expression&#8217; gefunden wurde (index: 41).
 	Die Eigenschaft **Input enthält den bearbeiten String.</p>
 	</article>
-<div class="headline"><h4>Verbesserung</h4></div>
-
-<pre><code class="js">const testString = 'Liebe Freunde, meine neue Nummer lautet: 
-	+49 69 1234567. 
-	Fax:  +49 69 4578911. 
-	Ich Wünsch euch schöne Ferien.';
+<div class="headline"><h4>Verbesserung</h4></div><pre><code class="js">const testString = 'Liebe Freunde, meine 
+neue Nummer lautet: +49 69 1234567. 
+Fax: +49 69 4578911. Ich Wünsch euch schöne Ferien.';
 var rXp = /\+?\d{2}\s\d{2,3}\s\d{5,7}/;
 var result = rXp.exec(testString);
-console.log(
-  'Nummer ' + result[0] + ' gefunden an Index: ' +result.index + '.' 
-);
-</code></pre>
-
-<p>Nun wird folgendes Ausgegeben:
-<strong>Nummer +49 69 1234567 gefunden an Index: 41.</strong></p>
-
-
-<div class="headline">
-	<h2>Weitersuchen mit einem loop und /g</h2>
-
-</div>
+console.log('Nummer ' + result[0] + ' gefunden an Index: ' +result.index + '.' );
+</code></pre><p>Nun wird folgendes Ausgegeben: <strong>Nummer +49 69 1234567 gefunden an Index: 41.</strong></p><div class="headline">
+	<h2>Weitersuchen mit einem loop und /g</h2></div>
 <article>
 	<p>Damit der gesamte Text durchsucht werden kann, baut man die Suchanfrage in einen Loop ein, der solange Läuft wie Ergebnisse bringt.
 		Der Regex muss auf jeden Fall das Global-Fähnchen <strong>/g</strong> angehängt werden.
 		Die Funktion gibt schön geordnete Ergebnisse zurück:
 		Nummer +49 69 1234567 gefunden an Index: 41.<br/>
 		Nummer +49 69 4578911 gefunden an Index: 63.</p>
-</article>
-
-	</section>
+</article>	</section>
 	<section>
 		<article>
 			<div class="headline">
@@ -509,8 +502,6 @@ console.log(result);</code>
 var text = "Eine Telefonnummer: 49 30 1234567 und die Nebenstelle: 49 30 98798798";
 text = text.replace(rex, '<Telefonnummer durch überangedne Programierkunst verborgen>')
 console.log(text);</code></pre>
-		
-		
 	</section>
   <script type="text/javascript" src="regEx.js"></script>
 </body>
