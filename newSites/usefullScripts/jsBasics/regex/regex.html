@@ -29,12 +29,13 @@
 		<div class="linkContainer">
         <dl>
 					<dt>Anwendug</dt>
-          <dd><a href="" id="id_07">Übersicht Methoden</a></dd>
-          <dd><a href="" id="id_08">Methode 1</a></dd>
-          <dd><a href="" id="id_07">Methode 2</a></dd>
-         <dd><a href="" id="id_07">Methode 2</a></dd>
-         <dd><a href="" id="id_07">Methode 2</a></dd>
-         <dd><a href="" id="id_07">Methode 2</a></dd>
+          <dd><a href="" >Übersicht Methoden</a></dd>
+          <dd><a href="">Methode 1</a></dd>
+          <dd><a href="">Methode 2</a></dd>
+         <dd><a href="" >Methode 2</a></dd>
+				 <dd><a href=""> Methode 2</a></dd>
+				 <dt>Neue Features</dt>
+         <dd><a href="#2018">in JS 2018</a></dd>
         </dl>
 		</div>
   </header>
@@ -502,6 +503,88 @@ console.log(result);</code>
 var text = "Eine Telefonnummer: 49 30 1234567 und die Nebenstelle: 49 30 98798798";
 text = text.replace(rex, '<Telefonnummer durch überangedne Programierkunst verborgen>')
 console.log(text);</code></pre>
+	</section>
+	<section id="2018">
+		<article>
+			<h1>Neue RegEx Features in Javascript 2018</h1>
+
+<p>In Javascript ist es nun möglich Capture Groups Namen zu geben:
+<code>?&lt;name&gt;</code></p>
+
+<h4>Namen für Capture Groups</h4>
+
+<pre><code>const rex = /(?&lt;year&gt;\d{4})-(?&lt;month&gt;\d{2})-(?&lt;day&gt;\{2})/u;
+const result = rex.exec('2018-05-09');</code></pre>
+
+<hr />
+
+<h4>Positive lookahead mit ?=</h4>
+
+<p>Mindesten eine Zahl aber muss Dollars folgen:</p>
+
+<pre><code>const pattern = /\d+(?=Dollars)/u;
+const result = pattern.exec('42 Dollars');
+</code></pre>
+
+
+<h4>Negative lookahead mit ?!=</h4>
+
+<p>Mindesten eine Zahl, Dollars darf nicht folgen:</p>
+<pre>
+<code>const pattern = /\d+(?!=Dollars)/u;
+const result = pattern.exec('42 Euros');</code></pre>
+
+
+<h4>Positive lookbehind mit ?&lt;=</h4>
+
+<p>Mindesten eine Zahl aber das Dollarzeichen muss davor stehen:</p>
+<pre><code>const pattern = /\d+(?&lt;=\$)\d+/u;
+const result = pattern.exec('$42');</code></pre>
+
+
+<h4>Negative lookbehind mit ?&lt;=</h4>
+
+<p>Sucht nach Zahlen vor denen keine Dollarzeichen stehn:
+<code>
+const pattern = /\d+(?&lt;!\$)\d+/u;
+const result = pattern.exec('€42');
+</code>
+&#8212;</p>
+
+<h4>Neue Flags</h4>
+
+<p>/s Damit gilt der Erfasst der Punkt aller Zeichen und Zeilenumbrüche
+/u Unicode Chacters</p>
+
+<p>So werden auch alle Ascii Zeichen gefunden:</p>
+
+<pre><code>const rexAscii = /\p{ASCII}/u;
+rexAscii.test('_');
+</code></pre>
+
+<p>So werden auch alle mathematischen Symbole gefunden:</p>
+
+<pre><code>const rexMath = /\p{Math}/u;
+rexAscii.test('=');
+</code></pre>
+
+<p>So werden alle Ascii-Lettern (auch griechische) und WhiteSpaces gefunden:</p>
+
+<pre><code>const rex = /[\p{Letter}\p{White_Space}]+/u;
+result =rex.test('Γεια σου κοσμε');
+</code></pre>
+
+<p>Benutzung in HTML:</p>
+
+<pre><code class="html">&lt;style&gt;
+    :valid {background: lightgreen; }
+    :invalid {background: pink }
+&lt;/style&gt;
+&lt;input pattern=&quot;[\p{Letter}\p{White_Space}]+&quot;
+            value&quot;Γεια σου κοσμε&quot;&gt;
+</code></pre>
+		</article>
+		<aside></aside>
 	</section>
   <script type="text/javascript" src="regEx.js"></script>
 </body>
