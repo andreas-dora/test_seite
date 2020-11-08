@@ -27,29 +27,34 @@
 }
 body{
   background-color: black;
-  color: var(--c-bronze);
+  color: #beaa7a;
   font-family: 'Space Grotesk', sans-serif;
   font-size: 100%;
 }
 section{
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: stretch;
 }
 .container{ 
   min-width: 300Px;
 
   max-width: 500px;
-  height: 80vh;
+  height: 55vh;
   border: 3px solid var(--c-bronze);
   flex: 1;
   margin: 0.5em;
   padding: 0.5em;
 }
 .codeContainer{
-  min-width: 300Px;
+  min-width: 400px;
+  /* max-width: 860px; */
   flex: 2;
   border: 3px solid var(--c-bronze);
   margin: 0.5em;
   padding: 0.5em;
+  overflow-x: scroll;
 }
 textarea{ 
   width: 100%;
@@ -60,21 +65,36 @@ textarea{
 .btn{
   height: 50px;
   width: 200px;
-  background-color: var(--c-bronze);
+  background-color: #beaa7a;
   font-size: 18px;
 }
 code{
   font-family: 'Oxygen Mono', monospace;
 }
-.text{
+.code__text{
   color: white;
 }
-.tag{
+.code__dType{
   color: rgb(97, 151, 196);
 }
-.atribut{
+.code__variable{
   color: dodgerblue;
 }
-.val{
+.code__string{
   color: tomato;
+}
+.code__comment{
+  color: green;
+}
+.code__object{
+  color: greenyellow;
+}
+.code__number{
+  color: rgb(107, 126, 125);
+}
+.code__const{
+  color: var(--c-superblue);
+}
+.code__function{
+  color: gold;
 }

@@ -1,12 +1,50 @@
 
 
-<form action="">
-<label for="output">Output</label><br>
-<textarea name="" id="codeBox" cols="30" rows="10"></textarea>
-<button class="btn">Copy</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hilighter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oxygen+Mono&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stlyle.css">
+</head>
+<body>
+  <header><h1>HELPER HELPER</h1></header>
+  <main>
+    <section class="one">
+      <!-- <div class="container">
+        <label for="inbox">Code input:</label><br>
+          <textarea name="inbox" id="inbox" cols="30" rows="10"></textarea>
+          <button class="btn" id="start">Do it</button> -->
+        <form>
+         
+          <h3>Info</h3>
+          <ul id="feedback">
+            <li>INFO:</li>
+          </ul>
+       
 
+      </div>
+<div class="container">
+  <form action="">
+    <label for="output">Output</label><br>
+    <textarea name="" id="output" cols="30" rows="10"></textarea>
+    <button class="btn" id="copy">Copy</button>
+  </form>
+</div>
+    <div class="codeContainer">
 
+      <h1>Preview</h1>
+<pre><code class="myCode">
 
-/ \&lt;([a-z]+)&gt;(.*?)&lt;/([a-z]+)&gt;
-&lt;<span class="tag">$1</span>&gt;<span class="text">$2</span>&lt;/<span class="tag">$3</span>&gt;
+  
+
+</code></pre>
+  </div>
+    </section>
+  </main>
+
+  <script type="text/javascript" src="helper.js"></script>
+</body>
+</html>

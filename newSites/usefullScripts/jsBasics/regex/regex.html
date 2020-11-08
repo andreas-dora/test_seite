@@ -468,18 +468,19 @@ var rXp = /\+?\d{2}\s\d{2,3}\s\d{5,7}/;console.log(rXp.exec(testString));
 </code></pre><article><p>Die Methode Liefert die Stelle zurück an der die &#8216;Expression&#8217; gefunden wurde (index: 41).
 	Die Eigenschaft **Input enthält den bearbeiten String.</p>
 	</article>
-<div class="headline"><h4>Verbesserung</h4></div><pre><code class="js">const testString = 'Liebe Freunde, meine 
+<div class="headline"><h4>Verbesserung</h4></div><pre><code class="js">const testString = 'Liebe Freunde,  meine 
 neue Nummer lautet: +49 69 1234567. 
 Fax: +49 69 4578911. Ich Wünsch euch schöne Ferien.';
 var rXp = /\+?\d{2}\s\d{2,3}\s\d{5,7}/;
 var result = rXp.exec(testString);
 console.log('Nummer ' + result[0] + ' gefunden an Index: ' +result.index + '.' );
-</code></pre><p>Nun wird folgendes Ausgegeben: <strong>Nummer +49 69 1234567 gefunden an Index: 41.</strong></p><div class="headline">
+</code></pre>
+<p>Nun wird folgendes Ausgegeben: <strong>Nummer +49 69 1234567 gefunden an Index: 41.</strong></p><div class="headline">
 	<h2>Weitersuchen mit einem loop und /g</h2></div>
 <article>
 	<p>Damit der gesamte Text durchsucht werden kann, baut man die Suchanfrage in einen Loop ein, der solange Läuft wie Ergebnisse bringt.
 		Der Regex muss auf jeden Fall das Global-Fähnchen <strong>/g</strong> angehängt werden.
-		Die Funktion gibt schön geordnete Ergebnisse zurück:
+		Die Funktion gibt schön geordnete  Ergebnisse zurück:
 		Nummer +49 69 1234567 gefunden an Index: 41.<br/>
 		Nummer +49 69 4578911 gefunden an Index: 63.</p>
 </article>	</section>
@@ -544,12 +545,12 @@ const result = pattern.exec('$42');</code></pre>
 
 <h4>Negative lookbehind mit ?&lt;=</h4>
 
-<p>Sucht nach Zahlen vor denen keine Dollarzeichen stehn:
-<code>
-const pattern = /\d+(?&lt;!\$)\d+/u;
-const result = pattern.exec('€42');
-</code>
-&#8212;</p>
+<p>Sucht nach Zahlen vor denen keine Dollarzeichen stehn:</p>
+
+<pre><code>const pattern = /\d+(?&lt;!\$)\d+/u;
+const result = pattern.exec('€42');</code>
+</pre>
+<hr>
 
 <h4>Neue Flags</h4>
 
