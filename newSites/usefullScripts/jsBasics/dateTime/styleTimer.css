@@ -1,0 +1,81 @@
+*, *:before, *:after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid pink; */
+}
+:root{
+--c-mainblau: #034f67;
+--c-hellgrau: #e6e1dc;
+--c-bikini: #77212e;
+--c-dunkel: #373434;
+--c-chili: #9B2335;
+--c-alarm: #f9423a;
+
+--c-back: #f8f8ff;
+--c-text: #000000;
+--c-accent: #696969;
+--c-hilite: #f9423a;
+
+--sans: Arial, Helvetica, sans-serif;
+--serif:'Times New Roman', Times, serif;
+--code: 'Courier New', Courier, monospace;
+--maxW: 1280px;
+--topOffset: 4em;
+}
+
+/*########################################## 
+############################################ 
+############################################ */
+
+body{
+  background-color: var(--c-back);
+  font-family: var(--sans);
+  font-size: 110%;
+    font-family: 'Cairo', sans-serif;
+    background-color: burlywood;
+}
+section{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.timeContainer{
+  width: 300px;
+  background-color: var(--c-mainblau);
+  padding-top: 2em;
+}
+.display{
+  height: 200px;
+  color: silver;
+  font-size: 40px;
+  text-align: center;
+}
+.btnGrp{
+  width: 80%;
+  margin: 10px auto;
+  /* height: 60px; */
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  background-color: inherit;
+  border-radius: 100%;
+  outline: none;
+  border: 3px solid silver;
+  color: silver;
+  font-weight: bold;
+}
+.plusminus{
+  height: 60px;
+  width: 60px;
+  font-size: 1.2em;
+
+}
+.timeBtn{
+  height: 60px;
+  width: 60px;
+}

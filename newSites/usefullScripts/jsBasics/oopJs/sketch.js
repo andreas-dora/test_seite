@@ -40,15 +40,15 @@ class Book {
   }
 }
 
-function Book(name, author, preis, isbn){
-  this.name = name;
-  this.author = author;
-  this.preis = preis;
-  this.isbn = isbn;
-  this.printDescription = function(){
-  console.log(this.author + ' : ' + this.name);
-  }
-}
+// function Book(name, author, preis, isbn){
+//   this.name = name;
+//   this.author = author;
+//   this.preis = preis;
+//   this.isbn = isbn;
+//   this.printDescription = function(){
+//   console.log(this.author + ' : ' + this.name);
+//   }
+// }
 
 var book = new Book(
   'Ada Adore', 'Vladimir Nabokov', 29,90, '808123081ß'

@@ -9,17 +9,17 @@ var testForJs = /var|let/g
  var output =document.querySelector('#output');
 var code = document.querySelector('.myCode');
 
-var workbench = `const feedback = document.querySelector('#feedback');
-const copyBtn = document.querySelector('#copy').addEventListener('click', copyFun);
-const startBtn = document.querySelector('#start').addEventListener("click", checkFun);
-let inbox = document.querySelector('#inbox')
-var output =document.querySelector('#output');
-var code = document.querySelector('.myCode');
-// var workbench;
-var myNumber = 9237;
-var tab6 = 222;
-function checkFun(){
-  startTime = Date.now();`;
+var workbench = `class Book {
+  constructor(name, author, preis, isbn){
+    this.name = name;
+    this.author = author;
+    this.preis = preis;
+    this.isbn = isbn;
+  }
+  printDescription(){
+    console.log(this.author + ' : ' + this.name);
+  }
+}`;
 
   workbench = workbench.replace(/</g, '&lt;');
   workbench = workbench.replace(/>/g,'&gt;');
@@ -27,8 +27,11 @@ function checkFun(){
   // var zCount = workbench.match(/(.)/gms);
   // console.log(zCount.length);
 
+  
+
   workbench = workbench.replace(/(\w+)\s{2,}/gm,'$1 ');//whitespace
   workbench = workbench.replace(/(\w+)\s{2,}/gm,'$1 ');//whitespac
+  workbench = workbench.replace(/constructor\((\w+)\b/g,'constructor(<span class="code__variable">$1</span>');
   workbench = workbench.replace(/'(.*?)'/gms, `<span class="code__string">'$1'</span>`);
   workbench = workbench.replace(/\/{2}(.*?)\n/gms, '<span class="code__comment">$1</span>\n');
   workbench = workbench.replace(/\/{2}(.*?)\n/gms, '<span class="code__comment">$1</span>\n');

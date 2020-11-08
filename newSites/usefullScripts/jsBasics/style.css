@@ -276,6 +276,21 @@ code{
   font-size: 1em;
   line-height: 1.4em;
 }
+.code__variable{
+  color: cornflowerblue;
+}
+.code__object{
+  color: var(--c-mainblau);
+}
+.code__cl{
+  color: var(--c-mainblau);
+}
+.code__number{
+  color: rgb(83, 162, 136);
+}
+.code__string{
+  color: firebrick;
+}
 /*########################################## --- Für diese Seite
 ############################################ 
 ############################################ */
