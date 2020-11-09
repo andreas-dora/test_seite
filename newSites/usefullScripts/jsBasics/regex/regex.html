@@ -585,7 +585,72 @@ result =rex.test('Γεια σου κοσμε');
             value&quot;Γεια σου κοσμε&quot;&gt;
 </code></pre>
 		</article>
-		<aside></aside>
+		<aside>
+			<h4>replace() mit Funktion</h4>
+		
+				
+				<pre><code>var newString = s.replace(r, replacer);
+				
+				function replacer(match){
+					if(match.length == 4){
+						return.match.toUpperCase();
+					} else {
+						return match;
+					}
+				}
+				</code></pre>
+			
+					
+		</aside>
+	</section>
+	<section>
+		<div class="heaadline">
+			<h1>JS Highlighting</h1>
+			<article>
+				
+					<h1>JS-Highlighter:</h1>
+					
+					<p>Vorbereitung: Feststehende JS-Vokabeln nach und nach sammeln. Nach Sorten und Häufigkeit sortieren.</p>
+					
+					<p>Idealerweise sollte die Sache auf einem Server laufen, damit Ergebnisse gespeichert werden können.</p>
+					
+					<p>Überlegung nach dem Top-Abfragen Nach Themen abfragen. Wenn new Date() auftaucht, das entsprechende Vokabular abfragen. </p>
+					
+					<p>Arbeitsschritte:
+					1. Tags entschärfen
+					2. Überflüssige Leerzeichen und Zeilenumbrüche entfernen
+					3. Splitten ?
+					4. Mit positiveLookback und match() alle benutzerdefinierten Variablen und Funktionen herausfinden.
+					5. </p>
+<h4>Findet benutzerdefinierte Funktionen und Variablen</h4>
+<pre><code>var rVar = [ 
+	/(?<=function )([a-z]+\b)/g,
+	/(?<=class )([a-z]+\b)/g,
+	/(?<=var )([a-z]+\b)/g,
+	/(?<=const )([a-z]+\b)/g,
+	/(?<=let )([a-z]+\b)/g
+];
+</code></pre>
+<h4>Alle Methoden von <strong>document</strong></h4>
+<pre><code>/(?<=document.)([a-z]+\w+)/g
+</code></pre>
+			</article>
+<pre><code>var cd_mth = ['getElementById', 'addEventListener', 'querySelectorAll', 'querySelector', 'log', 'replace', 'alert', 'setInterval'];
+var cd_dt = ['var', 'let', 'const', 'function', 'this', 'new' ];
+var cd_obj = ['Object', 'Number', 'String', 'Boolean', ];
+var lila = ['if', 'else if', 'else', 'return' ];
+
+var rVar = [ 
+	/(?<=function )([a-z]+\b)/g,
+	/(?<=class )([a-z]+\b)/g,
+	/(?<=var )([a-z]+\b)/g,
+	/(?<=const )([a-z]+\b)/g,
+	/(?<=let )([a-z]+\b)/g
+];
+
+s.split(/[,\s/]+/);
+			</code></pre>			
+		</div>
 	</section>
   <script type="text/javascript" src="regEx.js"></script>
 </body>

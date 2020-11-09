@@ -42,3 +42,5 @@ function timerFun(){
 }
 setInterval(timerFun, 1000);
 document.addEventListener('DOMContentLoaded', init);
+
+console.log(typeof DOMContentLoaded);

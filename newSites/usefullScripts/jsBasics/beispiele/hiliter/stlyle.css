@@ -77,6 +77,9 @@ code{
 .code__dType{
   color: rgb(97, 151, 196);
 }
+.code__v{
+  color: dodgerblue;
+}
 .code__variable{
   color: dodgerblue;
 }

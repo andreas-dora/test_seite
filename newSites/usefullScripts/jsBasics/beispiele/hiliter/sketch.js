@@ -8,15 +8,10 @@ const startBtn = document.querySelector('#start').addEventListener('click', chec
 var inbox = document.querySelector('#inbox')
 var output =document.querySelector('#output');
 var code = document.querySelector('.myCode');
-// var workbench;
-var myNumber = 9237;
-var tab6 = 222;
+
 function checkFun(){
   startTime = Date.now();
 
-  // workbench = String(inbox.value);
-  // workbench = workbench.replace(/</g, '&lt;');
-  // workbench = workbench.replace(/>/g,'&gt;');
   if(testforhtml.test(inbox.value)){
     hiliteHtml();
   } else if(testForJs.test(inbox.value)){
