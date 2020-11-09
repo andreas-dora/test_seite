@@ -3,7 +3,7 @@ const plusBtn = document.querySelector('#plus');
 const minusBtn = document.querySelector('#minus');
 var sek = document.querySelector('#sekunden'); 
 var isRunning = false;
-var startSeconds = 300;
+var startSeconds = 300;  // startSeconds 
 var workSeconds;
 
 function init(){
@@ -43,4 +43,3 @@ function timerFun(){
 setInterval(timerFun, 1000);
 document.addEventListener('DOMContentLoaded', init);
 
-console.log(typeof DOMContentLoaded);

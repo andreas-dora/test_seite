@@ -83,10 +83,13 @@ code{
 .code__variable{
   color: dodgerblue;
 }
+.code__str{
+  color: gray;
+}
 .code__string{
   color: tomato;
 }
-.code__comment{
+.code__com{
   color: green;
 }
 .code__object{
