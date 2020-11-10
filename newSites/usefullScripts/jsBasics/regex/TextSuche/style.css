@@ -286,20 +286,14 @@ code{
   font-size: 1em;
   line-height: 1.4em;
 }
-.code__variable{
-  color: cornflowerblue;
+.bronze{
+  color: var(--c-bronze);
 }
-.code__object{
-  color: var(--c-mainblau);
+.f9423a{
+  color: var(--c-hilite);
 }
-.code__cl{
-  color: var(--c-mainblau);
-}
-.code__number{
-  color: rgb(83, 162, 136);
-}
-.code__string{
-  color: firebrick;
+.c1e90ff{
+  color: #1e90ff;
 }
 /*########################################## --- Für diese Seite
 ############################################ 
@@ -319,7 +313,6 @@ th,td{
   border-bottom: 3px solid var(--c-myblack);
   border-spacing: 0;
   text-align: left;
-
 }
 
 /*########################################## --- TABELLEN
