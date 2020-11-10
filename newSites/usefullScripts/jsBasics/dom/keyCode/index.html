@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KeyCode Finder</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main>
+    <section>
+      <div class="headline"><h1>Keys'n Codes</h1></div>
+      <div class="flexBox">
+        <article>
+         <h3>Key = Code:</h3>
+         <form class="myForm">
+      
+             <input type="text" class="keyCodeIn" id="myFrame" autocomplete="off" maxlength="1" placeholder="">
+             <div class="keyCodeBox"><span class="istGleich">&lt;</span><span class="keyCodeFeld" >= Type here</span>
+            </div>
+ 
+         </form>
+        </article>
+        <aside>
+          <div class="container">
+            <h3>Key Events</h3>
+            <p>Beim Benutzen einer Taste entstehen drei Events: </p>
+            <ul>
+              <li>keydown</li>
+              <li>keypress</li>
+              <li>keyup</li>
+            </ul>
+            <P>keydown erkennt Shift, alt, control und comand, keypress kann das nicht. Dementsprechend ist es nur keydown möglich Versalien, und den größten Teil der Sonderzeichen zu erkennen.</P>
+            <h3>Codes</h3>
+            <p>Bei jedem Tastaturanschlag KeyCode, key, code und location abgefragt werden. Informationen auf Grund von keyCodes entgegen zu nehmen gilt als veraltet, weil das System an einigen Stellen zu ungenau war. Key gibt die Werte der lokalen Tastatur wieder. Da es recht viele unteschiedliche Länder-Tastaturen gibt - Schweizer haben kein 'ß' - ist diese Methode für Webanwedungen auch nicht empfelenswwert.</p>
+            <p><strong>code</strong> bezieht sich immer auf die amerikanische Tastatur (qwerty). Lässt man sich von der Tasturbelegung nicht verwirren, wird man mit sehr eindeutigen Ausgaben wie <strong>KeyM</strong> und <strong>Digit9</strong> belohnt. Diese Eindeutigkeit macht das System zur besten alternative für die Eventsteuerung.</p>
+              <!-- <pre>
+                <code id="cFeld"></code>
+              </pre> -->
+            </div>
+          </div>
+
+        </aside>  
+      </div>
+     
+    </section>
+  </main>
+  <script type="text/javascript" src="sketch.js"></script>
+</body>
+</html>
