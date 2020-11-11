@@ -271,8 +271,13 @@ footer{
 /*########################################## --- CODEBLOCK
 ############################################ 
 ############################################ */
+.textFeld{
+  color: var(--c-bronze);
+}
+
 pre{
   background-color: white;
+  /* color: var(--c-bronze); */
   margin-bottom: 1em;
   padding: 1em 04em;
   border: 1px solid silver;
@@ -280,8 +285,9 @@ pre{
 }
 
 code{
-  background-color: white;
+  background-color: var(--c-snow);
   font-family: var(--code);
+  color: var(--c-bronze);
   margin-bottom: 0.5em;
   font-size: 1em;
   line-height: 1.4em;
@@ -290,7 +296,7 @@ code{
   color: var(--c-bronze);
 }
 .f9423a{
-  color: var(--c-hilite);
+  border: 1px solid var(--c-hilite);
 }
 .c1e90ff{
   color: #1e90ff;
@@ -319,7 +325,7 @@ th,td{
 ############################################ 
 ############################################ */
 
-.fire{
+.hilite{
   color: var(--c-hilite);
 }
 .app{
