@@ -16,7 +16,7 @@ var treffer = document.querySelector('#treffer');
 
 
 
-const suchBtn = document.querySelector('#suchBtn').addEventListener('click', replaceIt);
+// const suchBtn = document.querySelector('#suchBtn'.addEventListener('click', replaceIt);
 // const resestBtn = document.querySelector('#resestBtn').addEventListener('click', cleanUp);
 const suchFeld = document.querySelector('#suchFeld').addEventListener('input', function (e){
     let input = String(e.target.value);
@@ -81,3 +81,5 @@ function replaceIt(){
 
 
 cFeld.innerHTML = s;
+
+
