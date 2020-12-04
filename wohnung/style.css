@@ -1,0 +1,25 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Cairo', sans-serif;
+}
+section{
+  width: 100%;
+  height: 100vh;
+
+  padding-top: 15vh;
+  background-color: ghostwhite;
+  color: #034f67;
+  /* color: #f9423a; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+  /* text-align: center; */
+}
+h1{
+  font-size: 10vw;
+  line-height: 1.3;
+}

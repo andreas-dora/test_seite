@@ -13,11 +13,6 @@ const cFeld = document.querySelector('#cFeld');
 cFeld.innerHTML = s;
 var treffer = document.querySelector('#treffer');
 
-
-
-
-// const suchBtn = document.querySelector('#suchBtn'.addEventListener('click', replaceIt);
-// const resestBtn = document.querySelector('#resestBtn').addEventListener('click', cleanUp);
 const suchFeld = document.querySelector('#suchFeld').addEventListener('input', function (e){
     let input = String(e.target.value);
     
@@ -30,13 +25,10 @@ const suchFeld = document.querySelector('#suchFeld').addEventListener('input', f
         // cFeld.innerHTML = s;
         cleanUp();
       } else { 
-        // let workS = s;
         treffer.textContent = String(matchResult.length);
         preview = r;
         placeHolder = String(p);
-        // let result = workS.replace(r,`${redSpan}$1${closeSpan}`);
-        // cFeld.innerHTML = result;
-        // console.log(r);
+
     }
   }
 });
