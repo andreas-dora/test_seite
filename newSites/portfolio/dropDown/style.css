@@ -21,7 +21,7 @@
 body{
   font-family: Barlow, Arial, sans-serif;
   background-color: #e6e1dc;
-  min-height: 100vh;
+  height: 100vh;
   font-size: 100%;
 }
 header{
@@ -77,13 +77,15 @@ nav{
   text-decoration: none;
   letter-spacing: 0.5em;
   text-align: center;
-  color: ghostwhite;
+  color: #e6e1dc;
   background-color: var(--c-second);
   text-transform: uppercase;
   padding: 2px 0 4px 0;
-  border: 3px solid var(--c-accent);
+  border: 1px solid var(--c-accent);
 }
 .menu-panel a:hover, .menu-panel a:focus{
-  border: 3px solid var(--c-second);
-  color: var(--c-accent);
+  border: 1px solid var(--c-second);
+  color: white;
+  box-shadow: 0 6px 16px -6px black;
+  -webkit-box-shadow: 0 6px 16px -6px black;
 }
