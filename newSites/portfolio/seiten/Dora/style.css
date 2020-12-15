@@ -29,7 +29,7 @@ body{
 section{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr minmax(30ch, 56ch) 1fr;
-  grid-template-rows:  max-content min 4rem 8rem auto min-content auto;
+  grid-template-rows:  min-content 4rem 8rem auto min-content auto;
 }
 
 p{
@@ -39,11 +39,12 @@ p{
 }
  
 h1{
-  font-size: clamp(1.6em, 4.6vw, 5em);
+  font-size: clamp(1.4em, 4.6vw, 5em);
   line-height: 1;
   margin-bottom: 19px;
   grid-row: 5;
   grid-column: 3 / 6;
+  color: #19404D;
 }
 h4{
   margin-bottom: 16px;
