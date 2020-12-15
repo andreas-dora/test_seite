@@ -9,7 +9,7 @@ section{
   width: 100%;
   height: 100vh;
 
-  padding-top: 15vh;
+  padding-top: 19vh;
   background-color: ghostwhite;
   color: #034f67;
   /* color: #f9423a; */
@@ -20,6 +20,6 @@ section{
   /* text-align: center; */
 }
 h1{
-  font-size: 10vw;
+  font-size: 7vw;
   line-height: 1.3;
 }

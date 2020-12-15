@@ -3,7 +3,7 @@ const menu = document.getElementById("id_menu-btn");
 menu.addEventListener("click", dropdown);
 
 function dropdown(){
-  alert("PENIS");
+  alert("Works");
   const panel = document.getElementById("id-menu-panel");
   // panel.classList.toggle("active");
   if (panel.style.display == "none") {

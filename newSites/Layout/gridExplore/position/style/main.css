@@ -1,91 +1,31 @@
-*, *:before, *:after{
+*, *:before, *:after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  /* border: 1px solid silver; */
-}
-:root{
---c-mainblau: #034f67;
---c-hellgrau: #e6e1dc;
---c-bikini: #77212e;
---c-dunkel: #373434;
---c-chili: #9B2335;
---c-alarm: #f9423a;
-
---c-back: #f8f8ff;
---c-text: #000000;
---c-accent: #696969;
---c-hilite: #f9423a;
-
---headLine: 'Cantarell', sans-serif;
---sans: Arial, Helvetica, sans-serif;
---serif:'Times New Roman', Times, serif;
---code: 'Courier New', Courier, monospace;
---maxW: 1000px;
---topOffset: 4em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* border: 1px solid pink; */
 }
 
-/*########################################## 
-############################################ 
-############################################ */
-
-body{
-  background-color: var(--c-back);
-  font-family: var(--sans);
-  font-size: 70%;;
-  /* background-color: lightblue; */
-}
-section{
-  height: 100vh;
-  width: 100%;
-  background-color: dimgray;
-  display: flex;
-  justify-items: center;
-  align-items: center;
-}
-
-.item{
-  background-color: white;
-  font-size: 3rem;
-  padding: 2em;
-  border: 6px solid black;
-  /* box-shadow: .05em -0.5em 0.7em 1em rgba(0, 0, 0, 0.1); */
-}
-
-
-.gridBox{
-  width: 800px;
-  height: 800px;
-  margin: 0 auto;
-  background-color: gainsboro;
-
+body {
+  display: -ms-grid;
   display: grid;
-  gap: 1em;
-  grid-template-rows: auto;
-  grid-template-columns: auto 2em minmax(300px, 500px) 2em auto;
-  
-
-  grid-template-areas: 
-  "a1 b1 c1";
-}
-.item-1{
-  grid-area: a1;
-  justify-self: end;
-  align-self: start;
-}
-.item-2{
-  grid-area: b1;
-  justify-self: center;
-  align-self: center;
-}
-.item-3{
-  grid-area: c1;
-  justify-self: start;
-  align-self: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 120%;
+  -ms-grid-rows: auto;
+      grid-template-rows: auto;
+  -ms-grid-columns: (auto)[3];
+      grid-template-columns: repeat(3, auto);
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
+h1, h2, h3, h4, h5 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
 
-
-
-
-
+.container {
+  background-color: lemonchiffon;
+}
+/*# sourceMappingURL=main.css.map */
