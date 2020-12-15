@@ -5,7 +5,18 @@
   box-sizing: border-box;
 }
 :root{
-  --var-col-back:#e6e1dc;
+  --c-mainblau: #034f67;
+  --c-hellgrau: #e6e1dc;
+  --c-bikini: #77212e;
+  --c-dunkel: #373434;
+  --c-chili: #9B2335;
+  --c-alarm: #f9423a;
+  --c-superblue: #4244b6;
+  --c-bronze: #a6966c;
+  --c-accent: #a6966c;
+  --c-second: #034f67;
+
+
 }
 body{
   font-family: Arial, Helvetica, sans-serif;
@@ -17,60 +28,74 @@ header{
   min-height: 100vh;
   position: relative;
 }
+
+
+nav{
+  /* position: fixed; */
+  /* top: 0; */
+  width: 100%;
+  /* z-index: 100; */
+  background-color: var(--c-accent);
+}
 .wrapper{
   max-width: 800px;
   margin: 0 auto;
+}
+.flexBox{
   display: flex;
   justify-content: space-between;
-}
-
-nav{
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-  background-color: #a6966c;
 }
 nav a{
   display: inline-block;
 }
-nav a button{
+nav button, nav a{
   background: transparent;
   font-family: inherit;
   font-size: 1.2rem;
   text-transform: uppercase;
   letter-spacing: 2px;
+  text-decoration: none;
+  color: black;
   border: none;
   outline: none;
-  padding: 8px 8px 32px 8px;
+  padding: 20px 8px
 }
-nav a button:hover, nav a button:focus{
+
+nav button:hover, nav button:focus,
+nav a:hover, nav a:focus{
   color:#77212e;
 }
 .menu-panel{
-  -position: fixed;
-  top: 0;
+  /* position: fixed; */
+  /* top: 0; */
   width: 100%;
   z-index: 50;
-  /* height: 100vh; */
-  padding-top: 16vh;
-  background-color: red;
+  height: 80vh;
+  /* padding-top: 16vh; */
+  /* background-color: red; */
   /* background-color: #e6e1dc; */
 
   display: none;
-  /* flex-wrap: wrap; */
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   overflow: hidden;
-}
-.menu-panel a{
-  display: block;
-  flex: 1;
-  text-decoration: none;
-  color: black;
+  background-color: var(--c-accent);
 }
 
+.menu-panel a{
+  display: block;
+  width: 100%;
+  /* flex: 1; */
+  text-decoration: none;
+  letter-spacing: 0.5em;
+  text-align: center;
+  color: ghostwhite;
+  background-color: var(--c-second);
+  text-transform: uppercase;
+
+}
+/* 
 .header-img{
   max-width: 45vmin; 
   height: 45vmin;
@@ -80,8 +105,10 @@ nav a button:hover, nav a button:focus{
   background-position: 50% 90% ;
   background-repeat: no-repeat;
   background-attachment: fixed;
-}
-.header-bottom{
+} */
+
+
+/* .header-bottom{
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -89,17 +116,19 @@ nav a button:hover, nav a button:focus{
   justify-content: space-evenly;
   bottom: 26vh;
  width: 100%;
-}
-main{
+} */
+
+/* main{
   margin: 0 auto;
-}
+} */
+
+
+
 section{
   padding-top: 6vh;
-
   background-color: white;
 }
 section h1{
-
   font-size: clamp(2rem, 8vw, 5rem);
   margin-bottom: 1em;
 }

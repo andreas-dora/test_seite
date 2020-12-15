@@ -1,0 +1,95 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: 'Cantarell', sans-serif;
+  font-size: 100%;
+}
+header{
+  margin: 5vh auto 3em auto;
+  padding: 0 0.4em;
+  max-width: 1000px;
+  
+}
+.title{
+  font-size: clamp(2em, 6vw, 8em);
+}
+main{
+  max-width: 1000px;
+  padding: 0 0.5em;
+
+  margin: 0 auto;
+}
+
+/*#####################*/
+/*#####################*/
+/*#####################*/
+.adress{
+  text-align: right;
+
+  margin-bottom: 2em;
+}
+.adress dt{
+  font-weight: bold;
+  line-height: 1.8;
+  font-size: 16px;
+
+}
+.adress dd{
+  font-size: 20px;
+  line-height: 2;
+  user-select: none;
+
+}
+/*#####################*/
+/*#####################*/
+/*#####################*/
+
+h1{
+  font-size: clamp(1.4em, 2vw, 2.3em);
+  margin-bottom: 1em;
+}
+h3{
+  font-size: 1.4em;
+  margin-bottom: 0.6em;
+  color: #f9423a;
+}
+
+.impressum {
+  user-select: none;
+
+}
+
+.impressum p{
+  font-family: 'Merriweather', serif;
+  font-size: 18px;
+  line-height: 1.8;
+
+  max-width:  20cm;
+  margin-bottom: 0.6em;
+}
+
+footer{
+  background-color: rgb(20, 20, 20);
+  color: white;
+  margin-top: 16vh;
+  font-size: 1.2em;
+}
+footer .container{
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2em .5em;
+  text-align: right;
+}
+footer a{
+  color: gainsboro;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
+footer a:hover, a:focus{
+  color: #f9423a;
+  outline: 1px solid #f9423a;
+}
