@@ -1,4 +1,3 @@
-console.log("ALLES DA");
 const overlay = document.getElementById('navOverlay');
 const openBtn = document.getElementById('id_menu-btn');
 openBtn.addEventListener('click', openFun);
