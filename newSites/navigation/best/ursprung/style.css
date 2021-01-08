@@ -68,7 +68,7 @@ body {
   height: 100vh;
   background: url("https://source.unsplash.com/GYQBryEWh0Y/") no-repeat center center;
   background-size: cover;
-  background-color: #000;
+  background-color: cadetblue;
 }
 .container {
   position: relative;

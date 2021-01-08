@@ -1,15 +1,20 @@
-const menu = document.getElementById("id_menu-btn");
+// const overlay = document.getElementById('id_pannel');
+const overlay = document.querySelector('.pannelBox');
+const openBtn = document.getElementById('id_menu-btn');
+openBtn.addEventListener('click', openFun);
+const closeBtn = document.getElementById('id_closeBtn').addEventListener('click', closeFun);
 
-menu.addEventListener("click", dropdown);
+var pLink = document.querySelectorAll('.pannelLink');
 
-function dropdown(){
-  const panel = document.getElementById("id-menu-panel");
-  // panel.classList.toggle("active");
-  if (panel.style.display == "none") {
-    panel.style.display = "flex";
-    menu.innerText = "close";
+function openFun(){
+  overlay.classList.toggle('pannelOpen');
+  if(openBtn.innerHTML === 'Menu'){
+    openBtn.innerHTML = 'close';
   } else {
-          panel.style.display = "none";
-          menu.innerText = "Menü";
-        }
+  openBtn.innerHTML = 'Menu';
+  }
+}
+
+function closeFun(){
+  overlay.style.height = "0%";
 }
