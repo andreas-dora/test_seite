@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meine Keckse</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Meine Kekse,</h1>
+    <h1>Deine Kekse:</h1>
+  </header>
+  <main>
+    <section>
+      <div class="flexBox">
+        <article class="output">
+          <h5 class="right">output</h5>
+          <p>Hallo <span id="username" class="hilite"></span>,</p>
+         
+          <div id="shopping-cart">
+            <p>Sie haben <span id="shopping-cart-item-count" class="hilite">0</span> Artikel in ihrem Warenkorb:</p>
+            
+            <ul id="shopping-cart-items" class="hilite"></ul>
+          </div>
+        </article>
+        <aside>
+          <h2>Sicherheit:</h2>
+          <p>Cookies werden können nur über das HTTP-Protokol verschickt werden. Die sichere HTTPS-Variante steht leider nicht zur Verfügung. SIe sind also <strong>unverschlüsselt</strong> und somit <strong>ungeschützt</strong>.</p>
+          <h2>Effizienz:</h2>
+          <p>Cookies sind immer nur für einen ausgewiesen Pfad einer Domain gültig. Für jeden Pfad müssen also die entsprechnden Kekse gesammelt und verschickt werden. Das kann sich mitunter negativ auf das zu übetragende Datenvolumen auswirken.</p>
+          <h2>Größe:</h2>
+          <p>Das maximale Keks-Volumen beträgt 4KB.</p>
+        </aside>
+      </div>
+  
+    </section>
+  </main>
+  <script src="./skripte/cookie-utils.js"></script>
+<script src="./skripte/catalog.js"></script>
+<script src="./skripte/shopping-cart.js"></script>
+</body>
+</html>

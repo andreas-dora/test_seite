@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Browser Speicher nutzen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+  <header>
+    <h1>Browser Speicher</h1>
+    <h1>nutzen</h1>
+  </header>
+  <main>
+<section>
+  <article>
+    <h2>Die Web Storage API</h2>
+    <p>Diese Schnittstelle stellt zwei verschienden Arten von Speicher zur Verfügung:</p>
+    <ul>
+      <li>Locale Storage</li>
+      <li>Session Storage</li>
+    </ul>
+    <br>
+    <h4>Locale Storage</h4>
+    <p>Der lokale Speicher ist über Browser-Fenster und Tabs hinweg, quasi global nutzbar. Der Zugriff erfolgt über das globale Objekt: <strong>window.localStorage</strong>.</p>
+    <h4>Session Storage</h4>
+    <p>Ist überd as globale Objekt: <strong>window.sessionStorage</strong> zu erreichen</p>
+    <br>
+
+    <p>Beide Varianten bedienen sich der selben Eigenschaften / Methoden.</p>
+    
+    
+
+  </article>
+</section>
+<section>
+  <h2>Übesicht Web Storage API Methoden / Eigenschaften</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Eigenschaft / Methode</th>
+            <th>Beschreibung</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>length</th>
+            <td>Anzahl der Elemente im Speicher</td>
+          </tr>
+          <tr>
+            <td>clear()</td>
+            <td>Löscht alle Key-Value-Pairs</td>
+          </tr>
+          <tr>
+            <td>getItem(key)</td>
+            <td>Liefert für anhand eines Keys den entsprechenden Wert</td>
+          </tr>
+          <tr>
+            <td>key(index)</td>
+            <td>Liefert den Namen des Schlüssel nach der Position </td>
+          </tr>
+          <tr>
+            <td>removeItem(key)</td>
+            <td>Entfernt das Key-Value-Pair falls vorhanden</td>
+          </tr>
+          <tr>
+            <td>setItem(key, value)</td>
+            <td>Fügt einen Key mit einem Wert zu. <br>
+            Falls der Schlüssel schon vorhanden ist wird dessen Wert überschrieben</td>
+          </tr>
+        </tbody>
+      </table>
+</section>
+<section>
+  <article>
+    <h2>Speichern von Werten</h2>
+    
+    
+    <div class="superBox">
+      <h4>Im localeStorage</h4>
+      <div class="superContent">
+        <code>localeStorage.setItem('firstname', 'Andi');</code><br>
+        <code>localeStorage.setItem('lastname', 'Pasti');</code>
+      </div>
+    </div>
+
+    <br>
+    
+    <div class="superBox">
+      <h4>Im sessionStorage:</h4>
+      <div class="superContent">
+        <code>sessionStorage.setItem('firstname', 'Andi');</code><br>
+        <code>sessionStorage.setItem('lastname', 'Pasti');</code>
+      </div>
+    </div>
+  </article>
+</section>
+<section>
+  <article>
+    <h2>Objecte speichern</h2>
+    <p>Mit <strong>JSON.stringify()</strong> lassen sich auch Objecte speichern:</p>
+  <h5 class="codeHeader">
+    <pre><code>let fullname = {
+  firstname: 'Andi',
+  lastname: 'Pasti'
+}
+localeStorage.setItem(
+  'user',
+  JSON.stringify(fullname)
+);
+    </code></pre>
+  </h5>
+  </article>
+</section>
+<section>
+  <article>
+    <h2>Read</h2>
+    <p>Gelesen wird mit <strong>getItem()</strong>.</p>
+    <div class="codeBox">
+      <h5 class="codeHead">read</h5>
+      <pre><code>localeStorage.setItem('firstname', 'Andi');
+var firstname = localeStorage.getItem();
+console.log(firstname);
+      </code></pre>
+    </div>
+  </article>
+
+</section>
+<section>
+  <article>
+    <h2>Update</h2>
+    <p>Zum Aktualisieren wird ebenfalls <strong>setItem()</strong> verwendet.</p>
+    <div class="codeBox">
+      <h4 class="codeHead">update</h4>
+      <pre><code>localeStorage.setItem('firstname', 'Andi');
+var firstname = localeStorage.getItem();
+console.log(firstname);
+localeStorage.setItem('firstname', 'Wendi');
+firstname = localeStorage.getItem();
+console.log(firstname);
+
+      </code></pre>
+    </div>
+  </article>
+</section>
+<section>
+  <article>
+    <h2>Delete</h2>
+    <div class="codeBox">
+      <h4 class="codeHead">delete</h4>
+      <pre><code>localeStorage.setItem('firstname', 'Andi');
+var firstname = localeStorage.getItem();
+console.log(firstname);
+localeStorage.removeItem('firstname');
+console.log(firstname);
+
+      </code></pre>
+    </div>
+
+    <h2>Den gesamten Inhalt löschen</h2>
+    <div class="codeBox">
+      <h4 class="codeHead">clear</h4>
+      <pre><code>localeStorage.clear();
+      </code></pre>
+  </article>
+</section>
+<section>
+  <article>
+    <h2>Auf Änderungen reagieren</h2>
+    <p>Mit einem <strong>EventListener</strong> kann auf Änderungen im Browserreagiert werden</p>
+<div class="codeBox">
+  <h4 class="codeHead">addEventListener</h4>
+<pre><code>window.addEventListener('storage', (e) => {
+  console.log(e.key); 
+  console.log(e.oldValue);
+  console.log(e.newValue);
+  console.log(e.url);
+  console.log(e.storageArea);
+});</code></pre>
+
+</div>  
+  </article>
+</section>
+</main>
+</body>
+</html>

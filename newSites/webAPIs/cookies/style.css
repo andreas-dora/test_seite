@@ -25,7 +25,10 @@ body{
 h1, h2, h3, h4, h5{
   color: var(--c-dunkel);
 }
-
+p li{
+  font-size: 1.2em;
+  line-height: 1.6;
+}
 header{
   margin-top: 4vw;
   text-transform: uppercase;
@@ -36,24 +39,48 @@ header{
 header h1{
   font-size: clamp(2em, 8vw, 4em);
 }
-
+h5{
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  border-bottom: 1px solid black;
+  text-align: right;
+  line-height: 1;
+  margin-bottom: 1.4em;
+}
 main{
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 section{
   margin-bottom: 4vw;
 }
-.inhalt h2{
+.flexBox{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+.output{
+  /* border: 1px solid black; */
+  min-width: 280px;
+  max-width: 520px;
+  background-color: var(--c-hellgrau);
+  font-size: 110%;
+  padding: 1em;
+}
+.output ul{
+  list-style: none;
+}
+li{
+  margin-left: 1em;
+}
+.hilite{
   color: var(--c-hilite);
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
-.inhalt dl{
-  max-width: 400px;
-  /* float: right; */
-  text-align: right;
+aside{
+  max-width: 560px;
 }
-.inhalt dd{
-  border-top: 1px solid black;
+@media screen and (min-width: 800px){
+  .ouput{
+    font-size: 130%;
+  }
 }
