@@ -5,5 +5,5 @@ for(let i = 0; i < radioBtns.length; i++){
   radioBtns[i].addEventListener('change', (e) => {
     console.log(e.target.value);
     message.innerText = e.target.value;
-  })
+  });
 } 

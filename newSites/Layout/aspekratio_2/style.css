@@ -1,0 +1,34 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  width: 90%;
+  margin: 5vh auto;
+}
+img{
+  max-width: 100%;
+}
+section{
+  display: flex;
+}
+.quad{
+  width: 30%;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.box{
+  height: 0;
+  background-color: cadetblue;
+  padding-top: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.content{
+  position: absolute;
+  top: 0;
+  left: 0;
+}

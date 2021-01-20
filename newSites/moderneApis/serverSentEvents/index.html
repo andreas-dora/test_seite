@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Server-Sent Events</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../main.css">
+</head>
+<body>
+<header>
+  <h1>Server-Sent</h1>
+  <h1>Events</h1>
+</header>
+<main>
+  <section class="inhalt">
+    <h2>Inhalt</h2>
+    <div class="inhaltContainer">
+      <dl>
+        <dt>Server-Sent Events</dt>
+        <dd>Blah</dd>
+        <dd>Blub</dd>
+      </dl>
+    </div>
+  </section>
+  <section>
+    <article>
+      <p>Server-Sent Events ermöglichen es, dass ein Server von sich aus Nachrichten an den Client verschickt.
+        Die API definiert ein EventSource-Interface, das Events erstellt und Botschaften versendet.
+        In der Constructor-Funktion </p>
+    </article>
+    <aside>
+      <h3>Festlegen einer Datenquelle</h3>
+      <pre><code>var source = new EventSource('/events');
+        source.onmessage = (e)=>{
+          console.log(e.data);
+          console.log(e.origin);
+          console.log(e.lastEventId);
+        };</code></pre>
+    </aside>
+    <article>
+      <p>Neben dem Eventhandler `onmessage` stehen noch die Event-Handler `onopen` und `onerror` zur Verfügung.</p>
+    </article>
+  </section>
+  <section>
+    <article>
+      <p>Alternativ zum `onmessage`-Handler kann auch die Methode `addEventListener()` verwendet werden.
+      </p>
+    </article>
+    <aside>
+      <pre><code>var source = new EventSource('/events');
+        source.addEventListener('message', (e) =>{
+          document.body.innerHTML += e.data + '<br>';
+        });</code></pre>
+    </aside>
+  </section>
+  <section>
+    <h2>Server Seite mit Node.js</h2>
+    <article>
+      <p>Das Beispiel soll alle fünf Sekunden eine Rechenaufgabe erzeugen und sie an den Client versenden.</p>
+    </article>
+    <aside>
+      <pre><code>
+        // aus Javascript Buch Listing 12.11
+
+'use strict'
+const fs = require('fs');
+const http = require('http');
+const MIN = 1;
+const MAX = 20;
+
+let server = http.createServer((request, response) =>{
+  if(request.headers.accept && request.headers.accept === 'text/event-stream'){
+    if(request.url === '/events'){
+      sendEvent(request, response);
+    
+    } else {
+      response.writeHead(404);
+      response.end();
+    }
+  } else {
+    response.writeHead(200, {'Content-Type': 'text/html'});
+    response.write(fs.readFyleSync(__dirname + '/index.html'));
+    response.end();
+  }
+})
+server.listen(8000);
+
+function sendEvent(request, response){
+  request.writeHead(200, {
+    'Content-Type': 'text/event-stream',
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive'
+  });
+
+  let id = (new Date()).toLocaleTimeString();
+
+  setInterval(() =>{
+    createServerSendEvent(response, id);
+  }, 5000);
+
+  function createServerSendEvent(response, id){
+    let exercise = createRandomExercise();
+    response.write('id: ', + id + '\n');
+      response.write("data: ", + exercise + '\n\n');
+  }
+
+  function createRandomExercise(){
+    let number1 = Math.floor(Math.random() * MAX) + MIN;
+    let number2 = Math.floor(Math.random() * MAX) + MIN;
+    let exercise = number1 + ' + ' + number2 + ' = ';
+    return exercise;
+  }
+
+}
+      </code></pre>
+    </aside>
+  </section>
+
+</main>
+</body>
+</html>

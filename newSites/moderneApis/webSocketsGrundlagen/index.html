@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Sockets Grundlagen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <main>
+    <div class="sectionHead">
+      <h1>Web Sockets</h1>
+      <h1>Grundlagen</h1>
+    </div>
+    <section class="mitCode">
+      <aside>
+        <p>Bei der Kommunikation über HTTP wird nur einseitig mit dem Server kommuniziert. Die Kommunikation geht immer vom Client aus. Der Server kann nicht (unaufgefordert) mit Daten an den Client senden. Auch wenn ‚Antworten‘ gesendet werden, geschieht das immer nur auf Anfrage des Client.</p>
+        <p>Die <strong>Websocket</strong> API ermöglicht eine Bidirektionale Kommuniktion mit dem Server. Der Server, kann also unaufgefordert Updates an den Client schicken. Dafür muss zwischen Client und Server eine dauerhafte Verdingen gehalten werden.
+        </p>
+      </aside>
+      <article>
+
+      </article>
+
+    </section>
+    <section class="mitCode">
+      <aside>
+        <h2>Verbindungsaufbau</h2>
+        <p>Die Verbindung wird folgendermaßen geöffnet:</p>
+        <code>let connection = new WebSocket('ws://example.com/test');</code>
+        <p>Für den Verbindungsaufbau stehen drei Event-Handler zur Verfügung:</p>
+        <ul>
+          <li><code>onopen</code></li>
+          <li><code>onerror</code></li>
+          <li><code>onclose</code></li>
+        </ul>
+      </aside>
+      <article>
+        <h3 class="codeHead">onopen</h3>
+<pre><code>connection.onopen = function (e){
+  console.log('Vebindung geöffnet');
+};
+</code></pre>
+<h3 class="codeHead">onerror</h3>
+<pre><code>connection.onerror = function (error){
+  console.log('Web Socket Error' + error);
+;}</code></pre>
+<h3 class="codeHead">onclose</h3>
+<pre><code>connection.onclose = function (e){
+  console.log('Verbindung geschlossen');
+};</code></pre>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
