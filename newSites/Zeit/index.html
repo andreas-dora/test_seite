@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alles zur Zeit</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>All Around</h1>
+    <h1>the clock</h1>
+  </header>
+  <main>
+    <section class="flexBox">
+      <article>
+        <h2>Das Date Object</h2>
+        <table>
+          <thead>
+            <tr>
+              <th>get methoden</th>
+              <th>output</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>new Date()</td>
+              <td id="id_nurObject"></td>
+            </tr>
+            <tr>
+              <td>getTime()</td>
+              <td><span id="id_getTime"></span></td>
+            </tr>
+            <tr>
+              <td>toLocaleTimeString()</td>
+              <td id="id_localeTimeString"></td>
+            </tr>
+            <tr>
+              <td>toLocaleDateString()</td>
+              <td>21.1.21</td>
+            </tr>
+            <tr><td>toISOString()</td><td id="id_isoString"></td></tr>
+            <tr><td>toJSON()</td><td id="id_toJSON"></td></tr>
+          </tbody>
+        </table>
+
+      </article>
+      <aside>
+        <dl>
+          <dt>links</dt>
+          <dd><a href="">Zeiterfassung</a></dd>
+          <dd><a href="">Create Date</a></dd>
+        </dl>
+      </aside>
+
+    </section>
+    <section class="flexBox">
+      <article>
+        <h2>Code für Datum und Zeit</h2>
+        <pre><code>
+const uhrFeld = document.getElementById('id_uhr');
+const datumFeld = document.getElementById("id_datum");
+
+function tellTime() {
+  let now = new Date();
+  let myH = now.getHours().toString().padStart(2, 0);
+  let myM = now.getMinutes().toString().padStart(2, 0);
+//   let myS = now.getSeconds().toString().padStart(2, 0);
+
+  let myDay = now.getDay();
+  let myDate = now.getDate().toString().padStart(2, 0);
+  let myM_ = now.getMonth()+1; 
+  let myMonth = myM_.toString().padStart(2, 0);
+
+ const tage = ["Sonntag", "Montag", "Dienstag", 
+ "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+
+ const monate = ["Januar", "Februar", "März", "April", "Mai", 
+ "Juni", "August", "September", "Oktober", "November", "Dezember"];
+
+  let myTime = myH + ":" + myM; // ":" + myS;
+  //var myDatum = myDate;
+ // let myDatum = myDate + "." + myMonth +".";
+  var myDatum = tage[myDay] + " " + myDate + "." + myMonth;
+
+ // document.getElementById("tag").innerText = tage[myDay];
+  uhrFeld.innerText = myTime;
+  datumFeld.innerText = myDatum;
+}
+
+setInterval(tellTime, 1000);
+        </code></pre>
+      </article>
+      <aside>
+        <div id="id_uhr"></div>
+        <div id="id_datum"></div>
+      </aside>
+    </section>
+    <section class="flexBox">
+      <article>
+        <h2>Millis und zurück</h2>
+        <p>Zeitangaben in Millisekunden seit den Siebzigern geliefert zu bekommen war für einen Moment etwas kryptisch. Doch mit MIllis lässt sich so wunderbar rechnen. <strong>Date.now()</strong>
+        gibt die aktuelle Zeit als Millis. Andere Daten lassen sich mit der Methode umwandeln.
+      Damit ich es selbst nicht vergesse und immer wiederfinde, hier alles noch mal auf einen Blick: </p>
+
+      <h4>Der Weg zuück:</h4>
+      <pre><code>
+var stampTime = new Date();
+stampTime.setTime(1611223475646);
+console.log(stampTime);
+console.log(stampTime.toLocaleTimeString());      </code></pre>
+      </article>
+      <aside>
+        <table>
+          <thead>
+            <tr>
+              <th></th><th>Millis</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>1 Sekunde</td><td>1000</td></tr>
+            <tr><td>1 Minute</td><td>60.000</td></tr>
+            <tr><td>1 Stunde</td><td>3.600.000</td></tr>
+            <tr><td>1 Tag</td><td>86.400.000</td></tr>
+            <tr><td>1 Woche</td><td>604.800.000</td></tr>
+ 
+          </tbody>
+        </table>
+      </aside>
+    </section>
+
+      
+  </main>
+
+  <script src="time.js"></script>
+
+</body>
+</html>

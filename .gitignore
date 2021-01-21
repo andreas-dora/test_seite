@@ -1,7 +1,9 @@
 node_modules/
+libraries/
 *.img
 *.tiff
 *.svg
 *.png
 *.jpg
 *.pdf
+p5.js
