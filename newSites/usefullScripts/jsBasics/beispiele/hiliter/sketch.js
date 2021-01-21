@@ -29,7 +29,7 @@ function hiliteHtml (){
   workbench = workbench.replace(/</g, '&lt;');
   workbench = workbench.replace(/>/g,'&gt;');
   let charCount = workbench.match(/(.)/gms)
-  let charNote = document.createTextNode('Empfangen: ' +charCount.length + 'HTML');
+  let charNote = document.createTextNode('Empfangen: ' +charCount.length + ' HTML');
   
   let listItem = document.createElement('li');
   listItem.appendChild(charNote);
@@ -47,7 +47,7 @@ function hiliteHtml (){
   output.value = workbench;
   code.innerHTML = workbench;
   let charCount2 = workbench.match(/(.)/gms)
-  let charNote2 = document.createTextNode('Empfangen: ' +charCount2.length);
+  let charNote2 = document.createTextNode('Ausgabe: ' +charCount2.length);
   let listItem2 = document.createElement('li');
   listItem2.appendChild(charNote2);
   feedback.appendChild(listItem2);

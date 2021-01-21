@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --c-mainblau: #034f67;
+  --c-hellgrau: #e6e1dc;
+  --c-bikini: #77212e;
+  --c-dunkel: #373434;
+  --c-chili: #9B2335;
+  --c-alarm: #f9423a;
+  --c-superblue: #4244b6;
+  --c-bronze: #a6966c;
+  --c-accent: #a6966c;
+  --c-second: #034f67;
+  --c-hilite: #f9423a;
+}
+
+body{
+  font-family: 'Cairo', Arial, sans-serif;
+  font-size: 100%;
+}
+h1, h2, h3, h4, h5{
+  color: var(--c-dunkel);
+}
+
+h5{
+  text-transform: uppercase;
+  letter-spacing: .16em;
+}
+
+.uhr{ 
+  font-size: 3.1em;
+  line-height: 1.3;
+  font-weight: 200;
+  text-align: center;
+}
+.datum{
+  text-align: center;
+
+}
+/*##########################*/
+/*########## btn ############*/
+/*##########################*/
+
+.bigBtn{
+  width: 120px;
+  height: 50px;
+  font-family: inherit;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1.2em;
+  letter-spacing: .2em;
+  overflow: hidden;
+  color: green;
+  border: 3px solid var(--c-dunkel);
+
+}
+
+
+/*##########################*/
+/*########## spalte ############*/
+/*##########################*/
+.spalte{
+  width: 160px;
+}
+.container{
+  width: 100%;
+  border: 1px solid var(--c-dunkel);
+  margin: .5em;
+  padding: .5em;
+}
+
+a{
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: var(--c-hellgrau);
+  color: var(--c-dunkel);
+  margin: .5em;
+
+
+}

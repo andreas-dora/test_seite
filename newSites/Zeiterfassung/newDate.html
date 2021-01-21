@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zeiterfassung</title>
+  <title>Create New Date</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Crimson+Text:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -17,7 +17,7 @@
           <div class="datum" id="id_datum"></div>
         </div>
         <div class="container">
-          <h5>Stehchuhr</h5>
+          <h5>Stechuhr</h5>
           <button class="bigBtn" id="id_workStartBtn">Start</button>
           <dl>
             <dd>Start: <span id="id_tagStart"></span></dd>
@@ -29,28 +29,32 @@
             <dd>Stunden: <span id="id_stundenFeld"></span>:<span id="id_minutenFeld"></span>
             </dd>
           </dl>
-          <!-- <p></p>
-          <p>Stempel: </p>
-          <p></p>
-          <hr>
-          <p></p>
-          <p></p> -->
-       
-       
-          
-          <!-- <button class="bigBtn" id="tagStop_btn">Stop</button> -->
-          <!-- <h4>Stunden: <span id="tagStunden"></span></h4> -->
+      
         </div>
        
         </div>
       </div>
       <div class="spalte">
-        <!-- <div class="container"> -->
-          <div class="linKHeader"><h5>Teile in Arbeit</h5></div>
+        <h5>Andere Seiten</h5>
+        <a href="index.html">Zeiterfassung</a>
+        <hr>
+        <div class="noContainer">
+          <h5>Termin erstellen</h5>
+          <label for="title">Title</label>
+          <input type="text" name="title" id="id_title">
+          <input type="date" name="datum" id="id_datum">
+          <label for="ganztags">Ganztags</label>
+
+          <input type="checkbox" name="ganztags" id="id_ganztags">
+
+          <label for="zeit">Zeit</label>
+          <input type="time" name="zeit" id="id_zeits">
+          <input type="number" min="0" max="23" value="1">: <input type="number" min="00" max="45" step="15" value="00"> 
           
-          <a href="newDate.html">Create new Date</a>
-          <hr>
-        <!-- </div> -->
+
+        </div>
+
+        </div>
         
       </div>
     </section>
