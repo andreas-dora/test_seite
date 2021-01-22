@@ -17,7 +17,7 @@
           <div class="datum" id="id_datum"></div>
         </div>
         <div class="container">
-          <h5>Stehchuhr</h5>
+          <h5>Stechuhr</h5>
           <button class="bigBtn" id="id_workStartBtn">Start</button>
           <dl>
             <dd>Start: <span id="id_tagStart"></span></dd>
@@ -26,9 +26,25 @@
             <dd><span id="id_EndeStempel"></span></dd>
             <hr>
             <dd>= <span id="id_myMillis"></span></dd>
+            <hr>
+          </dl>
+            <h5>Pause</h5>
+            <button class="bigBtn" id="id_pauseBtn">Pause</button>
+
+          <dl>
+            <!-- <dd>= <span id="id_pauseMillis"></span></dd> -->
+          
             <dd>Stunden: <span id="id_stundenFeld"></span>:<span id="id_minutenFeld"></span>
             </dd>
           </dl>
+
+          <table>
+            <tbody>
+              <tr><td>Pause (länge)</td><td id="id_pauseMillis"></td></tr>
+              <tr><td>Arbeitzeit</td><td id="id_totalMillis"></td>
+              </tr>
+            </tbody>
+          </table>
           <!-- <p></p>
           <p>Stempel: </p>
           <p></p>
