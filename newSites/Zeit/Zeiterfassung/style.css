@@ -97,7 +97,7 @@ section{
 
 article{
   min-width: 300px;
-  padding: .4em 1em .7em 3em;
+  padding: 1em;
   border: 1px solid var(--c-dunkel);
 
 }

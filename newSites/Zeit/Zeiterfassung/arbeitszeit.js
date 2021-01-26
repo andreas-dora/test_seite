@@ -33,18 +33,19 @@ showMillis();
 
 workBtn.addEventListener('click', workFun);
 
-pauseBtn.addEventListener('click', pauseFun);
+// pauseBtn.addEventListener('click', pauseFun);
 
 function workFun(){
  if(!isWorking){
    workStartStamp = Date.now();
    workBtn.innerText = 'Stop';
-  //  alert('Now Working');
+   pauseBtn.addEventListener('click', pauseFun);
  } else {
    workStopStamp = Date.now();
    workMillis = workStopStamp - workStartStamp;
-   
    workBtn.innerText = 'Start';
+   pauseBtn.removeEventListener('click', pauseFun);
+  //  pauseBtn.addEventListener('click', pauseFun);
   }
  isWorking = !isWorking;
  showMillis();
