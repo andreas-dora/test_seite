@@ -1,0 +1,228 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root{
+  --c-mainblau: #034f67;
+  --c-hellgrau: #e6e1dc;
+  --c-bikini: #77212e;
+  --c-dunkel: #373434;
+  --c-chili: #9B2335;
+  --c-alarm: #f9423a;
+  --c-superblue: #4244b6;
+
+  --c-bronze: #a6966c;
+  --c-accent: #034f67;
+  --c-second: #034f67;
+}
+
+
+body{
+  font-family: 'Cairo', Arial, sans-serif;
+}
+main{
+  margin-bottom: 3vw;
+}
+h1, h2{
+  line-height: 1;
+  color: var(--c-accent);
+}
+h1{
+  font-size: 2em;
+}
+/* h6{
+  font-size: 20px;
+  line-height: 1.4;
+  margin-bottom: .8em;
+} */
+p, h6{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  margin-bottom: .2em;
+}
+.more{
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right;
+  float: right;
+  color: var(--c-accent);
+}
+img{
+  max-width: 100%;
+}
+figcaption{
+  font-size: 16px;
+}
+header{
+  line-height: 1;
+  min-height: 50vh;
+  background-color: #e6e1dc;
+}
+main{
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+/*##############################################*/
+/*################# Inhalt #####################*/
+/*##############################################*/
+
+.inhalt dl{ 
+  text-align: right;
+  font-size: 20px;
+  min-width: 300px ;
+}
+.inhalt dt{
+  font-weight: bold;
+}
+.inhalt dd{
+  border-top: 2px solid black;
+}
+
+
+/*##############################################*/
+/*##############################################*/
+/*##############################################*/
+
+
+section{
+  margin: 0 auto;
+  padding: 5vmax 0 3vmax 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 3px solid var(--c-accent);
+}
+/* .content{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+.reverse{
+  flex-direction: column-reverse;
+}
+.flexBox{
+  display: flex;
+  gap: .6em;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.leftContent{
+  flex: 2;
+  min-width: 400px;
+}
+
+.sectionHead{
+  margin-bottom: 1em;
+}
+.sectionHead h1{
+  font-size: clamp(1.6em, 4vw, 6em);
+  line-height: 1;
+  margin-bottom: .2em;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+.sectionHead h6{
+  font-size: 21px;
+  line-height: 1.4;
+  margin-bottom: .8em;
+
+}
+
+article{
+  /* min-width: 400px; */
+  margin: 0 0 0  auto;
+  padding: 0 .6em;
+}
+
+aside{
+  flex: 1;
+  min-width: 200px;
+  padding: 0 .6em;
+}
+
+
+/*###################################################*/
+/*###################################################*/
+/*###################################################*/
+
+footer{
+  background-color: var(--c-accent);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+footer a{
+  font-weight: bold;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: whitesmoke;
+}
+.wrapper{
+  width: 96%;
+  padding: 3vw .5em; 
+  margin: 0 auto;
+  text-align: right;
+}
+
+/*###################################################*/
+/*###################################################*/
+/*###################################################*/
+
+/* @media (min-width: 640px){
+  body{
+    font-size: 105%;
+  }
+
+} */
+@media (min-width: 800px){
+  body{
+    font-size: 105%;
+  }
+  /* section{
+    min-height: 96vh;
+  } */
+  article{
+    width: 98%;
+  }
+  .flexBox{
+    gap: 1em;
+  }
+}
+
+@media (min-width: 900px){
+  section{
+    width: 98%;
+  }
+}
+
+
+
+@media (min-width: 1080px){
+  body{
+    font-size: 115%;
+  }
+  section{
+    width: 96%;
+    min-height: 100vh;
+    gap: 2em;
+  }
+  .flexBox{
+    gap: 2em;
+  }
+  .leftContent{
+    max-width: 62%;
+  }
+  article{
+    width: 90%;
+  }
+  aside{
+    max-width: 37%;
+  }
+}
+

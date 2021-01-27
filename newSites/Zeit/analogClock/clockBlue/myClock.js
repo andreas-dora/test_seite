@@ -15,6 +15,7 @@ var mySeconds = myTime.getSeconds();
 
 var myMinutes = myTime.getMinutes()* 60 + mySeconds;
 var myHours = myTime.getHours() % 12 * 3600 + myMinutes;
+var sekundenWinkel = (Math.PI*2/60) * mySeconds;
 var minutenWinkel = (Math.PI*2/3600) * myMinutes;
 var stundenWinkel = (Math.PI*2/43200) * myHours;
 // ctx.font = '100px Arial';
@@ -48,22 +49,35 @@ ctx.fill(deckel);
 ctx.restore();
 ctx.save();
 
-ctx.translate(clock_x, clock_y);
-ctx.rotate(minutenWinkel);
-ctx.beginPath();
-ctx.fillStyle = '#034f67';
-ctx.fillRect(-5,0, 10,-200);
-ctx.restore();
-ctx.save();
 
 ctx.translate(clock_x, clock_y);
 ctx.rotate(stundenWinkel);
 ctx.beginPath();
 ctx.fillStyle = '#034f67';
-ctx.fillRect(-10, 10, 20,-180);
+ctx.fillRect(-8, 10, 16,-180);
 ctx.restore();
 ctx.save();
+
+ctx.translate(clock_x, clock_y);
+ctx.rotate(minutenWinkel);
+ctx.beginPath();
+ctx.fillStyle = '#034f67';
+ctx.fillRect(-5,0, 10,-190);
+ctx.restore();
+ctx.save();
+
+
+ctx.translate(clock_x, clock_y);
+ctx.rotate(sekundenWinkel);
+ctx.beginPath();
+ctx.fillStyle = '#034f67';
+ctx.fillRect(-3,0, 6,-196);
+ctx.restore();
+ctx.save();
+
   requestAnimationFrame(draw)
 }
+
+
 
 document.addEventListener('DOMContentLoaded', draw);
