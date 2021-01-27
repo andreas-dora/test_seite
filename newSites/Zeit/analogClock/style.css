@@ -5,17 +5,18 @@
 }
 
 :root{
-  --c-mainblau: #034f67;
-  --c-hellgrau: #e6e1dc;
+  --c-mainblau: #034f67; /*  = 'rgb(166, 150, 108)' */
+  --c-hellgrau: #e6e1dc; /* = 'rgb(230, 225, 220)' */
   --c-bikini: #77212e;
-  --c-dunkel: #373434;
+  --c-dunkel: #373434;  /* = 'rgb(55, 52 52)' */
   --c-chili: #9B2335;
-  --c-alarm: #f9423a;
+  --c-alarm: #f9423a; /* = 'rgb(249, 66, 58)' */
   --c-superblue: #4244b6;
-  --c-bronze: #a6966c;
+  --c-bronze: #a6966c; /*  = 'rgb(55, 52 52)' */
+  
   --c-accent: #a6966c;
   --c-second: #034f67;
-  --c-hilite: #f9423a;
+  --c-hilite: #f9423a; /* = 'rgb(249, 66, 58)' */
 }
 
 body{
@@ -31,14 +32,15 @@ h5{
   letter-spacing: .16em;
 }
 body{
-  background-color: pink;
+  font-size: 100%;
+  background-color: var(--c-mainblau);
 }
 header{
   width: 100%;
   min-height: 100vh;
-  color: blue;
+  /* color: blue; */
 }
 section{
-  background-color: gray;
+  background-color: rgb(55, 52, 52);
   height: 50vh;
 }

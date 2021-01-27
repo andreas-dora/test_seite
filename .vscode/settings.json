@@ -1,4 +1,4 @@
 {
   "liveServer.settings.port": 5501,
-  "editor.wordWrap": "wordWrapColumn"
+  "editor.wordWrap": "on"
 }
