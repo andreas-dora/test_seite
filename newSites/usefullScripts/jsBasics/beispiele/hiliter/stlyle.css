@@ -19,6 +19,19 @@
 --c-accent: #696969;
 --c-hilite: #f9423a;
 
+/*###### für Highlite #### */
+
+
+--c-string:#ff6347;
+--c-object: #adff2f;
+--c-variable: #1e90ff;
+--c-dataType: #6197c4;
+--c-number: #6b7e7d;
+--c-comment: #178117;
+--c-text: #fffafa;
+--c-function: #ffd700;
+
+
 --sans: Arial, Helvetica, sans-serif;
 --serif:'Times New Roman', Times, serif;
 --code: 'Courier New', Courier, monospace;
@@ -31,17 +44,26 @@ body{
   font-family: 'Space Grotesk', sans-serif;
   font-size: 100%;
 }
+h3{
+  margin-bottom: 1em;
+}
+ul{
+  margin-left: 1.5em;
+  list-style: none;
+}
 section{
   display: flex;
+  
+  flex-direction: row;
   flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: stretch;
+  justify-content: space-evenly;
+  /* justify-content: stretch; */
+  margin-bottom: 2em;
 }
 .container{ 
   min-width: 300Px;
-
   max-width: 500px;
-  height: 55vh;
+  /* height: 55vh; */
   border: 3px solid var(--c-bronze);
   flex: 1;
   margin: 0.5em;
@@ -59,48 +81,53 @@ section{
 textarea{ 
   width: 100%;
   height: 31vh;
-  font-size: 1.6em;
+  font-size: 1.1em;
   overflow: scroll;
+  margin-bottom: 1em;
 }
+/* .hide{
+  visibility:
+} */
 .btn{
   height: 50px;
   width: 200px;
   background-color: #beaa7a;
   font-size: 18px;
+  margin-bottom: 1em;
+
+}
+pre{
+  overflow: auto;
+  padding: .5em;
+  background-color: var(--c-dunkel);
+  margin: 1em auto 2em auto;
 }
 code{
   font-family: 'Oxygen Mono', monospace;
+  line-height: 1.2;
 }
+
 .code__text{
-  color: white;
+  color:var(--c-text);
 }
 .code__dType{
-  color: rgb(97, 151, 196);
-}
-.code__v{
-  color: dodgerblue;
+  color: var(--c-dataType);
 }
 .code__variable{
-  color: dodgerblue;
-}
-.code__str{
-  color: gray;
+  color: var(--c-variable);
 }
 .code__string{
-  color: tomato;
-}
-.code__com{
-  color: green;
+  color: var(--c-string);
 }
 .code__object{
-  color: greenyellow;
+  color: var(--c-object);
 }
 .code__number{
-  color: rgb(107, 126, 125);
-}
-.code__const{
-  color: var(--c-superblue);
+  color: var(--c-number);
 }
 .code__function{
-  color: gold;
+  color: var(--c-function);
+}
+.code__comment{
+  color: var(--c-comment);
 }

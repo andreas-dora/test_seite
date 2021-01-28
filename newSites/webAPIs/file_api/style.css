@@ -169,7 +169,21 @@ footer a{
   margin: 0 auto;
   text-align: right;
 }
-
+.fileContainer{
+  min-height: 260px;
+  border: 1px solid var(--c-dunkel);
+  border-radius: 4px;
+}
+input[type=file]{
+height: 62px;
+color: red;
+background-color: var(--c-hellgrau);
+font-size: 1.2em;
+padding: 1em;
+}
+button{
+  min-height: 42px;
+}
 /*###################################################*/
 /*###################################################*/
 /*###################################################*/

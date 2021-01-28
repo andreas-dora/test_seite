@@ -8,14 +8,18 @@
   <link rel="stylesheet" href="stlyle.css">
 </head>
 <body>
-  <header><h1>Hi-liter &gt;</h1></header>
+  <header>
+    <h1>My Syntax &gt;</h1>
+    <h1>Highlighter</h1>
+  </header>
   <main>
     <section class="one">
       <div class="container">
         <label for="inbox">Code input:</label><br>
-          <textarea name="inbox" id="inbox" cols="30" rows="10"></textarea>
-          <button class="btn" id="start">Do it</button>
-        <form>
+        <textarea name="inbox" id="inbox" cols="30" rows="10"></textarea>
+        <button class="btn" id="start">Do it</button>
+        <button class="btn" id="id_reset">Clear</button>
+        <!-- <input class="btn" type="reset" value="Clear"> -->
 
           <!-- <h3>Info</h3> -->
           <ul id="feedback">
@@ -23,17 +27,87 @@
           </ul>
        
       </div>
-    <div class="codeContainer">
-      <form action="">
-        <label for="output">Output</label><br>
-        <textarea name="" id="output" cols="30" rows="10"></textarea>
-        <button class="btn" id="copy">Copy</button>
-      </form>
-      <h1>Preview</h1>
-<pre><code class="myCode">
-  
-</code></pre>
-  </div>
+      <div class="container">
+        <h3>Das CSS:</h3>
+        <pre>
+          <code>
+.code__text{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-text)</span>;
+}
+.code__dType{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-dataType)</span>;
+}
+.code__variable{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-variable)</span>;
+}
+.code__string{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-string)</span>;
+}
+.code__object{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-object)</span>;
+}
+.code__number{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-number)</span>;
+}
+.code__function{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-function)</span>;
+}
+.code__comment{
+  <span class="code__variable">color:</span> var<span class="code__variable">(--c-comment)</span>;
+}</code>
+        </pre>
+        <textarea class="hide" name="id_css" id="id_css" cols="30" rows="10">
+:root{
+  --c-string:#ff6347;
+  --c-object: #adff2f;
+  --c-variable: #1e90ff;
+  --c-dataType: #6197c4;
+  --c-number: #6b7e7d;
+  --c-comment: #178117;
+  --c-text: #fffafa;
+  --c-function: #ffd700;
+}
+.code__text{
+  color:var(--c-text);
+}
+.code__dType{
+  color: var(--c-dataType);
+}
+.code__variable{
+  color: var(--c-variable);
+}
+.code__string{
+  color: var(--c-string);
+}
+.code__object{
+  color: var(--c-object);
+}
+.code__number{
+  color: var(--c-number);
+}
+.code__function{
+  color: var(--c-function);
+}
+.code__comment{
+  color: var(--c-comment);
+}
+        </textarea>
+        <button class="btn" id="id_copyCss">Copy</button>
+   
+      </div>
+    </section>
+    <section>
+      <div class="codeContainer">
+        <form action="">
+          <label for="output">Output</label><br>
+          <textarea name="" id="output" cols="30" rows="10"></textarea>
+          <button class="btn" id="copy">Copy</button>
+        </form>
+        <h1>Preview</h1>
+  <pre><code class="myCode">
+    
+  </code></pre>
+    </div>
     </section>
   </main>
   <script type="text/javascript" src="sketch.js"></script>

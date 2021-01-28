@@ -9,6 +9,19 @@ var inbox = document.querySelector('#inbox')
 var output =document.querySelector('#output');
 var code = document.querySelector('.myCode');
 
+const cssArea = document.getElementById('id_css');
+const cssBtn = document.getElementById('id_copyCss');
+cssBtn.addEventListener('click', copyCss);
+const resetBtn = document.getElementById('id_reset').addEventListener('click', () =>{
+  inbox.value = '';
+});
+
+function copyCss(){
+  cssArea.select();
+  cssArea.setSelectionRange(0, 99999); /*For mobile devices*/
+  document.execCommand("copy");  alert("Copied the text: " + cssArea.value);
+}
+
 function checkFun(){
   startTime = Date.now();
 
@@ -65,7 +78,7 @@ function liteJS(){
 
 
 function copyFun() {
-
+  output.select();
     output.setSelectionRange(0, 99999); /*For mobile devices*/
     document.execCommand("copy");
     alert("Copied the text: " + output.value);
