@@ -102,7 +102,7 @@ Nutzergruppen der Abfrage: Personalabteilung
     <section>
       <div>
         <div class="sectionHead">  
-          <h1 class="sectionHead">Some Great Reverse</h1>
+          <h1 class="sectionHead">Grundlagen</h1>
 ´        </div>
         <div class="flexReverse">
           <aside>
@@ -143,7 +143,421 @@ Nutzergruppen der Abfrage: Personalabteilung
     </div>
 </div>
     </section> 
+    <section>
+      <div>
+        <div class="sectionHead">
+          <h1 class="sectionHead">Grundlagen</h1>
+        </div>
+        <div class="flexBox">
+          <div class="leftContent">
+            <article>
+              <h1>MySQL Grundlagen</h1>
 
+<p>Eine Auswahl von Spalten einer Tabelle wird Projektion genannt. (Ausgewählte Spalten werden in Tabellenform projiziert.)
+ Hinter dem Schlüsselwort <strong>SELECT</strong> folgen die Spaltenbezeichnungen. Hinter dem Schlüsselwort <strong>FROM</strong> wird die Tabelle genannt auf die die Datenbank zugreifen soll.
+ Wird mehr als eine Spalte abgefragt, werden diese mit Komma getrennt: </p>
+
+<p><code>SELECT name, vorname FROM mitarbeiter;</code></p>
+
+<p>Mit Sternchen werden alle Spalten einer Tabelle ausgewählt:</p>
+
+<p><code>SELECT * FROM mitarbeiter;</code></p>
+
+<hr />
+
+<h2>Filtern mit WHERE</h2>
+
+<ul>
+<li>Numerische Werte vergleichen</li>
+<li>Texte vergleichen</li>
+<li>Textmuster vergleichen</li>
+<li>Datumsangaben vergleichen</li>
+<li>auf Intervalle prüfen</li>
+<li>auf Existenz in Teilmengen prüfen</li>
+<li>auf &#8220;Wert wurde definiert&#8221; prüfen</li>
+</ul>
+
+<hr />
+
+<h4>Vergleichsoperatoren in SQL</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Operator</th>
+	<th>Funktion</th>
+	<th>Ausgabe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>a=b</td>
+	<td>ist gleich</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>a&lt;&gt;b</td>
+	<td>ist <strong>nicht</strong> gleich</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>a!=b</td>
+	<td>ist <strong>nicht</strong> gleich</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>a&lt;b</td>
+	<td>kleiner als</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>a&lt;=b</td>
+	<td>kleiner oder gleich</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>c <strong>BETWEEN</strong> a <strong>AND</strong> b </td>
+	<td>ob Wert c zwischen ab und b liegt</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>c <strong>NOT BETWEEN</strong> a <strong>AND</strong> b </td>
+	<td>ob c <strong>nicht</strong> zwischen ab und b liegt</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>a <strong>LIKE</strong> Textmuster</td>
+	<td>ob a dem Textmuster entspricht</td>
+	<td>true / false</td>
+</tr>
+<tr>
+	<td>a <strong>NOT LIKE</strong> Textmuster</td>
+	<td>ob a dem Textmuster <strong>nicht</strong> entspricht</td>
+	<td>true / false</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Beispiele</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Operator</th>
+	<th>Ergebnis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1 = 1</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>1 = 2</td>
+	<td>false</td>
+</tr>
+<tr>
+	<td>2&lt;&gt; 1</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>1 &lt;&gt; 1</td>
+	<td>false</td>
+</tr>
+<tr>
+	<td>2 != 1</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>1!= 1</td>
+	<td>false</td>
+</tr>
+<tr>
+	<td>2 BETWEEN 1 AND 3</td>
+	<td>true</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h3>Spalten auf Gleichheit prüfen</h3>
+
+<p>Aus der Mitarbeiter Tabelle sollen die Telefonnummern der von &#8216;Frau Lang&#8217; herausgesucht werden:</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    festnetz,
+    mobilnetz
+FROM
+    mitarbeiter
+WHERE
+    name = 'Lang';
+</code></pre>
+
+<hr />
+
+<p>Es sollen alle Mitarbeiter herausgesucht werden die in einem bestimmten Gebiet wohnen (PLZ):</p>
+
+<pre><code class="SQL">SELECT
+    name,
+    vorname,
+    plz
+FROM
+    mitarbeiter
+WHERE
+plz = 50000;
+</code></pre>
+
+<hr />
+
+<h4>Ungleicheit</h4>
+
+<p>Sucht nach Mitarbeitern deren Steuerklasse nicht 3 ist.</p>
+
+<p><code>sql
+SELECT
+    name,
+    vorname,
+    steuerklasse,
+    verheiratet
+FROM
+    mitarbeiter
+WHERE
+    steuerklasse&lt;&gt;3;
+</code></p>
+
+<hr />
+
+<h4>Nach späterem Eintrittsdatum filtern</h4>
+
+<p>Daten werden zwar wie Strings mit einfachen Anführungszeichen versehen, lassen sich aber dennoch mit Größer- und Kleiner-Operatoren bearbeiten.
+Hier wird nach Mitarbeiter gesucht die am 01.01.90 oder danach eingestellt wurden.</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    bonus,
+    eintrittsdatum
+FROM
+    mitarbeiter
+WHERE
+    eintrittsdatum&gt;='1990-01-01';
+</code></pre>
+
+<hr />
+
+<h3>Mit dem NOT-Operator verneinen</h3>
+
+<pre><code>SELECT
+    name,
+    vorname,
+    festnetz
+FROM
+    mitarbeiter
+WHERE NOT
+    name ='WINTER';
+</code></pre>
+
+<h3>Doppelte Verneinung mit NOT und &lt;&gt;</h3>
+
+<p>Mit dieser doppelten Verneinung finden wir wieder die Festnetznummer von Frau Winter.</p>
+
+<p>``sql
+SELECT
+ name,
+ vorname,
+ festnetz
+FROM
+ mitarbeiter
+WHERE NOT
+ name &lt;&gt;&#8217;WINTER&#8217;;
+```</p>
+
+<p>Alle Mitarbeiter deren Bonus nicht größer als 500 ist:</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    bonus
+FROM
+    mitarbeiter
+WHERE NOT
+    bonus &gt; 500;
+</code></pre>
+
+<h4>Intervallprüfung BETWEEN</h4>
+
+<p>Mit der Intervallprüfung lässt sich feststellen ob ein Wert in einem bestimmten Bereich liegt.</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    umsatz
+FROM
+    mitarbeiter
+WHERE
+    umsatz 
+ BETWEEN  50000 AND 170000;
+</code></pre>
+
+<p>Mitarbeiter die zwischen dem 1981 und 84 eingestellt wurden:</p>
+
+<pre><code class="sql"> SELECT
+    name,
+    vorname,
+    eintrittsdatum
+FROM
+    mitarbeiter
+WHERE
+    eintrittsdatum 
+ BETWEEN  '1981-01-01' AND '1984-12-31';
+</code></pre>
+
+<hr />
+
+<h3>Nach Textmustern filtern: LIKE</h3>
+
+<p>SQL ist nicht Case sensitive. Das gilt sowohl für das Script als auch den Inhalt der Datenbank.
+ <strong>Platzhalter</strong>: Das Prozentzeichen &#8216;<strong>%</strong>&#8217; steht als Platzhalter für eine beliebige Menge an Zeichen: <strong>%weg%</strong>
+Der <strong>Underscore</strong> steht für exakt ein Zeichen: <strong>d_i%</strong>
+Mehrere Platzhalter</p>
+
+<p>Sucht nach Mitarbeitern deren Vorname mit &#8216;k&#8217; beginnt:</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    eintrittsdatum
+FROM
+    mitarbeiter
+WHERE
+    vorname LIKE 'k%';
+</code></pre>
+
+<hr />
+
+<p>Sucht nach Mitarbeitern deren Vorname mit &#8216;r&#8217; endet:</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    eintrittsdatum
+FROM
+    mitarbeiter
+WHERE
+    vorname LIKE '%r';
+</code></pre>
+
+<hr />
+
+<p>Sucht nach Mitarbeitern deren Straße mit <strong>S</strong> beginnt und <strong>str</strong> enthält:</p>
+
+<pre><code class="sql"> SELECT
+    name,
+    vorname,
+    strasse,
+    hausnummer
+FROM
+    mitarbeiter
+WHERE
+    strasse LIKE 's%str%';
+</code></pre>
+
+<hr />
+
+<h4>Textmuster mit Verneinung: NOT LIKE</h4>
+
+<p>Findet Mitarbeiteradressen die in Straßen wohnen, deren Straßenname nicht <strong>str</strong> enthält:</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    strasse,
+    hausnummer
+FROM
+    mitarbeiter
+WHERE
+    strasse NOT LIKE '%str%';
+</code></pre>
+
+<p><strong>Nicht Verwechseln mit Verneinung die auf die gesamte Bedingung gültig ist</strong></p>
+
+<hr />
+
+<h2>Auf Listen prüfen: IN</h2>
+
+<p>Wenn Mitarbeiter gesucht werden die Schmidt oder Müller heißen, wird dafür nicht wie in JS ein or-Operator verwendet, sondern eine Liste der Möglichkeiten erstellt. Michael Laube nennt dies <strong>Mengenzugehörigkeit</strong>. </p>
+
+<p><code>sql
+SELECT
+    \*  
+FROM
+    mitarbeiter
+WHERE
+    name
+        IN (
+            'Müller',
+            'Schmidt',
+            'schneider',
+            'Funke'
+        ); 
+</code></p>
+
+<h4>Listenverneinung: NOT IN</h4>
+
+<p>Wer arbeitet in einer Abteilung die nicht Vertrieb, Verkauf oder Personal ist?</p>
+
+<pre><code class="sql"> SELECT 
+    name,
+    abteilung
+FROM
+    mitarbeiter
+WHERE
+    abteilung
+    NOT IN
+    (
+    'Personal',
+    'Vertrieb',
+    'Verkauf'
+    );
+</code></pre>
+
+<hr />
+
+<h2>Fehlende Werte: NULL</h2>
+              
+              
+                <p>Loque animi? Natus, quos? Qui ullam est beatae deleniti, 
+                  necessitatibus <a href="#" class="more">Mehr <span class="more__1">></span>
+                    <span class="more__2">></span><span class="more__3">></span></a></p>
+                  </article>
+                </div>
+                <aside>
+                  <figure>
+                    <img src="./img/lunQuad.jpg" alt="Offenbach Marktplatz">
+                    <figcaption>Die Satdt lebt: 24 Stunden in Offenbach machen müde 
+                      Bayern bunter.</figcaption>
+                    </figure>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section> 
 
 
   </main>
