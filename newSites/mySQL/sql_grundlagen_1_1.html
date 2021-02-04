@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Grundlagen</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/main.min.css">
+</head>
+<body>
+  <header>
+    <h1>Muster</h1>
+    <h1>Seite</h1>
+  </header>
+  <main>
+
+    <section>
+      <div class="flexBox">
+        <div class="leftContent">
+          <div class="sectionHead">
+            <h1>inhalt:</h1>
+          </div>
+         
+            <article>
+              <!-- <h6>Lorem ipsum, dolor sit amet, dolore! Molestias saepe distinctio consectetur deserunt cum labore quia odit fugit a earum, libero nulla ex ipsum.</h6> -->
+            </article>
+        </div>
+  
+          <aside class="inhalt">
+            <dl>
+              <dt>Bausteine:</dt>
+              <dd>Big Quote</dd>
+              <dd>Butons & Links</dd>
+              <dd>Tabellen</dd>
+              <dd>Code Block</dd>
+              <dd>Navigation</dd>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+
+    <section>
+      <div>
+        <div class="sectionHead">
+          <h1 class="sectionHead">SELECT & FROM</h1>
+        </div>
+        <div class="flexBox">
+          <div class="leftContent">
+            <article>
+              <p>Hinter dem Schlüsselwort <strong>SELECT</strong> folgen die Spaltenbezeichnungen. Hinter dem Schlüsselwort <strong>FROM</strong> wird die Tabelle genannt auf die die Datenbank zugreifen soll.
+                Wird mehr als eine Spalte abgefragt, werden diese mit Komma getrennt: </p>
+               <p><code>SELECT name, vorname FROM mitarbeiter;</code></p>
+               <p>Mit Sternchen werden alle Spalten einer Tabelle ausgewählt:</p>
+               
+               <p><code>SELECT * FROM mitarbeiter;</code></p>
+               <p>Eine Auswahl von Spalten einer Tabelle wird Projektion genannt. (Ausgewählte Spalten werden in Tabellenform projiziert.)</p>
+
+                  </article>
+                </div>
+                <aside>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section> 
+
+
+          <section>
+            <div>
+              <div class="sectionHead">
+                <h1 class="sectionHead">Filtern mit WHERE</h1>
+              </div>
+              <div class="flexBox">
+                <div class="leftContent">
+                  <article>
+                    <ul>
+                      <li>Numerische Werte vergleichen</li>
+                      <li>Texte vergleichen</li>
+                      <li>Textmuster vergleichen</li>
+                      <li>Datumsangaben vergleichen</li>
+                      <li>auf Intervalle prüfen</li>
+                      <li>auf Existenz in Teilmengen prüfen</li>
+                      <li>auf &#8220;Wert wurde definiert&#8221; prüfen</li>
+                      </ul>
+                      
+                        </article>
+                      </div>
+                      <aside>
+                        </aside>
+                      </div>
+                    </div>
+                  </div>
+                </section> 
+
+
+    <section>
+      <div>
+        <div class="sectionHead">
+          <h1 class="sectionHead">Vergleichsoperatoren</h1>
+        </div>
+        <div class="flexBox">
+          <div class="leftContent">
+            <article>
+
+ <table>
+ <colgroup>
+ <col/>
+ <col/>
+ 
+ </colgroup>
+ 
+ <thead>
+ <tr>
+   <th>Operator</th>
+   <th>Funktion</th>
+ 
+ </tr>
+ </thead>
+ 
+ <tbody>
+ <tr>
+   <td>a=b</td>
+   <td>ist gleich</td>
+ 
+ </tr>
+ <tr>
+   <td>a&lt;&gt;b</td>
+   <td>ist <strong>nicht</strong> gleich</td>
+ 
+ </tr>
+ <tr>
+   <td>a!=b</td>
+   <td>ist <strong>nicht</strong> gleich</td>
+ 
+ </tr>
+ <tr>
+   <td>a&lt;b</td>
+   <td>kleiner als</td>
+
+ </tr>
+ <tr>
+   <td>a&lt;=b</td>
+   <td>kleiner oder gleich</td>  
+ </tr>
+ <tr>
+   <td>c <strong>BETWEEN</strong> a <strong>AND</strong> b </td>
+   <td>ob Wert c zwischen ab und b liegt</td>
+ </tr>
+ <tr>
+   <td>c <strong>NOT BETWEEN</strong> a <strong>AND</strong> b </td>
+   <td>ob c <strong>nicht</strong> zwischen ab und b liegt</td>
+ </tr>
+ <tr>
+   <td>a <strong>LIKE</strong> Textmuster</td>
+   <td>ob a dem Textmuster entspricht</td>
+ </tr>
+ <tr>
+   <td>a <strong>NOT LIKE</strong> Textmuster</td>
+   <td>ob a dem Textmuster <strong>nicht</strong> entspricht</td>
+ </tr>
+ </tbody>
+ </table>
+ 
+ 
+ 
+ <hr />
+ 
+ <h3>Spalten auf Gleichheit prüfen</h3>
+ 
+ <p>Aus der Mitarbeiter Tabelle sollen die Telefonnummern der von &#8216;Frau Lang&#8217; herausgesucht werden:</p>
+ 
+ <pre><code class="sql">SELECT
+     name,
+     vorname,
+     festnetz,
+     mobilnetz
+ FROM
+     mitarbeiter
+ WHERE
+     name = 'Lang';
+ </code></pre>
+ 
+ <hr />
+ 
+ <p>Es sollen alle Mitarbeiter herausgesucht werden die in einem bestimmten Gebiet wohnen (PLZ):</p>
+ 
+ <pre><code class="SQL">SELECT
+     name,
+     vorname,
+     plz
+ FROM
+     mitarbeiter
+ WHERE
+ plz = 50000;
+ </code></pre>
+ 
+ <hr />
+ 
+ <h4>Ungleicheit</h4>
+ 
+ <p>Sucht nach Mitarbeitern deren Steuerklasse nicht 3 ist.</p>
+ 
+ <p><code>sql
+ SELECT
+     name,
+     vorname,
+     steuerklasse,
+     verheiratet
+ FROM
+     mitarbeiter
+ WHERE
+     steuerklasse&lt;&gt;3;
+ </code></p>
+ 
+ <hr />
+ 
+ <h4>Nach späterem Eintrittsdatum filtern</h4>
+ 
+ <p>Daten werden zwar wie Strings mit einfachen Anführungszeichen versehen, lassen sich aber dennoch mit Größer- und Kleiner-Operatoren bearbeiten.
+ Hier wird nach Mitarbeiter gesucht die am 01.01.90 oder danach eingestellt wurden.</p>
+ 
+ <pre><code class="sql">SELECT
+     name,
+     vorname,
+     bonus,
+     eintrittsdatum
+ FROM
+     mitarbeiter
+ WHERE
+     eintrittsdatum&gt;='1990-01-01';
+ </code></pre>
+ 
+ <hr />
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, 
+                  quam similique nihil omnis aliquid earum rerum dicta quod necessitatibus 
+                  inventore ad itaque animi? Natus, quos? Qui ullam est beatae deleniti, 
+                  necessitatibus <a href="#" class="more">Mehr <span class="more__1">></span>
+                    <span class="more__2">></span><span class="more__3">></span></a></p>
+                  </article>
+                </div>
+                <aside>
+                  <p>Eine Auswahl von Spalten einer Tabelle wird Projektion genannt. (Ausgewählte Spalten werden in Tabellenform projiziert.)</p>
+                  <h3>Beispiele</h3>
+ 
+                  <table>
+                  <colgroup>
+                  <col/>
+                  <col/>
+                  </colgroup>
+                  
+                  <thead>
+                  <tr>
+                    <th>Operator</th>
+                    <th>Ergebnis</th>
+                  </tr>
+                  </thead>
+                  
+                  <tbody>
+                  <tr>
+                    <td>1 = 1</td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>1 = 2</td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>2&lt;&gt; 1</td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>1 &lt;&gt; 1</td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>2 != 1</td>
+                    <td>true</td>
+                  </tr>
+                  <tr>
+                    <td>1!= 1</td>
+                    <td>false</td>
+                  </tr>
+                  <tr>
+                    <td>2 BETWEEN 1 AND 3</td>
+                    <td>true</td>
+                  </tr>
+                  </tbody>
+                  </table>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section> 
+
+
+
+
+    <section>
+      <div>
+        <div class="sectionHead">  
+          <h1 class="sectionHead">Some Great Reverse</h1>
+´        </div>
+        <div class="flexReverse">
+          <aside>
+            <figure>
+              <img src="./img/lunQuad.jpg" alt="">
+              <figcaption>Die Satdt lebt: 24 Stunden in Offenbach machen müde Bayern bunter.</figcaption>
+            </figure>
+          </aside>
+          <div class="leftContent">
+                <article>                
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+                    Repudiandae rem magni beatae assumenda tempore in dignissimos fuga 
+                    iusto, nostrum totam porro, voluptatibus inventore ratione 
+                    praesentium aperiam culpa tenetur blanditiis! Exercitationem.</p>
+                    <ul>
+               <li>Angeforderte Stelle</li>
+               <li>Funktion der Anfrage</li>
+               <li>Datum der Fertigstellung</li>
+               <li>Durchführung von Änderungen und GRund der Änderung</li>
+               <li>Autor</li>
+             </ul>
+             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas similique odio, qui architecto fugit sequi quae soluta ullam facere magnam?
+
+             </p>
+             <ul>
+              <li>Mit <span class="taste">cmd</span> &plus; <span class="taste">T</span> eine neue Skriptdatei ereugen.</li>
+              <li>Folgende Eingabe: <code>SELECT name,vorname FROM mitarbeiter;</code></li>
+              <li>Ausführen mit dem Blitzsymbol oder <span class="taste">CMD</span> &plus; <span class="taste">ENTER</span> </li>
+            </ul>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, quam similique nihil 
+                  omnis aliquid earum rerum dicta quod necessitatibus inventore ad itaque animi? Natus, quos? 
+                  reprehenderit sunt ad rerum dignissimos atque minus impedit architecto, earum nostrum fuga 
+                  aperiam porro natus, quaerat, culpa debitis repellendus? 
+                  <a href="#" class="more">Mehr <span class="more__1">></span>
+                    <span class="more__2">></span><span class="more__3">></span></a></p>            
+              </article>
+          </div>
+      </div>     
+        </div>
+      </div>
+    </section> 
+
+
+
+    <section>
+      <div>
+        <div class="sectionHead">  
+          <h1 class="sectionHead">Some Great Reverse</h1>
+´        </div>
+        <div class="flexReverse">
+          <aside>
+            <h3>Codeblöcke</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit nobis <a href="#" class="aFancy">Fancy Link</a> ipsam harum quae dolorem! Sed tempore placeat tempora odit veniam sequi. Adipisci ipsam alias aspernatur numquam, illum aut dolorum!</p>
+            <button class="myBtn">Test</button>
+            <button class="myBtn">Copy</button>
+          </aside>
+          <div class="leftContent">
+            <div class="codeContainer">
+              <pre>
+                <code>    
+&lt;<span class="code__dType">section</span>&gt;
+  &lt;<span class="code__dType">div</span>&gt;
+  &lt;<span class="code__dType">div</span><span class="code__variable"> class</span>=<span class="code__string">"sectionHead"</span>&gt;
+    &lt;<span class="code__dType">h1</span><span class="code__variable"> class</span>=<span class="code__string">"sectionHead"</span>&gt;<span class="code__text">Eine großes Headline</span>&lt;/<span class="code__dType">h1</span>&gt
+  &lt;/<span class="code__dType">div</span>&gt
+  &lt;<span class="code__dType">div</span><span class="code__variable"> class</span>=<span class="code__string">"flexBox"</span>&gt;
+    &lt;<span class="code__dType">div</span><span class="code__variable"> class</span>=<span class="code__string">"leftContent"</span>&gt;
+      &lt;<span class="code__dType">article</span>&gt;
+        &lt;<span class="code__dType">p</span>&gt;<span class="code__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae rem magni beatae assumenda tempore in dignissimos fuga iusto, nostrum totam porro, voluptatibus inventore ratione praesentium aperiam culpa tenetur blanditiis! Exercitationem.</span>&lt;/<span class="code__dType">p</span>&gt
+          &lt;<span class="code__dType">p</span>&gt;Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deserunt, 
+            quam similique nihil omnis aliquid earum rerum dicta quod necessitatibus inventore ad itaque animi? Natus, quos? Qui ullam est beatae deleniti, 
+            necessitatibus &lt;<span class="code__dType">a</span><span class="code__variable"> href</span>=<span class="code__string">"#"</span><span class="code__variable"> class</span>=<span class="code__string">"more"</span>&gt;<span class="code__text">Mehr </span>&lt;<span class="code__dType">span</span><span class="code__variable"> class</span>=<span class="code__string">"more__1"</span>&gt;<span class="code__text">&gt;</span>&lt;/<span class="code__dType">span</span>&gt
+              &lt;<span class="code__dType">span</span><span class="code__variable"> class</span>=<span class="code__string">"more__2"</span>&gt;<span class="code__text">&gt;</span>&lt;/<span class="code__dType">span</span>&gt<span class="code__text"></span>&lt;<span class="code__dType">span</span><span class="code__variable"> class</span>=<span class="code__string">"more__3"</span>&gt;<span class="code__text">&gt;</span>&lt;/<span class="code__dType">span</span>&gt<span class="code__text"></span>&lt;/<span class="code__dType">a</span>&gt<span class="code__text"></span>&lt;/<span class="code__dType">p</span>&gt
+            &lt;/<span class="code__dType">article</span>&gt
+          &lt;/<span class="code__dType">div</span>&gt
+          &lt;<span class="code__dType">aside</span>&gt;
+            &lt;<span class="code__dType">figure</span>&gt;
+              &lt;<span class="code__dType">img</span><span class="code__variable"> src</span>=<span class="code__string">"./img/lunQuad.jpg"</span><span class="code__variable"> alt</span>=<span class="code__string">"Offenbach Marktplatz"</span>&gt;
+              &lt;<span class="code__dType">figcaption</span>&gt;<span class="code__text">Die Satdt lebt: 24 Stunden in Offenbach machen müde Bayern bunter.</span>&lt;/<span class="code__dType">figcaption</span>&gt
+              &lt;/<span class="code__dType">figure</span>&gt
+            &lt;/<span class="code__dType">aside</span>&gt
+          &lt;/<span class="code__dType">div</span>&gt
+        &lt;/<span class="code__dType">div</span>&gt
+      &lt;/<span class="code__dType">div</span>&gt
+    &lt;/<span class="code__dType">section</span>&gt 
+</code>
+</pre>
+            </div>
+   
+          </div>
+      </div>     
+    </div>
+</div>
+    </section> 
+
+  </main>
+  <footer>
+    <div class="wrapper">
+      <span class="right"><span class="thin">&copy; 2021 Andreas Breitwieser | Letzte Aktualisierung: <span id="id_lastMod"></span> | </span><a href="#">Impressum</a></span>
+    </div>
+  </footer>
+  <script src="./js/main.js"></script>
+</body>
+</html>   
