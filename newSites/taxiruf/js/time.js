@@ -3,7 +3,7 @@ console.log('HElloTime');
 var zeitFeld = document.getElementById('id_time');
 // var zeitFeld = document.getElementById('id_zielQuik');
 zeitFeld.value = "Hello";
-function tellTime() {
+function init() {
   let now = new Date();
   let myH = now.getHours().toString().padStart(2, 0);
   let myM = now.getMinutes().toString().padStart(2, 0);
@@ -13,4 +13,6 @@ function tellTime() {
 
 }
 
-setInterval(tellTime, 1000);
+document.addEventListener('DOMContentLoaded', init);
+
+// setInterval(tellTime, 1000);
