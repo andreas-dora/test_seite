@@ -12,6 +12,7 @@ document.getElementById('id_timeString').innerText = jetzt.toTimeString();
 document.getElementById('id_dateString').innerText = jetzt.toDateString();
 document.getElementById('id_isoString').innerText = jetzt.toISOString();
 document.getElementById('id_toJSON').innerText = jetzt.toJSON();
+document.getElementById('id_getUTCYear').innerText = jetzt.getUTCMonth();
 console.log(jetzt.toISOString());
 console.log(jetzt.toJSON());
 
