@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Normalisierung</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <section>
+      <article>
+        <h2>Redundanzen identifizieren</h2>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>id</th>
+	<th>produktart</th>
+	<th>markenname</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Bier</td>
+	<td>Veltins</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Bier</td>
+	<td>Becks</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Bier</td>
+	<td>Corona</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Biermischgetränk</td>
+	<td>Becks Green Lemon</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>Biermischgetränk</td>
+	<td>Veltins+ Lemon</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td>Biermischgetränk</td>
+	<td>Veltins+ Cola</td>
+</tr>
+<tr>
+	<td>7</td>
+	<td>Softdrink</td>
+	<td>Club Mate</td>
+</tr>
+<tr>
+	<td>8</td>
+	<td>Softdrink</td>
+	<td>Afri Cola</td>
+</tr>
+</tbody>
+</table>
+
+<p>Redundazen sind Informations-Doubletten. Redundante Daten können 
+  nicht nur viel Speicherplatz verbrauchen, sie können auch zu Anomalien
+beim Einfügen, Aktualisieren und Löschen führen. Um dies zu vermeiden werden beim
+modellieren einer Datenbank drei normalisierungs Formen angewant.</p>
+<h4>1. Die Atomar Normalisierung</h4>
+
+<table>
+  <colgroup>
+  <col/>
+  <col/>
+  <col/>
+  </colgroup>
+  
+  <thead>
+  <tr>
+    <th>pid</th>
+    <th>mitarbeiter</th>
+    <th>adresse</th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <tr>
+    <td>1</td>
+    <td>Ernie East</td>
+    <td>Osterallee 4, 55544, Alt Laberbach</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Wendy West</td>
+    <td>Wallross Street 41, 13231, Catbourgh</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Surogetta Salt</td>
+    <td>Sweet Street 10, 77411, Duckling</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Anita Avokada</td>
+    <td>Auf der Gasse 18, 98981, Thinwood</td>
+  </tr>
+  </tbody>
+  </table>
+
+      </article>
+    </section>
+  </main>
+</body>
+</html>

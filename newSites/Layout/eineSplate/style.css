@@ -3,6 +3,20 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root{
+  --c-mainblau: #034f67;
+  --c-hellgrau: #e6e1dc;
+  --c-bikini: #77212e;
+  --c-dunkel: #373434;
+  --c-chili: #9B2335;
+  --c-alarm: #f9423a;
+  --c-superblue: #4244b6;
+  --c-bronze: #a6966c;
+  --c-accent: #a6966c;
+  --c-second: #034f67;
+  --c-hilite: #f9423a;
+}
+
 body{
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -10,6 +24,10 @@ body{
 h2{
   font-size: clamp(1.4em, 5vw, 2.9em);
   margin-bottom: .6em;
+}
+h4{
+  font-size: 26px;
+  margin: 1em 0;
 }
 h5{
   font-size: 18px;
@@ -19,8 +37,8 @@ h5{
 p, ul{
   font-size: 18px;
   line-height: 1.6;
-  max-width: 56ch;
-  margin: 0 0 .5em auto;
+  /* max-width: 56ch;
+  margin: 0 0 .5em auto; */
 }
 li{
   margin-bottom: .2em;
@@ -35,9 +53,30 @@ li{
 li{
   margin-left: 1em;
 }
-
+section{
+  max-width: 1000px;
+}
 article{
-  max-width: 760px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: 0 .5em 0 auto ;
   padding: 0 .5em 2em .5em;
+}
+
+
+/*##################################################* TABLE/
+/*##################################################*/
+/*##################################################*/
+
+table{
+  border-collapse: collapse;
+  margin-bottom: 1.5em;
+}
+
+th, td{
+  text-align: left;
+  padding: .4em 1em .2em .5em;
+  border: 1px solid var(--c-dunkel);
+}
+th{
+  background-color: var(--c-hellgrau);
 }
