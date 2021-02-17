@@ -74,48 +74,434 @@
   nicht nur viel Speicherplatz verbrauchen, sie können auch zu Anomalien
 beim Einfügen, Aktualisieren und Löschen führen. Um dies zu vermeiden werden beim
 modellieren einer Datenbank drei normalisierungs Formen angewant.</p>
+
 <h4>1. Die Atomar Normalisierung</h4>
 
+<h1>Normalisierung</h1>
+
+<h3>1. Die atomare Normalisierung (8.2)</h3>
+
+<p>Attribute dürfen nicht teilbar sein. Vor der Normalisierung: </p>
+
 <table>
-  <colgroup>
-  <col/>
-  <col/>
-  <col/>
-  </colgroup>
-  
-  <thead>
-  <tr>
-    <th>pid</th>
-    <th>mitarbeiter</th>
-    <th>adresse</th>
-  </tr>
-  </thead>
-  
-  <tbody>
-  <tr>
-    <td>1</td>
-    <td>Ernie East</td>
-    <td>Osterallee 4, 55544, Alt Laberbach</td>
-  </tr>
-  <tr>
-    <td>2</td>
-    <td>Wendy West</td>
-    <td>Wallross Street 41, 13231, Catbourgh</td>
-  </tr>
-  <tr>
-    <td>3</td>
-    <td>Surogetta Salt</td>
-    <td>Sweet Street 10, 77411, Duckling</td>
-  </tr>
-  <tr>
-    <td>4</td>
-    <td>Anita Avokada</td>
-    <td>Auf der Gasse 18, 98981, Thinwood</td>
-  </tr>
-  </tbody>
-  </table>
-      </article>
-    </section>
-  </main>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>persoid</th>
+	<th>mitarbeiter</th>
+	<th>adresse</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Ernie East</td>
+	<td>Wasserweg, 4, 55544, Wellenbach</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Wendy West</td>
+	<td>Zweitegasse, 41, 13231, Zweitstadt</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Surogetta Salz</td>
+	<td>Natriumallee, 10, 77411, Bad Prickel</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Anita Avokada</td>
+	<td>Neubaugasse, 18, 98981, Bentonblue</td>
+</tr>
+</tbody>
+</table>
+
+<p>Nach der atomar Normalisierung:</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>persoid</th>
+	<th>vorname</th>
+	<th>nachname</th>
+	<th>str</th>
+	<th>hnr</th>
+	<th>plz</th>
+	<th>ort</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Ernie</td>
+	<td>East</td>
+	<td>Wasserweg</td>
+	<td>4</td>
+	<td>55544</td>
+	<td>Wellenbach</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Wendy</td>
+	<td>West</td>
+	<td>Zweitegasse</td>
+	<td>41</td>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Surogetta</td>
+	<td>Salz</td>
+	<td>Natriumallee</td>
+	<td>10</td>
+	<td>77411</td>
+	<td>Bad Prickel</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Anita</td>
+	<td>Avokada</td>
+	<td>Neubaugasse</td>
+	<td>18</td>
+	<td>98981</td>
+	<td>Bentonblue</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>Voll funktionale Abhängikkeit (8.3)</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>persoid</th>
+	<th>adressid</th>
+	<th>vorname</th>
+	<th>nachname</th>
+	<th>str</th>
+	<th>hnr</th>
+	<th>plz</th>
+	<th>ort</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>1</td>
+	<td>Ernie</td>
+	<td>East</td>
+	<td>Wasserweg</td>
+	<td>4</td>
+	<td>55544</td>
+	<td>Erstdorf</td>
+</tr>
+<tr>
+	<td>1</td>
+	<td>2</td>
+	<td>Ernie</td>
+	<td>East</td>
+	<td>Kleistergasse</td>
+	<td>8</td>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>1</td>
+	<td>Wendy</td>
+	<td>West</td>
+	<td>Ahbachweg</td>
+	<td>111</td>
+	<td>55544</td>
+	<td>Erstdorf</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>2</td>
+	<td>Wendy</td>
+	<td>West</td>
+	<td>Zweitegasse</td>
+	<td>42</td>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+</tr>
+</tbody>
+</table>
+
+<p>Beide Mitarbeiter haben einen Zweitwohnsitz. Bei der AdressId enstehen Probleme. Um diese zu vermeiden werden die Daten auf zwei Tabellen verteilt:</p>
+
+<ol>
+<li>Mitarbeiter:</li>
+</ol>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>persoid</th>
+	<th>vorname</th>
+	<th>nachname</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Ernie</td>
+	<td>East</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Wendy</td>
+	<td>West</td>
+</tr>
+</tbody>
+</table>
+
+<ol>
+<li>Adressen:</li>
+</ol>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>adressid</th>
+	<th>str</th>
+	<th>hnr</th>
+	<th>plz</th>
+	<th>ort</th>
+	<th>persoid</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Wasserweg</td>
+	<td>4</td>
+	<td>55544</td>
+	<td>Erstdorf</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Kleistergasse</td>
+	<td>8</td>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Ahbachweg</td>
+	<td>111</td>
+	<td>55544</td>
+	<td>Erstdorf</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Zweitegasse</td>
+	<td>42</td>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+	<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>Trasitive Abhängikeiten (8.4)</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>adressid</th>
+	<th>str</th>
+	<th>hnr</th>
+	<th>plz</th>
+	<th>ort</th>
+	<th>persoid</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Wasserweg</td>
+	<td>4</td>
+	<td>55544</td>
+	<td>Erstdorf</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Kleistergasse</td>
+	<td>8</td>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Ahbachweg</td>
+	<td>111</td>
+	<td>55544</td>
+	<td>Erstdorf</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Zweitegasse</td>
+	<td>42</td>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+	<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<p>Im dritten Schritt werden die Ortschaften herausgelöst und in eine weiter Tabelle gepackt. Mit der Postleitzahl wird darauf verwiesen. Reduntante Ortschaften werden vermieden. Die transitive Abhängigkeit ist aufgehoben.</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>adressid</th>
+	<th>str</th>
+	<th>hnr</th>
+	<th>plz</th>
+	<th>persoid</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Wasserweg</td>
+	<td>4</td>
+	<td>55544</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Kleistergasse</td>
+	<td>8</td>
+	<td>13231</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Ahbachweg</td>
+	<td>111</td>
+	<td>55544</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Zweitegasse</td>
+	<td>42</td>
+	<td>13231</td>
+	<td>2</td>
+</tr>
+</tbody>
+</table>
+
+<p>Die Tabelle mit den Ortschaften: </p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>plz</th>
+	<th>ort</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>55544</td>
+	<td>Erstdorf</td>
+</tr>
+<tr>
+	<td>13231</td>
+	<td>Zweitstadt</td>
+</tr>
+</tbody>
+</table>
+
+<p>Auf die dritte Normalisierung, kann in der Praxis mitunter verzichtet werden. Das kann den Vorteil haben, dass wir hier die Adressen nicht aus zwei Tabellen verbunden werden müssen.</p>
+
+</article>
+</section>
+</main>
 </body>
 </html>

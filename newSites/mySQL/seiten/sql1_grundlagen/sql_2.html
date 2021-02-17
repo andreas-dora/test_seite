@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL 2. Was ist NULL</title>
+  <link rel="stylesheet" href="../../simple.css">
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Seiten Template</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+        <h1>MySQL Grundlagen 2</h1>
+
+<hr />
+
+<h2>Was ist NULL</h2>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Vorname</th>
+	<th>Name</th>
+	<th>Firma</th>
+	<th>Kd.Nr</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Walter</td>
+	<td>Wurmer</td>
+	<td>Wurm Metal</td>
+	<td>23</td>
+</tr>
+<tr>
+	<td>Vera</td>
+	<td>Feint</td>
+	<td></td>
+	<td>24</td>
+</tr>
+<tr>
+	<td></td>
+	<td>Dr. Not</td>
+	<td>Not Work</td>
+	<td>25</td>
+</tr>
+</tbody>
+</table>
+
+<p>In einer relationalen Datenbank werden fehlende Werte als <strong>NULL</strong> beschrieben. <strong>Null</strong> entspricht dem leeren Kästchen in einer Tabelle und sollte nicht mit der Zahl <strong>&#8216;0&#8217;</strong> verwechselt werden.
+Zeilenumbrüche, Leerzeichen oder Tabs sind ebenfalls nicht NULL.</p>
+
+<hr />
+
+<pre>
+  <code class="sql">
+    SELECT
+        name,
+        name=NULL,
+        name='Klein'
+    FROM
+        mitarbeiter;
+    </code>
+</pre>
+
+
+<h4>Ergebnis:</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>name=NULL</th>
+	<th>name=&#8217;Klein&#8217;</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Schneider</td>
+	<td>NULL</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>Müller</td>
+	<td>NULL</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>Klein</td>
+	<td>NULL</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>Lang</td>
+	<td>NULL</td>
+	<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<p>In der mittleren Spalte wird der Name der Spalte auf Gleichheit mit <strong>Null</strong> verglichen. So eine Spalte ist nicht abrufbar. Ergebnis: NULL.
+Die rechte Spalte Vergleicht den Wert von Name mit &#8216;Klein&#8217;. &#8216;0&#8217; und &#8216;1&#8217; stehen für <strong>true</strong> und <strong>false</strong>
+<strong>Null</strong>-Werte sind nie gleich (<strong>=</strong>). Denn NULL bedeutet das kein Wert vorhanden ist.
+NULL = NULL wird immer den Wert NULL zurückgeben.
+Neben true und false ist NULL ein dritter Wert. </p>
+
+<h3>Auf NULL prüfen</h3>
+
+<p>Um auf NULL zu prüfen wird folgende Syntax verwendet:</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    abteilung
+FROM
+    mitarbeiter
+WHERE
+    umsatz IS NULL; 
+</code></pre>
+
+<h4>Auf nicht NULL:</h4>
+
+<pre><code class="sql">
+  SELECT
+      name,
+      vorname,
+      abteilung
+  FROM
+      mitarbeiter
+  WHERE
+      umsatz IS NOT NULL;
+  </code>
+</pre>
+
+<pre><code>----
+</code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span id="id_modi"></span><span class="right">&copy; 2021 Andreas Breitwieser | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>

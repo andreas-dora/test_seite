@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Seiten Template</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Seiten Template</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+        <h1>MySQL Grundlagen 3</h1>
+
+<hr />
+
+<h2>Filterbedingungen verknüpfen</h2>
+
+<h2>AND (NOT) &amp; OR (NOT)</h2>
+
+<p>Michale Laube schreibt in Einstieg in SQL </p>
+
+<blockquote>
+<p>Für die logischen Verknüpfungsoperatoren gelten die Gesetze der boolschen Algebra.</p>
+</blockquote>
+
+<h4>AND:</h4>
+
+<p>AND verknüpft innerhalb der WHERE Klausel. AND liefert true, wenn alle verknüpften Bedingungen wahr sind:</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Bedingung 1 </th>
+	<th>Bedingung 2 </th>
+	<th>Ergebnis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>true</td>
+	<td>true</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>false</td>
+	<td> false</td>
+	<td> false</td>
+	<td style="text-align:left;"> </td>
+</tr>
+<tr>
+	<td>false</td>
+	<td> true</td>
+	<td> false</td>
+</tr>
+<tr>
+	<td>true</td>
+	<td> false</td>
+	<td> false</td>
+</tr>
+</tbody>
+</table>
+
+<p>Also ist das Ergebnis der Gesamtaussage nur wahr, wenn alle mit AND verknüpften Bestandteile wahr sind.</p>
+
+<hr />
+
+<h3>SQL-Bedingungen verknüpfen</h3>
+
+<p>In der Datenbank werden Mitarbeiter gesucht die Kinder haben und dennoch Überstunden leisten.</p>
+
+<p><code>sql
+SELECT
+    vorname,
+    name,
+    ueberstunden,
+    anzahlkinder
+FROM
+    mitarbeiter
+WHERE
+    ueberstunden&gt;0 AND anzahlkinder&gt;0;
+</code></p>
+
+<hr />
+
+<p>Mehr Bedingungen verknüpfen:</p>
+
+<p><code>sql
+SELECT
+    vorname,
+    name,
+    ueberstunden,
+    anzahlkinder,
+    abteilung,
+    umsatz
+FROM
+    mitarbeiter
+WHERE
+    ueberstunden&gt;0 AND anzahlkinder&gt;0 AND abteilung = 'Verkauf';
+</code></p>
+
+<hr />
+
+<h2>OR</h2>
+
+<p>Verknüpft man Bedingungen mit <strong>OR</strong> muss nur eine wahr sein.</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Bedingung 1 </th>
+	<th>Bedingung 2 </th>
+	<th>Ergebnis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>true</td>
+	<td>false</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>false</td>
+	<td> true</td>
+	<td> true</td>
+	<td style="text-align:left;"> </td>
+</tr>
+<tr>
+	<td>true</td>
+	<td> true</td>
+	<td> true</td>
+</tr>
+<tr>
+	<td>false</td>
+	<td> false</td>
+	<td> false</td>
+</tr>
+</tbody>
+</table>
+
+<pre><code class="sql">
+SELECT
+    vorname,
+    name,
+    ueberstunden,
+    anzahlkinder,
+    abteilung,
+    umsatz
+FROM
+    mitarbeiter
+WHERE
+    abteilung = 'Verkauf' OR
+    abteilung = 'Personal' OR
+    abteilung = 'Vertrieb';
+</code></pre>
+
+<hr />
+
+<h3>AND NOT</h3>
+
+<p>Werden zwei Bedingungen mit <strong>AND NOT</strong> verknüpft darf nur die vor AND NOT wahr sein:</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th></th>
+	<th>Bedingung 1 </th>
+	<th>Bedingung 2 </th>
+	<th style="text-align:left;">Ergebnis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>true</td>
+	<td>true</td>
+	<td>false</td>
+</tr>
+<tr>
+	<td>false</td>
+	<td> false</td>
+	<td> false</td>
+	<td style="text-align:left;"> </td>
+</tr>
+<tr>
+	<td>true</td>
+	<td> true</td>
+	<td> true</td>
+</tr>
+<tr>
+	<td>true</td>
+	<td> false</td>
+	<td> false</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<p>```sql
+SELECT
+ vorname,
+ name,
+ ueberstunden,
+ anzahlkinder,
+ austrittsgrund
+FROM
+ mitarbeiter
+WHERE
+ austrittsgrund IS NOT NULL AND NOT
+ austrittsgrund=&#8217;ruhestand&#8217;;
+ ````</p>
+
+<hr />
+
+<h3>OR NOT Verknüpfunng</h3>
+
+<p>Wie bei OR Verknüpfungen braucht auch bei der Negation nur ein Kriterium erfüllt werden:</p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Bedingung 1 </th>
+	<th>Bedingung 2 </th>
+	<th>Ergebnis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>true</td>
+	<td>false</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>false</td>
+	<td> true</td>
+	<td> false</td>
+	<td style="text-align:left;"> </td>
+</tr>
+<tr>
+	<td>true</td>
+	<td> true</td>
+	<td> true</td>
+</tr>
+<tr>
+	<td>false</td>
+	<td> false</td>
+	<td> true</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<pre><code class="sql">SELECT
+    name,
+    abteilung
+FROM    
+    mitarbeiter
+WHERE
+abteilung='Einkauf' OR NOT abteilung='Personal';
+</code></pre>
+
+<hr />
+
+<h2>Verknüpfungen kombinieren</h2>
+
+<p>Werden mehrere Verknüpfungen kombiniert hat immer <strong>AND</strong> vorrang. </p>
+
+<pre>
+<code class="sql">SELECT
+    name,
+    urlaubstage,
+    urlaubgenommen
+FROM
+    mitarbeiter
+WHERE
+    urlaubstage=30 AND urlaubgenommen&lt;20
+OR
+    urlaubstage=15 AND urlaubgenommen&lt;10;
+</code>
+</pre>
+<hr />
+
+<p>Die Reihenfolge lässt sich durch Klammern beeinflussen.</p>
+
+<h3>Beispiel 1</h3>
+
+<pre>
+<code class="sql">SELECT
+    name,
+    steuerklasse,
+    anzahlkinder,
+    verheiratet
+FROM
+    mitarbeiter
+WHERE
+    steuerklasse = 1
+AND
+    anzahlkinder&gt;0
+  OR
+    verheiratet='ja';   
+    </code>
+</pre>
+
+<p>Hier werden auch Mitarbeiter Steuerklasse 3 angezeigt.</p>
+
+<hr />
+
+<h4>Beispiel 2</h4>
+
+<pre><code class="sql">SELECT
+    name,
+    steuerklasse,
+    anzahlkinder,
+    verheiratet
+FROM
+    mitarbeiter
+WHERE
+    steuerklasse = 1
+AND
+    (
+    anzahlkinder&gt;0
+  OR
+    verheiratet='ja'
+    ); </code></pre>
+
+<p>Hier werden nur Mitarbeiter Steuerklasse 1 angezeigt </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>
