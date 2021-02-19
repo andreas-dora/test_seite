@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenbanken modelieren</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>Datenbanken modelieren</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+        <h1>Modelle in die Praxis umsetzen</h1>
+
+<h4>Eine Datenbank anlegen:</h4>
+
+<p><strong>Aus dem Buch:</strong></p>
+
+<pre><code class="sql">CREATE DATABASE ausbildungsdatenbank
+    DEFAULT CHAR SET utf8mb4;
+</code></pre>
+
+<hr />
+
+<h3>Tabellen mit einer 1:1 Beziehung erstellen</h3>
+
+<h5>Der Azubi:</h5>
+
+<pre><code class="sql">CREATE TABLE auszubildender (
+    ausid TINYINT PRIMARY KEY NOT NULL,
+    name VARCHAR(120),
+    vorname VARCHAR(120),
+    geburtsdatum DATE
+);
+</code></pre>
+
+<h4>Der Ausbildungsvertrag</h4>
+
+<pre><code class="sql">CREATE TABEL ausbidlungsvertrag (
+    vid TINYINT PRIMARY KEY NOT NULL,
+    vertragsdatum DATE
+    fk_ausid TINYINT,
+    CONSTRAINT fk_auszubildender
+        FOREIGN KEY(fk_ausid)
+            REFERENCES auszubildender (ausid),
+    CONSTRAINT uq_fk_ausid
+            UNIQUE (fk_ausid)
+);
+</code></pre>
+
+<p><strong>ACHTUNG ORIGINALTEXT:</strong>
+Hier formulieren wir in Zeile 5 den <strong>CONSTRAINT</strong> <code>fk_auszubildender</code>Hinter der Bezeichnung folgt mit den Schlüsselwörtern <strong>FOREIGN KEY</strong> die Spalte der Tabelle <em>ausbildungsvetrag</em>, die einen fremden Schlüsselwert aufnehmen soll, nämlich den Primärschlüsselwert der Spalte <em>ausid</em> aus der Tabelle <em>auszubildender</em>. </p>
+
+<p>Anschließend müssen wir festlegen, auf welche Tabelle und Spalte ausgehend von der Spalte <em>fk_ausid</em> verwiesen werden soll. Hierzu notieren Sie hinter der Definition der Fremdschlüsselspalte das Schlüsselwort <strong>REFERENCES</strong>. Mit diesem legen Sie fest, auf welche Tabelle und Spalte die Fremdschlüsselspalte <em>fk_ausid</em> verweisen soll. Hierzu notieren Sie hinter dem Schlüsselwort <strong>REFERENCES</strong> den Tabellennamen, gefolgt gefolgt von einer geschlossenen Klammer, in der Sie die Spalte angeben.<br/>
+<code>REFERENCES auszubildender (ausid),</code>
+Hier verweisen Sie auf die Tabelle <em>auszubildender</em> und ihre Primärschlüsselspalte <em>ausid</em>, um eine 1:1 Beziehung zwischen den Tabellen <em>auszubildender</em> und <em>ausbildungsvertrag</em> zu realisieren.</p>
+
+<hr />
+
+<h3>Tabellen die in einer 1:n Beziehung stehen</h3>
+
+<p>Ein Auszubildender kann mehr als einen Wohnsitz haben.
+ Ihnen fällt sicherlich auf, dass der <strong>FOREIGN KEY</strong>-Constraint genauso aufgebaut ist wie in der Tabelle <em>ausbildungsvertrag</em>. </p>
+
+<p>Die Beziehung definieren wir, indem wir der Fremdschlüsselspalte <em>fk_ausid</em> einen <strong>FOREIGN KEY</strong>-Constraint zuweisen, der auf die Spalte <em>ausid</em> der Tabelle <em>auszubildender</em> verweist. </p>
+
+<p>Für die Tabelle <em>adresse</em> wurde natürlich auch eine Primärschlüsselspalte festgelegt, und zwar die Spalte <em>aid</em> (Adress ID), die auf Zeilenebene die Primärschlüssel-Einschränkung <strong>PRIMARY KEY</strong> zugeordnet bekommt. </p>
+
+<pre><code class="sql">CREATE TABLE adresse (
+    aid TINYINT PRIMARY KEY NOT NULL,
+    strasse VARCHAR(200),
+    nr VARCHAR(5),
+    plz INT,
+    ort VARCHAR(200),
+    fk_ausid TINYINT,
+    CONSTRAINT fk_adresse_auszuildender
+        FOREIGN KEY (fk_ausid)
+            REFERENCES auszubildender (ausid)
+);
+</code></pre>
+
+<h4>1:n Beziehunng mit starker Entität</h4>
+
+<p>Die Tabellen <em>ausbildungsberuf</em> und <em>ausbildungsvetrag</em> stehen ebenfalls in einer 1:n-Beziehung. Die Tabelle <em>ausbildungsberuf</em> stellt eine starke Entität dar. Um eine Beziehung zwischen den Tabellen <em>ausbildungsberuf</em> und <em>ausbildungsvertag</em> über eine Fremschlüsselbeziehung herstellen zu können, ist es zunächst erforderlich, die Tabelle <em>ausbildungsberuf</em> zu erstellen. </p>
+
+<pre><code class="sql">CREATE TABLE ausbildungsberuf(
+    berufsid TINYINT PRIMARY KEY NOT NULL,
+    berufsbezeichnung VARCHAR(200)
+);
+</code></pre>
+
+<p>Den bereits erstellten Table <em>ausbildungsvetrag</em> kann man der Einfachheit halber einfach mit <code>DROP TABLE ausbildungsvetrag</code>löschen, denn wir brauchen hier eine weitere Fremdschlüsselspalte für <em>fk_berufsid</em>.</p>
+
+<pre><code class="sql">CREATE TABEL ausbidlungsvertrag (
+    vid TINYINT PRIMARY KEY NOT NULL,
+    vertragsdatum DATE
+    fk_ausid TINYINT,
+    fk_berufsid TINYINT,
+    CONSTRAINT fk_auszubildender
+        FOREIGN KEY(fk_ausid)
+            REFERENCES auszubildender (ausid),
+    CONSTRAINT fk_ausbildungsberuf
+        FOREIGN KEY (fk_berufsid)
+        REFERENCES ausbildungsberuf (berufsid),     
+    CONSTRAINT uq_fk_ausid
+            UNIQUE (fk_ausid)
+);
+</code></pre>
+
+<p>Außerdem sehen sie hier eine weitere <strong>FOREIGN KEY</strong>-Constraint-Defenition, die festlegt, dass die hinzugefügte Fremdschlüsselspalte <em>fk_berufsid</em> der TAbelle <em>ausbildungsvertrag</em> auf die Spalte <em>berufsid</em> der Tabelle <em>ausbildungsberuf</em> verweist.</p>
+
+<hr />
+
+<h3>m:n-Beziehung</h3>
+
+<p>Zwischn den Tabellen <em>ausbildungsberuf</em> und <em>lehrfach</em> besteht eine m:n-Beziehung. Um die Beziehung herzustellen wird über die Schlüssel (oder Hilfstabelle AdR) <em>berufslehrfach</em> hergestellt. </p>
+
+<p>Die einzelnen Splaten <em>berufid</em> und <em>lehrfachid</em> stellen wiederum jeweils eine Beziehung zu den Tabellen <em>ausbildungsberuf</em> (Primärschlüsselspalte <em>berufid</em>) und Lehrfach <em>lehrfachid</em> her und repräsentieren jeweils eine Fremdschlüsselbeziehung. </p>
+
+<p>Zunächst erstellen wir die Lehrfach Tabelle: </p>
+
+<pre><code class="SQL">CREATE TABLE lehrfach ( 
+    lehrfachid TINYINT PRIMATY KEY NOT NULL,
+    lehrfach VARCHAR(200)
+);
+</code></pre>
+
+<p>Anschließend kann die Berufslehrfach-Tabelle Berufe und Lehrfächer in Verbindung setzen. Der Primärschlüssel wird hier aus zwei Fremdschlüsselwerten zusammen gesetzt. </p>
+
+<pre><code class="sql">CREATE TABEL berufslehrfach (
+    fk_berufsid TINYINT NOT NULL,
+    fk_lehrfachid TINYINT NOT NULL,
+    PRIMARY KEY (fk_berufsid, fk_lehrfachid),
+    CONSTRAINT fk_asubildungsberuf2
+        FOREIGN KEY (fk_berufsid)
+            REFERENCES ausbildungsberuf (berufsid),
+    CONSTRAINT fk_lehrfach
+        FOREIGN KEY (fk_lehrfachid)
+            REFERENCES lehrfach (lehrfachid)
+);
+</code></pre>
+
+<blockquote>
+<p>Achten Sie darauf, dass der CONSTRAINT, der die Beziehung zur Tabelle <em>ausbildungsberuf</em> festlegt, den Namen <em>fk_ausbildungsberuf2</em> erhält. Diese Namensgebung geschieht mit Rücksicht auf die MySQL-Datenbank, in der <strong>Namen für Constraints nur einmal vergeben werden dürfen</strong>. Und * fk_ausbildungsberuf* wird bereits verwendet.</p>
+</blockquote>
+
+<hr />
+
+<h3>9.25. Selbstbezügliche Tabellen</h3>
+
+<p>Die Tabelle <em>mitarbeiterausbildungsbetrieb</em> steht in einer 1:n-Beziehung zu sich selbst. Das resultiert aus der Tatsache, dass es sich bei einem Mitarbeiter um einen Vorgesetzten handeln kann, der widerum in einer 1:n-Beziehung zu seinen Mitarbeitern stehen kann.</p>
+
+<pre><code class="sql">CREATE TABLE mitarbeiterausbildungsbetrieb (
+    mitarbeiterid TINYINT PRIMARY KEY NOT NULL,
+    name VARCHAR(120),
+    vorname VARCHAR(120),
+    fk_mitarbeiterid TINYINT,
+    CONSTRAINT fk_mitarbeiterausbildungsbetrieb
+        FOREIGN KEY (fk_mitarbeiterid)
+            REFERENCES mitarbeiterausbildungsbetrieb (mitarbeiterid)
+ );
+</code></pre>
+
+<hr />
+
+<h1>Mein Version</h1>
+
+<p>(Nur für mySQL) </p>
+
+<pre><code class="sql">CREATE DATABASE mitarbeiterdb
+    DEFAULT CHAR SET utf8mb4;
+</code></pre>
+
+<h4>Tablellen mit einer 1:1 Beziehung erstellen</h4>
+
+<pre><code class="sql">CREATE TABLE mitarbeiter (
+    maid SMALLINT PRIMARY KEY NOT NULL,
+    name VARCHAR(120),
+    vorname VARCHAR(120),
+    geburtsdatum DATE
+);
+</code></pre>
+
+<hr />
+
+<h4>Die Arbeitsverträge</h4>
+
+<pre><code class="sql">CREATE TABEL arbeitsvertrag (
+    vid SMALLINT PRIMARY KEY NOT NULL,
+    vertragsdatum DATE
+    fk_maid SMALLINT,
+    CONSTRAINT fk_mitarbeiter
+        FOREIGN KEY(fk_maid)
+            REFERENCES mitarbeiter (maid),
+    CONSTRAINT uq_fk_maid
+            UNIQUE (fk_maid)
+);
+</code></pre>
+
+<p>Die Spalte <em>fk_maid</em> soll einen Fremdschlüssel aufnehmen. Es wird genauer Beschrieben:
+<code>CONSTRAINT fk_mitarbeiter</code> Der Mitarbeitername soll anstelle von <code>FOREIGN KEY(fk_maid)</code> eingesetzt werden.
+Dazu muss in die Mitarbeitertabelle geschaut werden:
+`REFERENCES mitarbeiter (maid),</p>
+
+<p>Hinter dem Schlüsselwort <strong>FOREIGN KEY</strong> wird auf die Tabelle <em>mitarbeiter</em> gezeigt.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText = document.lastModified;
+  </script>
+</body>
+</html>
