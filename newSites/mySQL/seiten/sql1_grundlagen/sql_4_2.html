@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Datentypen konvertieren</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Datentypen konvertieren</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+
+
+<p>SQL bietet eine <strong>CAST</strong> Konvertierungsfunktion. <strong>CAST</strong> kann bei allen UPDATE-Operationen zum Einsatz kommen.</p>
+
+<p>Typenkonvertierung kann notwendig sein bei: </p>
+
+<ul>
+<li>Mathematischen Operationen</li>
+<li>Beim Einfügen <strong>INSERT</strong> und <strong>UPDATE</strong></li>
+<li>Beim Vergleichen einer Bedingung in einer <strong>WHERE</strong>-Klausel</li>
+<li>Bei <strong>ORDER BY</strong></li>
+<li>Bei Anwendung einer <strong>UNION</strong>-Klausel</li>
+<li>Beim Aufrufen von Skalierfunktionen</li>
+</ul>
+
+<p>Wird eine Konvertierung vorgenommen um zu Rechnen oder Inhalte zusammen zu fügen muss man sich immer an demDatentyp mit dem höheren Wertebereich orientieren.
+Gibt man einer Datenbank keine weiteren Anweisungen zur Konvertierung spricht man von einer <strong>impliziten Konvertierung</strong>. Wird die <strong>CAST</strong> Funktion (in der man der Datenbank seine Wünsche Mitteilt** verwendet, ist das eine <strong>explizite Konvertierung</strong></p>
+
+<p><code>SELECT CAST(5 AS DECIMAL(6,3)) AS kovertierungsergebnis;</code></p>
+
+<p><strong>Ergebnis:</strong> 5.000 (Eine 5 mit drei Kommastellen).</p>
+
+<p>Aufrunden mit <strong>Cast</strong> funktioniert nicht bei <strong>mySQL</strong></p>
+
+<p><code>SELECT CAST(3.4 AS INTEGER) AS ganzezahl;</code></p>
+
+<h4>Implizite Konvertierung</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Anweisung</th>
+	<th>mySQL</th>
+	<th>Postgre</th>
+	<th>MS SQL</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>SELECT 4 + &#8216;9&#8217;;</td>
+	<td> 13</td>
+	<td>13 </td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>SELECT 4 + &#8216;09&#8217;;</td>
+	<td> 13</td>
+	<td>13 </td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>SELECT 4 + &#8217; 09 &#8217;;</td>
+	<td> 13</td>
+	<td>13 </td>
+	<td>13</td>
+</tr>
+<tr>
+	<td>SELECT 4 + &#8216;9.53&#8217;;</td>
+	<td> 13.53</td>
+	<td>error</td>
+	<td>error</td>
+</tr>
+<tr>
+	<td>SELECT 4.53 + &#8216;9&#8217;;</td>
+	<td> 13.5300000001</td>
+	<td>13.53</td>
+	<td>13.53</td>
+</tr>
+<tr>
+	<td>SELECT &#8216;3.47&#8217; + &#8216;9.53&#8217;;</td>
+	<td> 13</td>
+	<td>error</td>
+	<td>3.479.53</td>
+</tr>
+</tbody>
+</table>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>

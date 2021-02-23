@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Transaktionen</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Transaktionen</h1>
+</header>
+
+  <main>
+    <section>
+<article>
+  <h2>Anforderungen an relationale Datenbanksysteme</h2>
+
+<h4>Operationen sollen atomar sein</h4>
+
+<p>Operationen wie <strong>INSERT</strong>, <strong>UPDATE</strong> oder <strong>DELETE</strong> sollen ganz oder gar nicht ausgeführt werden. Wenn zB mehrere <strong>INSERT</strong>-Anweisungen hintereinander auf eine Tabelle ausgeführt werden sollen und nach der Hälfte eine Störung auftritt, soll der Ursprüngliche Zusatnd wieder hergestellt werden. Es gilt also die Forderung, dass nicht ein Teil von Operationen ausgeführt wird. In der Gesamtheit der Durchführung ist eine Folge von Operationen also unmittelbar (atomar) durchzuführen.</p>
+
+<h4>Der Datenbestand soll konsistent sein</h4>
+
+<p>Wenn Operationen wie <strong>INSERT</strong> oder <strong>UPDATE</strong> durchgeführt werden, muss sichergestellt sein, dass der Datenbestand konsistent bleibt. Das betrifft insbesondere Schlüsselbeziehungen zwischen Tabellen bzw die referenzielle Integrität. Eine Störung darf nicht dazu führen, dass Beziehungen zwischen Zeilen in einem nicht definierten Zusatnd vorliegen.</p>
+
+<h4>Operationen sollen isoliert voneinander durchgeführt werden</h4>
+
+<p>Eine relationale DB verwaltet Daten zentral. Sie arbeitet im Muliuser-Betrieb. Operationen, die gleichzeitig durch unterschiedliche Nutzer an einem Datensatz ausgeführt werden, dürfen sich nicht gegenseitig beeinflussen. Hier gilt die Forderung, dass diese Oprationen stets isoliert voneinander durchgeführt werden.</p>
+
+<h4>Daten sollen dauerhaft gespeichert werden</h4>
+
+<p>Unabhängig von jeglichen Störszenarien gilt für eine relationale Datenbank die Forderung, dass die verwalteten Daten dauerhaft gespeichert werden.</p>
+
+<blockquote>
+<p>Diese Forderungen werden in relationalen DBs durch das Transaktionsprinzip umgesetzt. Die Forderungen werden auch in Kurzform als ACIS-Prinzip bezeichnet. Die Abkürzung resultiert aus den englischen Begriffen: automacity, consistency, islolation und durability </p>
+</blockquote>
+
+<hr />
+
+<h2>Transaktionen</h2>
+
+<p>Transaktionen fassen einzelne Operationen zu einer gesamtheitlichen Operation zusammen, die entweder ganz oder gar nicht ausgeführt wird. Transaktionen überführen eine DB bei der Durchführung von Operationen aus einem konsistenten Zustand in einen konsistenten Zustand.
+Transaktionen stellen nach dem ACID-Prinzip sicher, dass </p>
+
+<ul>
+<li>eine oder mehrere Operationen ganz oder gar nicht durchgeführt werden (atomicity).</li>
+<li>die referenzielle Integrität der Daten stets erhalten bleibt und die Daten von einem konsistenten Zustand in den nächsten überführt werden (consitency).</li>
+<li>konkurrierende Zugriffe auf gleiche Datensätze stets isoliert voneinander stattfinden (isolation).</li>
+<li>Daten dauerhaft gespeichert werden (durability).</li>
+</ul>
+
+<hr />
+
+<h3>Aufbau einer Transaktion</h3>
+
+<p>Eine Transaktion hat einen Startpunkt und einen Endpunkt, dazwischen können Anweisungen wie <strong>INSERT</strong>, <strong>UPDATE</strong> und <strong>DELETE</strong> durchgeführt werden.</p>
+
+<pre><code class="sql">BEGIN;
+INSERT INTO kunde_intern VALUES(8,'Logistik');
+INSERT INTO kunde_intern VALUES(9,'Entwicklung');
+INSERT INTO kunde_intern VALUES(10,'Öffentlichkeitsarbeit');
+INSERT INTO kunde_intern VALUES(11,'Innovationszentrum');
+COMMIT;
+</code></pre>
+
+<p>Ein Transaktionsblock beginnt mit dem Schlüsselwort <strong>BEGIN</strong> und endet mit <strong>COMMIT</strong>. Wenn so ein Block ausgeführt wird sichert die Datenbank, dass die ACID-Anforderungen gewährleistet sind.</p>
+
+<h4>ROLLBACK macht rückgängig</h4>
+
+<p>Solange eine Transaktion noch nicht mit <strong>COMMIT</strong> beendet wurde, kann sie mit dem Schlüsselwort <strong>ROLLBACK</strong> rückgängig gemacht werden.</p>
+
+<hr />
+
+<h3>Isolationsebenen</h3>
+
+<p>Im SQL-Standard werden vier Isolationsebenen unterschieden: </p>
+
+<ul>
+<li><em>Read uncommited</em>: Die Ergebnisse von Einfüge- und Aktualisierungsoperationen können auch ohne abschließende <strong>COMMIT</strong>-Anweisung in einer parallel laufenden Transaktion gelesen werden.</li>
+<li><em>Read commited</em>: Die Ergebnisse können nur nach abschließender <strong>Commit</strong>-Anweisung gelesen werden.</li>
+<li><em>Repeatable read</em>: Innerhalb einer Transaktion ist sichergestellt, dass ein gelesener Daten wiederholbar ist, auch wenn er innerhalb einer anderen Transaktion</li>
+<li><em>Seriallizable</em>: Transaltionen werden sequenziell abgearbeitet. Dies stellt die höchste Isolationsebene dar.</li>
+</ul>
+</article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>

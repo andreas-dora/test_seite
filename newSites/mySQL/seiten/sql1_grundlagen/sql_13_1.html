@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Einfache Rechnungen</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Einfache Rechnunge</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+        <h2>Mit SQL Rechnen</h2>
+
+<p>Es gilt Punkt vor Strichrechnung. Es stehen die üblichen Operatoren zur Verfügung sowie der Modulus-Operator: <strong>%</strong>. </p>
+
+<h4>Ausdrücke/ Expressions</h4>
+
+<p>In SQL werden sogenannte Ausdrücke verwendet. Hierbei kann es sich um Rechenoperationen, oder um Bedingungen handeln, die ausgewertet werden. Ausdrücken ist gemein, dass sie ausgewertet werden und zu einem Ergebnis führen. </p>
+
+<p>Ausdrücke können überall da verwendet werden, wo Werte erwartet werden. Daher können Sie Ausdrücke auch in zahlreichen anderen SQL-Anweiseungen (zB <strong>INSERT</strong> oder <strong>UPDATE</strong>) einsetzen. </p>
+
+<p>SQL kennt sechs verschiedene Expressions: </p>
+
+<ul>
+<li>Werte</li>
+<li>Variablen</li>
+<li>Berechnungen</li>
+<li>Konstanten</li>
+<li>Operationen</li>
+<li>Vergleiche</li>
+</ul>
+
+<hr />
+
+<h4>Spaltenwerte</h4>
+
+<pre><code class="sql">SELECT
+    name, 
+    vorname,
+    bonus,
+    monatslohn,
+    bonus + monatslohn AS summe
+FROM mitarbeiter;
+</code></pre>
+
+<p><strong>Ergebnis:</strong> </p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>vorname</th>
+	<th>bonus</th>
+	<th>monatslohn</th>
+	<th>summe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Müller</td>
+	<td>Ralf</td>
+	<td>500.00</td>
+	<td>4000.00</td>
+	<td>4500.00</td>
+</tr>
+<tr>
+	<td>Schneider</td>
+	<td>Petra</td>
+	<td>500.00</td>
+	<td>4000.00</td>
+	<td>4500.00</td>
+</tr>
+<tr>
+	<td>Klein</td>
+	<td>Thomas</td>
+	<td>500.00</td>
+	<td>4000.00</td>
+	<td>4500.00</td>
+</tr>
+<tr>
+	<td>Lang</td>
+	<td>Ute</td>
+	<td>280.50</td>
+	<td>2800.00</td>
+	<td>3080.50</td>
+</tr>
+</tbody>
+</table>
+
+<p>Es können auch mehr als zwei Summanden verwendet werden:</p>
+
+<pre><code class="sql">SELECT
+    name, 
+    vorname,
+    bonus,
+    monatslohn,
+    1000 AS wert1000,
+    bonus + monatslohn + 1000 AS summe
+FROM mitarbeiter;
+</code></pre>
+
+<p><strong>Ergebnis:</strong> </p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>vorname</th>
+	<th>bonus</th>
+	<th>monatslohn</th>
+	<th>wert1000</th>
+	<th>summe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Müller</td>
+	<td>Ralf</td>
+	<td>500.00</td>
+	<td>4000.00</td>
+	<td>1000</td>
+	<td>4500.00</td>
+</tr>
+<tr>
+	<td>Schneider</td>
+	<td>Petra</td>
+	<td>500.00</td>
+	<td>4000.00</td>
+	<td>1000</td>
+	<td>4500.00</td>
+</tr>
+<tr>
+	<td>Klein</td>
+	<td>Thomas</td>
+	<td>500.00</td>
+	<td>4000.00</td>
+	<td>1000</td>
+	<td>4500.00</td>
+</tr>
+<tr>
+	<td>Lang</td>
+	<td>Ute</td>
+	<td>280.50</td>
+	<td>2800.00</td>
+	<td>1000</td>
+	<td>3080.50</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Multiplizieren</h4>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    stundenpromonat,
+    stundenlohn,
+    stundenpromonat*stundenlohn AS gehalt
+FROM
+    mitarbeiter;
+</code></pre>
+
+<p><strong>Ergebnis:</strong> </p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>vorname</th>
+	<th>stundenpromonat</th>
+	<th>stundenlohn</th>
+	<th>summe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Müller</td>
+	<td>Ralf</td>
+	<td>160</td>
+	<td>20.80</td>
+	<td>3328.00</td>
+</tr>
+<tr>
+	<td>Schneider</td>
+	<td>Petra</td>
+	<td>180</td>
+	<td>28.50</td>
+	<td>5130.00</td>
+</tr>
+<tr>
+	<td>Klein</td>
+	<td>Thomas</td>
+	<td>165</td>
+	<td>20.80</td>
+	<td>3432.00</td>
+</tr>
+<tr>
+	<td>Lang</td>
+	<td>Ute</td>
+	<td>170</td>
+	<td>20.00</td>
+	<td>3400.00</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>Nach Ergebnissen filtern</h4>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    stundenpromonat*stundenlohn AS monatslohnberechnet,
+    monatslohn
+FROM
+    mitarbeiter
+WHERE
+    stundenpromonat*stundenlohn&lt;monatslohn;
+</code></pre>
+
+<p><strong>Ergebnis:</strong> </p>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>vorname</th>
+	<th>monatslohnberechnet</th>
+	<th>monatslohn</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Müller</td>
+	<td>Ralf</td>
+	<td>3328.00</td>
+	<td>4000.00</td>
+</tr>
+<tr>
+	<td>Klein</td>
+	<td>Thomas</td>
+	<td>3432.00</td>
+	<td>4000.00</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>Nach Ergebnis sortieren:</h4>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    bonus,
+    monatslohn,
+    bonus - monatslohn AS sonderbonus
+FROM
+    mitarbeiter
+ORDER BY
+    bonus - monatslohn
+DESC;   
+</code></pre>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>vorname</th>
+	<th>bonus</th>
+	<th>monatslohn</th>
+	<th>sonderbonus</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Müller</td>
+	<td>Ralf</td>
+	<td>200000.00</td>
+	<td>1800.00</td>
+	<td>4500.00</td>
+</tr>
+<tr>
+	<td>Schneider</td>
+	<td>Petra</td>
+	<td>50000.00</td>
+	<td>6000.00</td>
+	<td>44000.00</td>
+</tr>
+<tr>
+	<td>Klein</td>
+	<td>Thomas</td>
+	<td>10000.00</td>
+	<td>6000.00</td>
+	<td>4000.00</td>
+</tr>
+<tr>
+	<td>Lang</td>
+	<td>Ute</td>
+	<td>10000.00</td>
+	<td>7500.00</td>
+	<td>2500.00</td>
+</tr>
+</tbody>
+</table>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>

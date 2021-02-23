@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Datentypen</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Datentypen</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+
+<h4>Datentypen für ganze Zahlen in mySQL</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Datentyp</th>
+	<th>Speicherbedarf</th>
+	<th>Minimal-, Maximalwert</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>TINYINT mit Vorzeichen</td>
+	<td>1Byte</td>
+	<td>&#8211;128 bis 127</td>
+</tr>
+<tr>
+	<td>TINYINT ohne Vorzeichen</td>
+	<td>1Byte</td>
+	<td>0 bis 255</td>
+</tr>
+<tr>
+	<td>SMALLINT mit Vorzeichen</td>
+	<td>2Byte</td>
+	<td>&#8211;32.768 bis 32.767</td>
+</tr>
+<tr>
+	<td>SMALLINT ohne Vorzeichen</td>
+	<td>2Byte</td>
+	<td>0 bis 65535</td>
+</tr>
+<tr>
+	<td>MEDIUMINT mit Vorzeichen</td>
+	<td>3Byte</td>
+	<td>&#8211;8.388.608 bis 8.388.607</td>
+</tr>
+<tr>
+	<td>MEDIUMINT ohne Vorzeichen</td>
+	<td>3Byte</td>
+	<td>0 bis 16.777.215</td>
+</tr>
+<tr>
+	<td>INT mit Vorzeichen</td>
+	<td>4Byte</td>
+	<td>&#8211;2.147.483.648 bis 2.147.483.647</td>
+</tr>
+<tr>
+	<td>INT ohne Vorzeichen</td>
+	<td>4Byte</td>
+	<td>0 bis 4.294.967.285</td>
+</tr>
+<tr>
+	<td>BIGINT mit Vorzeichen</td>
+	<td>8Byte</td>
+	<td>&#8211;9.233.372.036.854.775.808 bis 9.233.372.036.854.775.807</td>
+</tr>
+<tr>
+	<td>INT ohne Vorzeichen</td>
+	<td>8Byte</td>
+	<td>0 bis 18.446.744.073.709.551.615</td>
+</tr>
+</tbody>
+</table>
+
+<ul>
+<li>Postgre kennt nur SMALLINT, INTEGER, BIGINT</li>
+<li>MS SQL Server kennt TINYINT, SMALLINT, INTEGER, BIGINT</li>
+</ul>
+
+<hr />
+
+<h4>Datentypen für rationale Zahlen</h4>
+
+<p>Rationale Zahlen können durch einen Bruch dargestellt werden.
+Rationale Zahlen können als Fixkomma- oder Fließkomma Zahlen dargestellt werden. Fixkomma Zahlen werden benutzt wenn es großer Genauigkeit bedarf.</p>
+
+<p>Für Fixkomma Zahlen stehen die Typen <strong>DECIMAL</strong>(p,s) und **(p,s).
+In mySQL unterscheiden sich die Beiden Typen nicht. </p>
+
+<ul>
+<li>P = Precision (Gesamtlänge)</li>
+<li>S = Scale (Anzahl der Stellen hinter dem Komma)</li>
+</ul>
+
+<hr />
+
+<h4>Typen für Datum und Zeit</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Datentyp</th>
+	<th>von</th>
+	<th>bis</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>DATE</td>
+	<td>1000&#8211;01&#8211;01</td>
+	<td>9999&#8211;12&#8211;31</td>
+</tr>
+<tr>
+	<td>DATETIME</td>
+	<td>1000&#8211;01&#8211;01 00:00:00.000000</td>
+	<td>9999&#8211;12&#8211;31 23:59:59.999999</td>
+</tr>
+<tr>
+	<td>TIMESTAMP</td>
+	<td>1970&#8211;01&#8211;01 00:00:01.000000</td>
+	<td>2038&#8211;01&#8211;19 03:14:17.999999</td>
+</tr>
+<tr>
+	<td>TIME</td>
+	<td>&#8211;838:59:59.000000</td>
+	<td>838:59:59.000000</td>
+</tr>
+<tr>
+	<td>YEAR</td>
+	<td>1901</td>
+	<td>2155</td>
+</tr>
+</tbody>
+</table>
+
+<p>Daten werden nach dem ISO 8601 Standard gespeichert:
+yyyy-mm-dd </p>
+
+<p>Zeitangaben: hh:mm:ss.f
+f ist Platzhalter für den angebrochene Teil einer Sekunde</p>
+
+<p><strong>TIME</strong> wird verwendet um Zeitintervalle bis zu 838 Stunden darzustellen.</p>
+
+<hr />
+
+<h4>Datentypen für Strings</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Datentyp</th>
+	<th>Maximale Zeichenkettenlänge</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>CHAR(L)</td>
+	<td>255</td>
+</tr>
+<tr>
+	<td>VARCHAR(L)</td>
+	<td>65.535 (seit mySQL 5.0.3)</td>
+</tr>
+</tbody>
+</table>
+
+<p>PostgreSQL speichert bei beiden Typen maximal 10.485.760.
+ MS SQL Server kann bei beiden Typen maximal 8000 Zeichen speichern. </p>
+
+<p><strong>CHAR(100)</strong> hat den Nachteil, dass nicht genutzte Stellen mit Leerzeichen aufgefüllt werden.
+<strong>VARCHAR(100)</strong> hat ebenfalls eine max Länge von 100 Byte allerdings werden nicht benutze Stellen nicht mit Leerstellen aufgefüllt. </p>
+
+<h4>Zeichensätze:</h4>
+
+<ul>
+<li>latin1, CPI252 West European</li>
+<li>latin2, ISO8859&#8211;2 Central European</li>
+<li>utf8, UTF&#8211;8 Unicode</li>
+</ul>
+
+<hr />
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>
