@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Skalarfunktionen</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Skalarfunktionen</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+        <h1>Skalarfunktion</h1>
+
+<ul>
+<li>Zeichenketten-Skalarfunktionen</li>
+<li>numerische Skalarfunktionen</li>
+<li>Konvertierungs-Skalarfunktionen</li>
+<li>Datums-Skalarfunktionen</li>
+</ul>
+
+<h2>Zeichenketten-Skalarfunktionen</h2>
+
+<h4>LOWER // UPPER</h4>
+
+<pre><code class="sql">SELECT
+    artikelbezeichnung
+    LOWER(artikelbezeichnung) AS artikelbezeichnungklein
+FROM
+    produkt;
+</code></pre>
+
+<hr />
+
+<h4>TRIMM</h4>
+
+<p>Die <strong>TRIM</strong>-Funktion befreit einen String von führenden und nachhängenden Leerzeichen. Mit Ausnahme von PostgreSQL werden auch Tabulatoren durch <strong>TRIM</strong> entfernt</p>
+
+<pre><code class="sql">SELECT 
+    TRIM(artikelbezeichnung) AS artikelbezeichnungohneleerzeichen
+FROM produktleerzeichen;
+</code></pre>
+
+<hr />
+
+<h4>SUBSTRING</h4>
+
+<pre><code class="sql">SELECT
+    artikelbezeichnung
+    SUBSTRING(artikelbezeichnung FROM 1 FOR 8) AS extrakt
+FROM
+    produkt;
+</code></pre>
+
+<h4>CONCAT</h4>
+
+<pre><code class="sql">SELECT
+    artikelbezeichnung,
+    kategorie,
+    legierung,
+    CONCAT(artikelbezeichnung,' ',kategorie,' ',legierung)
+        AS produktinfo
+FROM
+    produkt;
+</code></pre>
+
+<hr />
+
+<h2>Numerische Skalarfunktionen</h2>
+
+<h4>CHAR_LENGTH</h4>
+
+<p>Ermittelt die länge einer Zeichenkette.</p>
+
+<pre><code class="sql">SELECT 
+    legierung,
+    CHAR_LENGTH(legierung) AS length
+FROM
+    produkt;
+</code></pre>
+
+<hr />
+
+<h4>POSITION</h4>
+
+<pre><code class="sql">SELECT
+    legierung,
+    POSITION('Eisen' IN legierung) AS startpos
+FROM
+    produkt;
+</code></pre>
+
+<h4>POWER (Potenz)</h4>
+
+<p>Mit <strong>POWER</strong>(Basis, Exponent) lässt sich eine Potenz berechnen.</p>
+
+<pre><code class="sql">SELECT
+    artikelbezeichnung,
+    POWER(100,3) AS potenz
+FROM 
+    produkt;
+</code></pre>
+
+<hr />
+
+<h4>SQRT (Quadratwurzel)</h4>
+
+<pre><code class="sql">SELECT
+    artikelbezeichnung,
+    SQRT(9) AS wurzel
+FROM 
+    produkt;
+</code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>

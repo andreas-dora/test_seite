@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL CASE Logic</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL CASE Logic</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+        <h1>Bedingungslogik</h1>
+
+<h1>CASE Logic</h1>
+
+<p>Case id die SQL-Variante von If else</p>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    CASE
+        WHEN
+            austrittsdatum IS NULL
+        THEN
+            'aktiver Mitarbeiter'
+        ELSE
+            'ausgeschieden'
+        END AS status
+FROM
+    mitarbeiter;                    
+</code></pre>
+
+<h5>Ergebnis:</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>vorname</th>
+	<th>austrittsdatum</th>
+	<th>status</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> Müller</td>
+	<td>Ralf</td>
+	<td>NULL </td>
+	<td>aktiver Mitarbeiter</td>
+</tr>
+<tr>
+	<td> Schneider</td>
+	<td>Petra</td>
+	<td>2000&#8211;07&#8211;31 </td>
+	<td>ausgeschieden</td>
+</tr>
+<tr>
+	<td> Klein</td>
+	<td>Thomas</td>
+	<td>NULL </td>
+	<td>aktiver Mitarbeiter</td>
+</tr>
+<tr>
+	<td> Lang</td>
+	<td>Ute</td>
+	<td>NULL </td>
+	<td>aktiver Mitarbeiter</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>Mit ORDER BY</h4>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    austrittsgrund
+FROM
+    mitarbeiter
+WHERE
+    austrittsgrund IS NOT NULL
+ORDER BY
+    CASE
+        WHEN
+            austrittsgrund='ruhestand'
+        THEN 
+            3
+        WHEN
+            austrittsgrund='veränderung'
+        THEN
+            2
+        WHEN
+            austrittsgrund='abfindungsprogramm' 
+        THEN
+            1
+    END
+;
+</code></pre>
+
+<h5>Ergebnis:</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name </th>
+	<th>vorname</th>
+	<th>austrittsgrund</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Haier</td>
+	<td>Peter</td>
+	<td>abfindungsprogramm</td>
+</tr>
+<tr>
+	<td>Mey</td>
+	<td>Tanja</td>
+	<td>veränderung</td>
+</tr>
+<tr>
+	<td>Lempe</td>
+	<td>Dirk</td>
+	<td>veränderung</td>
+</tr>
+<tr>
+	<td>Schneider</td>
+	<td>Petra</td>
+	<td>ruhestand</td>
+</tr>
+</tbody>
+</table>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>
