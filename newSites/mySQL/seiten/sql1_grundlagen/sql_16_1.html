@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Datum & Zeit</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body>
+  <nav>
+    <a href="../../../../index.html">Home</a>
+    <a href="../inhalt.html">SQL Inhalt</a>
+  </nav>
+<header>
+  <h1>SQL Datum & Zeit</h1>
+</header>
+
+  <main>
+    <section>
+      <article>
+        <h2>Datum und Zeit</h2>
+
+<h4>Gebräuchliche Datumsformate:</h4>
+
+<ul>
+<li>Deutschland: 19.03.2020</li>
+<li>ISO 8601: 2020&#8211;03&#8211;19</li>
+<li>USA: 03&#8211;19&#8211;2020</li>
+</ul>
+
+<h4>Skalarfunktionen</h4>
+
+<ul>
+<li><strong>CURRENT_DATE</strong></li>
+<li><strong>CURRENT_TIME</strong></li>
+<li><strong>CURRENT_TIMESTAMP</strong></li>
+</ul>
+
+<h4>Anwendung</h4>
+
+<p><code>SELECT CURRENT_DATE AS aktuellesdatum;</code>
+<code>SELECT CURRENT_TIMESTAMP AS zeitstempel;</code> </p>
+
+<pre><code class="sql">SELECT
+    CURRENT_TIMESTAMP AS zeitstempel,
+    mitarbeiterid AS id,
+    name,
+    vorname,
+    gebdatum,
+    eintrittsdatum
+FROM
+    mitarbeiter;
+</code></pre>
+
+<h5>Ergebnis:</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>zeitstempel</th>
+	<th>id</th>
+	<th>name</th>
+	<th>vorname</th>
+	<th>gebdatum</th>
+	<th>eintrittsdatum</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>2021&#8211;02&#8211;23 18:08:04</td>
+	<td>1</td>
+	<td>Müller</td>
+	<td>Ralf</td>
+	<td>1970&#8211;12&#8211;20</td>
+	<td>1990&#8211;01&#8211;13</td>
+</tr>
+<tr>
+	<td>2021&#8211;02&#8211;23 18:08:04</td>
+	<td>2</td>
+	<td>Schneider</td>
+	<td>Petra</td>
+	<td>1965&#8211;03&#8211;07</td>
+	<td>1995&#8211;08&#8211;27</td>
+</tr>
+<tr>
+	<td>2021&#8211;02&#8211;23 18:08:04</td>
+	<td>3</td>
+	<td>Klein</td>
+	<td>Thomas</td>
+	<td>1970&#8211;12&#8211;20</td>
+	<td>1990&#8211;01&#8211;13</td>
+</tr>
+<tr>
+	<td>2021&#8211;02&#8211;23 18:08:04</td>
+	<td>4</td>
+	<td>Lang</td>
+	<td>Ute</td>
+	<td>1985&#8211;07&#8211;19</td>
+	<td>2005&#8211;06&#8211;07</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>DATE_FORMAT (mySQL)</h4>
+
+<p><code>DATE_FORMAT(datum,format)</code> </p>
+
+<p>Die Funktion <strong>DATE_FORMAT</strong> verlangt nach zwei Argumenten: Einem Datum oder einer Spalte, die das Datum enthält und nach einer Angabe zum Wunschformat. </p>
+
+<pre><code class="sql">SELECT
+    DATE_FORMAT(CURRENT_TIMESTAMP, '%d.%m.%Y') AS zeitstempel,
+    mitarbeiterid AS id,
+    name,
+    DATE_FORMAT(gebdatum, '%d.%m.%Y') AS gebdatum,
+    DATE_FORMAT(eintrittsdatum, '%d.%m.%Y') AS einttritsdatum
+FROM
+    mitarbeiter;
+</code></pre>
+
+<h5>Ergebnis:</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>zeitstempel</th>
+	<th>id</th>
+	<th>name</th>
+	<th>gebdatum</th>
+	<th>eintrittsdatum</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>23.02.2021</td>
+	<td>1</td>
+	<td>Müller&#8217;</td>
+	<td>20.12.1970</td>
+	<td>13.01.1990</td>
+</tr>
+<tr>
+	<td>23.02.2021</td>
+	<td>2</td>
+	<td>Schneider</td>
+	<td>07.03.1965</td>
+	<td>27.08.1995</td>
+</tr>
+<tr>
+	<td>23.02.2021</td>
+	<td>3</td>
+	<td>Klein</td>
+	<td>20.12.1970</td>
+	<td>13.01.1990</td>
+</tr>
+<tr>
+	<td>23.02.2021</td>
+	<td>4</td>
+	<td>Lang</td>
+	<td>19.07.1985</td>
+	<td>07.06.2005</td>
+</tr>
+</tbody>
+</table>
+
+<h4>Deutsche Monate und Tage</h4>
+
+<p>Soll die mySQL deutsche Monate und Tage ausgeben muss das natürlich irgendwie gewünscht werden:</p>
+
+<p><code>SET LC_TIME_NAMES=de_DE;</code></p>
+
+<pre><code class="sql">SET LC_TIME_NAMES=de_DE
+SELECT
+    DATE_FORMAT(CURRENT_TIMESTAMP, '%d.%M.%Y') AS zeitstempel,
+    mitarbeiterid,
+    name,
+    DATE_FORMAT(gebdatum, '%d.%M.%Y') AS gebdatum,
+    DATE_FORMAT(eintrittsdatum, '%d.%M.%Y') AS einttritsdatum
+FROM
+    mitarbeiter;
+</code></pre>
+
+<h5>Ergebnis:</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>zeitstempel</th>
+	<th>id</th>
+	<th>name</th>
+	<th>gebdatum</th>
+	<th>eintrittsdatum</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>23. Februar 2021</td>
+	<td>1</td>
+	<td>Müller&#8217;</td>
+	<td>20. Dezember 1970</td>
+	<td>13. Januar 1990</td>
+</tr>
+<tr>
+	<td>23. Februar 2021</td>
+	<td>2</td>
+	<td>Schneider</td>
+	<td>07. März 1965</td>
+	<td>27. August 1995</td>
+</tr>
+<tr>
+	<td>23. Februar 2021</td>
+	<td>3</td>
+	<td>Klein</td>
+	<td>20. Dezember 1970</td>
+	<td>13. Januar 1990</td>
+</tr>
+<tr>
+	<td>23. Februar 2021</td>
+	<td>4</td>
+	<td>Lang</td>
+	<td>19. Juli 1985</td>
+	<td>07. Juni 2005</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>MySql Zeit-Formate</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>Abkürzung</th>
+	<th>Ausgabe</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>%a</td>
+	<td>Kurzform Wochentage: Mo, Di, Mi</td>
+</tr>
+<tr>
+	<td>%b</td>
+	<td>Kurzform Monate: Jan, Feb,</td>
+</tr>
+<tr>
+	<td>%c</td>
+	<td>Numerische Monate: 1&#8211;12</td>
+</tr>
+<tr>
+	<td>%D</td>
+	<td>Monatstag engl: 1st, 2nd</td>
+</tr>
+<tr>
+	<td>%d</td>
+	<td>Monatstag Zweistellig: 01 bis 31</td>
+</tr>
+<tr>
+	<td>%e</td>
+	<td>Monatstag: 0 bis 31</td>
+</tr>
+<tr>
+	<td>%f</td>
+	<td>MIkrosekunden</td>
+</tr>
+<tr>
+	<td>%H</td>
+	<td>Stunden: 00 bis 23</td>
+</tr>
+<tr>
+	<td>%h</td>
+	<td>Stunden: 01 bis 12</td>
+</tr>
+<tr>
+	<td>%k</td>
+	<td>Stunden 0 bis 23</td>
+</tr>
+<tr>
+	<td>%l</td>
+	<td>Stunden 1 bis 12</td>
+</tr>
+<tr>
+	<td>%M</td>
+	<td>Monat voll ausgeschrieben: Januar - Dezember</td>
+</tr>
+<tr>
+	<td>%m</td>
+	<td>Monat: 01 bis 12</td>
+</tr>
+<tr>
+	<td>%p</td>
+	<td>AM und PM</td>
+</tr>
+<tr>
+	<td>%r</td>
+	<td>Stunden: 01 bis 12 AM oder PM</td>
+</tr>
+<tr>
+	<td>%S</td>
+	<td>Sekunden: 00 bis 59</td>
+</tr>
+<tr>
+	<td>%T</td>
+	<td>Zeitangabe: hh:mm:ss</td>
+</tr>
+<tr>
+	<td>%U</td>
+	<td>Wochenangabe 01 bis 53 beginnend mit Sonntag</td>
+</tr>
+<tr>
+	<td>%u</td>
+	<td>Wochenangabe 0 bis :53 beginnend mit Montag</td>
+</tr>
+<tr>
+	<td>%W</td>
+	<td>Wochentage Sonntag bis Samstag</td>
+</tr>
+<tr>
+	<td>%Y</td>
+	<td>Jahr vierstellig</td>
+</tr>
+<tr>
+	<td>%y</td>
+	<td>Jahr zweistellig</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h2>EXTRACT Zeitangaben extrahieren</h2>
+
+<p>MySQL erlaubt es folgende Teile eines Datums zu extrahieren:</p>
+
+<ul>
+<li>SECOND</li>
+<li>MINUTE</li>
+<li>HOUR</li>
+<li>DAY</li>
+<li>WEEK</li>
+<li>MONTH</li>
+<li>QUATER</li>
+<li>YEAR</li>
+<li>MINUTE_SECOND</li>
+<li>HOUR_MINUTE</li>
+<li>DAY_HOUR</li>
+</ul>
+
+<h4>Beispiel 1:</h4>
+
+<pre><code class="sql">SELECT
+    name,
+    vorname,
+    EXTRACT(week FROM CURRENT_TIMESTAMP) AS Woche,
+    EXTRACT(minute FROM CURRENT_TIMESTAMP) AS Minute,
+FROM    
+    mitarbeiter;
+</code></pre>
+
+<h4>Ausgabe:</h4>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>name</th>
+	<th>vorname</th>
+	<th>gebjahr</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>Müller</td>
+	<td>Ralf</td>
+	<td>1970</td>
+</tr>
+<tr>
+	<td>Schneider</td>
+	<td>Petra</td>
+	<td>1965</td>
+</tr>
+<tr>
+	<td>Klein</td>
+	<td>Thomas</td>
+	<td>1970</td>
+</tr>
+<tr>
+	<td>Lang</td>
+	<td>Ute</td>
+	<td>1985</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>Beispiel 2</h4>
+
+<pre><code class="sql">SELECT
+    EXTRACT(week FROM CURRENT_TIMESTAMP) AS Kallenderwoche,
+    EXTRACT(minute FROM CURRENT_TIMESTAMP) AS Minute,
+    EXTRACT(SECOND FROM CURRENT_TIMESTAMP) AS Sekunde,
+    EXTRACT(MINUTE_SECOND FROM CURRENT_TIMESTAMP) AS MinuteSekunde;
+</code></pre>
+
+<hr />
+
+<h2>Mit Daten rechnen</h2>
+
+<p>Ein </p>
+
+<h4>Zeit addieren:</h4>
+
+<p><code>SELECT DATE_ADD(datum, INTERVAL menge zeiteinheit)</code> </p>
+
+<h4>Zeit subtrahieren:</h4>
+
+<p><code>SELECT DATE_SUB(datum, INTERVAL menge zeiteinheit)</code> </p>
+
+<h4>Beispiel:</h4>
+
+<pre><code class="sql">SELECT
+    DATE_ADD(CURRENT_TIMESTAMP, INTERVAL 7 DAY);
+</code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span class="right"> &copy; 2021 Andreas Breitwieser | Last Update: <span id="id_modi"> </span> | <a href="#" target="_blank">Impressum</a></span>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>

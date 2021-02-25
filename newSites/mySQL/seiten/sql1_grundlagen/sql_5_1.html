@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Seiten Template</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body id="id_up">
+  <nav>
+    <ul>
+      
+      <li><a href="../../../../index.html">Home</a></li>
+      <li><a href="#id_up">Up</a></li>
+      <li><a href="../inhalt.html">SQL Inhalt</a></li>
+    </ul>
+    
+    
+  </nav>
+<header>
+  
+</header>
+
+  <main>
+    <h1>SQL UNION</h1>
+    <section>
+      <article>
+        <h4>Mengenoperationen</h4>
+        
+        <p>Zu den Grundlegenden Mengenoperationen zählen:
+        - Vereinigungsmenge
+        - Schnittmenge
+        - Diffrenzmenge</p>
+        
+        <h4>Vereinigungsmenge</h4>
+        
+        <p>Fügt man alle Elemente aus zwei (oder mehr) Mengen zusammen erhält man eine Vereinigungsmenge.</p>
+        
+        <h4>Tabelle mengea:</h4>
+        
+        <table>
+        <colgroup>
+        <col/>
+        </colgroup>
+        
+        <thead>
+        <tr>
+          <th>element</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+          <td> 1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td> 3</td>
+        </tr>
+        <tr>
+          <td> 4</td>
+        </tr>
+        <tr>
+          <td> 5</td>
+        </tr>
+        <tr>
+          <td> 6</td>
+        </tr>
+        <tr>
+          <td> 8</td>
+        </tr>
+        </tbody>
+        </table>
+        
+        <h4>Tabelle mengeb:</h4>
+        
+        <table>
+        <colgroup>
+        <col/>
+        </colgroup>
+        
+        <thead>
+        <tr>
+          <th>element</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+          <td> 2</td>
+        </tr>
+        <tr>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td> 6</td>
+        </tr>
+        <tr>
+          <td> 7</td>
+        </tr>
+        <tr>
+          <td> 8</td>
+        </tr>
+        <tr>
+          <td> 9</td>
+        </tr>
+        <tr>
+          <td> 10</td>
+        </tr>
+        </tbody>
+        </table>
+        
+        <p>Hier sorgt die Anweisung <strong>UNION</strong> für ein eindeutiges Ergebnis. Jedes Element wird nur einmal übernommen. &#8220;Nur eindeutige Elemente werden zugelassen&#8221;.</p>
+        
+        <pre><code class="sql">SELECT element FROM mengea
+        UNION
+        SELECT element FROM mengeb;
+        </code></pre>
+        
+        <h4>Ergebnis:</h4>
+        
+        <table>
+        <colgroup>
+        <col/>
+        </colgroup>
+        
+        <thead>
+        <tr>
+          <th>element</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+          <td> 1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td> 3</td>
+        </tr>
+        <tr>
+          <td> 4</td>
+        </tr>
+        <tr>
+          <td> 5</td>
+        </tr>
+        <tr>
+          <td> 6</td>
+        </tr>
+        <tr>
+          <td> 7</td>
+        </tr>
+        <tr>
+          <td> 8</td>
+        </tr>
+        <tr>
+          <td> 9</td>
+        </tr>
+        <tr>
+          <td> 10</td>
+        </tr>
+        </tbody>
+        </table>
+        
+        <hr />
+        
+        <h2>UNION ALL übernimmt auch Duplikate</h2>
+        
+        <pre><code class="sql">SELECT element FROM mengea
+        UNION ALL
+        SELECT element FROM mengeb;
+        </code></pre>
+        
+        <h4>Ergebnis:</h4>
+        
+        <table>
+        <colgroup>
+        <col/>
+        </colgroup>
+        
+        <thead>
+        <tr>
+          <th>element</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+          <td> 1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td> 3</td>
+        </tr>
+        <tr>
+          <td> 4</td>
+        </tr>
+        <tr>
+          <td> 5</td>
+        </tr>
+        <tr>
+          <td> 6</td>
+        </tr>
+        <tr>
+          <td> 8</td>
+        </tr>
+        <tr>
+          <td> 2</td>
+        </tr>
+        <tr>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td> 6</td>
+        </tr>
+        <tr>
+          <td> 7</td>
+        </tr>
+        <tr>
+          <td> 8</td>
+        </tr>
+        <tr>
+          <td> 9</td>
+        </tr>
+        <tr>
+          <td> 10</td>
+        </tr>
+        </tbody>
+        </table>
+        
+        <hr />
+        
+        <h2>INTERSECT (Schnittmenge)</h2>
+        
+        <p><strong>INTERSECT</strong> wird von <strong>mySQL nicht unterstütz</strong>.</p>
+      </article>
+      <article>
+        <h1>Megenoperationen mit UNION</h1>
+
+<h5>Tabelle: &#8216;produkt&#8217;</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>artikelid</th>
+	<th>artikelbezeichnung</th>
+	<th>preis</th>
+	<th>kategorie</th>
+	<th>legierung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>1</td>
+	<td>Schraube 1</td>
+	<td>2.56</td>
+	<td>Schrauben</td>
+	<td>Zink/Eisen</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Schraube 2</td>
+	<td>2.30</td>
+	<td>Schrauben</td>
+	<td>Kupfer/Eisen</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Schraube 3</td>
+	<td>2.21</td>
+	<td>Schrauben</td>
+	<td>Nickel/Eisen</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Schraube 4</td>
+	<td>2.11</td>
+	<td>Schrauben</td>
+	<td>Gold/Eisen</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>Schraube 5</td>
+	<td>1.50</td>
+	<td>Schrauben</td>
+	<td>Silber/Eisen</td>
+</tr>
+</tbody>
+</table>
+
+<h5>Tabelle: &#8216;produktarchiv&#8217;</h5>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>artikelid</th>
+	<th>artikelbezeichnung</th>
+	<th>preis</th>
+	<th>kategorie</th>
+	<th>legierung</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>100</td>
+	<td>Schraube A</td>
+	<td>2.56</td>
+	<td>Schrauben</td>
+	<td>Zink/Eisen</td>
+</tr>
+<tr>
+	<td>101</td>
+	<td>Schraube 2</td>
+	<td>2.30</td>
+	<td>Schrauben</td>
+	<td>Kupfer/Eisen</td>
+</tr>
+<tr>
+	<td>102</td>
+	<td>Schraube B</td>
+	<td>2.21</td>
+	<td>Schrauben</td>
+	<td>Nickel/Eisen</td>
+</tr>
+<tr>
+	<td>103</td>
+	<td>Schraube 4</td>
+	<td>2.11</td>
+	<td>Schrauben</td>
+	<td>Gold/Eisen</td>
+</tr>
+<tr>
+	<td>104</td>
+	<td>Schraube C</td>
+	<td>1.50</td>
+	<td>Schrauben</td>
+	<td>Silber/Eisen</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>UNION auf mehrere Spalten:</h4>
+
+<pre><code class="sql"> SELECT
+    artikelbezeichnung,
+    kategorie,
+    legierung
+ FROM produkt
+ UNION
+ SELECT
+    artikelbezeichnung,
+    kategorie,
+    legierung
+ FROM produktarchiv 
+ 
+ SELECT * FROM produkt;
+</code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <ul>
+        <li><span class="right"> &copy; 2021 Andreas Breitwieser</li>
+        <!-- <li>|</li> -->
+        <li>Last Update: <span id="id_modi"> </span></li>
+        <!-- <li>|</li> -->
+        <li><a href="#" target="_blank">Impressum</a></li>
+      </ul>
+        </span>
+
+    </div>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>

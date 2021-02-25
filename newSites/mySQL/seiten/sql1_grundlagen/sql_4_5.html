@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Constraints</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body id="id_up">
+  <nav>
+    <ul>
+      
+      <li><a href="../../../../index.html">Home</a></li>
+      <li><a href="#id_up">Up</a></li>
+      <li><a href="../inhalt.html">SQL Inhalt</a></li>
+    </ul>
+    
+    
+  </nav>
+<header>
+  
+</header>
+
+  <main>
+    <h1>SQL Constraints</h1>
+    <section>
+      <article>
+        <h1>CONSTRAINTS</h1>
+
+        <h1>Einschränkungen</h1>
+        
+        <hr />
+        
+        <h3>Inhalt</h3>
+        
+        <ul>
+        <li>NOT NULL</li>
+        <li>UNIQUE</li>
+        <li>CHECK für Spalten</li>
+        <li>CONSTRAINTS auf Tabellenebene</li>
+        </ul>
+        
+        <hr />
+        
+        <h2>CONSTRAINTS Einschränkungen</h2>
+        
+        <h4>Plichtfelder erklären: NOT NULL</h4>
+        
+        <p>Werden Spalten mit NOT NULL zu &#8216;Pflichtfeldern&#8217; erklärt dürfen diese bei INSERT und auch UPDATE nicht leer sein.</p>
+        
+        <pre><code class="sql">CREATE TABLE dienstwagen(
+            wagenid TINYINT AUTO_INCREMENT PRIMARY KEY,
+            kennzeichen CHAR(9) NOT NULL,
+            erstzulassung DATE NOT NULL,
+            kostenstelle TINYINT,
+            herrsteller VARCHAR(200),
+            modell VARCHAR(200),
+            leistung DECIMAL(5,2),
+            motor VARCHAR(100),
+            getriebe VARCHAR(100),
+            mitarbeiter VARCHAR(300)
+        );
+        </code></pre>
+        
+        <hr />
+        
+        <h4>Einzigartig mit UNIQUE</h4>
+        
+        <p>Bekommt eine Spalte die Einschränkung <strong>UNIQUE</strong> zugewiesen, darf muss deren Inhalt &#8216;einzigartig&#8217; sein. Für Autokennzeichen ist das sehr passend. </p>
+        
+        <pre><code class="sql">CREATE TABLE dienstwagen(
+            wagenid TINYINT AUTO_INCREMENT PRIMARY KEY,
+            kennzeichen CHAR(9) UNIQUE,
+            erstzulassung DATE NOT NULL,
+            kostenstelle TINYINT,
+            herrsteller VARCHAR(200),
+            modell VARCHAR(200),
+            leistung DECIMAL(5,2),
+            motor VARCHAR(100),
+            getriebe VARCHAR(100),
+            mitarbeiter VARCHAR(300)
+        );
+        </code></pre>
+        
+        <h4>Standardwert mit DEFAULT zuweisen.</h4>
+        
+        <p>Wird ein Default-Wert zugewiesen muss dieser beim INSERT nicht extra beschrieben werden.
+        Eine Spalte sollte nicht gleichzeitig UNIQUE und DEFAULT haben.</p>
+        
+        <pre><code class="sql">CREATE TABLE dienstwagen(
+            wagenid TINYINT AUTO_INCREMENT PRIMARY KEY,
+            kennzeichen CHAR(9) UNIQUE,
+            erstzulassung DATE NOT NULL,
+            kostenstelle TINYINT DEFAULT 0,
+            herrsteller VARCHAR(200),
+            modell VARCHAR(200),
+            leistung DECIMAL(5,2),
+            motor VARCHAR(100),
+            getriebe VARCHAR(100),
+            mitarbeiter VARCHAR(300)
+        );
+        </code></pre>
+        
+        <hr />
+        
+        <h4>CHECK für Spalten</h4>
+        
+        <p>Diese Plausibilitätsprüfung gilt für INSERT und UPDATE.
+        Die Spalte Motor lässt so nur noch die Eingaben &#8216;Diesel&#8217; oder &#8216;Benzin&#8217; zu.</p>
+        
+        <pre><code class="sql">CREATE TABLE dienstwagen(
+            wagenid TINYINT AUTO_INCREMENT PRIMARY KEY,
+            kennzeichen CHAR(9) UNIQUE,
+            erstzulassung DATE NOT NULL,
+            kostenstelle TINYINT DEFAULT 0,
+            herrsteller VARCHAR(200),
+            modell VARCHAR(200),
+            leistung DECIMAL(5,2),
+            motor VARCHAR(100) CHECK(motor='Diesel' OR motor='Benzin'),
+            getriebe VARCHAR(100),
+            mitarbeiter VARCHAR(300)
+        );
+        </code></pre>
+        
+        <hr />
+        
+        <h2>Constraints auf Tabellenebene</h2>
+        
+        <p>Auf Tabellenebene können Einschränkungen für mehrere Spalten formuliert werden. Es sind aber nur folgende Einschränkungen möglich: </p>
+        
+        <ul>
+        <li>PRIMARY KEY</li>
+        <li>UNIQUE</li>
+        <li>CHECK</li>
+        </ul>
+        
+        <pre><code class="sql">CREATE TABLE dienstwagen(
+            wagenid TINYINT AUTO_INCREMENT,
+            kennzeichen CHAR(9) UNIQUE,
+            erstzulassung DATE NOT NULL,
+            kostenstelle TINYINT DEFAULT 0,
+            herrsteller VARCHAR(200),
+            modell VARCHAR(200),
+            leistung DECIMAL(5,2),
+            motor VARCHAR(100) CHECK(motor='Diesel' OR motor='Benzin'),
+            getriebe VARCHAR(100),
+            mitarbeiter VARCHAR(300),
+            CONSTRAINT pk_wagenid PRIMARY KEY (wagen_id)
+        );
+        </code></pre>
+        
+        <p>Nach dem Schlüsselwort <strong>CONSTRAINT</strong> erhält die Einschränkung einen Titel &#8220;pk_wagenid &#8221; anschließend wird die Art der Einschränkung angegeben. Schließlich wird dahinter in Klammern das Spalte angegeben auf die sie wirken soll</p>
+        
+        <hr />
+        
+        <h4>UNIQUE Einschränkung auf mehrere Spalten</h4>
+        
+        <pre><code class="sql">CREATE TABLE zweigstellen(
+            globalid TINYINT PRIMARY KEY,
+            land VARCHAR(200),
+            zweigstellenid TINYINT,
+            namezweigstelle VARCHAR(200),
+            CONSTRAINT uq_landzweigstellenid UNIQUE (land, zweigstellenid)
+        );
+        </code></pre>
+        
+        <p>In dem oben stehenden Skript wird formuliert, dass eine &#8220;Zweigstellen ID&#8221; in einem Land einzigartig sein muss. Es kann mehrere Nummer 1 geben, in jedem Land aber nur eine. </p>
+        
+        <table>
+        <colgroup>
+        <col/>
+        <col/>
+        <col/>
+        <col/>
+        </colgroup>
+        
+        <thead>
+        <tr>
+          <th>globalid</th>
+          <th>land</th>
+          <th>zweigstellenid</th>
+          <th>namezweigstelle</th>
+        </tr>
+        </thead>
+        
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Deutschland</td>
+          <td>1</td>
+          <td>Zweigstelle 1</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Deutschland</td>
+          <td>2</td>
+          <td>Zweigstelle 2</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Holland</td>
+          <td>1</td>
+          <td>Zweigstelle 3</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Holland</td>
+          <td>2</td>
+          <td>Zweigstelle 4</td>
+        </tr>
+        </tbody>
+        </table>
+        
+        <hr />
+        
+        <h4>CHECK auf Tabellenebene</h4>
+        
+        <pre><code class="sql">CREATE TABLE zweigstellen(
+            globalid SMALLINT PRIMARY KEY,
+            land VARCHAR(200),
+            zweigstellenid SMALLINT,
+            namezweigstelle VARCHAR(200),
+            mitarbeiterplanzahl SMALLINT,
+            mitarbeiteristzahl,
+            CONSTRAINT ch_mitarbeiterzahl CHECK(mitarbeiterplanzahl&gt;=mitarbeiteristzahl)
+        );
+        </code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <ul>
+        <li><span class="right"> &copy; 2021 Andreas Breitwieser</li>
+        <!-- <li>|</li> -->
+        <li>Last Update: <span id="id_modi"> </span></li>
+        <!-- <li>|</li> -->
+        <li><a href="#" target="_blank">Impressum</a></li>
+      </ul>
+        </span>
+
+    </div>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>
