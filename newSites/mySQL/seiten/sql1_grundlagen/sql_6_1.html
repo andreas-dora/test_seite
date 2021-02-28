@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Modelling DB / USER</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body id="id_up">
+  <nav>
+    <ul>
+      
+      <li><a href="../../../../index.html">Home</a></li>
+      <li><a href="#id_up">Up</a></li>
+      <li><a href="../inhalt.html">SQL Inhalt</a></li>
+    </ul>
+    
+    
+  </nav>
+<header>
+  
+</header>
+
+  <main>
+    <h1>SQL Datenbank modelieren: USER </h1>
+    <section>
+      <article>
+        <h3>User</h3>
+
+        <h4>User anlegen (mySQL)</h4>
+        
+        <pre><code class="sql">CREATE USER hans IDENTIFIED BY 'secret';
+        </code></pre>
+        
+        <h4>USER löschen (mySQL)</h4>
+        
+        <pre><code class="sql">DROP USER hans;
+        </code></pre>
+        
+        <hr />
+        
+        <h3>Verbindung zur Datenbank einrichten (mySQL)</h3>
+        
+        <p>Nachdem man einen User angelegt hat muss für ihn eine Verbindung zur Datenbank hergestellt werden.
+        Dazu erstmal die Workbench beenden. Anschließend im Startfenster der Workbench neben <strong>MySQL Connections</strong> auf das <strong>+</strong> klicken.</p>
+        
+        <p>In der ersten Zeile wird der Verbindung ein Name gegeben: &#8216;connection_Hans&#8217;.
+        Im Feld Username muss noch der Benutzername eingetragen werden: &#8216;hans&#8217;.
+        Nun kann man im Startfenster der Workbench die neue Verbindung schon sehen. </p>
+        
+        <hr />
+        
+        <h3>Rechte zuweisen GRANT</h3>
+        
+        <p>Entsprechend den DB-Operationen kann man Benutzern verschiedene Rechte zuweisen:</p>
+        
+        <ul>
+        <li>SELECT zum Lesen</li>
+        <li>INSERT zum Schreiben</li>
+        <li>UPDATE zum Ändern</li>
+        <li>DELETE zum Löschen</li>
+        </ul>
+        
+        <p>Die Formel für eine Zuweisung lautet dann:
+        <strong>GRANT</strong> Berechtigungsart <strong>ON</strong> Tabellenname <strong>TO</strong> Benutzername </p>
+        
+        <pre><code class="sql">GRANT SELECT,UPDATE  ON mitarbeiter TO hans;
+        </code></pre>
+        
+        <hr />
+        
+        <h3>Rechte entziehen: REVOKE</h3>
+        
+        <pre><code class="sql">REVOKE SELECT,UPDATE  ON mitarbeiter TO hans;
+        </code></pre>
+        
+        <hr />
+        
+        <h3>Gruppen / Rollen anlegen: CREATE ROLE</h3>
+        
+        <p>Über ROLE kann man ausgewählte Rechte einer Gruppe von Nutzern zuweisen. Dazu muss zunächst eine ROLE angelegt werden. </p>
+        
+        <pre><code class="sql">CREATE ROLE personal;
+        </code></pre>
+        
+        <hr />
+        
+        <h3>ROLE Berechtigung anlegen</h3>
+        
+        <p>Anschließend kann man der ROLE genau wie einzelnen Benutzern mit GRANT Rechte zuweisen</p>
+        
+        <pre><code class="sql">GRANT SELECT,INSERT,UPDATE  ON abteilung TO personal;
+        </code></pre>
+        
+        <hr />
+        
+        <h4>User eine Role zuordnen (mySQL)</h4>
+        
+        <pre><code class="sql">GRANT personal To hans;
+        </code></pre>
+        
+        <p><strong>ACHTUNG</strong>: Vor der Abfrage muss bei mySQL DBs folgende Anweisung ausgeführt werden:</p>
+        
+        <pre><code class="sql">SET ROLE 'personal'
+        USE uebungsdatenbank;
+        
+        SELECT * FROM abteilung;
+        </code></pre>
+        
+        <hr />
+        
+        <h4>Der ROLE Berechtigungen entziehen:</h4>
+        
+        <pre><code class="sql">REVOKE SELECT, INSERT, UPDATE ON abteilung FROM personal;
+        </code></pre>
+        
+        <hr />
+        
+        <h4>ROLE löschen</h4>
+        
+        <pre><code class="sql">DROP ROLE personal;
+        </code></pre>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <ul>
+        <li><span class="right"> &copy; 2021 Andreas Breitwieser</li>
+        <li>Last Update: <span id="id_modi"> </span></li>
+        <li><a href="#" target="_blank">Impressum</a></li>
+      </ul>
+        </span>
+
+    </div>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>
