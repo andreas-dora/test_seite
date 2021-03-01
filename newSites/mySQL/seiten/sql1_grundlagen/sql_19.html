@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL VIEWs</title>
+  <link rel="stylesheet" href="../../simple.css">
+
+</head>
+<body id="id_up">
+  <nav>
+    <ul>
+      
+      <li><a href="../../../../index.html">Home</a></li>
+      <li><a href="#id_up">Up</a></li>
+      <li><a href="../inhalt.html">SQL Inhalt</a></li>
+    </ul>
+    
+    
+  </nav>
+<header>
+  
+</header>
+
+  <main>
+    <h1>SQL VIEWs</h1>
+    <section>
+      <article>
+        <h1>SQL VIEW</h1>
+
+<p><em>von A</em> </p>
+
+<p>Häufig genutzte Ansichten einer SQL-Datenbank können als <strong>VIEW</strong>s gespeichert werden.
+ <strong>VIEW</strong>s sind definierte Ansichten des aktuellen Datenbestands. Diese Ansichten werden über <strong>SELECT AS</strong> Anweisung definiert.
+<strong>VIEW</strong>s können genutzt werden, wenn Usern nur ein bestimmter Teil des Datenbestands zugänglich gemacht werden soll.
+<strong>VIEW</strong>s sind keine Momentaufnahmen. </p>
+
+<h6>Beispiel:</h6>
+
+<p>Allen Mitarbeiter soll die die interne Telefonliste zugänglich gemacht werden, die Gehaltsstufen und Personalnotizen sind aber einem bestimmten &#8216;Zirkel&#8217; vorbehalten.</p>
+
+<hr />
+
+<h3>Einfache Views anlegen</h3>
+
+<p>Wie auch bei Subqueries, lohnt es sich den <strong>SELECT</strong>-Kern auf seine Funktionalität zu prüfen, bevor man ihn in einer <strong>VIEW</strong> speichert. </p>
+
+<p>Es lohnt sich <strong>VIEWS</strong> sinnvoll zu benennen, damit es zu keinen Abfragefehlern kommt. Dazu wird dem Namen gerne <strong>v_</strong> vorangesetzt. </p>
+
+<p>Die einfache Abfrage lautet:</p>
+
+<pre><code class="sql">SELECT
+mitarbeiterid AS persNr, name , vorname 
+FROM mitarbeiter;
+</code></pre>
+
+<h6>Ausgabe:</h6>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>mitarbeiterid</th>
+	<th>name</th>
+	<th>vorname</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td> 1</td>
+	<td>Müller</td>
+	<td>Ralf</td>
+</tr>
+<tr>
+	<td>2</td>
+	<td>Schneider</td>
+	<td>Petra</td>
+</tr>
+<tr>
+	<td>3</td>
+	<td>Klein</td>
+	<td>Thomas</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td>Lang</td>
+	<td>Ute</td>
+</tr>
+<tr>
+	<td>5</td>
+	<td>Eisenhof</td>
+	<td>Frank</td>
+</tr>
+</tbody>
+</table>
+
+<p>As: Die geprüfte Abfrage kann wie folgt als <strong>VIEW</strong> gespeichert werden:</p>
+
+<pre><code class="sql">CREATE VIEW v_mitarbeiter
+AS SELECT
+    mitarbeiterid AS persNr, 
+    vorname, 
+    name 
+FROM mitarbeiter;
+</code></pre>
+
+<p>Die <strong>VIEW</strong> kann nun wie eine eigenständige Tabelle abgefragt werden.</p>
+
+<pre><code class="sql">SELECT *
+FROM v_mitarbeiter;
+</code></pre>
+
+<p>Eine <strong>VIEW</strong> ist immer genauso aktuell wie die gesamte Tabelle.</p>
+
+<pre><code class="sql">UPDATE mitarbeiter 
+SET name='Hasenmüller'
+WHERE mitarbeiterid=1;
+SELECT *
+FROM v_mitarbeiter;
+</code></pre>
+
+<p>Benutzt man die MySQL-Workbench findet man einmal angelegte <strong>VIEW</strong>s, nach dem aktualisieren, in der Gliederung der Datenbank wieder.</p>
+
+<p><strong>VIEW</strong>s können alles, was einfache abfragen auch können. Hier ein <strong>VIEW</strong> mit <strong>INNER JOIN</strong>:</p>
+
+<pre><code class="sql">CREATE VIEW v_mitarbeiterkontakt
+AS
+SELECT
+    m.mitarbeiterid,
+    m.vorname,
+    m.name,
+    k.festnetz,
+    k.mobilnetz
+FROM 
+    mitarbeiter m INNER JOIN kontakt k
+ON
+    m.mitarbeiterid=k.mitarbeiterid;
+    
+
+SELECT * FROM    v_mitarbeiterkontakt;
+</code></pre>
+
+<h6>Ausgabe:</h6>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>mitarbeiterid</th>
+	<th>vorname</th>
+	<th>name</th>
+	<th>festnetz</th>
+	<th>mobilnetz</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>2</td>
+	<td>Petra</td>
+	<td>Schneider</td>
+	<td>0123/11111111</td>
+	<td>4566/000000</td>
+</tr>
+<tr>
+	<td>4</td>
+	<td> Ute</td>
+	<td>Lang</td>
+	<td>8977/9999999</td>
+	<td>2345/555555</td>
+</tr>
+<tr>
+	<td>6</td>
+	<td>Anja</td>
+	<td>Lupin</td>
+	<td>2345/3333333</td>
+	<td>3456/66666</td>
+</tr>
+<tr>
+	<td>8</td>
+	<td>Iris</td>
+	<td>Müller</td>
+	<td>3456/11111111</td>
+	<td>2345/999999</td>
+</tr>
+</tbody>
+</table>
+
+<hr />
+
+<h4>VIEW und ORDER BY</h4>
+
+<p>andy says: Wenn ein <strong>VIEW</strong> eine Standard-Ausgabe widerspiegeln soll, macht es natürlich Sinn eine <strong>ODER BY</strong>-Wunsch einzufügen. Außerdem macht es Sinn die Spalte so benennen, wie sie ausgegeben werden sollen.</p>
+
+<pre><code class="sql">CREATE VIEW v_mitarbeitersortiert
+AS
+SELECT
+    mitarbeiterid AS PersoNr,
+    vorname AS Vorname,
+    name AS Name
+FROM
+    mitarbeiter
+ORDER BY name   ;
+
+SELECT * FROM v_mitarbeitersortiert;
+</code></pre>
+
+<h6>Ausgabe:</h6>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>PersoNr</th>
+	<th>Vorname</th>
+	<th>Nachname</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>22</td>
+	<td>Vera</td>
+	<td>Groß</td>
+</tr>
+<tr>
+	<td>17</td>
+	<td>Peter</td>
+	<td>Haier</td>
+</tr>
+<tr>
+	<td>1</td>
+	<td>Ralf</td>
+	<td>Hasenmüller</td>
+</tr>
+<tr>
+	<td>46</td>
+	<td>Hans</td>
+	<td>Heinrich</td>
+</tr>
+</tbody>
+</table>
+
+<h3>INSERT im VIEW</h3>
+
+<p>Auch über <strong>VIEW</strong>s lassen sich Tupels einfügen. Die eigefügten Tupels werden ganz normaler Bestandteil der zugrundeliegenden Tabelle. Allerdings können nur die, die für die <strong>VIEW</strong> sichtbaren Spalten gefüttert werden. Deshalb sollte sichergestellt sein, dass die <strong>VIEW</strong> auch die <strong>PRIMARY KEY</strong>-Spalte sowie alle anderen Spalten, die <strong>NOT NULL</strong> sein dürfen abdeckt. Wenn die <strong>PRIMARY KEY</strong>-Spalte durch <strong>AUTO_INCREMENT</strong> gefüttert wird ist das nicht notwendig. </p>
+
+<p>Die Reihenfolge de &#8216;Futter&#8217;-Werte, wurde durch die Formulierung des <strong>VIEW</strong>s bereits vorgegeben. Für ein <strong>INSERT</strong> über <strong>VIEW</strong> braucht man sich nur noch daran zu halten. </p>
+
+<pre><code class="sql">INSERT INTO v_mitarbeitersortiert
+VALUES (55,'Walter','Haarenohr');
+
+SELECT * FROM v_mitarbeitersortiert;
+</code></pre>
+
+<p>Alle Nichtabgedeckten Spalten (die über die <strong>VIEW</strong> nicht zugänglich waren, enthalten keine Werte, sind also <strong>NULL</strong>.</p>
+
+<p>Die Abfrage der zugrundeliegenden Tabelle macht diese sichtbar.</p>
+
+<pre><code class="sql">SELECT * FROM mitarbeiter; 
+</code></pre>
+
+<table>
+<colgroup>
+<col/>
+<col/>
+<col/>
+<col/>
+<col/>
+</colgroup>
+
+<thead>
+<tr>
+	<th>mitarbeiterid</th>
+	<th>name</th>
+	<th>vorname</th>
+	<th>gebdatum</th>
+	<th>eintrittsdatum</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+	<td>5</td>
+	<td>Haarenohr</td>
+	<td>Walter</td>
+	<td>NULL</td>
+	<td>NULL</td>
+</tr>
+</tbody>
+</table>
+
+<h5>JOINed VIEWS und INSERT</h5>
+
+<p>Liegt der <strong>VIEW</strong> eine <strong>JOIN</strong>-Abfrage zugrunde, die Daten aus zwei oder mehreren Tabellen wiedergibt, müssten für ein entsprechendes <strong>INSERT</strong> auch alle diese Tabellen gefüttert werden.</p>
+
+<hr />
+
+<h4>UPDATE im JOINed VIEW</h4>
+
+<p>Auch Updates auf <strong>VIEWS</strong> die über ein <strong>JOIN</strong> zusammengesetzt wurden, können nur auf den <strong>INNER JOIN</strong>-Teil angewendet werden: </p>
+
+<h6>Funktioniert:</h6>
+
+<pre><code class="sql">UPDATE v_mitarbeiterkontakt
+SET name='Hahamüller'
+WHERE mitarbeiterid=35;
+</code></pre>
+
+<h6>Funktioniert nicht:</h6>
+
+<pre><code class="sql">UPDATE v_mitarbeiterkontakt
+SET festnetzt='1234567'
+WHERE mitarbeiterid=35;
+</code></pre>
+
+<hr />
+
+<h4>Wichtig:</h4>
+
+<p>Alle <strong>INSERT</strong>, <strong>UPDATE</strong> und <strong>DELETE</strong> Anweisungen in <strong>VIEW</strong>s werden auf die zugrundeliegende Tabelle angewendet. Falls der <strong>VIEW</strong> ein <strong>INNER JOIN</strong> zugrunde liegt, kann nur die linke Tabelle bearbeitet werden.
+Die Bearbeitung ist NICHT möglich, wenn <strong>VIEW AS SELCT</strong> auf eine der folgenden Anweisungen enthält: </p>
+
+<ul>
+<li>Distinct</li>
+<li>SUM, MIN, MAX, AVG, COUNT</li>
+<li>GROUP BY</li>
+<li>HAVING</li>
+<li>UNION (ALL)</li>
+<li>LEFT / RIGHT / FULL OUTER JOIN</li>
+</ul>
+
+<hr />
+
+<h4>VIEWs löschen</h4>
+
+<p><code>DROP VIEW v_mitarbeiter;</code></p>
+
+<h4>VIEW ersetzen</h4>
+
+<p><code>CREATE OR REPLACE v_alterview AS v_neuerview;</code> </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrapper">
+      <ul>
+        <li><span class="right"> &copy; 2021 Andreas Breitwieser</li>
+        <!-- <li>|</li> -->
+        <li>Last Update: <span id="id_modi"> </span></li>
+        <!-- <li>|</li> -->
+        <li><a href="#" target="_blank">Impressum</a></li>
+      </ul>
+        </span>
+
+    </div>
+  
+  </footer>
+  <script>
+    modi = document.querySelector('#id_modi');
+    modi.innerText =document.lastModified;
+  </script>
+</body>
+</html>
