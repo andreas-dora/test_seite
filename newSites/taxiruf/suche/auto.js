@@ -125,3 +125,5 @@ const offenbach = [
 "Am Waldeck",
 "Am Waldpark"
 ];
+
+autocomplete(document.getElementById("myInput"), offenbach);
