@@ -223,10 +223,11 @@ input {
 }
 input[type=text] {
   background-color: #f1f1f1;
-  width: 100%;
+  min-width: 300px;
+  width: 40%;
 }
 input[type=submit] {
-  background-color: DodgerBlue;
+  background-color: var(--c-mainblau);
   color: #fff;
 }
 .autocomplete-items {
@@ -252,10 +253,78 @@ input[type=submit] {
 }
 .autocomplete-active {
   /*when navigating through the items using the arrow keys:*/
-  background-color: DodgerBlue !important;
+  background-color: var(--c-mainblau) !important;
   color: #ffffff;
 }
 
 .btn{
   padding: 10px;
+}
+
+
+/*##################################################* CUSTOM SELECT/
+/*##################################################*/
+/*##################################################*/
+
+
+
+.custom-select {
+  position: relative;
+  font-family: inherit;
+  width: 160px;
+  display: inline-block;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  background-color: var(--c-mainblau);
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/* style the items (options), including the selected item: */
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: var(--c-mainblau);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
 }

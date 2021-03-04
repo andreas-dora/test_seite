@@ -8,16 +8,32 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header>
+    <nav>
+      <form action="https://google.com/maps" target="_blank" method="GET">
+        <div class="custom-select">
+          <select>
+            <!-- <option value="0">Stadt</option> -->
+            <option value="offenbach" selected="selected">Offenbach</option>
+            <option value="frankfurt">Frankfurt</option>
+            <option value="mühlhein">Mühlheim</option>
+            <option value="heusenstamm">Heusenstamm</option>
+          </select>
+        </div>
+        <input type="text" placeholder="Straße" name="q">
+        <input type="number" placeholder="Nr." name="q">
+
+        <input type="submit" value="Such" name="q">
+      </form>
+    </nav>
+  </header>
   <main>
     <article>    
       <div class="searchContainer">
-      <form action="https://google.com/search" target="_blank" method="GET">
-        <input type="text" placeholder="Suche" name="q">
-        <input type="submit" value="Such" name="q">
-        <!-- <button type="submit" name="q">Such</button> -->
-      </form>
+      
     </div>
   </article>
   </main>
+  <script src="./scripts/cselect.js"></script>
 </body>
 </html>
