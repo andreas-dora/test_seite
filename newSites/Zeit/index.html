@@ -144,7 +144,16 @@ setInterval(tellTime, 1000);
 var stampTime = new Date();
 stampTime.setTime(1611223475646);
 console.log(stampTime);
-console.log(stampTime.toLocaleTimeString());      </code></pre>
+console.log(stampTime.toLocaleTimeString()); </code></pre>
+<br>
+<hr>
+        <h3>Zeitstempel für den Footer</h3>
+        <pre><code>&lt;script>
+  stampFeld = document.querySelector('#id_stampFeld');
+  var stampDate = new Date();
+  stampDate.setTime =document.lastModified;
+  stampFeld.innerText = stampDate.toLocaleDateString();
+&lt;/script></code></pre>
       </article>
       <aside>
         <table>
