@@ -11,7 +11,7 @@
   <header>
     <nav>
       <form action="https://google.com/maps" target="_blank" method="GET">
-        <div class="custom-select">
+        <div class="custom-select" id="id_city">
           <select>
             <!-- <option value="0">Stadt</option> -->
             <option value="offenbach" selected="selected">Offenbach</option>
@@ -20,8 +20,10 @@
             <option value="heusenstamm">Heusenstamm</option>
           </select>
         </div>
-        <input type="text" placeholder="Straße" name="q">
-        <input type="number" placeholder="Nr." name="q">
+        <input type="text" placeholder="Straße" id="id_street">
+        <input type="number" placeholder="Nr." id="id_hnr">
+        <input type="text" placeholder="Straße" name="q" id="id_suche">
+
 
         <input type="submit" value="Such" name="q">
       </form>
