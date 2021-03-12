@@ -24,33 +24,59 @@
 </header>
 
   <main>
-    <h1>Formular in Tabelle</h1>
     <section>
-      <article>
-        <h2>Schreib mir eine Nachricht</h2>
-        <form action="">
-          <table>
+      <h1>Formular in Tabelle</h1>
+          <table class="fTable"> 
             <tbody>
               <tr>
-                <td><label for="vorname">Vorname:</label></td>
-                <td><input type="text" name="vorname" id="id_vorname"></td>
+                <th><label for="vorname">Vorname:</label></th>
+                <td colspan="3"><input type="text" name="vorname" class="longInput"></td>
               </tr>
               <tr>
-                <td><label for="nachname">Nachname:</label></td>
-                <td><input type="text" name="nachname" id="id_nachname"></td>
+                <th><label for="nachname">Nachname:</label></th>
+                <td colspan="3"><input type="text" name="nachname" class="longInput"></td>
               </tr>
+              <tr>
+                <th><label for="gebdate">Geburtsdatum:</label></th>
+                <td><input type="date" name="gebdate"></td>
+              </tr>
+              <tr>
+                <th><label for="email">Email:</label></th>
+                <td colspan="3"><input type="email" name="email" class="longInput"></td>
+              </tr>
+              <tr>
+                <th><label for="ort">Ort:</label></th>
+                <td><input type="text" name="ort" class="mediumInput">
+                <th><label for="plz">Plz:</label></th>
+                <td><input type="number" name="plz" id="id_plz" class="smallInput" size="6"></td>  
+              </tr>
+            
+          
+            <tr>
+              <th><label for="ort">Straße:</label></th>
+              <td><input type="text" name="ort" class="mediumInput"></td>
+              <th><label for="hnr">Nr.</label></th>
+              <td><input type="text" name="hnr" id="id_hnr" class="smallInput" size="5"></td>
+            </tr>
+            <tr>
+              <th><label for="nchricht">Nachricht:</label></th>
+              <td colspan="3" rowspan="4"><textarea name="nachricht" id="_nachricht" rows="10"></textarea></td>
+            </tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr>
+              <td></td>
+              <td></td>
+              <td colspan="2">
+              <input class="myBtn" type="submit"></td>
+            </tr>
             </tbody>
           </table>
+          
         </form>
 
-        <div class="inhalt">
-          <dl>
-            <dt>Grundlagen</dt>
-            
-          </dl>
-        </div>
-
-      </article>
+ 
     </section>
   </main>
 

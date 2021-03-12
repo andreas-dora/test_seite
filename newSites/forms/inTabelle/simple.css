@@ -5,7 +5,7 @@
 }
 :root{
   --c-mainblau: #034f67;
-  --c-hellgrau: #e6e1dc;
+  --c-hellgrau: #e8e1d9;
   --c-bikini: #77212e;
   --c-dunkel: #373434;
   --c-chili: #9B2335;
@@ -16,6 +16,8 @@
   --c-second: #034f67;
   --c-hilite: #f9423a;
   --c-back:#f8f8ff;
+ --c-myGreen: #229452;
+
 }
 
 body{
@@ -74,7 +76,10 @@ main{
   min-height: 100vh;
 }
 section{
-  max-width: 1000px;
+  max-width: 1100px;
+  padding: .5em;
+  margin: 0 auto;
+  border: 1px solid var(--c-hilite);
 }
 article{
   max-width: 600px;
@@ -99,7 +104,7 @@ nav ul{
   list-style: none;
   display: flex;
   justify-content: space-between;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: .2em auto;
   padding: .5em;
 }
@@ -124,7 +129,7 @@ footer{
   color: rgb(248, 248, 255);
 }
 footer .wrapper{
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 2em .5em;
   text-transform: uppercase;
@@ -149,7 +154,7 @@ footer a{
 /*##################################################*/
 /*##################################################*/
 
-table{
+/* table{
   border-collapse: collapse;
   margin-bottom: 1.5em;
 }
@@ -161,7 +166,7 @@ th, td{
 }
 th{
   background-color: var(--c-hellgrau);
-}
+} */
 
 /*##################################################* CODE/
 /*##################################################*/
@@ -205,3 +210,93 @@ pre{
   font-size: 18px;
 }
 
+/*##################################################* Form Table/
+/*##################################################*/
+/*##################################################*/
+
+
+.fTable{
+  /* background-color:lavender; */
+  border-collapse: collapse;
+  margin-bottom: 1em;
+}
+.fTable th{
+  font-family: 'Cairo', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  padding: .2em .4em .2em .1em; 
+  text-align: right;
+}
+.fTable td{
+  padding: .2em .4em .2em .2em; 
+}
+
+.fTable td input{
+  height: 38px;
+  font-size: 18px;
+  padding-left: 0.4em;
+}
+.fTable td .longInput{
+  width: 100%;
+}
+.fTable td .mediumInput{
+  width: 400px;
+}
+.fTable td .smallInput{
+  width: 90px;
+}
+.fTable td textarea{
+  width: 100%;
+  height: 100%;
+  padding: 0.4em;
+  font-size: 16px;
+  line-height: 1.4;
+}
+input, textarea{
+  background-color: var(--c-hellgrau);
+  border: none;
+  outline: 2px solid ghostwhite;
+  transition: 0.3s; 
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+input:focus, textarea:focus{
+  background-color: #fff;
+  outline: 2px solid var(--c-myGreen);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/*##################################################* Button/
+/*##################################################*/
+/*##################################################*/
+
+
+
+
+.myBtn {
+  font-family: 'Barlow', Arial, sans-serif;
+
+  /* font-family: inherit; */
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  overflow: hidden;
+  display: block;
+  
+  width: 120px;
+  height: 38px;
+  margin-bottom: 20px;
+  background-color: var(--c-hellgrau);
+  border: none;
+  outline: 3px solid var(--c-dunkel);
+  transition: 0.3s; 
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.myBtn:hover,
+.myBtn:focus{
+  cursor: pointer;
+  background-color: #fff;
+  color:  var(--c-myGreen);
+  outline: 3px solid var(--c-myGreen);
+  box-shadow: inset 0 5px 6px rgba(0, 0, 0, 0.4);
+}
