@@ -484,7 +484,7 @@
 "Pirazzistraße",
 "Platz d.Deutschen Einheit",
 "Platz Der Deutschen Einheit",
-"Platz Des",
+"Platz Des 9",
 "Pommernstraße",
 "Poststraße",
 "Prinz-Georg-Straße",
@@ -652,3 +652,4 @@
 "Zufahrt Wirtschaftshof",
 "Zum Mühler",
 "Zwingerweg"
+"Äsele Starße"
