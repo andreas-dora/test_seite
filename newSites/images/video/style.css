@@ -473,3 +473,15 @@ article a{
 .table tbody tr:nth-child(even){
   background-color: ghostwhite;
 }
+
+/*##################################################* img und video/
+/*##################################################*/
+/*##################################################*/
+
+img{
+  max-width: 100%;
+}
+video{
+  max-width: 100%;
+  outline: none;
+}
