@@ -1,0 +1,15 @@
+{
+  "name": "qr_code",
+  "version": "1.0.0",
+  "description": "QR Code Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Andreas Breitwieser",
+  "license": "MIT",
+  "dependencies": {
+    "qrcode": "^1.4.4",
+    "xlsx": "^0.16.9"
+  }
+}
