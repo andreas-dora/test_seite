@@ -1,0 +1,10 @@
+BEGIN:VCARD
+N:;;;;
+FN:Taxiruf Offenbach GbR
+ORG:Taxiruf Offenbach GbR;
+TEL;type=WORK;type=VOICE;type=pref:+49 69 81 82 82
+NOTE:24 Stunden für Sie erreichbar
+item1.URL;type=pref:https://taxiruf-offenbach.de/
+item1.X-ABLabel:_$!<HomePage>!$_
+X-ABShowAs:COMPANY
+END:VCARD

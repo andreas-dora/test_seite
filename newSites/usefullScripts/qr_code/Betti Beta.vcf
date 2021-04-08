@@ -1,0 +1,9 @@
+BEGIN:VCARD
+N:Beta;Betti;;;
+FN: Betti  Beta 
+ORG:BetaBest;
+EMAIL;type=INTERNET;type=HOME;type=pref:betti@beta.de
+TEL;type=CELL;type=VOICE;type=pref:01750555555
+item1.URL;type=pref:www.beta.de
+item1.X-ABLabel:_$!<HomePage>!$_
+END:VCARD
