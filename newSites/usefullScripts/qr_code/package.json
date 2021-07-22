@@ -10,6 +10,6 @@
   "license": "MIT",
   "dependencies": {
     "qrcode": "^1.4.4",
-    "xlsx": "^0.16.9"
+    "xlsx": "^0.17.0"
   }
 }
