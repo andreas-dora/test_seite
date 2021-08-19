@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Select</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+
+    <section>
+      <article>
+        <h1>Cab Helper</h1>
+
+        <form id="id_txForm">
+          <div class="formGroup">
+            <input type="text" id="id_startStr" name="startStr" autocomplete="off">
+            <div class="custom-select" style="width:200px;">
+              <select id="id_startCity" name="startCity">
+                <option value="0">Stadt</option>
+                <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                <option value="Frankfurt am Main">Frankfurt</option>
+                <option value="Mühlheim am Main">Mühlheim</option>
+                <option value="Heusenstamm">Heusenstamm</option>
+                <option value="0">---</option>
+              </select>
+            </div>
+          </div>
+          <div class="formGroup">
+            <input type="text" id="id_zielStr" name="zielStr" autocomplete="off">
+            <div class="custom-select" style="width:200px;">
+              <select id="id_zielCity" name="zielCity">
+                <option value="0">Stadt</option>
+                <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                <option value="Frankfurt am Main">Frankfurt</option>
+                <option value="Mühlheim am Main">Mühlheim</option>
+                <option value="Heusenstamm">Heusenstamm</option>
+                <option value="0">---</option>
+              </select>
+            </div>
+          </div>
+          
+          <button type="submit" id="id_mapBtn">Weg</button>
+          <button type="reset">Clear</button>
+        </form>
+        <div class="output">
+          <table>
+             <tbody>
+               <tr>
+                 <td>Von:</td>
+                 <td id="von">   
+                 </td>
+               </tr>
+               <tr>
+                 <td>Nach:</td>
+                 <td id="nach">   
+                 </td>
+               </tr>
+               <tr>
+                 <td>Tarif: </td>
+                 <td>€ 4,50 + 0,10 je <span id="rate"></span></td>
+               </tr>  
+               <tr>
+                 <td>Preis:</td>
+                 <td id="preis">
+                   20.40
+                 </td>
+               </tr>
+               <tr>
+                 <td>Km:</td>
+                 <td id="km">
+                   10.4
+                 </td>
+               </tr>
+               <tr>
+                 <td>Minuten:</td>
+                 <td id="minuten">
+                  12
+                 </td>
+               </tr>
+             </tbody>
+           </table>
+         </div>
+      </article>
+      <aside>
+        <div class="dateTime">
+          <div class="time" id="id_time"></div>
+          <div class="date" id="id_date"></div>
+        </div>
+
+        <div class="notapo">
+          <form id="id_apoForm">
+            <textarea name="apo" id="" cols="30" rows="10"></textarea>
+            <button id="id_copy" class="btn blue">Copy</button>
+          </form>
+        </div>
+      </aside>
+    </section>
+  </main>
+  <script src="frontend.js"></script>
+  <script src="cselect.js"></script>
+</body>
+</html>

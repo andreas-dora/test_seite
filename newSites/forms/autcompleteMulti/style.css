@@ -1,0 +1,19 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.formGroup{
+    margin-bottom: .5em;
+}
+.custom-select{
+    display: inline-block;
+}
+input{
+    height: 38px;
+    width: 300px;
+    font-size: 1.3em;
+}
+select{
+    font-size: 1.3em;
+    padding: .3em;
+    background-color: grey;
+}

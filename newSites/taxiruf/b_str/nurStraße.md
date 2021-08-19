@@ -599,7 +599,7 @@
 "Ulmenstraße",
 "Ulrichschneise",
 "Untere Grenzstraße",
-"Untergass
+"Untergass",
 "Valentin-Unkelbach-Weg",
 "Viehweidschneise",
 "Vilbeler Straße",
@@ -651,5 +651,5 @@
 "Zufahrt Tiefgarage",
 "Zufahrt Wirtschaftshof",
 "Zum Mühler",
-"Zwingerweg"
+"Zwingerweg",
 "Äsele Starße"

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="./materiaFiles/sass/materialize.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Try Materialized</title>
+</head>
+<body>
+  <main>
+      <section>
+          <article>
+              <h1>Materialize Select</h1>
+              <form id="id_txForm" class="col s12">
+                  <div class="row col s12">
+                    <div class="input-field col s9">
+                        <!-- <i class="material-icons prefix">textsms</i> -->
+                        <input type="text" id="id_stSt" class="autocomplete" name="stSt">
+                        <label for="stSt">Start</label>
+                    </div>
+                    <div class="input-field col s3">
+                        <select id="id_stC">
+                          <option value="" disabled selected>Stadt wählen</option>
+                          <option value=", Offenbach am Main">Offenbach</option>
+                          <option value=", Frankfurt am Main">Frankfurt</option>
+                          <option value=", Mühlheim am Main">Mühlheim</option>
+                        </select>
+                        <label>Start City</label>
+                      </div>
+            
+                  </div>
+                  <div class="row">
+                    <button class="btn waves-effect waves-light" id="id_km">km
+                        <i class="material-icons right">send</i>
+                      </button>
+                  </div>
+                  
+              </form>
+              <form action="https://google.com/search" target="_blank" method="GET">
+                <div class="row">
+                    <div class="input-field col s12">
+                      <input class="google" id="id_stA" name="q" type="hidden">
+                      <label for="q">Disabled</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button class="btn waves-effect waves-light" name="q">Google
+                        <i class="material-icons right">send</i>
+                      </button>
+                    <button class="btn waves-effect waves-light" type="reset" name="q" >Reset
+                        <i class="material-icons right">send</i>
+                      </button>
+                      
+                  </div>
+                  <div class="row">
+                    <div class="input-field col s5">
+                        <input list="browsers">
+  <datalist id="browsers">
+    <option value="Internet Explorer">Intern</option>
+    <option value="Firefox">
+    <option value="Chrome">
+    <option value="Opera">
+    <option value="Safari">
+  </datalist>
+
+                    </div>
+                  </div>
+            </form>
+
+
+ 
+          </article>
+      </section>
+  </main>
+<script src="./materiaFiles/js/bin/materialize.min.js"></script>
+<script src="main.js"></script>
+</body>
+
+</html>

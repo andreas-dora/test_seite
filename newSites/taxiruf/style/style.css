@@ -46,18 +46,10 @@ main{
 section{
   margin-bottom: 6vw;
 }
-.inhalt h2{
-  color: var(--c-hilite);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-}
-.inhalt dl{
-  max-width: 400px;
-  /* float: right; */
-  text-align: right;
-}
-.inhalt dd{
-  border-top: 1px solid black;
+input{
+  height: 42px;
+  width: 260px;
+  font-size: 1.4em;
 }
 
 
@@ -77,35 +69,3 @@ th{
   text-align: left;
 }
 
-/*###############################*/
-/*########## code ### ###########*/
-/*###############################*/
-.codeBox{
-  max-width: 800px;
-  padding: 1em;
-  margin-bottom: 1em;
-}
-code{
-  font-size: 150%;
-  line-height: 1.5;
-}
-.codeHead{
-  text-align: right;
-  line-height: 1;
-  border-bottom: 1px solid black;
-  margin-bottom: .6em;
-}
-
-/*###############################*/
-/*########## superBox ###########*/
-/*###############################*/
-
-.superBox{
-  border: 1px solid gray;
-  padding: .5em;
-  margin-bottom: 1em;
-}
-.superContent{
-  font-size: 140%;
-  padding-left: .5em;
-}

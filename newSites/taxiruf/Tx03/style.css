@@ -1,0 +1,257 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root{
+    --c-mainblau: #034f67;
+    --c-hellgrau: #e6e1dc;
+    --c-bikini: #77212e;
+    --c-dunkel: #373434;
+    --c-chili: #9B2335;
+    --c-alarm: #f9423a;
+    --c-superblue: #4244b6;
+    --c-bronze: #a6966c;
+    --c-accent: #a6966c;
+    --c-second: #034f67;
+    --c-hilite: #f9423a;
+    --c-back:#f8f8ff;
+  }
+  body{
+    font-family: Arial, 'sans-sserif';
+    background-color: #dcd7d2;
+    font-size: 100%;
+    height: 100vh ;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  /* header{
+    max-width: 1200px;
+    margin: 1vh auto 0 auto;
+    display: flex;
+ 
+    flex-wrap: wrap;
+    justify-content: space-between;
+  } */
+  section{
+    max-width: 1200px;
+    margin: 1vh auto 0 auto;
+    display: flex;
+ 
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1em;
+  }
+  article{
+    min-width:620px;
+    flex: 2;
+  }
+  .flexBox{
+      max-width: 670px;
+    display: flex;
+    flex-wrap: wrap;
+    /* border: 1px solid red; */
+  }
+  .formBox{
+    
+      min-width: 570px;
+      flex: 2;
+      margin-bottom: 1em;
+  }
+  .txContainer{
+    background-color: #dcd7d2;
+    padding: 0 1em 1em 1em;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  }
+  .buttonContainer{
+      flex: 1   ;
+      min-width: 78px;
+      display: flex;
+      flex-wrap: wrap;
+  }
+
+  /* .gForm{
+    width: 90px;      
+    min-width: 76px;
+  } */
+select{
+  display: inline-block;
+  height: 38px;
+  margin: .5em;
+  /* margin: 0 .8em .5em .5em; */
+  font-family: inherit;
+  font-size: .8em;
+  padding: 0 .5em; 
+  letter-spacing: .1em;
+  font-weight:bold;
+  background-color: #034f67;
+  color: whitesmoke;
+  outline: none;
+  border: none;
+  flex-wrap: wrap;
+}
+  .btn{
+      display: block;
+      height: 38px;
+      width: 90px;     
+      min-width: 76px;
+      margin: 0  .5em .5em 0;
+      font-family: inherit;
+      font-size: .8em;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-weight:bold;
+      color: whitesmoke;
+      outline: none;
+      border: none;
+      flex-wrap: wrap;
+  }
+  aside{
+    margin: 0 auto;
+      min-width:280px;
+      max-width: 360px;
+      flex: 1;
+  }
+  h1{
+    font-size: 2em;
+    color: whitesmoke;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+  }
+  
+  p{
+    margin-bottom: .5em;
+  }  
+  a{
+    color: #034f67;
+  }
+  .time{
+    font-size: 2em;
+  }
+  form{
+      border: 1px solid silver;
+  }
+  .formGroup{
+    margin-bottom: .5em;
+  }
+  
+  
+  
+  .blue{
+    background-color: #034f67;
+  }
+  .red{
+    background-color: #9B2335;
+  }
+  
+  button:hover{
+    cursor: pointer;
+    color: white;
+  }
+  
+  .blue:hover, .blue:active{
+      background-color: #186c85;
+   }
+
+  .notizCon{
+    margin: 0 auto;
+    background-color: #e6e1dc;
+    margin-bottom: .5em;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  }
+  .notizHead{
+    text-align: center;
+    padding: .4em;
+    background-color: #034f67;
+    color: white;
+  }
+  .notizHead h5{
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  }
+  .notiz{
+    background-color: #e6e1dc;
+    padding: .5em;
+  }
+  pre{
+    background-color: #373434;
+    color: white;
+    padding: .5em;
+  }
+  td{
+    padding: .1em .4em .2em 0;
+    /* border: 1px solid black; */
+  }
+
+/*###########################################*/
+/*###########################################*/
+/*###########################################*/
+/*###########################################*/
+
+  .autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+    width: 370px;
+    margin: .5em;
+    height: 36px;
+  }
+  input{
+    display: inline-block;
+    width: 100%;
+   
+    font-size: 1.2em;
+    border: 1px solid transparent;
+    background-color:snow;
+    padding: 10px 6px;
+    font-size: 16px;
+    outline: 1px solid white;
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.2);
+  }
+  input:focus, input:active{
+    background-color: white;
+    box-shadow: inset 1px 1px 6px rgba(0, 0, 0, 0.2);
+
+  }
+  /* input[type=text] {
+    background-color: #f1f1f1;
+  } */
+
+  
+  /*##################################*/
+  /*##################################*/
+  /*##################################*/
+
+  .autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+  }
+  .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
+
+  /*##################################*/
+  /*##################################*/
+  /*##################################*/
+
+ 

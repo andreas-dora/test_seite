@@ -46,7 +46,7 @@ body{
   justify-content: space-between;
   margin-bottom: .5em;
 }
-.zeile{
+.formGroup{
   height: 40px;
   padding: .2em;
 }
@@ -60,7 +60,9 @@ label{
   background-color: silver;
 }
 input{
-  height: 100%;
+  display: inline-block;
+  height: 42px;
+  width: 300px;
   font-size: 1.05em;
   padding-left: .2em;
 }

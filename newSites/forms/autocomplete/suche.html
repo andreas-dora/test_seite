@@ -4,20 +4,30 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Google Suche mit Autocomplete</title>
+  <title>Autocomplete</title>
   <link rel="stylesheet" href="simple.css">
 </head>
 <body>
   <main>
     <article>
-      <form autocomplete="off" action="/action_page.php">
+      <form autocomplete="off" id="myForm">
         <div class="autocomplete" style="width:300px;">
-          <input id="myInput" type="text" name="myCountry" placeholder="Straße">
+          <input id="id_startStr" type="text" name="startStr" placeholder="Straße">
+          <div class="custom-select" style="width:200px;">
+            <select id="id_startCity" name="startCity">
+              <option value="0">Stadt</option>
+              <option value="Offenbach am Main" selected="selected">Offenbach</option>
+              <option value="Frankfurt am Main">Frankfurt</option>
+              <option value="Mühlheim am Main">Mühlheim</option>
+              <option value="Heusenstamm">Heusenstamm</option>
+              <option value="0">---</option>
+            </select>
+          </div>
         </div>
-        <input type="submit">
+        <button id="sndBtn">Senden</button>
       </form>
     </article>
   </main>
-  <script src="auto.js"></script>
+  <script src="myAuto.js"></script>
 </body>
 </html>

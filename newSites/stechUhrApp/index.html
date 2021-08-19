@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helper</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hallo Welt</h1>
+    <form id="myForm">
+        <div class="formGroup">
+            <label for="username">Benutzer:</label>
+            <input type="text" name="username" id="id_username">
+        </div>
+        <div class="formGroup">
+            <label for="pwd">Passwort:</label>
+            <input type="text" name="pwd" id="id_pwd">
+        </div>
+        <div class="fromGroup" id="btnGroup">
+            <button class="btn success" id="startBtn" type="submit" data-action="start" value="start">Start</button>
+            <button class="btn success" type="submit" data-action="stop" value="stop">Stop</button>
+        </div>
+
+    </form>
+    <div id="message"></div>
+
+    <script src="sketch.js"></script>
+</body>
+</html>

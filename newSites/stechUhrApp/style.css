@@ -1,0 +1,17 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
+    color: whitesmoke;
+}
+input{
+    width: 300px;
+    height: 40px;
+    font-size: 1.2em;
+}
+.btn{
+    height: 40px;
+    width: 90px;
+}
+.formGroup{
+    margin-bottom: 1em;
+}

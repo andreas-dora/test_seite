@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <section>
+            <article>
+                <div class="toDoBox">
+                    <form class="toTodForm" id="toDoForm">
+                        <label for="toDo_title" >Titel</label>
+                        <div class="formRow">
+                            <input type="text" name="toDo_title" id="toDo_title" class="toDo_title">
+                        </div>
+                        <textarea name="toDo_Content" id="toDo_Content" cols="30" rows="10" maxlength="200"></textarea>
+                        <div class="formRow">
+                            <input type="date">
+
+                        </div>
+                        <input type="checkbox" name="toDo_Done" id="toDo_Done">
+                        <div class="formRow">
+                            <button type="reset">Reset</button>
+                            <button id="toDo_save">Save</button>
+                        </div>
+
+                    </form>
+                </div>
+            
+            </article>
+        </section>
+    </main>
+</body>
+</html>

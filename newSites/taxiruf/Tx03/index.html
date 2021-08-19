@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TxApp 02</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+  <body>
+   <main>
+     <section class="header">
+      <div>
+        <h1>TxApp 0.2</h1>
+      </div>
+    
+    <div class="dateTime">
+        <div class="time" id="id_time"></div>
+        <div class="date" id="id_date"></div>
+      </div>
+     </section>
+    <section>
+      <article>
+       <div class="container txContainer" id="id_txContainer">
+        <div class="flexBox">
+          <form id="id_txForm">
+            <div class="formGroup">
+              <div class="autocomplete">
+                <input type="text" class="stInput" id="id_stStr" name="stStr" autocomplete="off" autofocus>
+              </div>
+                <select id="id_stC" class="citySel" name="stC">
+                  <option value="0">Stadt</option>
+                  <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                  <option value="Frankfurt am Main">Frankfurt</option>
+                  <option value="Mühlheim am Main">Mühlheim</option>
+                  <option value="">---</option>
+                  <option value="Heusenstamm">Heusenstamm</option>
+                  <option value="Hanau">Hanau</option>
+                </select>
+              </div>
+              <div class="formGroup">
+                <div class="autocomplete">
+                  <input type="text" class="stInput" id="id_zStr" name="zStr" autocomplete="off">   
+                </div>
+                  <select id="id_zC" class="citySel" name="zC">
+                    <option value="0">Stadt</option>
+                    <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                    <option value="Frankfurt am Main">Frankfurt</option>
+                    <option value="Mühlheim am Main">Mühlheim</option>
+                    <option value="0">---</option>
+                    <option value="Heusenstamm">Heusenstamm</option>
+                    <option value="Hanau">Hanau</option>                    
+                  </select>
+              </div>       
+            </form>    
+            <div class="buttonContainer">
+              <form class="gForm" action="https://google.com/search" target="_blank" method="GET">
+                <input type="hidden" name="q" id="id_q" class="goole">
+                <button class="btn blue" id="q">G</button>
+            </form>       
+              <button class="btn red" type="reset" id="id_reset">Reset</button>
+              <button class="btn blue" id="id_kmBtn">km</button>
+          </div>
+       </div>      
+        <div class="pannel" id="id_output">
+         <table>
+            <tbody>
+              <tr><td>Von:</td><td id="von"></td></tr>
+              <tr><td>Nach:</td><td id="nach"></td></tr>
+              <tr><td>Tarif: </td><td><small>€ 4,50 + </small><small id="id_tarif"></small></td></tr>  
+              <tr><td>Preis:</td><td><strong>€ <span id="preis"></span></strong></td></tr>
+              <tr><td>Entfernung:</td><td><span id="km"></span> km</td></tr>
+              <tr><td>Dauer:</td><td><span id="minuten"></span> Minuten</td></tr>
+            </tbody>
+          </table>
+        </div>
+         </div>   
+      </article>
+      <aside>
+       
+       <div class="notizCon">
+         <div class="notizHead">
+         <h5>Notapotheke</h5></div>
+         
+         <div class="notiz">
+           <p><small><?= apoTime; ?></small></p>
+           <p id="id_apoInfo"><?=  apoMain; ?></p>
+           <button class="btn blue" id="id_copyApo">copy</button>
+          <small><a href="https://www.aponet.de/apotheke/notdienstsuche/63067/%20/5">Aponet</a></small>
+           </div>
+
+        </div>
+     
+        </aside>
+    </section>
+  </main>
+  <footer>
+    <p>Tägliche Aktionen </p>
+  </footer>
+  <script src="sketch.js"></script>    
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siblings</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Siblings</h1>
+    <form id="id_txForm">
+        <div class="formGroup">
+          <input type="text" class="autoIn" id="id_stStr" name="stStr" autocomplete="off">
+          <div class="custom-select" id="cS1" style="width:160px;">
+            <select id="id_stC" name="stC">
+              <option value="0">Stadt</option>
+              <option value="Offenbach am Main" selected="selected">Offenbach</option>
+              <option value="Frankfurt am Main">Frankfurt</option>
+              <option value="Mühlheim am Main">Mühlheim</option>
+              <option value="Heusenstamm">Heusenstamm</option>
+              <option value="">---</option>
+            </select>
+          </div>
+    
+        </div>
+        <div class="formGroup">
+          <input type="text" class="autoIn" id="id_zStr" name="zStr" autocomplete="off">
+          <div class="custom-select" style="width:160px;">
+            <select id="id_zC" name="zC">
+              <option value="0">Stadt</option>
+              <option value="Offenbach am Main" selected="selected">Offenbach</option>
+              <option value="Frankfurt am Main">Frankfurt</option>
+              <option value="Mühlheim am Main">Mühlheim</option>
+              <option value="Heusenstamm">Heusenstamm</option>
+              <option value="0">---</option>
+            </select>
+          </div>
+        </div>       
+        <button class="btn blue" id="id_kmBtn">km</button>
+        <button class="btn red" type="reset">C</button>
+      </form>
+
+      <hr>
+      <h1>Google Search</h1>
+      <p><small>This input will be hidden</small></p>
+      <script src="sketch.js"></script>
+</body>
+</html>
