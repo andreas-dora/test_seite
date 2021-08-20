@@ -23,6 +23,11 @@ uTime.innerText = h+":"+m+":"+":"+s;
 uWT.innerText = wt;
 uDate.innerText = tag+"."+monat+"."+jahr;
 utc.innerText = jetzt.getTime();
+
+console.log('Zweistellig: ' + jetzt.toLocaleTimeString('de-de',{
+	hour: '2-digit',
+	minute: '2-digit'
+}));
 // console.log(volleTage[wt]);
 // console.log(volleMonate[monat]);
 

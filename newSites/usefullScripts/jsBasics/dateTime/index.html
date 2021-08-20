@@ -73,16 +73,23 @@
 
 <tbody>
 <tr>
-	<td>toLocaleDateString()</td>
+	<td>.toLocaleDateString()</td>
 	<td>5.11.2019</td>
 </tr>
 <tr>
-	<td>toLocaleTimeString()</td>
+	<td>.toLocaleTimeString()</td>
 	<td>09:55:21</td>
 </tr>
 <tr>
-	<td>toLocaleString()</td>
+	<td>.toLocaleString()</td>
 	<td>5.11.2019, 09:55:21</td>
+</tr>
+<tr>
+  <td>.toLocaleTimeString('de-de',{
+    hour: '2-digit',
+    minute: '2-digit'
+  }));</td>
+  <td>09:55</td>
 </tr>
 </tbody>
 </table>
@@ -93,6 +100,11 @@ var jetzt = new Date();
 console.log(jetzt.toLocaleDateString());
 console.log(jetzt.toLocaleTimeString());
 console.log(jetzt.toLocaleString());
+
+console.log(jetzt.toLocaleTimeString('de-de',{
+	hour: '2-digit',
+	minute: '2-digit'
+}));
 </code>
 </pre>        
   </section>

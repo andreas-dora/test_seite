@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nach Doppelten Einträgen suchen</title>
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <header>
+        <h1>Arrays neue</h1>
+        <h1>Methoden</h1>
+        <dl>
+            <dt>Duplikate Aussortieren</dt>
+            <dd>mit Objekten</dd>
+            <dd>mit Sets</dd>
+            <dt>Arrays kopieren</dt>
+            <dd>mit Objekten</dd>
+            <dd>mit Sets</dd>
+        </dl>
+    </header>
+    <main>
+        <article>
+            <h1>Dopplete Einträge suchen</h1>
+            <p>Aus einem Array von Rund 3600 Straßennamen sollen Dopplete Einträge entfernt werden. Der folgende Code brauchte dafür 10 Millisekunden.
+                Wird die Array-Länge nicht vorab sondern im Loop, also jedes Mal aufs neue abgefragt steigt die Rechenzeit um mehr als 50% auf 16 Millisekunden. 
+            </p>
+          
+
+<pre><code>vor = [ 'Abflugring','Abtsgäßchen','Achenbachstr.' ... ];
+var vorLen = vor.length; 
+for(let i = 0; i < vorLen; i++){ 
+    if(nach.indexOf(vor[i]) === -1){
+        nach.push(vor[i]);
+    }
+}</code></pre>
+<p>Bei dieser Methode wird für jeden Eintrag das gesamte Array nach Duplikaten abgesucht. DAs macht die Sache sehr zeitaufwendig. Man kann nun mit .sort() das Array 
+    vor der Duplikatsuche sortieren. Dann müsste jeder  Eintrag nur noch mit dem daurauffolgenden verglichen werden. Falls die Reihenfolge der Einträge beibehalten werden soll, scheidet diese Lösung aber aus.
+</p>
+<hr>
+<h3>Objekteigenschaften nutzen</h3>
+<pre><code>vor = [ 'Abflugring','Abtsgäßchen','Achenbachstr.' ... ];
+hilfsObjekt = {};
+for(let i of vor){
+    hilfsObjekt[i] = true;
+}
+
+var nach = Object.keys(hilfsObjekt);</code></pre>
+<p>Die Keys in einem Javascript Objekt müssen einzigartig sein. Duplikate werden nicht zugelassen. Anstatt zu Suchen macht sich das folgende Skript die Zugangsbeschränkung eines Obekts zu nutzen.
+    Die Einträge des Arrays werden in Objekt-Schlüssel eines Hilfsobjekts verwandelt. Duplikate werden automatisch abgewiesen. Jeden Key wird einfach der Wert TRUE zuegewiesen.
+    Anschließend werden die Objekt-Keys wieder in ein Array gelesen. Diese Methode benötigt lediglich 2 Millisekunden zum Bearbeiten der 3600 Einträge. 
+</p>
+<hr>
+<h2>Noch leichter mit Set</h2>
+<p>Der neue JS-Datentyp Set macht das aussortieren noch leichter. Der Datentyp lässt nur einzigartige Werte zu.</p>
+<pre><code>var meinSet = new Set(vor);</code></pre>
+<p>Der Inhalt sieht in etwa so aus:</p>
+<pre>
+    [[Entries]]
+[0 … 99]
+0: "Abflugring "
+value: "Abflugring "
+1: "Abtsgäßchen "
+value: "Abtsgäßchen "
+2: "Achenbachstr. "
+3: "Ackermannstr. "
+4: "Adalbert-Stifter-Str. "
+5: "Adalbertstr. "
+
+</pre>
+<p>Der große Vorteil von Set wird mit dem Spear-Oparor sichtbar. Dieser besteht aus Eckigen Klammern und drei Punkten:  </p>
+<p><strong><code>var nach = [... new Set(vor)];</code> </strong></p>
+
+<p>So eingehüllt wird in einer Zeile Code ein Array in ein Duplikate verweigendes Set und zurück in ein Array verwandelt. Diese Methode benötigte ebenfalls lediglich 2 Millisekunden zum Bearbeiten der 3600 Einträge. </p>
+
+
+            <table>
+                <tbody>
+                    <tr>
+                        <td>Länge vorher:</td>
+                        <td id="startL"></td>
+                    </tr>
+                    <tr>
+                        <td>Länge nachher:</td>
+                        <td id="endL"></td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </article>
+        <article>
+            <h1>Arrays kopieren</h1>
+            <p>Ganz soi einfach ist es nicht: Möchte man autarge Kopie eines Arrays erstellen reicht es nicht aus 'b = a' zu sagen. Werden anschließend Änderungen an a vorgenommen, ändert sich auch b.</p>
+            <p>Natürlich kann man im Loop jedes einezelne Element aus a nach b pushen. ES6 bietet Methoden die einige Zeilen sparen</p>
+            <h3>1. Objekt.assign()-Methode</h3>
+            <p>Sieht auf den ersten Blick etwas seltsam aus, kopiert aber ganz einfach von der rechten auf die linke Seite.</p>
+            <p><strong><code>var alteBekannte = Object.assign([], bekannte);
+            </code></strong></p>
+            <hr>
+            <h3>2. Spear-Opperator</h3>
+            <p>Noch seltsamer sieht der Spread-Operator aus. Drei Pünktchen assoziert man doch mit 'Ausslassung', 'verkürzt'. In ES6 werden damit nun Kopien von Arrays gemacht.
+
+            </p>
+            <p><strong><code>var alteBekannte = [... bekannte];</code></strong> - Zack kopiert</p>
+            <p>Das muss man mal gesehen haben. Da möchte man fast behapten die drei Punkte würde für die Trommeln eine Xerox-Kopierers stehen.</p>
+        </article>
+    </main>
+    <script src="sketch.js"></script>
+</body>
+</html>
