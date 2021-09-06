@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tx App New Stylsheet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+         <main>
+         <section class="header">
+          <div>
+            <h1>TxApp 0.12</h1>
+          </div>
+        
+        <div class="dateTime">
+            <div class="time" id="id_time"></div>
+            <div class="date" id="id_date"></div>
+          </div>
+         </section>
+        <section>
+          <article>
+            <div class="container">
+           
+               <fieldset>
+                   <legend>Suchen</legend>
+                <div class="flexBox">
+                <form id="id_txForm">
+                    <div class="formGroup">
+                      <div class="autocomplete">
+                        <input type="text" class="stInput" id="id_stStr" name="stStr" autocomplete="off" autofocus>
+                      </div>
+                        <select id="id_stC" class="citySel" name="stC">
+                          <option value="0">Stadt</option>
+                          <option value="">---</option>
+                          <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                          <option value="Frankfurt am Main">Frankfurt</option>
+                          <option value="Mühlheim am Main">Mühlheim</option>
+                          <option value="Heusenstamm">Heusenstamm</option>
+                        </select>
+                    
+                
+                    </div>
+                    <div class="formGroup">
+                      <div class="autocomplete">
+                        <input type="text" class="stInput" id="id_zStr" name="zStr" autocomplete="off">
+          
+                      </div>
+                        <select id="id_zC" class="citySel" name="zC">
+                          <option value="0">Stadt</option>
+                          <option value="0">---</option>
+                          <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                          <option value="Frankfurt am Main">Frankfurt</option>
+                          <option value="Mühlheim am Main">Mühlheim</option>
+                          <option value="Heusenstamm">Heusenstamm</option>
+                        </select>
+                    </div>       
+                    <!-- <button class="btn blue" id="id_kmBtn">km</button>
+                    <button class="btn red" type="reset">C</button> -->
+                  </form>
+            
+                   
+             
+                    <div class="buttonContainer">
+                        <form class="gForm" action="https://google.com/search" target="_blank" method="GET">
+                          <input type="hidden" name="q" id="id_q" class="goole">
+                          <button class="btn blue" id="q">Google</button>
+                      </form>
+                        
+                        <button class="btn red" type="reset" id="id_reset">Reset</button>
+                        <button class="btn blue" id="id_kmBtn">km</button>
+                    </div>
+                    </div>
+               </fieldset>
+            
+           
+           
+            <div class="pannel" id="id_output">
+             <table>
+                <tbody>
+                  <tr><td>Von:</td><td id="von"></td></tr>
+                  <tr><td>Nach:</td><td id="nach"></td></tr>
+                  <tr><td>Tarif: </td><td><small></small><small id="id_tarif"></small></td></tr>  
+                  <tr><td>Preis:</td><td><strong><span id="preis"></span></strong></td></tr>
+                  <tr><td>Entfernung:</td><td><span id="km"></span></td></tr>
+                  <tr><td>Dauer:</td><td><span id="minuten"></span></td></tr>
+                </tbody>
+              </table>
+            </div>
+            </div>
+          </article>
+          <aside>
+           
+           <div class="container">
+             <div class="notizHead">
+             <h5>Notapotheke</h5></div>
+             
+             <div class="notiz">
+               <p><small><?= apoTime; ?></small></p>
+        
+               <textarea id="apoArea" readonly ><?= apoMain; ?></textarea>
+               <button class="btn blue" id="apoBtn">copy</button>
+              <small><a href="https://www.aponet.de/apotheke/notdienstsuche/63067/%20/5">Aponet</a></small>
+              
+               </div>
+            </div>   
+            </aside>
+        </section>
+      </main>
+      <footer>
+        <p>Tägliche Aktionen </p>
+      </footer>
+      <script>
+        const zeitFeld = document.getElementById("id_time");
+    const datumFeld = document.getElementById("id_date");
+    
+    
+    function init(){
+        const apoArea = document.getElementById('apoArea');
+        const apoBtn = document.getElementById('apoBtn');
+        apoBtn.addEventListener('click', apoFun);
+            
+        const gIn = document.getElementById('id_q');
+        const txForm = document.getElementById('id_txForm');
+        txForm.addEventListener('submit', onSubmit);
+        document.getElementById('id_kmBtn').addEventListener('click', sendRoute);
+        document.getElementById('id_reset').addEventListener('click', () =>{
+            txForm.reset();
+        });
+    
+        const stInput = document.getElementsByClassName('stInput');
+        stInput[0].addEventListener('input', gCopy);
+        stInput[0].addEventListener('click', gCopy);
+        for(let i = 0; i< stInput.length; i++){
+            stInput[i].addEventListener('input', autocomplete);
+            autocomplete(stInput[i], offenbach);
+        }
+    
+        const citySel = document.getElementsByClassName('citySel');
+        citySel[0].addEventListener('change', gCopy);
+    
+        // console.log(citySel.length);
+        for(let i = 0; i< citySel.length; i++){
+            citySel[i].addEventListener('change', citySelect);
+            function citySelect(){
+               console.log('citySelect: ' + citySel[i].value);
+                let cityVal = citySel[i].value;
+                 switch (cityVal){
+                     case 'Offenbach am Main':
+                        autocomplete(stInput[i], offenbach);
+                        break;
+                    case 'Frankfurt am Main':
+                        autocomplete(stInput[i], frankfurt);
+                        break;
+                    case 'Mühlheim am Main':
+                        autocomplete(stInput[i], muehlheim);    
+                        break;
+                 }
+            }
+       
+        }
+    function apoFun(){
+      apoArea.select();
+      document.execCommand("copy");
+      console.log('apo Copy');
+      console.log(apoArea);
+    }
+    function gCopy(){
+        gIn.value = stInput[0].value + ', ' + citySel[0].value;
+    }
+    function autocomplete(inp, arr) {
+        var currentFocus;
+        inp.addEventListener('input', function(e) {
+            var a, b, i, val = this.value;
+            closeAllLists();
+            if (!val) { return false;}
+            currentFocus = -1;
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            this.parentNode.appendChild(a);
+            for (i = 0; i < arr.length; i++) {
+              if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                b = document.createElement("DIV");
+                b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                b.innerHTML += arr[i].substr(val.length);
+                b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    b.addEventListener("click", function(e) {
+                    inp.value = this.getElementsByTagName("input")[0].value + ' ';
+                    closeAllLists();
+                    gCopy();
+                });
+                a.appendChild(b);
+              }
+            }
+        });
+        inp.addEventListener("keydown", function(e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+              currentFocus++;
+              addActive(x);
+            } else if (e.keyCode == 38) { //up
+              currentFocus--;
+              addActive(x);
+            } else if ((e.keyCode == 13)||(e.keyCode == 39) || (e.keyCode == 9)){
+              e.preventDefault();
+              if (currentFocus > -1) {
+                if (x) x[currentFocus].click();
+              }
+            }
+        });
+        function addActive(x) {
+          if (!x) return false;
+          removeActive(x);
+          if (currentFocus >= x.length) currentFocus = 0;
+          if (currentFocus < 0) currentFocus = (x.length - 1);
+          /*add class "autocomplete-active":*/
+          x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+          /*a function to remove the "active" class from all autocomplete items:*/
+          for (var i = 0; i < x.length; i++) {
+            x[i].classList.remove("autocomplete-active");
+          }
+        }
+        function closeAllLists(elmnt) {
+          /*close all autocomplete lists in the document,
+          except the one passed as an argument:*/
+          var x = document.getElementsByClassName("autocomplete-items");
+          for (var i = 0; i < x.length; i++) {
+            if (elmnt != x[i] && elmnt != inp) {
+            x[i].parentNode.removeChild(x[i]);
+          }
+        }
+      }
+      /*execute a function when someone clicks in the document:*/
+      document.addEventListener("click", function (e) {
+          closeAllLists(e.target);
+      });
+      }
+      function sendRoute(){
+          const route = {
+              stA: stInput[0].value + ', ' + citySel[0].value,
+              zA: stInput[1].value + ', ' + citySel[1].value,
+             
+          }
+          console.log(route.stA);
+          google.script.run.withSuccessHandler(getBack).GOOGLEMAPS(route);    }
+    }
+    
+    
+        function getBack(result){
+          document.getElementById('von').textContent = result.start;
+          document.getElementById('nach').textContent = result.ziel;
+          document.getElementById('km').textContent = (result.meter / 1000).toFixed(1) + ' km';
+          document.getElementById('minuten').textContent = result.minuten + ' Minuten';
+          var tarifFeld = document.getElementById('id_tarif');
+          if((myH > 5 ) && (myH < 22)){
+          tarif = 54;
+          tarifFeld.textContent = "€ 4,50 + Normaltarif: € 0,10 für 54 Meter (ca. € 1,85 pro km)"
+          } else {
+         tarif = 51; 
+         tarifFeld.textContent = "€ 4,50 + Nachttartif: € 0,10 für 51 Meter (ca. € 1,95 pro km)"
+        }
+          var preis = ((Math.ceil(result.meter / tarif))*0.1+4.5).toFixed(2);
+          document.getElementById('preis').textContent = '€ ' + preis;
+        }
+    
+    function onSubmit(e){
+        e.preventDefault();
+    }
+      const offenbach = [
+        'Adam-Marsch-Str.','Adolf-Kolping-Platz','Ahornstr.','Aliceplatz','Alicestr.','Alt-Bieber','Alter Heusenstammer Weg','Alter Heusenstammer Weg','Altkönigstr.','Am Alten Judenfriedhof','Am Aussichtsturm','Am Entensee','Am Grenzgraben','Am Heiligenstock','Am Hinterberg','Am Hirtenschild','Am Kandel','Am Klingenrain','Am Maingarten','Am Michelsee','Am Mühlwehr','Am Pfortengraben','Am Rebstock','Am Schießberg','Am Schneckenberg','Am Stützel','Am Waldeck','Am Waldpark','Am Waldschwimmbad','Am Wetterpark','Am Wiesengrund','An der Roten Warte','Andréstr.','Anhalter Str.','Annastr.','Annelise-Heikaus-Str.','Anton-Bruckner-Str.','Anzengruberstr.','Arendsstr.','Arndtstr.','Arnoldstr.','Arthur-Zitscher-Str.','Aschaffenburger Str.','Aschaffweg','Auf der Reiswiese','Auf der Rosenhöhe','August-Bebel-Ring','August-Birlenbach-Str.','August-Hecht-Str.','Auheimer Str.','Aulmannstr.','Austr.','Babenhäuser Schneise','Bachstr.','Backstr.','Bahnhofstr.','Beethovenstr.','Benzstr.','Bergstr.','Berliner Str.','Berliner Str.','Bernardstr.','Bert-Brecht-Str.','Bertha-Von-Suttner-Str.','Bethnal-Green-Str.','Bettinastr.','Bieberer Feldschneise','Bieberer Str.','Bieberer Str.','Bieberer Wiesenschneise','Bieberer Wiesenschneise','Biebernseeweg','Bierbrauerweg','Bildstockstr.','Birkenlohrstr.','Birkenlohrstr.','Birnenweg','Bischofsheimer Weg','Bismarckstr.','Bleichstr.','Blücherstr.','Blumenstr.','Bockschneise','Böhmerwaldweg','Boschweg','Brahmsstr.','Brandenburger Str.','Brandsbornstr.','Braunseeschneise','Bregenzer Str.','Breite Str.','Bremer Str.','Brinkstr.','Brockmannstr.','Bruchschneise','Brückenstr.','Brüder-Grimm-Str.','Brunnenweg','Brüsseler Platz','Buchenweg','Buchhügelallee','Buchrainweg','Buddenstr.','Bürgeler Str.','Bürgerplatz','Bürgerstr.','Carl-Legien-Str.','Carl-Maria-von-Weber-Str.','Carl-von-Ossietzky-Weg','Christian-Pleß-Str.','Clara-Grein-Str.','Cronberger Str.','Cronbergerstr.','Dag-Hammarskjöld-Platz','Daimlerstr.','Danziger Str.','Darmstädter Str.','Dickstr.','Dielmannstr.','Dieselstr.','Dietesheimer Str.','Dietzenbacher Str.','Ditmar-Schaup-Brücke','Domstr.','Donauweg','Dornbergerstr.','Dornbuschstr.','Dörnigheimer Str.','Dr.-Köhler-Str.','Dr.-Rebentisch-Str.','Dreieichring','Dreiherrnsteinweg','Eberhard-von-Rochow-Str.','Ebsenweg','Edelsheimerstr.','Edith-Stein-Str.','Eduard-Oehler-Str.','Egerländer Str.','Eginhardstr.','Eibenweg','Eichwaldweg','Eifelweg','Eigenheimstr.','Elbestr.','Elisabeth-Selbert-Steg','Elisabethenstr.','Ellenbogengasse','Elsa-Brändström-Str.','Elsawaweg','Else-Sterne-Roth-Str.','Emdener Str.','Emmastr.','Engelsgäßchen','Enkheimer Str.','Eppsteiner Str.','Erfaweg','Erich-Ollenhauer-Str.','Erlenbruchstr.','Erlenstegschneise','Erlenstegscshneise','Ermlandweg','Ernst-Griesheimer-Platz','Eschstr.','Eupener Str.','Europaplatz','Fachackerweg','Fachweg','Falltorstr.','Fechenheimer Str.','Feldbergweg','Feldschneise','Feldstr.','Felix-Mendelssohn-Str.','Ferdinand-Porsche-Str.','Feuerwehrplatz','Fichtestr.','Finkenstr.','Fischergasse','Flurstr.','Flutstr.','Forstmeisterschneise','Frankenstr.','Frankfurter Str.','Frankfurter Str.','Franz-Liszt-Str.','Französisches Gäßchen','Frauhohlwiesenweg','Freiherr-vom-Stein-Str.','Freiligrathstr.','Friedensstr.','Friedhofstr.','Friedrichsring','Friedrichstr.','Friesenstr.','Fritz-Erler-Str.','Fritz-Remy-Str.','Frühlingsaustr.','Fuchsbau','Fuldaweg','Gabelsbergerstr.','Gambachschneise','Gartenfeldstr.','Gartenstr.','Gaußstr.','Geisfeldkreisel','Geishornstr.','Geisschneise','Geleitsstr.','Georg-Büchner-Weg','Georg-Oswald-May-Weg','Gerberstr.','Gerhard-Becker-Str.','Gerhart-Hauptmann-Str.','Germaniastr.','Gersprenzweg','Geschwister-Scholl-Str.','Gießener Weg','Glockengasse','Goerdelerstr.','Goethering','Goethestr.','Goldbergstr.','Gottfried-Schaider-Str.','Grabenstr.','Gravenbruchweg','Grazer Str.','Groß-Hasenbach-Str.','Große Marktstr.','Großer Biergrund','Grünring','Gustav-Adolf-Str.','Gustav-Stresemann-Str.','Gutenbergstr.','Habichtswaldweg','Hafen','Hafenallee','Hafeninsel','Hafenplatz','Hainbachweg','Hainerweg','Hainstädter Str.','Hamburger Str.','Hanauer Str.','Händelplatz','Harrasweg','Hartmannstr.','Hauffstr.','Hauffstr.','Haupteinfahrt Sana Klinikum','Haydnstr.','Hebestr.','Heinrich-Heine-Str.','Heinrich-Krumm-Str.','Helene-Mayer-Str.','Herderstr.','Hergenröderstr.','Hergenröderweg','Hermann-Löns-Str.','Hermann-Steinhäuser-Str.','Hermannstr.','Herrnrainweg','Herrnstr.','Hertzweg','Herzogstr.','Hesselbuschstr.','Hessenring','Hessenstr.','Heusenstammer Schneise','Heusenstammer Weg','Heusenstammer-Feld-Schneise','Hintergasse','Hinterwaldweg','Hochrainstr.','Hochstädter Str.','Hochstr.','Hofstr.','Hohe Str.','Hölderlinstr.','Holzwiesenweg','Hospitalstr.','Hugenottenplatz','Hugo-Eberhardt-Weg','Hugo-Wolf-Str.','Humboldtstr.','Humboldtstr.','Humperdinckstr.','Hunsrückweg','Im Birkengrund','Im Eschig','Im Frankfurter Grund','Im Gartenfeld','Im Gartenrain','Im Großen Ahl','Im Hain','Im Mittelfeld','In den Bruchgärten','In den Lindengärten','In den Obstgärten','in Den Rosengärten','In den Tannen','in Den Weingärten','In der Kalkwiese','In der Tränk','Innsbrucker Str.','Isenburgring','J.-F.-Kennedy-Promenade','Jacob-Mönch-Str.','Jacques-Offenbach-Str.','Jägerweg','Jahnstr.','Jakob-Mönch-Str.','Jean-Weipert-Str.','Johann-Strauß-Weg','Johannes-Morhart-Str.','Jossaweg','Judenbuschschneise','Julie-Heraeus-Str.','Julius-Leber-Str.','Kahlweg','Kaiserleipromenade','Kaiserleistr.','Kaiserstr.','Kalte-Klinge-Schneise','Kantstr.','Karl-Ferdinand-Becker-Weg','Karl-Herdt-Weg','Karl-Nahrgang-Weg','Karlstr.','Karolingerstr.','Kasernenstr.','Kaufunger-Wald-Weg','Kékuléstr.','Kettelerstr.','Kiefern-Neuheeg-Schneise','Kinzigweg','Kirchenpfad','Kirchgasse','Kleewasem','Kleewasen','Kleine Bleiche','Kleine Marktstr.','Kleiner Biergrund','Kleines Gäßchen','Klingsporstr.','Klopstockstr.','Konrad-Adenauer-Str.','Kopernikusstr.','Körnerstr.','Kornkammer','Krafftstr.','Kreuzfeldweg','Kreuzstr.','Krimmerstr.','Krotzenburger Str.','Kühruhschneise','Kurfürstenstr.','Kurhessenplatz','Kurhessenstr.','Kurt-Schumacher-Str.','Kurt-Tucholsky-Str.','Kurze Str.','Lachwiesen','Lahnstr.','Lämmerspieler Weg','Lammertstr.','Landgraf-Friedrich-Str.','Landgrafenring','Landgrafenstr.','Langener Str.','Langschneise','Langschneise','Langstr.','Lärchenpfad','Lärchenschneise','Larochestr.','Laskastr.','Lausitzer Str.','Lauterbornweg','Lautzenhardtweg','Lehenstr.','Lehrstr.','Leibnizstr.','Leimenkautschneise','Leopold-Bode-Str.','Lessingstr.','Lichtenplattenweg','Liebigstr.','Lilienthalstr.','Lilistr.','Limburger Weg','Lindenstr.','Linsenberg','Linzer Str.','Lohrweg','Lohweg','Lortzingstr.','Löwenstr.','Lübecker Str.','Ludo-Mayer-Str.','Ludwigstr.','Luisenstr.','Lützowstr.','Maindammweg','Maingaustr.','Mainkurstr.','Mainländerstr.','Mainstr.','Mainuferradweg','Mainzer Ring','Manchotstr.','Marburger Weg','Marienstr.','Marktplatz','Markusplatz','Markwaldstr.','Marstallstr.','Martin Luther Park','Martin-Luther-Park','Masurenweg','Mater-Bonifacia-Weg','Mathildenplatz','Mathildenstr.','Matthias-Erzberger-Str.','Mauerfeldstr.','Mäuslachschneise','Max-Dienemann-Weg','Max-Reger-Str.','Maybachstr.','Mecklenburger Str.','Memeler Str.','Merianstr.','Merowingerstr.','Mistweg','Mittelschneise','Mittelseestr.','Mödlingstr.','Mozartweg','Mozartweg','Mühlbachweg','Mühlheimer Str.','Müllerweg','Müllerweg','Mümlingweg','Münzenbergerstr.','Nahestr.','Nasses Dreieck','Nasses Dreieck','Neckarstr.','Neue Schneise','Neuer Weg','Neugasse','Neusalzer Str.','Niddaweg','Niedergasse','Nordring','Obere Grenzstr.','Oberfeldstr.','Oberhofstr.','Obermühlstr.','Oberräder Weg','Obertshäuser Wegschneise','Odenwaldring','Offenbacher Str.','Oppelner Str.','Ostendplatz','Ostpreußenstr.','Ostschneise','Ostsschneise','Osw.-v.-Nell-Breuning-Str.','Oswald-Von-Nell-Breuning-Str.','Ottersfuhrstr.','Otto-Scheugenpflug-Str.','Otto-Steinwachs-Weg','Parkhaus Ziegelgasse','Parkstr.','Paul-Löbe-Str.','Pechschneise','Pfaffenweg','Pfarrer-Kaspar-Walter-Str.','Pfarrgasse','Philipp-Reis-Str.','Phillip-Ullrich-Str.','Phillipp-Ullrich-Str.','Pirazzistr.','Platz d.Deutschen Einheit','Platz Der Deutschen Einheit','Platz des 8. Mai 1945','Pommernstr.','Poststr.','Prinz-Georg-Str.','Provisorische Anbindung Zur Walter-Spiller-Brücke','Puteauxpromenade','Querstr.','Radfeldstr.','Rathausgasse','Rathenaustr.','Regina-Jonas-Weg','Rehschneise','Reichertweg','Reinhardswaldweg','Rembrücker Wegschneise','Rheinstr.','Rhönstr.','Richard-Wagner-Str.','Riethgasse','Robert-Koch-Str.','Rodauweg','Rödernstr.','Rohrmühlstr.','Rohrstr.','Rondellweg','Roseggerstr.','Rosenaustr.','Rostocker Str.','Rotdornweg','Rowentastr.','Rubensstr.','Rügener Str.','Rumpenheimer Schloßgasse','Rumpenheimer Str.','Saaleweg','Sachsenstr.','Saligstr.','Salomon-Formstecher-Weg','Salzburger Str.','Salzgäßchen','Samlandweg','Sandgasse','Schäferbornweg','Schäferstr.','Scharfensteinerstr.','Scheffelstr.','Schifferstr.','Schillerplatz','Schillerstr.','Schillstr.','Schlesierstr.','Schloßgartenstr.','Schloßgrabengasse','Schloßmühlstr.','Schloßstr.','Schmiedegasse','Schnegelbachweg','Schöffenstr.','Schönbornstr.','Schöne Aussicht','Schopenhauerstr.','Schreberstr.','Schubertstr.','Schuckertweg','Schulstr.','Schumannstr.','Schutzbaumstr.','Schwarzwaldweg','Seestr.','Seligenstädter Str.','Senefelderstr.','Sibeliusstr.','Siebeneichen','Siegfried-Guggenheim-Weg','Siemensstr.','Sigmund-Merzbach-Platz','Sinnweg','Sophie-Von-La-Roche-Platz','Spatzennest','Spessartring','Speyerstr.','Spießstr.','Sprendlinger Landstr.','Sprendlinger Weg','St.-Gilles-Str.','Stadthof','Starkenburgring','Staudenstr.','Staufenstr.','Stauffenbergstr.','Steinbrechpfad','Steinheimer Str.','Steinweg','Sternstr.','Stiftstr.','Stoltzestr.','Storchsrain','Strackgasse','Strahlenbergerstr.','Sudetenstr.','Sulzbachweg','Tambourweg','Tauberweg','Taunusring','Taunusstr.','Tempelseestr.','Tennisstr.','Thüringer Str.','Tilsiter Weg','Trappbörnchen','Tulpenhofstr.','Uhlandstr.','Ulmenstr.','Ulrichschneise','Untere Grenzstr.','Untergass','Valentin-Unkelbach-Weg','Viehweidschneise','Vilbeler Str.','Vogelsbergweg','Von-Behring-Str.','Von-Brentano-Str.','Von-Gluck-Str.','Vorderwaldweg','Wacholderpfad','Waitzenäckerstr.','Waldenburger Weg','Waldhofschneise','Waldhofstr.','Waldstr.','Waldstr.','Walpertswiesenweg','Walter-Spiller-Brücke','Warschauer Str.','Weidigweg','Weikertsblochstr.','Weilburger Weg','Weinbergstr.','Weißdornpfad','Welfenstr.','Wenkenwiesenweg','Werraweg','Weserstr.','Westerwaldweg','Wiener Ring','Wiesenstr.','Wikingerstr.','Wilhelm-Busch-Str.','Wilhelm-Leuschner-Str.','Wilhelm-Schramm-Str.','Wilhelm-Weber-Weg','Wilhelmsplatz','Wilhelmstr.','Wilhelmstr.','Willemerstr.','Willi-Bauer-Str.','Wingertstr.','Wintergasse','Wolframstr.','Wolfsheckenweg','Würzburger Str.','Yorckstr.','Ziegelstr.','Zu Den Mainwiesen','Zufahrt Tiefgarage','Zufahrt Wirtschaftshof','Zum Mühler','Zwingerweg','Äsele Starße'
+    ];
+      const frankfurt = [
+    
+      ];
+    
+      const muehlheim = [
+    'Ahornstr.','Albert-Schweitzer-Str.','Albertstr.','Alfred-Delp-Str.','Alter Frankfurter Weg','Am Alten Friedhof','Am Dreispitz','Am Grünen See','Am Hansteinweiher','Am Letzten Busch','Am Maienschein','Am Schwimmbad','Am Waldgraben','Am Wingertsweg','Amselweg','An Den Hirtenwiesen','An der Hildebrandsmühle','An der Jünglingshecke','Angergasse','Anne-Frank-Str.','Anton-Dey-Str.','Apfelbaumgasse','Arndtstr.','Auf Den Hirtenwiesen','August-Bebel-Str.','Außenliegend','Aussiger Str.','Austr.','Bachgasse','Bahnhofstr.','Basaltstr.','Bebraer Str.','Beethovenstr.','Benzstr.','Bernhardstr.','Bert-Brecht-Str.','Bertha-Von-Suttner-Weg','Bettinastr.','Bieberer Str.','Bieberer Weg','Birkenwaldstr.','Bischof-Kaiser-Str.','Bischof-Ketteler-Str.','Bleichstr.','Blumenstr.','Bornstr.','Bornweg','Borsigstr.','Brentanostr.','Breslauer Str.','Brückenstr.','Brühlweg','Brunnenstr.','Brunnenweg','Buchenweg','Bürgermeister-Beheim-Str.','Bürgermeister-Hainz-Str.','Büttnerstr.','Carl-Zeiss-Str.','Charles-Ottina-Str.','Daimlerstr.','Dammstr.','Dieselstr.','Dietesheimer Str.','Dietrich-Bonhoeffer-Str.','Dresdener Str.','Dürerstr.','Ebertstr.','Edith-Stein-Str.','Eigenheimstr.','Elbestr.','Elisabethenstr.','Erlenweg','Ernst-Abbe-Str.','Fackelswiesenweg','Fährenstr.','Feldbergstr.','Feldstr.','Feststr.','Fichtestr.','Forsthausstr.','Forstweg','Franz-Jakoby-Str.','Freiherr-vom-Stein-Str.','Friedensstr.','Friedhofsweg','Friedrich-Ebert-Str.','Friedrichstr.','Fritz-Erler-Str.','Fuggerstr.','Fünfhäusergasse','Gartenstr.','Geleitstr.','Gerhart-Hauptmann-Str.','Goerdelerstr.','Goethestr.','Gottfried-Keller-Str.','Grenzstr.','Grimmstr.','Gutenbergstr.','Haingrabengasse','Hallgartenstr.','Hanauer Str.','Händelstr.','Hauffstr.','Hauptstr.','Hausener Str.','Hausener Weg','Hegelstr.','Heinestr.','Heinrich-Böll-Str.','Helpertseestr.','Henri-Dunant-Str.','Herderstr.','Hermann-Hesse-Str.','Hermann-Löns-Str.','Herrnstr.','Hindemithstr.','Hirschgasse','Hoffmannstr.','Holbeinstr.','Im Brückfeld','Im Heimgarten','Im Steinbeunerfeld','In der Seewiese','Industriestr.','Jahnstr.','Jean-Monnet-Str.','Josefstr.','Karlstr.','Käthe-Kollwitz-Str.','Kettelerstr.','Kirchborngasse','Kirchstr.','Kirchweg','Kolpingstr.','Konrad-Adenauer-Str.','Körnerstr.','Kreuzstr.','Krummstr.','Lämmerspieler Str.','Lämmerspieler Weg','Leipziger Str.','Leonhardstr.','Leopoldstr.','Lerchenweg','Lessingstr.','Leuschnerstr.','Lilienweg','Lindenstr.','Louis-Raverat-Str.','Ludwigsplatz','Ludwigstr.','Luisenstr.','Mainstr.','Mainstweg','Marktstr.','Memelstr.','Mozartstr.','Mühlheimer Str.','Mühlstr.','Müllerweg','Nelkenweg','Neustr.','Obermainstr.','Obertshäuser Str.','Oberwiese','Odenwaldstr.','Offenbacher Str.','Offenbacher Weg','Otto-Hahn-Str.','Paulstr.','Pestalozzistr.','Peterstr.','Pfaffenbrunnenweg','Pfarrgasse','Philipp-Reis-Str.','Quellenweg','Querstr.','Raabestr.','Rabenlohweg','Rathenaustr.','Rilkestr.','Ringstr.','Rittelsweg','Robert-Bosch-Weg','Robert-Koch-Str.','Robert-Schuman-Str.','Rodaustr.','Roseggerstr.','Rosenweg','Rösterweg','Rote-Warte-Str.','Rubensstr.','Rückertstr.','Rumpenheimer Str.','Sackgasse','Saint-Priest-Str.','Schillerstr.','Schlehenstr.','Schlesierstr.','Schmiedegasse','Schubertstr.','Schulstr.','Schumacherstr.','Senefelderallee','Siedlerstr.','Siemensstr.','Spessartstr.','Stauffenbergstr.','Steinheimer Str.','Steinkautenweg','Sudetenstr.','Südring','Tannenweg','Taunusstr.','Thomas-Mann-Str.','Tiefenorter Ring','Tilsiter Str.','Trachstr.','Tränkgasse','Tulpenweg','Uhlandstr.','Ulmenstr.','Unter den Eichen','Untermainstr.','Vogelsangstr.','Waldheimer Str.','Waldstr.','Weingartenweg','Wichernstr.','Wiesenstr.','Wilhelm-Busch-Str.','Wilhelm-Leuschner-Str.','Wilhelmstr.','Wingertstr.','Zeppelinring','Zimmerstr.','Zum Markwald'
+      ];
+    
+    
+    // #####################################################
+    // #####################################################
+    // #####################################################
+    
+    function tellTime(){
+        let now = new Date();
+        myH = now.getHours(); //.toString().padStart(2, 0);
+        let myM = now.getMinutes().toString().padStart(2, 0);
+        let myDay = now.getDay();
+        let myDate = now.getDate().toString().padStart(2, 0);
+        let myM_ = now.getMonth()+1; 
+        let myMonth = myM_.toString().padStart(2, 0);
+        const tage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+        let myTime = myH.toString().padStart(2, 0) + ":" + myM; // ":" + myS;
+        var myDatum = tage[myDay] + " " + myDate + "." + myMonth;
+        zeitFeld.innerText = myTime;
+        datumFeld.innerText = myDatum;
+        // var tarifFeld = document.getElementById('id_tarif');
+        // if((myH > 5 ) && (myH < 22)){
+        //   tarif = 54;
+        //   tarifFeld.textContent = "Normaltarif: € 0,10 für 54 Meter (ca. € 1,85 pro km)"
+        // } else {
+        //   tarif = 51; 
+        //   tarifFeld.textContent = "Nachttartif: € 0,10 für 51 Meter (ca. € 1,95 pro km)"
+        // }
+      }
+     
+     // #####################################################
+     // #####################################################
+     
+    
+    
+     // autocomplete(document.getElementById("startStr"), frankfurt);
+      document.addEventListener('DOMContentLoaded', init);
+      setInterval(tellTime, 1000);
+    
+    
+      </script>
+      </body>
+    </html>
+    

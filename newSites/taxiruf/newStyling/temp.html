@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 100%;
+        }
+        h1, label, legend{
+            font-style: italic;
+            text-transform: uppercase;
+            letter-spacing: .02em;
+        }
+        .flexBox{
+            display: flex;
+            gap: 1em;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        .dummy{
+            padding: 1em 2em;
+            background-color: whitesmoke;
+        }
+        .dummy h2{
+            font-size: clamp(2em, 5vw, 6em);
+            margin-bottom: .4em;
+        }
+        .dummy p{
+            /* background-color: black; */
+            line-height: 1.5;
+            font-size: 1em;
+        }
+        article{
+            min-width: 320px;
+            width: 50%;
+        }
+        aside{
+            min-width: 300px;
+            max-width: 400px;
+        }
+        fieldset{
+            padding: .8em 1em;
+        }
+        label{
+            font-size:  .8em;
+        }
+        legend{
+            padding: .4em;
+            font-weight: bold;
+        }
+        input{
+            display: block;
+            height: 38px;
+            width: 100%;
+            margin-bottom: 1em;
+            font-size: 1em;
+        }
+        textarea{
+            display: block;
+            min-height: 100px;
+            width: 100%;
+            margin-bottom: 1em;
+            resize: none;
+            font-family: inherit;
+            font-size: 1em;
+            /* padding: .3em; */
+        }
+        button{
+            display: inline-block;
+            width: 100px;
+            height: 38px;
+            font-family: inherit;
+            font-style: italic;
+            font-size: .8em;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+            outline: none;
+            border: 4px solid #000;
+        }
+        button:hover{
+            border-color: #f9423a;
+            color: #f9423a;;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Meine App</h1>
+    </header>
+        <main>
+            <section class="flexBox">
+                <aside>
+                    <fieldset>
+                        <legend>Neue Aufgabe</legend>
+                        <form id="toDo__Form">
+                            <label for="todo__title">Title</label>
+                            <input type="text" id="todo__title" name="title" autocomplete="off">
+                            <label for="todo__content">Beschreibung</label>
+                            <textarea name="todo__content" id="todo__content" cols="30" rows="10"></textarea>
+                            <button type="submit" class="btn" id="save">save</button>
+                        </form>
+                    </fieldset>
+                </aside>
+                <article class="dummy">
+                    <h2>Here's my dummy</h2>
+                    <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum, corrupti.</h4>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nostrum suscipit ipsam, molestiae totam quibusdam facilis ipsum molestias adipisci eaque id mollitia error aliquid nobis et autem, distinctio explicabo maxime! Quisquam, consequuntur voluptas iste veniam quod nostrum rem corrupti cum eligendi amet impedit animi nihil iure dignissimos a ullam similique autem totam cupiditate adipisci sit facere architecto eaque. Quia modi iste vitae, numquam voluptas enim id odit, facilis sint dolorum dolore quaerat ab asperiores cum consectetur rem? Error aperiam eligendi exercitationem iure nisi in ex vitae, molestiae, ipsum quaerat repellendus praesentium culpa odio aut natus impedit cupiditate consectetur totam nostrum. Illum nihil mollitia tempora quaerat. Debitis officia explicabo perferendis voluptatum laboriosam reiciendis. Labore dolores quae, numquam suscipit ad enim adipisci ea.</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, quia illum. Molestias aperiam mollitia sunt distinctio sed exercitationem eaque facere!</p>
+                    <p><small>Lorem ipsum dolor sit amet  adipisicing.</small></p>
+                </article>
+                <aside class="gray">
+                
+                </aside>
+        </section>
+    </main>
+    <script>
+
+        function init(){
+            console.log('init');
+            const tForm = document.getElementById('toDo__Form');
+            const tTitle = document.getElementById('todo__title');
+            const tContent = document.getElementById('todo__content');
+            const tSave = document.getElementById('save');
+            tForm.addEventListener('submit', onSubmit);
+            tSave.addEventListener('click', sendTData);
+
+            function onSubmit(e){
+                e.preventDefault();
+        }
+            function sendTData(){
+                console.log('from sendData');
+                const tData = {
+                    title: tTitle.value,
+                    content: tContent.value
+                 }; 
+                 console.log(tData);
+                 google.script.run.notizEintragen(tData);    
+                //  google.script.run.withSuccessHandler(getBack).GOOGLEMAPS(route);    
+            }
+        }
+        
+
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
