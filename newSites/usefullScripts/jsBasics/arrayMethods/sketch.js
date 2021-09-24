@@ -1,16 +1,16 @@
 var todoList = [
-  'Aufstehen',
-  'Frühstück',
-  'Einkaufen',
+  'arbeiten',
+  4,
+  10,
+  404,
+  5,
   'Aufräumen',
-  'Daten sichern',
-  'Coding',
-  'Workout'
+  'Workout',
+  'Übung'
 ];
 
-var niceOutput = todoList.join(', und dann: ');
-console.log(niceOutput);
-
+todoList.sort();
+console.log(todoList);
 //----------------------
 // var stack = [];
 // stack.push("eins");

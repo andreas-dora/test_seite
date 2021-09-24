@@ -104,9 +104,14 @@
                     <fieldset>
                         <legend>Neue Aufgabe</legend>
                         <form id="toDo__Form">
-                            <label for="todo__title">Title</label>
-                            <input type="text" id="todo__title" name="title" autocomplete="off">
-                            <label for="todo__content">Beschreibung</label>
+                            <!-- <label for="todo__title">Title</label>
+                            <input type="text" id="todo__title" name="title" autocomplete="off"> -->
+                            <label for="todo__title">Eins</label>
+                            <input type="text" id="eins" name="eins" autocomplete="off">
+                            <label for="todo__title">Zwei</label>
+                            <input type="text" id="zwei" name="zwei" autocomplete="off">
+                            <label for="todo__title">q</label>
+                            <input type="text" id="q" name="q" autocomplete="off">
                             <textarea name="todo__content" id="todo__content" cols="30" rows="10"></textarea>
                             <button type="submit" class="btn" id="save">save</button>
                         </form>
@@ -129,7 +134,7 @@
         function init(){
             console.log('init');
             const tForm = document.getElementById('toDo__Form');
-            const tTitle = document.getElementById('todo__title');
+ 
             const tContent = document.getElementById('todo__content');
             const tSave = document.getElementById('save');
             tForm.addEventListener('submit', onSubmit);
@@ -137,6 +142,9 @@
 
             function onSubmit(e){
                 e.preventDefault();
+                console.log('Default Prevention');
+                tForm.q.value = tForm.eins.value + ', ' +  tForm.zwei.value;
+                tForm.submit();
         }
             function sendTData(){
                 console.log('from sendData');

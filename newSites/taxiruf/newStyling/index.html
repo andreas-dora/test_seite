@@ -8,114 +8,127 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-   
-         <main>
-         <section class="header">
-          <div>
-            <h1>TxApp 0.12</h1>
-          </div>
+   <nav>
+      <a href="#">Drive</a>
+       <a href="#">Kalender</a>
+       <a href="#">Tx-HP</a>   
+       <div class="dopdown">
+        <button class="navBtn" id="apoBtn">Apotheke</button>
+        <div class="dropContent">
+          <small>Notdienst bis 11.9.2021 um 08:30</small>
+          <textarea name="" id="" cols="20" rows="4">Lauterborn Apotheke,
+           Richard-Wagner-Straße 93</textarea>
+           <button class="btn blue" id="copyBtn">Coy</button>
+        </div>
+       </div>
+       <div class="time" id="id_date"></div>
+       <div  id="id_time" class="time"></div>
+   </nav>
+  <main>
+     
+      
+ 
         
-        <div class="dateTime">
-            <div class="time" id="id_time"></div>
-            <div class="date" id="id_date"></div>
-          </div>
-         </section>
-        <section>
-          <article>
-            <div class="container">
-           
-               <fieldset>
-                   <legend>Suchen</legend>
-                <div class="flexBox">
-                <form id="id_txForm">
-                    <div class="formGroup">
-                      <div class="autocomplete">
-                        <input type="text" class="stInput" id="id_stStr" name="stStr" autocomplete="off" autofocus>
-                      </div>
-                        <select id="id_stC" class="citySel" name="stC">
-                          <option value="0">Stadt</option>
-                          <option value="">---</option>
-                          <option value="Offenbach am Main" selected="selected">Offenbach</option>
-                          <option value="Frankfurt am Main">Frankfurt</option>
-                          <option value="Mühlheim am Main">Mühlheim</option>
-                          <option value="Heusenstamm">Heusenstamm</option>
-                        </select>
-                    
-                
-                    </div>
-                    <div class="formGroup">
-                      <div class="autocomplete">
-                        <input type="text" class="stInput" id="id_zStr" name="zStr" autocomplete="off">
+ 
+    
+    <section>
+      <article>
+     
+       <div class="flexBox">
+        <form id="id_txForm">
+          <div class="formGroup">
+            <div class="autocomplete">
+              <input type="text" class="stInput" id="id_stStr" name="stStr" autocomplete="off" autofocus>
+            </div>
+              <select id="id_stC" class="citySel" name="stC">
+                <option value="0">Stadt</option>
+                <option value="">---</option>
+                <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                <option value="Frankfurt am Main">Frankfurt</option>
+                <option value="Mühlheim am Main">Mühlheim</option>
+                <option value="Heusenstamm">Heusenstamm</option>
+              </select>
           
-                      </div>
-                        <select id="id_zC" class="citySel" name="zC">
-                          <option value="0">Stadt</option>
-                          <option value="0">---</option>
-                          <option value="Offenbach am Main" selected="selected">Offenbach</option>
-                          <option value="Frankfurt am Main">Frankfurt</option>
-                          <option value="Mühlheim am Main">Mühlheim</option>
-                          <option value="Heusenstamm">Heusenstamm</option>
-                        </select>
-                    </div>       
-                    <!-- <button class="btn blue" id="id_kmBtn">km</button>
-                    <button class="btn red" type="reset">C</button> -->
-                  </form>
-            
-                   
-             
-                    <div class="buttonContainer">
-                        <form class="gForm" action="https://google.com/search" target="_blank" method="GET">
-                          <input type="hidden" name="q" id="id_q" class="goole">
-                          <button class="btn blue" id="q">Google</button>
-                      </form>
-                        
-                        <button class="btn red" type="reset" id="id_reset">Reset</button>
-                        <button class="btn blue" id="id_kmBtn">km</button>
-                    </div>
-                    </div>
-               </fieldset>
-            
-           
-           
-            <div class="pannel" id="id_output">
-             <table>
-                <tbody>
-                  <tr><td>Von:</td><td id="von"></td></tr>
-                  <tr><td>Nach:</td><td id="nach"></td></tr>
-                  <tr><td>Tarif: </td><td><small></small><small id="id_tarif"></small></td></tr>  
-                  <tr><td>Preis:</td><td><strong><span id="preis"></span></strong></td></tr>
-                  <tr><td>Entfernung:</td><td><span id="km"></span></td></tr>
-                  <tr><td>Dauer:</td><td><span id="minuten"></span></td></tr>
-                </tbody>
-              </table>
+      
+          </div>
+          <div class="formGroup">
+            <div class="autocomplete">
+              <input type="text" class="stInput" id="id_zStr" name="zStr" autocomplete="off">
+
             </div>
-            </div>
-          </article>
-          <aside>
-           
-           <div class="container">
-             <div class="notizHead">
-             <h5>Notapotheke</h5></div>
-             
-             <div class="notiz">
-               <p><small><?= apoTime; ?></small></p>
+              <select id="id_zC" class="citySel" name="zC">
+                <option value="0">Stadt</option>
+                <option value="0">---</option>
+                <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                <option value="Frankfurt am Main">Frankfurt</option>
+                <option value="Mühlheim am Main">Mühlheim</option>
+                <option value="Heusenstamm">Heusenstamm</option>
+              </select>
+          </div>       
+        </form>
+  
+         
+   
+          <div class="buttonContainer">              
+              <button class="btn red" type="reset" id="id_reset">R</button>
+              <button class="btn blue" id="id_kmBtn">Map</button>
+          </div>
+          <div class="buttonContainer">
+              <form class="gForm" action="https://google.com/search" target="_blank" method="GET">
+                <input type="hidden" name="q" id="id_q" class="google">
+                <button class="btn blue" id="q">Web</button>
+            </form>
+          </div>
+          
+       </div>    
         
-               <textarea id="apoArea" readonly ><?= apoMain; ?></textarea>
-               <button class="btn blue" id="apoBtn">copy</button>
-              <small><a href="https://www.aponet.de/apotheke/notdienstsuche/63067/%20/5">Aponet</a></small>
-              
-               </div>
-            </div>   
-            </aside>
+      </article>
+      <aside>
+        <form>
+          <div class="big"><input type="text" class="output" name="outPreis" id="preis" readonly></div>
+          <div class="small"><input type="text" name="outVon" id="outStart" class="output"></div>
+          <div class="small"><input type="text" name="outZiel" id="outZiel" class="output"></div>
+          <div class="small"><input type="text" name="outTarirf" id="outTarirf" class="output"></div>
+        </form>
+               <table>
+            <tbody>
+              <tr><td colspan="4" id="von"></td></tr>
+              <tr><td colspan="4" id="nach"></td></tr>
+              <tr><td colspan="4"><small id="id_tarif"></small></td></tr>  
+              <tr>
+                <td><strong><span id="preis"></span></strong></td>
+                <td><span id="km"></span></td>
+                <td><span id="minuten"></span></td>
+                <td></td>
+              </tr>              
+            </tbody>
+          </table>
+      
+        </aside>
+    </section>
         </section>
       </main>
       <footer>
         <p>Tägliche Aktionen </p>
       </footer>
       <script>
-        const zeitFeld = document.getElementById("id_time");
+     
+    const zeitFeld = document.getElementById("id_time");
     const datumFeld = document.getElementById("id_date");
     
+       
+    function tellTime(){
+        let now = new Date();
+        zeitFeld.innerText = now.toLocaleTimeString('de-De',{  
+          hour: '2-digit',
+          minute: '2-digit'
+        });
+        datumFeld.innerText = now.toLocaleDateString('de-DE',{
+          weekday: 'short',
+          day: '2-digit',
+          month: '2-digit'
+        });
+      }
     
     function init(){
         const apoArea = document.getElementById('apoArea');
@@ -283,37 +296,6 @@
     'Ahornstr.','Albert-Schweitzer-Str.','Albertstr.','Alfred-Delp-Str.','Alter Frankfurter Weg','Am Alten Friedhof','Am Dreispitz','Am Grünen See','Am Hansteinweiher','Am Letzten Busch','Am Maienschein','Am Schwimmbad','Am Waldgraben','Am Wingertsweg','Amselweg','An Den Hirtenwiesen','An der Hildebrandsmühle','An der Jünglingshecke','Angergasse','Anne-Frank-Str.','Anton-Dey-Str.','Apfelbaumgasse','Arndtstr.','Auf Den Hirtenwiesen','August-Bebel-Str.','Außenliegend','Aussiger Str.','Austr.','Bachgasse','Bahnhofstr.','Basaltstr.','Bebraer Str.','Beethovenstr.','Benzstr.','Bernhardstr.','Bert-Brecht-Str.','Bertha-Von-Suttner-Weg','Bettinastr.','Bieberer Str.','Bieberer Weg','Birkenwaldstr.','Bischof-Kaiser-Str.','Bischof-Ketteler-Str.','Bleichstr.','Blumenstr.','Bornstr.','Bornweg','Borsigstr.','Brentanostr.','Breslauer Str.','Brückenstr.','Brühlweg','Brunnenstr.','Brunnenweg','Buchenweg','Bürgermeister-Beheim-Str.','Bürgermeister-Hainz-Str.','Büttnerstr.','Carl-Zeiss-Str.','Charles-Ottina-Str.','Daimlerstr.','Dammstr.','Dieselstr.','Dietesheimer Str.','Dietrich-Bonhoeffer-Str.','Dresdener Str.','Dürerstr.','Ebertstr.','Edith-Stein-Str.','Eigenheimstr.','Elbestr.','Elisabethenstr.','Erlenweg','Ernst-Abbe-Str.','Fackelswiesenweg','Fährenstr.','Feldbergstr.','Feldstr.','Feststr.','Fichtestr.','Forsthausstr.','Forstweg','Franz-Jakoby-Str.','Freiherr-vom-Stein-Str.','Friedensstr.','Friedhofsweg','Friedrich-Ebert-Str.','Friedrichstr.','Fritz-Erler-Str.','Fuggerstr.','Fünfhäusergasse','Gartenstr.','Geleitstr.','Gerhart-Hauptmann-Str.','Goerdelerstr.','Goethestr.','Gottfried-Keller-Str.','Grenzstr.','Grimmstr.','Gutenbergstr.','Haingrabengasse','Hallgartenstr.','Hanauer Str.','Händelstr.','Hauffstr.','Hauptstr.','Hausener Str.','Hausener Weg','Hegelstr.','Heinestr.','Heinrich-Böll-Str.','Helpertseestr.','Henri-Dunant-Str.','Herderstr.','Hermann-Hesse-Str.','Hermann-Löns-Str.','Herrnstr.','Hindemithstr.','Hirschgasse','Hoffmannstr.','Holbeinstr.','Im Brückfeld','Im Heimgarten','Im Steinbeunerfeld','In der Seewiese','Industriestr.','Jahnstr.','Jean-Monnet-Str.','Josefstr.','Karlstr.','Käthe-Kollwitz-Str.','Kettelerstr.','Kirchborngasse','Kirchstr.','Kirchweg','Kolpingstr.','Konrad-Adenauer-Str.','Körnerstr.','Kreuzstr.','Krummstr.','Lämmerspieler Str.','Lämmerspieler Weg','Leipziger Str.','Leonhardstr.','Leopoldstr.','Lerchenweg','Lessingstr.','Leuschnerstr.','Lilienweg','Lindenstr.','Louis-Raverat-Str.','Ludwigsplatz','Ludwigstr.','Luisenstr.','Mainstr.','Mainstweg','Marktstr.','Memelstr.','Mozartstr.','Mühlheimer Str.','Mühlstr.','Müllerweg','Nelkenweg','Neustr.','Obermainstr.','Obertshäuser Str.','Oberwiese','Odenwaldstr.','Offenbacher Str.','Offenbacher Weg','Otto-Hahn-Str.','Paulstr.','Pestalozzistr.','Peterstr.','Pfaffenbrunnenweg','Pfarrgasse','Philipp-Reis-Str.','Quellenweg','Querstr.','Raabestr.','Rabenlohweg','Rathenaustr.','Rilkestr.','Ringstr.','Rittelsweg','Robert-Bosch-Weg','Robert-Koch-Str.','Robert-Schuman-Str.','Rodaustr.','Roseggerstr.','Rosenweg','Rösterweg','Rote-Warte-Str.','Rubensstr.','Rückertstr.','Rumpenheimer Str.','Sackgasse','Saint-Priest-Str.','Schillerstr.','Schlehenstr.','Schlesierstr.','Schmiedegasse','Schubertstr.','Schulstr.','Schumacherstr.','Senefelderallee','Siedlerstr.','Siemensstr.','Spessartstr.','Stauffenbergstr.','Steinheimer Str.','Steinkautenweg','Sudetenstr.','Südring','Tannenweg','Taunusstr.','Thomas-Mann-Str.','Tiefenorter Ring','Tilsiter Str.','Trachstr.','Tränkgasse','Tulpenweg','Uhlandstr.','Ulmenstr.','Unter den Eichen','Untermainstr.','Vogelsangstr.','Waldheimer Str.','Waldstr.','Weingartenweg','Wichernstr.','Wiesenstr.','Wilhelm-Busch-Str.','Wilhelm-Leuschner-Str.','Wilhelmstr.','Wingertstr.','Zeppelinring','Zimmerstr.','Zum Markwald'
       ];
     
-    
-    // #####################################################
-    // #####################################################
-    // #####################################################
-    
-    function tellTime(){
-        let now = new Date();
-        myH = now.getHours(); //.toString().padStart(2, 0);
-        let myM = now.getMinutes().toString().padStart(2, 0);
-        let myDay = now.getDay();
-        let myDate = now.getDate().toString().padStart(2, 0);
-        let myM_ = now.getMonth()+1; 
-        let myMonth = myM_.toString().padStart(2, 0);
-        const tage = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
-        let myTime = myH.toString().padStart(2, 0) + ":" + myM; // ":" + myS;
-        var myDatum = tage[myDay] + " " + myDate + "." + myMonth;
-        zeitFeld.innerText = myTime;
-        datumFeld.innerText = myDatum;
-        // var tarifFeld = document.getElementById('id_tarif');
-        // if((myH > 5 ) && (myH < 22)){
-        //   tarif = 54;
-        //   tarifFeld.textContent = "Normaltarif: € 0,10 für 54 Meter (ca. € 1,85 pro km)"
-        // } else {
-        //   tarif = 51; 
-        //   tarifFeld.textContent = "Nachttartif: € 0,10 für 51 Meter (ca. € 1,95 pro km)"
-        // }
-      }
-     
-     // #####################################################
-     // #####################################################
-     
     
     
      // autocomplete(document.getElementById("startStr"), frankfurt);

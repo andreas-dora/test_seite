@@ -138,7 +138,7 @@ code{
 .code__dType{
   color: var(--c-dataType);
 }
-.code__variable{
+.c__variable{
   color: var(--c-variable);
 }
 .code__string{

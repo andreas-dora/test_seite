@@ -8,29 +8,32 @@
 </head>
 <body>
   <main>
+
     <section class="inhalt">
+      <h1 class="headline"><span class="hilite">JS</span> Array Methoden</h1>
+
       <h1>Inhalt / Übersicht</h1>
-      <article>
-        <h1>Array Methods</h1>
 
-        <dl>
-          <dt>Einfügen:</dt>
-          <dd>push()</dd>
-          <dd>unshift()</dd>
-          <dd>splice()</dd>
-          <dt>Entfernen:</dt>
-          <dd>pop()</dd>
-          <dd>push()</dd>
-          <dd>splice()</dd>
-          <dt>Kopieren:</dt>
-          <dd>slice()</dd>
-          <dt>Sotieren:</dt>
-          <dd>sort()</dd>
-          <dd>reverse()</dd>
-        </dl>
-
-
-        <h4>Alphabetische Übersicht</h4>
+      <div class="flexBox">
+        <aside>
+          <dl>
+            <dt>Einfügen:</dt>
+            <dd>push()</dd>
+            <dd>unshift()</dd>
+            <dd>splice()</dd>
+            <dt>Entfernen:</dt>
+            <dd>pop()</dd>
+            <dd>push()</dd>
+            <dd>splice()</dd>
+            <dt>Kopieren:</dt>
+            <dd>slice()</dd>
+            <dt>Sotieren:</dt>
+            <dd><a href="#sort">sort()</a></dd>
+            <dd>reverse()</dd>
+          </dl>
+        </aside>
+        <article>
+         <h4>Alphabetische Übersicht</h4>
 
         <table>
         <colgroup>
@@ -99,261 +102,112 @@
           <td>Sortiert ein Array auf Basis einer Funktion</td>
         </tr>
         </tbody>
-        </table>
-        
-        
-        
+        </table>     
       </article>
+      </div>
     </section>
-    <section>
-      <article>
+ 
        
+<section>
 
-     
-
-
-<h2>Elemente hinzufügen</h2>
-
-<h4>Elemente am Ende hinzufügen mit push()</h4>
-
+  <h2>Elemente hinzufügen: <span class="hilite">push(), unshift()</span></h2>
+ <div class="flexBox">
+   <aside>
+    <p>Zum stehen mehrere Methoden zur Verfügung um Elemente einem Array hinzuzufügen.</p>
+    <h3>Elemente am Ende hinzufügen mit push()</h3>
+   </aside>
+   <article>
 <pre><code class="js"> 
- var todoList = [];
-var plusPunkt;
+  var todoList = [];
+  var plusPunkt;
+  
+  plusPunkt = todoList.push('Bad putzen');
+  console.log(plusPunkt);
+  
+  plusPunkt = todoList.push('Einkaufen');
+  console.log(plusPunkt);
+  
+  plusPunkt = todoList.push('Rasen mähen');
+  console.log(plusPunkt);
+  
+  plusPunkt = todoList.push('Kochen');
+  console.log(plusPunkt);
+  
+  console.log(todoList);
+  </code></pre>
+   </article>
+ </div>
+<div class="flexBox">
+  <aside>
+    <h3>Elemente am Anfang hinzufügen mit <span class="hilite">unshift()</span></h3>
+  </aside>
+  <article>
+    <pre><code class="js"> var todoList = [];
+      var plusPunkt;
+      
+      plusPunkt = todoList.push('Bad putzen');
+      plusPunkt = todoList.push('Einkaufen');
+      plusPunkt = todoList.push('Rasen mähen');
+      plusPunkt = todoList.push('Kochen');
+      
+      plusPunkt = todoList.unshift('Frühstück');
+      
+      console.log(todoList);
+      </code></pre>
+  </article>
+</div>
+ <div class="flexBox">
+   <aside>
+    <h3>Einfügen, ersetzen und Löschen <span class="hilite">splice()</span></h3>
+    <p>Die Methode <strong>splice()</strong> ist äußerst vielseitig. Sie kann genutzt werden um 
+      Elemente in ein Array Einzufügen, Elemente zu löschen oer Elemente zu Ersetzen. Die Methode erwartet 2 bis 3 Argumente:
+      <ol>
+        <li>Die Stelle an der Eingefügt, gelöscht oder Ersetzt werden werden soll.</li>
+        <li>Die Anzahl der Elemente, die gelöscht werden sollen. Mit <strong>0</strong> wird kein Element gelöscht.</li>
+        <li>Optional: das Element, dass eingefügt werden soll</li>
+      </ol>
+      <p></p>
+   </aside>
+   <article>
+    <pre><code class="js">var todoList = [
+      'Frühstück',
+      'Einkaufen',
+      'Aufräumen',
+      'Coding'
+    ];
+    
+    todoList.splice(3, 0, 'Daten sichern');
+    console.log(todoList);
+    </code></pre>
+   </article>
+ </div>
+</section>
+<section>
 
-plusPunkt = todoList.push('Bad putzen');
-console.log(plusPunkt);
-
-plusPunkt = todoList.push('Einkaufen');
-console.log(plusPunkt);
-
-plusPunkt = todoList.push('Rasen mähen');
-console.log(plusPunkt);
-
-plusPunkt = todoList.push('Kochen');
-console.log(plusPunkt);
-
-console.log(todoList);
-</code></pre>
-
-<hr />
-
-<h4>Elemente am Anfang hinzufügen mit unshift()</h4>
-
-<pre><code class="js"> var todoList = [];
-var plusPunkt;
-
-plusPunkt = todoList.push('Bad putzen');
-plusPunkt = todoList.push('Einkaufen');
-plusPunkt = todoList.push('Rasen mähen');
-plusPunkt = todoList.push('Kochen');
-
-plusPunkt = todoList.unshift('Frühstück');
-
-console.log(todoList);
-</code></pre>
-
-<hr />
-
-<h4>Mit splice() Elemente an einer bestimmten Position hinzufügen</h4>
-
-<p>Die Methode <strong>splice()</strong> erwartet 2 bis 3 Argumente:
-1. Die Stelle an der Eingefügt werden soll.
-2. Die Anzahl der Positionen die gelöscht werden sollen
-3. Den neuen Inhalt</p>
-
-
-<pre><code class="js">var todoList = [
-  'Frühstück',
-  'Einkaufen',
-  'Aufräumen',
-  'Coding'
-];
-
-todoList.splice(3, 0, 'Daten sichern');
-console.log(todoList);
-</code></pre>
-      </article>
-    </section>
-    <section>
-      <article>
-
-
-
-
-<h2>Elemente entfernen</h2>
-
-<h4>Das letzte Element mit pop() entfernen</h4>
-
-<pre><code class="js">var todoList = [
-  'Frühstück',
-  'Einkaufen',
-  'Aufräumen',
-  'Coding',
-  'Workout'
-];
-
-var item1 = todoList.pop();
-console.log(todoList);
-</code></pre>
-
-<hr />
-
-<h4>Mit shift() das erste Element enfernen</h4>
-
-<pre><code class="js">var todoList = [
-  'Frühstück',
-  'Einkaufen',
-  'Aufräumen',
-  'Coding',
-  'Workout'
-];
-
-var item1 = todoList.shift();
-console.log(todoList);
-</code></pre>
-      </article>
-
-    </section>
-    <section>
-
+<h2>Elemente entfernen: <span class="hilite">pop(), shift(), splice()</span></h2>
+<div class="flexBox">
+<aside>
+  <h3>Das letzte Element entfernen: <span class="hilite">pop()</span></h3>
+</aside>
 <article>
-  <h1>Array Methods</h1>
-
-<table>
-<colgroup>
-<col/>
-<col/>
-</colgroup>
-
-<thead>
-<tr>
-	<th>Methode</th>
-	<th>Beschreibung</th>
-</tr>
-</thead>
-
-<tbody>
-<tr>
-	<td>concat()</td>
-	<td>Hängt Elemente (oder Arrays) an</td>
-</tr>
-<tr>
-	<td>filter()</td>
-	<td>Filtert Elemente heraus</td>
-</tr>
-<tr>
-	<td>forEach()</td>
-	<td>Wendet eine Funktion auf alle Elemente an</td>
-</tr>
-<tr>
-	<td>join()</td>
-	<td>Wandelt ein Array in einen String um</td>
-</tr>
-<tr>
-	<td>map()</td>
-	<td>Bildet die Elemente auf Basis einer Umwandlungfunktion ab</td>
-</tr>
-<tr>
-	<td>pop()</td>
-	<td>Entfernt das letzte Element</td>
-</tr>
-<tr>
-	<td>push()</td>
-	<td>Fügt am Ende ein neues Element hinzu</td>
-</tr>
-<tr>
-	<td>reduce()</td>
-	<td>Auf Basis einer übergebenen Funktion werden alle Werte zusammen gefasst</td>
-</tr>
-<tr>
-	<td>revers()</td>
-	<td>Kehrt die Reihenfolge der Elemente in einem Array um</td>
-</tr>
-<tr>
-	<td>shift()</td>
-	<td>Entfernt das letzte Element eines Arrays</td>
-</tr>
-<tr>
-	<td>slice()</td>
-	<td>Schneidet ein einzelnes Element heraus</td>
-</tr>
-<tr>
-	<td>splice()</td>
-	<td>Fügt ein neues Element an einer bestimmten Position ein</td>
-</tr>
-<tr>
-	<td>sort()</td>
-	<td>Sortiert ein Array auf Basis einer Funktion</td>
-</tr>
-</tbody>
-</table>
-
-<hr />
-
-<h2>Elemente hinzufügen</h2>
-
-<h4>Elemente am Ende hinzufügen mit push()</h4>
-
-<pre><code class="js"> 
- var todoList = [];
-var plusPunkt;
-
-plusPunkt = todoList.push('Bad putzen');
-console.log(plusPunkt);
-
-plusPunkt = todoList.push('Einkaufen');
-console.log(plusPunkt);
-
-plusPunkt = todoList.push('Rasen mähen');
-console.log(plusPunkt);
-
-plusPunkt = todoList.push('Kochen');
-console.log(plusPunkt);
-
-console.log(todoList);
-</code></pre>
-
-<hr />
-
-<h4>Elemente am Anfang hinzufügen mit unshift()</h4>
-
-<pre><code class="js"> var todoList = [];
-var plusPunkt;
-
-plusPunkt = todoList.push('Bad putzen');
-plusPunkt = todoList.push('Einkaufen');
-plusPunkt = todoList.push('Rasen mähen');
-plusPunkt = todoList.push('Kochen');
-
-plusPunkt = todoList.unshift('Frühstück');
-
-console.log(todoList);
-</code></pre>
-
-<hr />
-
-<h4>Mit splice() Elemente an einer bestimmten Position hinzufügen</h4>
-
-<p>Die Methode <strong>splice()</strong> erwartet 3 Argumente:
-1. Die Stelle an der Eingefügt werden soll.
-2. Die Anzahl der Positionen die gelöscht werden sollen
-3. Den neuen Inhalt</p>
-
-<pre><code class="js">var todoList = [
-  'Frühstück',
-  'Einkaufen',
-  'Aufräumen',
-  'Coding'
-];
-
-todoList.splice(3, 0, 'Daten sichern');
-console.log(todoList);
-</code></pre>
-
-<h2>Elemente entfernen</h2>
-
-<h4>Das letzte Element mit pop() entfernen</h4>
-
+  <pre><code class="js">var todoList = [
+    'Frühstück',
+    'Einkaufen',
+    'Aufräumen',
+    'Coding',
+    'Workout'
+  ];
+  
+  todoList.pop();
+  console.log(todoList);
+  </code></pre>
+</article>
+</div>
+<div class="flexBox">
+<aside>
+  <h3>Das erste Element enfernen: <span class="hilite">shift()</span></h3>
+</aside>
+<article>
 <pre><code class="js">var todoList = [
   'Frühstück',
   'Einkaufen',
@@ -362,155 +216,223 @@ console.log(todoList);
   'Workout'
 ];
 
-var item1 = todoList.pop();
+todoList.shift();
 console.log(todoList);
-</code></pre>
-
-<hr />
-
-<h4>Mit shift() das erste Element enfernen</h4>
-
-<pre><code class="js">var todoList = [
-  'Frühstück',
-  'Einkaufen',
-  'Aufräumen',
-  'Coding',
-  'Workout'
-];
-
-var item1 = todoList.shift();
-console.log(todoList);
-</code></pre>
-
-<h4>Einen bestimmten Teil mit splice() entfernen</h4>
-
-<p>Mit <strong>splice</strong> kann man nicht nur Elemente an einem bestimmten Punkt hinzufügen sondern auch ganze Teile eines Arrays entfernen.</p>
-
-<pre><code>var todoList = [
-  'Frühstück',
-  'Einkaufen',
-  'Aufräumen',
-  'Coding',
-  'Workout'
-];
-
-var item1 = todoList.splice(2, 2);
-console.log(todoList);
-</code></pre>
-
-<h4>Mit splice() eins hinzufügen und zwei löschen</h4>
-
-<pre><code class="js">var todoList = [
-  'Frühstück',
-  'Einkaufen',
-  'Aufräumen',
-  'Coding',
-  'Workout'
-];
-
-var item1 = todoList.splice(2, 2, 'Faulenzen');
-console.log(todoList);
-</code></pre>
-
-<hr />
-
-<h2>Teile kopieren</h2>
-
-<p>Mit <strong>slice()</strong> kann man einen ausgewählten Teil kopieren;<br/>
-<strong>slice</strong> erwartet ein bis zwei Argumente.
-1. Anfang der Auswahl
-2. Das Ende der Auswahl (Die Auswahl endet davor)</p>
-
-<pre><code class="js">var todoList = [
-  '0. Aufstehen',
-  '1. Frühstück',
-  '2. Einkaufen',
-  '3. Aufräumen',
-  '4. Daten sichern',
-  '5. Coding',
-  '6. Datenabgleich',
-  '7. Workout'
-];
-
-var teil = todoList.slice(2);
-console.log(teil);
-</code></pre>
-
-<p>Das Ende der Auswahl schließt vor dem im zweiten Argument übergebenen Wert.</p>
-
-<pre><code class="js">var teil = todoList.slice(2,5);
-console.log(teil);
-</code></pre>
-
-<p>Gibt aus dem obigen Array die Punkte 2., 3. und 4. zurück</p>
-
-<p>Es können auch negative Werte übergeben werden </p>
-
-<pre><code class="js">var teil = todoList.slice(2,-1);
-</code></pre>
-
-<p>Übernimmt den dritten bis vorletzten Eintrag.</p>
-
-<hr />
-
-<h2>Sortieren</h2>
-
-<p>Für das Sortieren der Elemente eines Arrays stehen zwei Methoden zur Verfügung.</p>
-
-<p><strong>reverse()</strong> gibt den Inhalt eines Array einfach in umgekehrter Reihenfolge wieder.</p>
-
-<p><strong>sort()</strong> ermöglicht es ein Array anhand einer übergebenen Vergleichsfunktion zu sortieren.</p>
-
-<pre><code class="js">var werte = [
-  7, 9, 6, 3, 8, 2, 4, 1, 5
-];
-
-function compare(wert1, wert2){
-  if (wert1 &lt; wert2){
-    return -1;
-  }
-  else if(wert1 &gt; wert2){
-    return 1;
-  }
-  else {
-    return 0;
-  }
-}
-
-werte.sort(compare);
-console.log(werte);
-</code></pre>
-
-<h4>Beispiel für alphabetische Sortierung</h4>
-
-<pre><code class="js">var contacts = [
-  {
-    firstName: 'Britta',
-    lastName: 'Master',
-    email: 'britta@test.de'
-  },
-  {
-    firstName: 'Andi',
-    lastName: 'Dora',
-    email : 'andi.dora@test.de'
-  },
-  {
-    firstName: 'Elira',
-    lastName: 'Klaviara',
-    email: 'elvira@klaviara.de'
-  }
-]
-
-function compareByFirstName(contact1, contact2){
-  return contact1.firstName.localeCompare(contact2.firstName)
-}
-
-contacts.sort(compareByFirstName);
-console.group(contacts);
 </code></pre>
 </article>
+</div>
+<div class="flexBox">
 
-      
+</div>
+<div class="flexBox">
+  <aside>
+    <h3>Einfügen, ersetzen und Löschen <span class="hilite">splice()</span></h3>
+    <p><strong>splice()</strong> kann genutzt werden um an einer bestimmten Stelle des Arrays
+      ein oder mehrere Elemente zu löschen. Die Methode erwartet 2 bis 3 Argumente:</p>
+      <ol>
+        <li>Die Stelle an der Eingefügt, gelöscht oder Ersetzt werden werden soll.</li>
+        <li>Die Anzahl der Elemente, die gelöscht werden sollen. Mit <strong>0</strong> wird kein Element gelöscht.</li>
+        <li>Optional: das Element, dass eingefügt werden soll</li>
+      </ol>
+  </aside>
+  <article>
+
+  </article>
+</div>
+<div class="flexBox">
+  <aside>
+    <h4>Einen bestimmten Teil mit splice() entfernen</h4>
+  </aside>
+  <article>
+    <pre><code class="js">var todoList = [
+      'Frühstück',
+      'Einkaufen',
+      'Aufräumen',
+      'Coding'
+    ];
+    
+    todoList.splice(3, 1);
+    console.log(todoList);
+    </code></pre>      
+  </article>
+</div>
+<div class="flexBox">
+  <aside>
+    <h4>Mit splice() eins hinzufügen und zwei löschen</h4>
+  </aside>
+  <article>
+    <pre><code class="js">var todoList = [
+      'Frühstück',
+      'Einkaufen',
+      'Aufräumen',
+      'Coding',
+      'Workout'
+    ];
+    
+    var item1 = todoList.splice(2, 2, 'Faulenzen');
+    console.log(todoList);
+  </article>
+</div>
+
+
+
+
+
+</code></pre>
+    </section>
+    <section>
+      <h2>Teile kopieren: <span class="hilite">slice()</span></h2>
+<div class="flexBox">
+  <aside>
+    <p>Mit <strong>slice()</strong> kann man einen ausgewählten Teil kopieren;<br/>
+      <strong>slice()</strong> erwartet ein bis zwei Argumente.
+      1. Anfang der Auswahl
+      2. Das Ende der Auswahl (Die Auswahl endet davor)</p>
+  </aside>
+  <article>
+    <pre><code class="js">var todoList = [
+      '0. Aufstehen',
+      '1. Frühstück',
+      '2. Einkaufen',
+      '3. Aufräumen',
+      '4. Daten sichern',
+      '5. Coding',
+      '6. Datenabgleich',
+      '7. Workout'
+    ];
+    
+    var teil = todoList.slice(2);
+    console.log(teil);
+    </code></pre>
+
+  </article>
+</div>
+<div class="flexBox">
+  <aside>
+    <p>Das Ende der Auswahl schließt vor dem im zweiten Argument übergebenen Wert.</p>
+  </aside>
+  <article>
+    <pre><code class="js">var teil = todoList.slice(2,5);
+      console.log(teil);
+      </code></pre>
+  </article>
+</div>
+  <div class="flexBox">
+    <aside>
+      <p>Gibt aus dem obigen Array die Punkte 2., 3. und 4. zurück</p>
+
+      <p>Es können auch negative Werte übergeben werden </p>
+      <p>Übernimmt den dritten bis vorletzten Eintrag.</p>
+    </aside>
+    <article>
+
+      <pre><code class="js">var teil = todoList.slice(2,-1);
+      </code></pre>
+    </article>
+  </div>
+    </section>
+    <section>
+
+<h2 id="sort">Sortieren: <spn class="hilite">sort(), reverse()</spn></h2>
+<div class="flexBox">
+  <aside><p><strong>sort()</strong> ist eine Higher Order Funktion. Solche Funktionen arbeiten mit Vergleichsfunktionen. Ohne Vergleichsfunktion
+    wird das Array nach Wertigkeit der ASCII-Zeichen durchsortiert.</p>
+    
+      <ol>
+        <li>404</li>
+        <li>5</li>
+        <li>'Aufräumen'</li>
+        <li>'Workout'</li>
+        <li>'arbeiten'</li>
+        <li>'Übung'</li>
+      </ol>
+
+  
+      </aside>
+      <article>
+        <pre><code>var todoList = [
+          'arbeiten',
+          5,
+          404,
+          'Aufräumen',
+          'Workout',
+          'Übung'
+          ];
+        
+        todoList.sort();
+        console.log(todoList);</code></pre>
+          </article>
+        
+    </div>
+    <div class="flexBox">
+<aside>
+  <p>gibt <strong>reverse()</strong>  den Inhalt eines Array einfach in umgekehrter Reihenfolge wieder. 
+  </p>
+  <p><strong>sort()</strong> ermöglicht es ein Array anhand einer übergebenen Vergleichsfunktion zu sortieren.</p>
+
+</aside>
+<article>
+  <pre><code class="js">var werte = [
+    7, 9, 6, 3, 8, 2, 4, 1, 5
+  ];
+  
+  function compare(wert1, wert2){
+    if (wert1 &lt; wert2){
+      return -1;
+    }
+    else if(wert1 &gt; wert2){
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  }
+  werte.sort(compare);
+  console.log(werte);
+  </code></pre>  
+</article>
+    </div>
+ <div class="flexBox">
+<aside>
+  <h4>Beispiel für alphabetische Sortierung</h4>
+</aside>
+<article>
+  <pre><code class="js">var contacts = [
+    {
+      firstName: 'Britta',
+      lastName: 'Master',
+      email: 'britta@test.de'
+    },
+    {
+      firstName: 'Andi',
+      lastName: 'Dora',
+      email : 'andi.dora@test.de'
+    },
+    {
+      firstName: 'Elira',
+      lastName: 'Klaviara',
+      email: 'elvira@klaviara.de'
+    }
+  ]
+  
+  function compareByFirstName(contact1, contact2){
+    return contact1.firstName.localeCompare(contact2.firstName)
+  }
+  
+  contacts.sort(compareByFirstName);
+  console.group(contacts);
+  </code></pre>
+</article>
+ </div>
+
+
+
+
+
+
+
+
+
     </section>
   </main>
   <script type="text/javascript" src="sketch.js"></script>

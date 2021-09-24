@@ -1,12 +1,12 @@
-var startTime;
+var workbench = `var startTime;
 var workTime;
-var testforhtml = /<(.*?)>/g;
+var testforhtml1 =/<(.*?)>/g;
 var testForJs = /var|let/g
-const feedback = document.querySelector('#feedback');
-const copyBtn = document.querySelector('#copy').addEventListener('click', copyFun);
+const feedback = document.querySelector("#feedback");
+const copyBtn =document.querySelector('#copy').addEventListener('click', copyFun);
 const startBtn = document.querySelector('#start').addEventListener('click', checkFun);
 var inbox = document.querySelector('#inbox')
-var output =document.querySelector('#output');
+var output = document.querySelector('#output');
 var code = document.querySelector('.myCode');
 
 const cssArea = document.getElementById('id_css');
@@ -19,6 +19,7 @@ const resetBtn = document.getElementById('id_reset').addEventListener('click', (
 });
 
 function copyCss(){
+  let enineBulltee;
   cssArea.select();
   cssArea.setSelectionRange(0, 99999); /*For mobile devices*/
   document.execCommand("copy");  alert("Copied the text: " + cssArea.value);
@@ -35,12 +36,85 @@ function checkFun(){
   else {
     console.log('NIX');
   }
+}`;
+/*
+var startTime;
+var workTime;
+var testforhtml = /<(.*?)>/g;
+var testForJs = /var|let/g
+const feedback = document.querySelector('#feedback');
+const copyBtn = document.querySelector('#copy').addEventListener('click', copyFun);
+const startBtn = document.querySelector('#start').addEventListener('click', checkFun);
+var inbox = document.querySelector('#inbox')
+var output = document.querySelector('#output');
+var code = document.querySelector('.myCode');
+
+const cssArea = document.getElementById('id_css');
+const cssBtn = document.getElementById('id_copyCss');
+cssBtn.addEventListener('click', copyCss);
+const resetBtn = document.getElementById('id_reset').addEventListener('click', () =>{
+  inbox.value = '';
+  output.value = '';
+  code.innerHTML = '';
+});
+
+
+function copyCss(){
+  let start = 'star';
+  cssArea.select();
+  cssArea.setSelectionRange(0, 99999); 
+  document.execCommand("copy");  alert("Copied the text: " + cssArea.value);
 }
 
+function checkFun(){
+  startTime = Date.now();
+
+  if(testforhtml.test(inbox.value)){
+    hiliteHtml();
+  } else if(testForJs.test(inbox.value)){
+    liteJS();
+  }
+  else {
+    console.log('NIX');
+  }
+}
+*/
+/*##############################################*/
+/*##############################################*/
+/*##############################################*/
+function hiliteJS(){
+
+  const myCode = document.getElementById('myCode');
+  const out1 = document.getElementById('out1');
+  out1.value = 'Works';
+  workbench = workbench.replace(/\"/g, '\'');
+  workbench = workbench.replace(/(\=|\+|\-)\W/g, '$1 ');
+
+  let letTest = /(?<=(var|const|let)\s)\w+/g;
+  console.log(workbench.length);
+  var myKeys =  workbench.match(letTest);
+  console.log('myyKeys Länge : ' + myKeys.length);
+  console.log('myKeys : ' + myKeys);
+  
+  for(let i = 0; i< myKeys.length; i++){
+    console.log(`Jetzt muss das raus ${myKeys[i]}`);
+    let ex =  RegExp(myKeys[i], 'g');
+    console.log(ex);
+ 
+   workbench = workbench.replace(ex, `<span class="__variable">${myKeys[i]}</span>`);
+    }
+
+  output.value = workbench;
+  myCode.innerHTML = workbench;
+}
+
+document.addEventListener('DOMContentLoaded', hiliteJS);
+/*
 function hiliteHtml (){
 
   let workbench;
   workbench = String(inbox.value);
+  let myKeys = [];
   workbench = workbench.replace(/</g, '&lt;');
   workbench = workbench.replace(/>/g,'&gt;');
   let charCount = workbench.match(/(.)/gms)
@@ -82,7 +156,8 @@ function liteJS(){
 function copyFun(e) {
   e.preventDefault();
   output.select();
-    output.setSelectionRange(0, 99999); /*For mobile devices*/
+    output.setSelectionRange(0, 99999); 
     document.execCommand("copy");
     alert("Copied the text: " + output.value);
   }
+  */

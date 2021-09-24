@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>output tabelle</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h1>Output-Form in Tabelle</h1>
+        <section>
+            <div class="outCon">
+                <form id="outputForm" class="outputForm">
+                    <table>
+                       
+                        <tbody>
+                            <tr><td colspan="4"><input type="text" name="outStart" id="outStart" class="output" readonly></td></tr>
+                            <tr><td colspan="4"><input type="text" name="outZiel" id="outZiel" class="output" readonly></td></tr>
+                            <tr>
+                                <th><input type="text" name="outPreis" id="outPreis" class="output" readonly></th>
+                                <td><input type="text" name="outKm" id="outKm" class="output" readonly></td>
+                                <td><input type="text" name="outZeit" id="outZeit" class="output" readonly></td>
+                                <td></td>
+                            </tr>
+                           
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4"><input type="text" name="outTarif" id="outTarif" class="output" readonly></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function init(){
+            const outF = document.getElementById('outputForm');
+            outF.outStart.value = 'Start: Erich-Ollenhauer Straße 12-19, 63065 Offenbach am Main'
+            outF.outZiel.value = 'Ziel: Hermann-Strinhäuser Straße 12-19, 63065 Offenbach am Main'
+            outF.outPreis.value = '€ 16,70 *'
+            outF.outKm.value = '124.1km'
+            outF.outZeit.value = '136 Minuten'
+            outF.outTarif.value = '*Anfahrt € 4,50 + Normaltarif: € 0,10 für 54 Meter (ca. € 1,85 pro km)'
+        }
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
