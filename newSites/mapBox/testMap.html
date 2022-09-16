@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapBox TestMap</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;600&display=swap" rel="stylesheet">
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+    <script src="https://kit.fontawesome.com/5f8e9c1668.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="mapStyle.css">
+</head>
+<body>
+    <main>
+        
+        <div class="flexBox">
+            <div class="mapContainer">
+                <div class="map" id="map"></div>
+            </div>
+     
+            <div class="panel">
+                <a class="btn" href="index.html">Home</a>
+<aside>
+    <form id="routeFormID" action="">
+        <div class="formGroup">
+            <label for="start">Start:</label>
+            <input type="text" name="startSt" id="startSt" autocomplete="off">
+        </div>
+        <div class="formGroup">
+            <label for="ziel">Ziel:</label>
+            <input type="text" name="ziel" id="ziel" autocomplete="off">
+        </div>
+ 
+
+
+        <button class="btn" type="reset"><i class="far fa-times-circle"></i></button>
+        <button class="btn" type="submit"><i class="fas fa-search-location"></i>
+        <button class="btn" type="submit" name="g"><i class="fab fa-google"></i>
+        </button>
+    </form>
+    <form id="ouput">
+        <textarea name="textFeld" id="textFeld" readonly></textarea>
+    </form>
+</aside>
+
+            </div>       
+        
+    </main>  
+    <script src="https://unpkg.com/@mapbox/mapbox-sdk/umd/mapbox-sdk.min.js"></script>
+    <script src="mapSketch.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserInterface</title>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><button class="navBtn" id="routeBtn">Route</button></li>
+            <li>point</li>
+            <li>HP</li>
+            <li>Links</li>
+            <li>Guide</li>
+            <li>Tel</li>
+            <li>Apotheke</li>
+            <li>Tarife</li>
+            <li><a href="plan.html" target="_blank" rel="noopener noreferrer">Diesntplan</a></li>
+            <li><a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vSgI9-8X8weA83nHPyOMAP_S4WWjZpkY8jNH9jf_FjN-kzL_MzGzCsVHhbCJVGwuEhp7PLdi07WyYVJ/pubhtml?gid=1843516491&single=true" target="_blank" rel="noopener noreferrer">Plan</a></li>
+        </ul>
+        <div class="dateTime"><span id="date"></span> | <span id="time"></span></div>
+    </nav>
+    <main>
+        <div class="mapContainer">
+            <div class="map" id="map"></div>
+        </div>
+
+
+        <aside id="sideMenu">
+            <div class="asideContent">
+                <form id="routeFormID" action="">
+                    <label for="startCity">Start</label>
+                    <div class="formRow">
+                        <select name="startCity" id="startCity">
+                            <option value="Offenbach am Main">Offenbach</option>
+                            <option value="Mühlheim am Main">Mühlheim</option>
+                            <option value="Frankfurt am Main">Frankfurt</option>
+                            <option value="Heusenstamm">Heusenstamm</option>
+                            <option value="">---</option>
+                        </select>
+                    </div>
+                    <div class="formRow">
+                        <input type="text" name="startStreet" id="startStreet" autofocus>
+                    </div>
+                    <div class="formRow">
+                        <button class="formBtn" id="googleBtn">Google</button>
+                    </div>
+                    <hr>
+                    <label for="zieltCity">Ziel</label>
+                    <div class="formRow">
+                        <select name="zielCity" id="zielCity">
+                            <option value="Offenbach am Main">Offenbach</option>
+                            <option value="Mühlheim am Main">Mühlheim</option>
+                            <option value="Frankfurt am Main">Frankfurt</option>
+                            <option value="Heusenstamm">Heusenstamm</option>
+                            <option value="">---</option>
+                        </select>
+                    </div>
+                    <div class="formRow">
+                        <input type="text" name="zielStreet" id="zielStreet">
+                    </div>
+                    <div class="formRow">
+                        <button type="submit" class="formBtn greenBtn" id="submitBtn">Route</button>
+                        <button type="reset" class="formBtn redBtn" id="resetBtn">Reset</button>
+                    </div>
+                    <hr>
+                </form>
+            </div>
+
+        </aside>
+        <article>
+
+        </article>
+    </main>
+    <script src="sketch.js"></script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Zeit Test</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="flexBox">
+    <div class="flexBox">
+      <div class="mapContainer">
+          <div class="map" id="map"></div>
+      </div>
+
+      <div class="panel">
+          <a class="btn" href="index.html">Home</a>
+<aside>
+<form id="routeFormID" action="">
+  <label for="start">Start:</label>
+  <input type="text" name="start" id="start" autocomplete="off">
+
+  <label for="ziel">Ziel:</label>
+  <input type="text" name="ziel" id="ziel" autocomplete="off">
+  <button class="btn" type="reset">Reset</button>
+  <button class="btn" type="submit" name="submitBtn" id="submitBtn">Submit</button>
+</form>
+<div div id="instructions" class="instructions"></div>
+<form id="ouput">
+  <textarea name="textFeld" id="area" name="area" readonly></textarea>
+</form>
+</aside>
+
+      </div>   
+    <script src="sketch.js"></script>
+  </body>
+</html>

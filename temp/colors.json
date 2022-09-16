@@ -1,0 +1,13 @@
+{
+	"name": "paulS",
+	"theme": {
+        "--c-moss": "#465040",
+    	"--c-mint": "#C8D5BC",
+    	"--c-rose": "#EFD8D2",
+    	"--c-gold": "#FDB94B",
+    	"--c-peach": "#DF4C6C",
+  	    "--c-prince": "#57324C",
+ 	    "--c-steel": "#80A6AF",
+	    "--c-sea": "#469FA3"
+	}
+}

@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: darkgray;
+}
+h1, h2{
+    font-family: 'Syncopate', sans-serif;
+    line-height: 1;
+}
+header{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    
+    justify-content: space-around;
+    /* align-content:space-around; */
+    /* justify-items:center; */
+}
+.headline{
+    font-size: 300%;
+    height: min-content;
+    border: 1px solid white;
+    color: dodgerblue;
+}
+
+section{
+    min-height: 100vh;
+}
+.section_one article p{
+    width: 96%;
+    margin: 0 auto;
+    columns:3;
+    gap: 2em;
+    font-family: 'Flow Block', cursive;
+    line-height: 1.5;
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Zeit Test</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body class="flexBox">
+    <div class="flexBox">
+      <div class="mapContainer">
+          <div class="map" id="map"></div>
+      </div>
+
+      <div class="panel">
+          <!-- <a class="btn" href="index.html">Home</a> -->
+<aside>
+<form id="routeFormID" action="">
+  <select name="bewegung" id="bewegung">
+    <option value="driving">Kürzeste Fahrt</option>
+    <option value="driving-traffic">Schnellste Fahrt</option>
+    <option value="walking">Fußweg</option>
+    <option value="cycling">Fahrad</option>
+  </select>
+  <!-- <label for="start">Start:</label> -->
+  <input type="text" name="start" id="start" autocomplete="off" placeholder="Start">
+
+  <label for="ziel">Ziel:</label>
+  <input type="text" name="ziel" id="ziel" autocomplete="off">
+  <button class="btn" type="reset">Reset</button>
+  <button class="btn" type="submit" name="submitBtn" id="submitBtn">Submit</button>
+</form>
+
+<form id="ouput">
+  <input type="text" name="dauer" id="dauer" readonly>
+  <!-- <div div id="instructions" class="instructions"></div> -->
+  <textarea name="textFeld" class="instructions" id="instructions" name="instructions" readonly>
+    <h3>Wegbeschreibung</h3>
+  </textarea>
+</form>
+</aside>
+
+      </div>   
+    <script src="mapTest.js"></script>
+  </body>
+</html>

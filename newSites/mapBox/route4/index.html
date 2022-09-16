@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <title>Getting started with the Mapbox Directions API</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <section class="formSection">
+        <nav>
+          <a href="https://drive.google.com/drive/my-drive" target="_blank"><span class="material-icons-outlined">
+            local_taxi</span></a>    
+          <a href="https://drive.google.com/drive/my-drive" target="_blank"><span class="material-icons-outlined">
+            my_location</span></a>    
+          <a href="https://drive.google.com/drive/my-drive" target="_blank">Drive</a>    
+           <div class="dopdown">
+            <button class="navBtn" id="apoNav"><span class="material-icons-outlined">
+              local_pharmacy
+              </span></button>
+            <div class="dropContent">
+              <p><small><?= apoTime; ?></small></p>
+              <textarea name="apoArea" id="apoArea"><?= apoMain; ?>
+               </textarea><br>
+               <button class="btn blue" id="apoBtn">Copy</button>
+            </div>
+           </div>
+           <div class="time"><span id="id_date"></span>   <span id="id_time"></span></div>     
+       </nav>
+         <main>
+        <section>
+          <article> 
+           <div class="flexBox">
+            <form id="id_txForm">
+              <div class="formGroup">
+                <select id="id_stC" class="citySel" name="stC">
+                  <option value="0">Stadt</option>
+                  <option value="">---</option>
+                  <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                  <option value="Frankfurt am Main">Frankfurt</option>
+                  <option value="Mühlheim am Main">Mühlheim</option>
+                  <option value="Heusenstamm">Heusenstamm</option>
+                </select>     
+                <div class="autocomplete">
+
+  
+                  <input type="text" class="stInput" id="id_stStr" name="stStr" autocomplete="off" autofocus>
+                </div>
+ 
+              </div>
+              <div class="formGroup">
+                <select id="id_zC" class="citySel" name="zC">
+                  <option value="0">Stadt</option>
+                  <option value="0">---</option>
+                  <option value="Offenbach am Main" selected="selected">Offenbach</option>
+                  <option value="Frankfurt am Main">Frankfurt</option>
+                  <option value="Mühlheim am Main">Mühlheim</option>
+                  <option value="Heusenstamm">Heusenstamm</option>
+                </select>
+                <div class="autocomplete">
+                  <input type="text" class="stInput" id="id_zStr" name="zStr" autocomplete="off">
+                </div>
+
+              </div>       
+            </form> 
+              <div class="buttonContainer">              
+                  <button class="btn red" type="reset" id="id_showStart"><span class="material-icons-outlined">
+                    add_location
+                    </span></button>
+                  <button class="btn red" type="reset" id="id_reset">R</button>
+                  <button class="btn blue" id="id_kmBtn"><span class="material-icons-outlined">
+                    directions
+                    </span></button>
+              </div>
+              <div class="buttonContainer">
+                  <form class="gForm" action="https://google.com/search" target="_blank" method="GET">
+                    <input type="hidden" name="q" id="id_q" class="goole">
+                    <button class="btn blue" id="q"><span class="material-icons-outlined">
+                      search
+                      </span></button>
+                      <button class="btn red" type="reset" id="id_reset"><span class="material-icons-outlined">
+                        clear
+                        </span>
+                        </button>
+                </form>
+              </div>
+           </div>         
+          </article>
+          <aside>
+            <form id="output">
+              <input type="text" class="bigOut" name="preis" readonly>
+              <input type="text" class="smallOut" name="start" readonly>
+              <input type="text" class="smallOut" name="ziel" readonly>
+              <input type="text" class="smallOut" name="tarif" readonly>
+            </form>      
+            </aside>
+          </section>
+        </form>
+      </section>
+        <div class="mapSection">
+        <!-- <div id='map' class="map"></div> -->
+        <div id="instructions" class="instructions"></div>
+      </div>
+
+
+    </main>
+   
+    <script src="sketch.js"></script>
+  </body>
+</html>

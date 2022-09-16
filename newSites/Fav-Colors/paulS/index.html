@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colors of PS</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;600&family=PT+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+   
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="ps">
+            <div class="moss"></div>
+            <div class="mint"></div>
+            <div class="rose"></div>
+            <div class="gold"></div>
+            <div class="peach"></div>
+            <div class="prince"></div>
+            <div class="steel"></div>
+            <div class="sea"></div>
+    </header>
+    <main>
+        <section class="sectionA">
+            <h1>Karte für Paul S.</h1>
+            
+            <div class="flexBox">
+                <aside>
+                    
+                    <p>Mapbox nicht nur ein Anbieter von Kartenmaterial. Mit <strong>Mapbox GS JS</strong> 
+                        stellt das Unternhemen auch eine Javascript zum Einbinden des Kartenmaterial zur Verfügung.
+                     Diese Bibliothek bietet neben der einfachen Rutenplanung auch Lösungen für das <a href="#" target="_blank" rel="noopener noreferrer">Traveling Salesman Problem</a> 
+                    an. Kartenmaterial und Bibliothek stehen Entwicklen kostenfrei zur Verfügung</p>
+                    <p>Mit dem Online-Edidtor <a href="#" target="_blank" rel="noopener noreferrer">Mapbox Studio</a> Lassen sich Kartenlayouts individuellen Bedürfnissen anpassen.</p>
+                    <p>Von Hause aus stehen acht verschiedene <a href="https://docs.mapbox.com/api/maps/styles/" target="_blank" rel="noopener noreferrer">Karten</a> zur für die unteschiedlichsten Verwendungszwecke zur Verfügung, die sich im Studio individuell anpassen lassen</p>
+                    <p>Eine Reihe von <a href="#" target="_blank" rel="noopener noreferrer">Turorials</a> erleichtert den Einstieg</p>
+                        <ul>
+                            <li><a href="https://www.mapbox.com/" target="_blank" rel="noopener noreferrer">Homepage</a></li>
+                            <li><a href="https://docs.mapbox.com/api/maps/styles/" target="_blank" rel="noopener noreferrer">Karten Typen</a></li>
+                            <li><a href="https://docs.mapbox.com/help/tutorials/" target="_blank" rel="noopener noreferrer">Tutorials</a></li>
+                        </ul>
+                </aside>
+                <article>
+<pre><code>function init(){
+    routeForm = document.getElementById('routeFormID');
+    routeForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
+    routeForm.submitBtn.addEventListener('click', getRoute);
+    const start = [8.7665093, 50.098195]; // Waldstr 80
+    const end = [8.6693886, 50.1063468]; // Gutleustr. 32
+    
+    mapboxgl.accessToken = 'pk.eyJ1IjoiJ9.VtVXGZ5lB83a-70qOnBk_g';
+    const map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/navigation-night-v1',
+        center: [8.759833, 50.10344], 
+        zoom: 13 
+    });
+    const markerSt = new mapboxgl.Marker()
+    // .setLngLat([8.770833, 50.099444])
+    .setLngLat([start[0], start[1]])
+    .addTo(map);
+    const MarkerZiel = new mapboxgl.Marker()
+    .setLngLat([end[0], end[1]])
+    .addTo(map);
+    console.log('heello from init');
+    
+    
+                       </code></pre>
+                </article>
+            </div>
+        </section>
+    <section>
+        <article>
+            <img src="./img/b_stylo-bille-849-paul-smith-avec-etui-damson-edition-limitee-caran-d-ache-detail0-0.png" alt="">
+            <img src="./img/e_boite-8-couleurs-supracolor-soft-aquarelle-paul-smith-edition-limitee-caran-d-ache-detail0-0.png" alt="">
+            <img src="./img/e_stylo-bille-849-paul-smith-avec-etui-damson-edition-limitee-caran-d-ache-detail3-0.png" alt="">
+            <img src="./img/images-1.jpg" alt="">
+            <img src="./img/images.jpg" alt="">
+            <img src="./img/paul-smith-book-496758.webp" alt="">
+            <img src="./img/Paul-Smith-Cinelli-Cycling-Caps-Teaser.jpg" alt="">
+        </article>
+    </section>
+    </main>
+</body>
+</html>

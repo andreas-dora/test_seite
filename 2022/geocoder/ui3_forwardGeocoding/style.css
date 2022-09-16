@@ -1,0 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+  #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .menu{
+      position: fixed;
+      top: 5;
+      left: 5;
+      z-index: 1000;
+      width: 320px;
+      background-color: rgba(30,30,30,0.4);
+  }
+  .menuContent{
+      margin: 5px;
+  }
+ 
+  .formRow{
+      height: 32px;
+      margin-bottom: 10px;
+      background-color: tomato;
+  }
+  input{
+      height: 100%;
+      width: 100%; 
+}
+button{
+    height: 100%;
+    font-size: 16px;
+    padding: 0 8px;
+}
